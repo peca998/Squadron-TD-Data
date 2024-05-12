@@ -1,0 +1,32 @@
+name,wpn_bonus_add,wpn_period_mult,dps_bonus_add,wpn_bonus_mult,dps_bonus_mult,sort_with_dps_bonus,life_bonus_add,life_bonus_mult,sort_with_life_bonus,notes
+Fat Zergling,0,1.0,0,1,1.0,True,0,1.0,True,
+Lava Crawler,0,1.0,0,1,1.0,True,0,1.0,True,
+Space Cow,0,1.0,0,1,1.0,True,0,1.0,True,
+Marine,0,1.0,0,1,1.0,True,0,1.0,True,
+Hoverlord,0,1.0,0,1,1.0,True,0,1.0,True,
+Roach,0,1.0,0,1,1.0,True,0,1.0,True,
+Zealot,0,1.0,0,1,1.0,True,0,1.0,True,
+Grim Reaper,0,1.0,0,1,1.0,True,0,1.0,True,
+Exotic,0,1.0,0,1,1.0,True,0,1.0,True,
+The Infestor,0,1.0,0,1,1.0,True,0,1.0,True,
+Scantipede,0,1.0,0,1,1.0,True,0,1.0,True,
+Hydralisk,0,1.0,0,1,1.0,True,0,1.0,True,
+Broodlord,0,1.0,0,1,1.0,True,0,1.0,True,
+Immortal,0,1.0,0,1,1.0,True,0,1.0,True,
+Lurker,0,1.0,0,1,1.0,True,0,1.0,True,
+Hellion,0,1.0,0,1,1.0,True,0,1.0,True,
+Marauder,0,1.0,0,1,1.0,True,0,1.0,True,
+Corruptor,0,1.0,0,1,1.0,True,0,1.0,True,
+Lyote,0,1.0,0,1,1.0,True,0,1.0,True,
+Fatty,0,1.0,0,1,2.44,True,0,1.0,True,80% of damge per bounce: 1+0.8+0.64=2.44
+Acidolarvea,0,1.0,0,1,1.0,True,0,1.0,True,
+Aberration,0,1.33,0,1,1.0,True,120,1.3,True,assume 3 nearby died: 1.1^3=1.33AS | 1+0.1*3 HP | 2*3 regen; 20 sec wave => 120hp
+ARES,0,1.0,60,1,1.0,True,0,1.0,True,assume krogoth would've gained 50% life: 1200/20=60
+High Templar,0,1.0,0,1,1.0,True,0,1.0,True,
+Hybrid,0,1.0,0,1,1.75,True,0,1.0,True,assume 3 units cleaved: 0.25*3=0.75
+Kerrigan,0,1.0,0,1,1.0,True,2984,1.0,True,assume 70 damage absorbed: 2132(hp)/50*70=2984
+Predator,0,1.0,140,1,1.0,True,0,1.0,True,assume 3 units hit: 3*0.4*2333(hp)=2800/20=140
+Preserver,0,1.0,0,1,1.0,True,0,1.0,True,
+Nyx,0,1.0,0,1,1.0,True,0,1.0,True,
+Experimental Hybrid,0,1.0,0,1,1.0,True,0,1.0,True,
+Terratron,0,1.0,0,1,1.0,True,0,1.0,True,

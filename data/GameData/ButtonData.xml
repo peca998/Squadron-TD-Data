@@ -1,0 +1,1981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton default="1" id="AbilityButtonTemplate">
+        <?token id="prio" type="CString" value="bogus"?>
+        <TooltipAppender Text="DOCSTR_Abil_Priority_##prio##"/>
+    </CButton>
+    <CButton default="1" id="RacialButtonTemplate">
+        <TooltipAppender Text="DOCSTR_Racial_Tier_Info"/>
+    </CButton>
+    <CButton default="1" id="TowerButtonTemplate">
+        <TooltipAppender Validator="TooltipCollapsed" Text="DOCSTR_ExpandTooltip"/>
+        <TooltipAppender Validator="TooltipExpanded" Text="Button/Tooltip/##id##_Upgrades"/>
+        <TooltipAppender Validator="TooltipExpanded" Text="DOCSTR_CollapseTooltip"/>
+    </CButton>
+    <CButton id="CelestialSurge" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-biosample.dds"/>
+    </CButton>
+    <CButton id="ChronoInfusion" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+    </CButton>
+    <CButton id="ConcussivePsiblast" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+    </CButton>
+    <CButton id="FuryShield">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel1-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel1-dark.dds"/>
+    </CButton>
+    <CButton id="ta_DestructiveSacrifice">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+    </CButton>
+    <CButton id="EnhancedPsiblast" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+    </CButton>
+    <CButton id="Psiblast" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+    </CButton>
+    <CButton id="PsiblastBarrage" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shadowcannon.dds"/>
+    </CButton>
+    <CButton id="fAlarak" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak.dds"/>
+    </CButton>
+    <CButton id="fDestructiveAlarak">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fJinara" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-jinarav2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-jinarav2.dds"/>
+    </CButton>
+    <CButton id="fShockingAlarak">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="ta_EnhancedSacrifice">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+    </CButton>
+    <CButton id="ta_Sacrifice">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+    </CButton>
+    <CButton id="ta_ShockingSacrifice">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+    </CButton>
+    <CButton id="ta_SummoningChainLightning">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+    </CButton>
+    <CButton id="SwiftInfusion" parent="AbilityButtonTemplate" prio="HighestLostVitality">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+    </CButton>
+    <CButton id="AmplifiedSoulDetonation">
+        <Icon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+    </CButton>
+    <CButton id="DuplicationDummyUnit"/>
+    <CButton id="EMPShock" parent="AbilityButtonTemplate" prio="BestAoe">
+        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+    </CButton>
+    <CButton id="Aftermath">
+        <Icon value="Assets\Textures\btn-ability-zerg-genemutation-attackspeed.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-genemutation-attackspeed.dds"/>
+    </CButton>
+    <CButton id="BigBrother">
+        <Icon value="Assets\Textures\btn-upgrade-tychus-detection.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-tychus-detection.dds"/>
+    </CButton>
+    <CButton id="Accent">
+        <Icon value="Assets\Textures\btn-upgrade-tychus-herc-criticalsystem.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-tychus-herc-criticalsystem.dds"/>
+    </CButton>
+    <CButton id="Adept">
+        <Icon value="Starcraft 2 Assets\btn-special-protoss-Meditate.dds"/>
+    </CButton>
+    <CButton id="AnnihilatorAlignPrism">
+        <Icon value="Starcraft 2 Assets\btn-custom-protoss-rapiddeployment.dds"/>
+    </CButton>
+    <CButton id="AppraiseTower">
+        <Icon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+    </CButton>
+    <CButton id="Aptitude@Level_2">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel0-dark.dds"/>
+    </CButton>
+    <CButton id="Aptitude@Level_3">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel0-dark.dds"/>
+    </CButton>
+    <CButton id="ArclightBond" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-purifier-download2.dds"/>
+    </CButton>
+    <CButton id="Cadenza" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-disintegration.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-disintegration.dds"/>
+    </CButton>
+    <CButton id="CleanCut">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-snipetripletap.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-snipetripletap.dds"/>
+    </CButton>
+    <CButton id="EmpoweredSoulDetonation">
+        <Icon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+    </CButton>
+    <CButton id="EnhancedInfusion" parent="AbilityButtonTemplate" prio="HighestLostVitality">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+    </CButton>
+    <CButton id="EnhancedSoulDetonation">
+        <Icon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+    </CButton>
+    <CButton id="Fermata">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-immortalchampionvortex.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-immortalchampionvortex.dds"/>
+    </CButton>
+    <CButton id="Infusion" parent="AbilityButtonTemplate" prio="HighestLostVitality">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
+    </CButton>
+    <CButton id="Legato" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-ability-zerg-dehaka-ultralisk-healingadaptation.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-dehaka-ultralisk-healingadaptation.dds"/>
+    </CButton>
+    <CButton id="MechanicalRampage">
+        <Icon value="Assets\Textures\btn-upgrade-terran-acidexplosionimmunity.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-acidexplosionimmunity.dds"/>
+    </CButton>
+    <CButton id="ProtectiveShell">
+        <Icon value="Assets\Textures\btn-ability-dehaka-armorgain.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-dehaka-armorgain.dds"/>
+    </CButton>
+    <CButton id="Send_Hunterling">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-brutalisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-brutalisk.dds"/>
+    </CButton>
+    <CButton id="LeapAttack" parent="AbilityButtonTemplate" prio="Angle">
+        <Icon value="Assets\Textures\talent-kerrigan-level12-unlockraptor.dds"/>
+        <AlertIcon value="Assets\Textures\talent-kerrigan-level12-unlockraptor.dds"/>
+    </CButton>
+    <CButton id="SoulDetonation">
+        <Icon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-skullsoul.dds"/>
+    </CButton>
+    <CButton id="SpawnMechaLocusts">
+        <Icon value="Assets\Textures\btn-unit-zerg-creeperhostspawn-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-creeperhostspawn-mecha.dds"/>
+    </CButton>
+    <CButton id="Tributary@Button" parent="AbilityButtonTemplate" prio="HasSpellAttunement">
+        <Icon value="Assets\Textures\btn-ability-zeratul-stalker-vengeanceofthevoid.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zeratul-stalker-vengeanceofthevoid.dds"/>
+    </CButton>
+    <CButton id="TurnOffAutocasts">
+        <Icon value="Assets\Textures\btn-menu-strains-cancel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-menu-strains-cancel.dds"/>
+    </CButton>
+    <CButton id="UndoMerge">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="Wiederholungszeichen">
+        <Icon value="Assets\Textures\btn-tips-richminerals.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-richminerals.dds"/>
+    </CButton>
+    <CButton id="DalSegno">
+        <Icon value="Assets\Textures\btn-ability-zerg-darkswarm.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-regenaura.dds"/>
+    </CButton>
+    <CButton id="DeathSwamp@Button">
+        <Icon value="Assets\Textures\btn-ability-zerg-darkswarm.dds"/>
+    </CButton>
+    <CButton id="DecelerationShift" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-stukov-researchqueenfungalgrowth.dds"/>
+    </CButton>
+    <CButton id="EssenceFortification">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+    </CButton>
+    <CButton id="FakePassive">
+        <Icon value="Assets\Textures\btn-border-transportslot-empty.dds"/>
+    </CButton>
+    <CButton id="Glockenspiel">
+        <Icon value="Assets\Textures\btn-upgrade-terran-explosiveshrapnelshells.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-explosiveshrapnelshells.dds"/>
+    </CButton>
+    <CButton id="Sostenuto">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-stukov-queenenergyregen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-stukov-queenenergyregen.dds"/>
+    </CButton>
+    <CButton id="Send_Hybrid_Dominator">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\tip_hybriddominator.dds"/>
+        <AlertIcon value="Assets\Textures\tip_hybriddominator.dds"/>
+    </CButton>
+    <CButton id="Overwatch">
+        <Icon value="Assets\Textures\btn-ability-terran-battlefieldawareness.dds"/>
+    </CButton>
+    <CButton id="ElectricalShock" parent="RacialButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+    </CButton>
+    <CButton id="CannibalizeGreymane">
+        <Icon value="Assets\Textures\btn-ability-zerg-consume.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-consume.dds"/>
+    </CButton>
+    <CButton id="Decoherence">
+        <Icon value="Assets\Textures\btn-ability-spearofadun-temporalfield.dds"/>
+    </CButton>
+    <CButton id="PrimalHunger">
+        <Icon value="Starcraft 2 Assets\btn-ability-zerg-consume-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-ability-zerg-consume-color.dds"/>
+    </CButton>
+    <CButton id="Salvage">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-drilldeep-color.dds"/>
+    </CButton>
+    <CButton id="Send_Blood_Beetle">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-brutaliskunlocked.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+    </CButton>
+    <CButton id="Send_Baneling">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-collection-webby-baneling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-webby-baneling.dds"/>
+    </CButton>
+    <CButton id="Send_Abyss_Mage">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-hightemplar.dds"/>
+    </CButton>
+    <CButton id="Send_Flame_Behemoth">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\tip_hybridbehemoth.dds"/>
+        <AlertIcon value="Assets\Textures\tip_hybridbehemoth.dds"/>
+    </CButton>
+    <CButton id="Send_Quillgore">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-quillgore.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-quillgore.dds"/>
+    </CButton>
+    <CButton id="Send_Tyrannozor">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-tyrannozor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-tyrannozor.dds"/>
+    </CButton>
+    <CButton id="SoulFlash" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CButton>
+    <CButton id="SpawnPrimalLocusts">
+        <Icon value="Assets\Textures\btn-unit-zerg-locustflyerex3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-locustflyerex3.dds"/>
+    </CButton>
+    <CButton id="Stringendo">
+        <Icon value="Assets\Textures\btn-ability-hornerhan-viking-piercingattacks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-hornerhan-viking-piercingattacks.dds"/>
+    </CButton>
+    <CButton id="UndoUpgrade">
+        <Icon value="EditorData\Images\General\Undo.tga"/>
+        <AlertIcon value="EditorData\Images\General\Undo.tga"/>
+    </CButton>
+    <CButton id="Pocoapoco">
+        <Icon value="Assets\Textures\btn-ability-zerg-dehaka-attackair.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-dehaka-attackair.dds"/>
+    </CButton>
+    <CButton id="Adagio">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-colossuschampionslowbeam.dds"/>
+    </CButton>
+    <CButton id="Unison" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-zeratul-topbar-steadfastreinforcements.dds"/>
+    </CButton>
+    <CButton id="fAegis" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-sentry.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-sentry.dds"/>
+    </CButton>
+    <CButton id="fAmplifiedSupplicant">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fArchon" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-archon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-archon.dds"/>
+    </CButton>
+    <CButton id="fAscendant" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-hightemplar.dds"/>
+    </CButton>
+    <CButton id="fAstralblade" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot-aiur.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot-aiur.dds"/>
+    </CButton>
+    <CButton id="fBarrageSlayer" parent="TowerButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fChronoHavoc">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fConcussiveSlayer" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="fEmpoweredSupplicant">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="fGreaterArchon">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="fHavoc" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-sentry-taldarim.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry-taldarim.dds"/>
+    </CButton>
+    <CButton id="fKingsguard">
+        <Icon value="Assets\Textures\btn-unit-protoss-colossus-ihanrii.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-colossus-ihanrii.dds"/>
+    </CButton>
+    <CButton id="fMechaHost">
+        <Icon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-swarmhost-mecha.dds"/>
+    </CButton>
+    <CButton id="fPhantasm">
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar-ihanrii.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar-ihanrii.dds"/>
+    </CButton>
+    <CButton id="fSlayer" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-immortal.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-immortal.dds"/>
+    </CButton>
+    <CButton id="fSummoningArchon">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fSwiftHavoc">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="fThunderAstralblade">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="fThunderAstralblade@Slash">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+    </CButton>
+    <CButton id="fPrimalHost">
+        <Icon value="Assets\Textures\btn-unit-collection-primal-swarmhost.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-webby-swarmhost.dds"/>
+    </CButton>
+    <CButton id="SpawnSwarmLocusts">
+        <Icon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+    </CButton>
+    <CButton id="Tenuto">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-researchbosoniccore.dds"/>
+    </CButton>
+    <CButton id="fRadar">
+        <Icon value="Assets\Textures\btn-unit-terran-blimpmengsk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-blimpmengsk.dds"/>
+    </CButton>
+    <CButton id="fRaptorling">
+        <Icon value="Assets\Textures\btn-unit-collection-primal-zerglingupgrade.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-primal-zerglingupgrade.dds"/>
+    </CButton>
+    <CButton id="fRetaliator" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-adept-taldarim.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-adept-taldarim.dds"/>
+    </CButton>
+    <CButton id="fRiftblade" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-zealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-zealot.dds"/>
+    </CButton>
+    <CButton id="fRiftblade@Slash">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+    </CButton>
+    <CButton id="fAstralblade@Slash">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+    </CButton>
+    <CButton id="fSoulofLegends">
+        <Icon value="Assets\Textures\btn-unit-collection-purifier-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+    </CButton>
+    <CButton id="fSupplicant" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-supplicant.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-supplicant.dds"/>
+    </CButton>
+    <CButton id="fSwarmHost" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+    </CButton>
+    <CButton id="DivineAura" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-custom-arcaneshield.dds"/>
+    </CButton>
+    <CButton id="PlasmaShields">
+        <Icon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+    </CButton>
+    <CButton id="FontOfLife">
+        <Icon value="Assets\Textures\med2.dds"/>
+    </CButton>
+    <CButton id="ChromaticScale" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-wormhole-color.dds"/>
+    </CButton>
+    <CButton id="HeavyParticleBeam">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="PrimalFeast" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar6.dds"/>
+    </CButton>
+    <CButton id="Radiance" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-flinks-tempestthing.dds"/>
+    </CButton>
+    <CButton id="ConjureImps@Button">
+        <Icon value="Assets\Textures\btn-tips-defierbones.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-defierbones.dds"/>
+    </CButton>
+    <CButton id="Resolve@Level_2">
+        <Icon value="Assets\Textures\btn-ability-terran-advancedhealingai.dds"/>
+    </CButton>
+    <CButton id="Resolve@Level_3">
+        <Icon value="Assets\Textures\btn-ability-terran-advancedhealingai.dds"/>
+    </CButton>
+    <CButton id="SecurityOverride">
+        <Icon value="Assets\Textures\btn-unit-terran-odin.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-odin.dds"/>
+    </CButton>
+    <CButton id="Send_Dark_Probe">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-probe-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-probe-dark.dds"/>
+    </CButton>
+    <CButton id="Send_Mind_Slug">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-collection-aquatic-symbiote.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-aquatic-symbiote.dds"/>
+    </CButton>
+    <CButton id="Send_Observer">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+    </CButton>
+    <CButton id="SpringOfLife">
+        <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+    </CButton>
+    <CButton id="Tactics@Level_1">
+        <Icon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+    </CButton>
+    <CButton id="Assemblance">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldbattery-color.dds"/>
+    </CButton>
+    <CButton id="VolleyFire" parent="RacialButtonTemplate">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+    </CButton>
+    <CButton id="ConcussiveDetonation">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-nuclearstrike-color2.dds"/>
+    </CButton>
+    <CButton id="fLordKaiser">
+        <Icon value="Starcraft 2 Assets/btn-ability-protoss-nexusrecall-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-protoss-nexusrecall-color.dds"/>
+    </CButton>
+    <CButton id="fTeeter" parent="TowerButtonTemplate">
+        <Icon value="Starcraft 2 Assets/btn-ability-protoss-sightofadun.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-protoss-sightofadun.dds"/>
+    </CButton>
+    <CButton id="fShadowFist" parent="TowerButtonTemplate">
+        <Icon value="Assets/Textures/btn-ability-terran-domination.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-zerg-queenofblades.dds"/>
+    </CButton>
+    <CButton id="fScornedHand">
+        <Icon value="Starcraft 2 Assets/btn-ability-zerg-domination.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-zerg-domination.dds"/>
+    </CButton>
+    <CButton id="fStahrry">
+        <Icon value="Starcraft 2 Assets/btn-ability-protoss-blackhole-upgrade-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-protoss-blackhole-upgrade-color.dds"/>
+    </CButton>
+    <CButton id="fNethermaster">
+        <Icon value="Assets\Textures\btn-ability-terran-chronorift.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-chronorift.dds"/>
+    </CButton>
+    <CButton id="fFlux" parent="TowerButtonTemplate">
+        <Icon value="Assets/Textures/btn-ability-terran-emp-color.dds"/>
+        <AlertIcon value="Assets/Textures/btn-ability-terran-emp-color.dds"/>
+    </CButton>
+    <CButton id="fRuneguard">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+    </CButton>
+    <CButton id="fGravLance">
+        <Icon value="Starcraft 2 Assets\btn-custom-terran-diamondback.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-diamondback.dds"/>
+    </CButton>
+    <CButton id="fEssence" parent="TowerButtonTemplate">
+        <Icon value="Assets/Textures/btn-ability-protoss-blink-color.dds"/>
+        <AlertIcon value="Assets/Textures/btn-ability-protoss-blink-color.dds"/>
+    </CButton>
+    <CButton id="fNetherlord" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\wireframe-general-pickupchronoriftdevice.dds"/>
+        <AlertIcon value="Assets\Textures\wireframe-general-pickupchronoriftdevice.dds"/>
+    </CButton>
+    <CButton id="fHeisendonger">
+        <Icon value="Assets/Textures/btn-ability-terran-tosh-mindblast.dds"/>
+        <AlertIcon value="Assets/Textures/btn-ability-terran-tosh-mindblast.dds"/>
+    </CButton>
+    <CButton id="fThalassotherapy">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpprism-ihanrii.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpprism-ihanrii.dds"/>
+    </CButton>
+    <CButton id="fTwistedFace">
+        <Icon value="Starcraft 2 Assets/btn-ability-zerg-disguise-green-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-zerg-disguise-green-color.dds"/>
+    </CButton>
+    <CButton id="fVoidSmasher" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-immortal.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-immortal.dds"/>
+    </CButton>
+    <CButton id="fWhirlwindAstralblade">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel3-dark.dds"/>
+    </CButton>
+    <CButton id="fWhirlwindAstralblade@Slash">
+        <Icon value="Assets\Textures\btn-ability-protoss-whirlwind.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-whirlwind.dds"/>
+    </CButton>
+    <CButton id="fZee">
+        <Icon value="Starcraft 2 Assets/btn-ability-zerg-disguise-red-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets/btn-ability-zerg-disguise-red-color.dds"/>
+    </CButton>
+    <CButton id="fCraggy" parent="TowerButtonTemplate">
+        <Icon value="Assets/Textures/btn-ability-zerg-frenzied-color.dds"/>
+        <AlertIcon value="Assets/Textures/btn-ability-zerg-frenzied-color.dds"/>
+    </CButton>
+    <CButton id="Ancestry" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-zeratul-color.dds"/>
+    </CButton>
+    <CButton id="AntimatterShielding">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-kineticimpulse-color.dds"/>
+    </CButton>
+    <CButton id="WardenRestrain">
+        <Icon value="Starcraft 2 Assets\btn-custom-terran-toshspectres.dds"/>
+    </CButton>
+    <CButton id="Forcefield">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-entomb.dds"/>
+    </CButton>
+    <CButton id="FeedHeisendonger">
+        <Icon value="Assets\Textures\btn-ability-zerg-infestation.dds"/>
+    </CButton>
+    <CButton id="IncreaseGasCapacity"/>
+    <CButton id="Recovery@Level_1">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion.dds"/>
+    </CButton>
+    <CButton id="Recovery@Level_2">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion.dds"/>
+    </CButton>
+    <CButton id="Recovery@Level_3">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion.dds"/>
+    </CButton>
+    <CButton id="Aptitude@Level_1">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-groundweaponslevel0-dark.dds"/>
+    </CButton>
+    <CButton id="SLSoulTypeEssence">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level1.dds"/>
+    </CButton>
+    <CButton id="SLSoulTypeFlux">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level2.dds"/>
+    </CButton>
+    <CButton id="SLSoulTypeShade">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level3.dds"/>
+    </CButton>
+    <CButton id="Crescent" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Starcraft 2 Assets\btn-command-holdposition-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergeArtisan">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergeKapelle">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergePatron">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergeTremolo">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergeNote">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="SylphMergeApprentice">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-improved-color.dds"/>
+    </CButton>
+    <CButton id="Masterpiece">
+        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+    </CButton>
+    <CButton id="Vigor@Level_1">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="Tactics@Level_2">
+        <Icon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+    </CButton>
+    <CButton id="Tactics@Level_3">
+        <Icon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+    </CButton>
+    <CButton id="ThrowFeast">
+        <Icon value="Starcraft 2 Assets\btn-custom-zerg-acidsaliva.dds"/>
+    </CButton>
+    <CButton id="DarkBlade">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+    </CButton>
+    <CButton id="FeedTeeter">
+        <Icon value="Assets\Textures\btn-ability-zerg-infestation.dds"/>
+    </CButton>
+    <CButton id="ShadowFury">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowfury.dds"/>
+    </CButton>
+    <CButton id="OnTheBrink" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Starcraft 2 Assets\btn-Special-AuraMeditate.dds"/>
+    </CButton>
+    <CButton id="Ding">
+        <Icon value="Starcraft 2 Assets\btn-techupgrade-terran-tenstenspikes-color.dds"/>
+    </CButton>
+    <CButton id="BlindingLight" parent="AbilityButtonTemplate" prio="Random">
+        <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+    </CButton>
+    <CButton id="BloodLift">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-voodoo.dds"/>
+    </CButton>
+    <CButton id="BloodFury">
+        <Icon value="Starcraft 2 Assets\btn-custom-flameskull.dds"/>
+    </CButton>
+    <CButton id="TargetedStrikes">
+        <Icon value="Assets\Textures\btn-ability-protoss-psytrousoxideoff.dds"/>
+    </CButton>
+    <CButton id="ExplosiveRounds">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-terran-gaussrifle.dds"/>
+    </CButton>
+    <CButton id="FigurandumMones">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-zeratul.dds"/>
+    </CButton>
+    <CButton id="Earthshock">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-burstcapacitors.dds"/>
+    </CButton>
+    <CButton id="GravLance">
+        <Icon value="Starcraft 2 Assets\btn-DOTA-Thrall-spell1.dds"/>
+    </CButton>
+    <CButton id="HellfireMissiles">
+        <Icon value="Starcraft 2 Assets\btn-techupgrade-terran-hellstormbatteries-color.dds"/>
+    </CButton>
+    <CButton id="MuddledArmor">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-muscularaugments.dds"/>
+    </CButton>
+    <CButton id="TwinFlamethrower">
+        <Icon value="Assets\Textures\btn-upgrade-terran-twin-linkedflamethrower.dds"/>
+    </CButton>
+    <CButton id="Necromancy" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-ability-zerg-disguise-red-color.dds"/>
+    </CButton>
+    <CButton id="NightmareCounterAttack">
+        <Icon value="Starcraft 2 Assets\WardenCounterAttack.dds"/>
+    </CButton>
+    <CButton id="Deflection">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-platearmor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-platearmor.dds"/>
+    </CButton>
+    <CButton id="Overburn">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-charonboosters.dds"/>
+    </CButton>
+    <CButton id="Overburn2">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-charonboosters.dds"/>
+        <HotkeyAlias value="Overburn"/>
+    </CButton>
+    <CButton id="Pacify" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-lockdown-classic.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+    </CButton>
+    <CButton id="Prescience">
+        <Icon value="Assets\Textures\btn-ability-protoss-mindcontrol.dds"/>
+    </CButton>
+    <CButton id="Reassembly">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-immortalityprotocol-color2.dds"/>
+    </CButton>
+    <CButton id="ReflectiveShell">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
+    </CButton>
+    <CButton id="Send_Titan_Strider">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Titan Strider\btn-unit-protoss-titanstrider.dds"/>
+        <AlertIcon value="Titan Strider\btn-unit-protoss-titanstrider.dds"/>
+    </CButton>
+    <CButton id="Send_Broodlord">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+    </CButton>
+    <CButton id="SpellAttunement" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
+    </CButton>
+    <CButton id="StickySlime" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-contaminaite.dds"/>
+    </CButton>
+    <CButton id="Subcannons">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-tenstenspikes.dds"/>
+    </CButton>
+    <CButton id="StaticCharge" parent="RacialButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-psistorm-greater-color.dds"/>
+    </CButton>
+    <CButton id="Absolution">
+        <Icon value="Assets\Textures\btn-tips-challengecounter.dds"/>
+    </CButton>
+    <CButton id="ExtremeHealing">
+        <Icon value="Assets\Textures\btn-ability-protoss-protoncharge.dds"/>
+    </CButton>
+    <CButton id="ImprovedTargeting">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-seekermissile.dds"/>
+    </CButton>
+    <CButton id="ImpenetrableShields">
+        <Icon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+    </CButton>
+    <CButton id="IncendiaryRounds">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-clusterwarheads.dds"/>
+    </CButton>
+    <CButton id="SapCannons">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-cloakdistortionfield.dds"/>
+    </CButton>
+    <CButton id="RRR">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+    </CButton>
+    <CButton id="RBG">
+        <Icon value="Assets\Textures\btn-tips-defierbones.dds"/>
+    </CButton>
+    <CButton id="BBB">
+        <Icon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+    </CButton>
+    <CButton id="GGG">
+        <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+    </CButton>
+    <CButton id="RRB">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="RRG">
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+    </CButton>
+    <CButton id="BBG">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+    </CButton>
+    <CButton id="RBB">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+    </CButton>
+    <CButton id="RGG">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level1.dds"/>
+    </CButton>
+    <CButton id="BGG">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pneumatizedcarapace.dds"/>
+    </CButton>
+    <CButton id="ResistantFlesh">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-selfixarmor-level3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+    </CButton>
+    <CButton id="MortemTactus">
+        <Icon value="Starcraft 2 Assets\btn-DOTA-Doctor-spell3.dds"/>
+    </CButton>
+    <CButton id="Amorphism">
+        <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
+    </CButton>
+    <CButton id="Purge" parent="AbilityButtonTemplate" prio="SpellImmune">
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+    </CButton>
+    <CButton id="Righteousness">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+    </CButton>
+    <CButton id="Foresight">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="ElusiveBarrier">
+        <Icon value="Assets\Textures\btn-shield-protoss-plasmashields.dds"/>
+    </CButton>
+    <CButton id="SolidPlating">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-kineticfoam.dds"/>
+    </CButton>
+    <CButton id="Surveillance">
+        <Icon value="Assets\Textures\btn-ability-terran-scannersweep-color.dds"/>
+    </CButton>
+    <CButton id="Tempt" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-stetmann-garyselfhealing.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-garyselfhealing.dds"/>
+    </CButton>
+    <CButton id="Infatuate" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
+    </CButton>
+    <CButton id="InstallInfusions">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+    </CButton>
+    <CButton id="CallofPraesidio">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-snipe-upgraded-color.dds"/>
+    </CButton>
+    <CButton id="UpgradeAmount">
+        <Icon value="Assets\Textures\icon-gas.dds"/>
+        <AlertIcon value="Assets\Textures\icon-gas.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="UpgradeSpeed">
+        <Icon value="Starcraft 2 Assets\btn-command-holdposition-color.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-command-holdposition-color.dds"/>
+    </CButton>
+    <CButton id="UndyingWill">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+    </CButton>
+    <CButton id="Resolve@Level_1">
+        <Icon value="Assets\Textures\btn-ability-terran-advancedhealingai.dds"/>
+    </CButton>
+    <CButton id="Inspiration">
+        <Icon value="Assets\Textures\inspiration_coop.dds"/>
+    </CButton>
+    <CButton id="Vigor@Level_2">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="Vigor@Level_3">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="WintersGrasp" parent="RacialButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+    </CButton>
+    <CButton id="Purify" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+    </CButton>
+    <CButton id="Torment">
+        <Icon value="Assets\Textures\btn-ability-terran-tosh-mindblast.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-tosh-mindblast.dds"/>
+    </CButton>
+    <CButton id="BattleRoar">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldbattery.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldbattery.dds"/>
+    </CButton>
+    <CButton id="AmplifyMagic">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-arguslink-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-arguslink.dds"/>
+    </CButton>
+    <CButton id="Ascend">
+        <Icon value="Assets\Textures\btn-ability-terran-scannersweep.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-scannersweep.dds"/>
+    </CButton>
+    <CButton id="fBoneWarrior" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-tychusspectre-holo.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-tychusspectre-holo.dds"/>
+    </CButton>
+    <CButton id="fCherub" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-terran-spidermine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-spidermine.dds"/>
+    </CButton>
+    <CButton id="fTheos">
+        <Icon value="Assets\Textures\btn-unit-protoss-nullifier.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-nullifier.dds"/>
+    </CButton>
+    <CButton id="fSpirit" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-observer.dds"/>
+    </CButton>
+    <CButton id="fFallen">
+        <Icon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-immortal.dds"/>
+    </CButton>
+    <CButton id="fCupid">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+    </CButton>
+    <CButton id="fDeity" parent="TowerButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-custom-protoss-stonezealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-stonezealot.dds"/>
+    </CButton>
+    <CButton id="fAuror">
+        <Icon value="Assets\Textures\wireframe-hybrid-destroyer.dds"/>
+        <AlertIcon value="Assets\Textures\wireframe-hybrid-viper.dds"/>
+    </CButton>
+    <CButton id="fSeraphim">
+        <Icon value="Assets\Textures\btn-unit-protoss-probe.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-probe.dds"/>
+    </CButton>
+    <CButton id="fProphet" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-preserver02.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-preserver02.dds"/>
+    </CButton>
+    <CButton id="fVanguard" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+    </CButton>
+    <CButton id="fTemplar" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-colossus-collectoredition.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-colossus-collectoredition.dds"/>
+    </CButton>
+    <CButton id="fArchangel">
+        <Icon value="Assets\Textures\btn-unit-collection-purifier-tempest.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-purifier-tempest.dds"/>
+    </CButton>
+    <CButton id="fCelestian">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+    </CButton>
+    <CButton id="fSaint" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+    </CButton>
+    <CButton id="fDaemon">
+        <Icon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-observer-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-observer-color.dds"/>
+    </CButton>
+    <CButton id="fHades">
+        <Icon value="Assets\Textures\wireframe-protoss-archon.dds"/>
+        <AlertIcon value="Assets\Textures\wireframe-protoss-archon.dds"/>
+    </CButton>
+    <CButton id="fFireArcher">
+        <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+    </CButton>
+    <CButton id="fDarkMage">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
+    </CButton>
+    <CButton id="fCarrionSpitter" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+    </CButton>
+    <CButton id="fNightcrawler">
+        <Icon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+    </CButton>
+    <CButton id="fSkeletor">
+        <Icon value="Assets\Textures\btn-unit-protoss-prisonzealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-prisonzealot.dds"/>
+    </CButton>
+    <CButton id="fGateguard" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+    </CButton>
+    <CButton id="fHarbinger">
+        <Icon value="Assets\Textures\btn-unit-terran-maraudermercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-maraudermercenary.dds"/>
+    </CButton>
+    <CButton id="fBoneOverseer" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-phoenix.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-phoenix.dds"/>
+    </CButton>
+    <CButton id="fKeeperofSouls">
+        <Icon value="Assets\Textures\btn-unit-protoss-phoenix-urun.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-phoenix-urun.dds"/>
+    </CButton>
+    <CButton id="fNightmare" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot-dark.dds"/>
+    </CButton>
+    <CButton id="fDoppelganger">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-darktemplar.dds"/>
+    </CButton>
+    <CButton id="fLordofDeath" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+    </CButton>
+    <CButton id="CircleSlash">
+        <Icon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
+    </CButton>
+    <CButton id="Send_Aberration_Basher">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+    </CButton>
+    <CButton id="Send_Aberration_Pulverizer">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+    </CButton>
+    <CButton id="fDragonAspect">
+        <Icon value="Assets\Textures\btn-lostvinking-swarmguardian.dds"/>
+        <AlertIcon value="Assets\Textures\btn-lostvinking-swarmguardian.dds"/>
+    </CButton>
+    <CButton id="fFenix">
+        <Icon value="Assets\Textures\wireframe-general-spacediablo.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zeratul.dds"/>
+    </CButton>
+    <CButton id="fAquaSpirit" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-phaseprism.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-phaseprism.dds"/>
+    </CButton>
+    <CButton id="fGreymane">
+        <Icon value="Assets\Textures\btn-unit-zerg-ultralisk-torrasque.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk-torrasque.dds"/>
+    </CButton>
+    <CButton id="fGrizzly" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+    </CButton>
+    <CButton id="fHarpy" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-mutalisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-mutalisk.dds"/>
+    </CButton>
+    <CButton id="fMedusa">
+        <Icon value="Assets\Textures\btn-ability-zerg-dehaka-mutalisk-airattackdamageupgrade.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-dehaka-mutalisk-airattackdamageupgrade.dds"/>
+    </CButton>
+    <CButton id="fOceanus" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-phaseprism-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-phaseprism-dark.dds"/>
+    </CButton>
+    <CButton id="fAdept">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-probe.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-probe.dds"/>
+    </CButton>
+    <CButton id="fRoachChampion">
+        <Icon value="Starcraft 2 Assets\btn-special-Roach.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-special-Roach.dds"/>
+    </CButton>
+    <CButton id="fRoachFighter" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+    </CButton>
+    <CButton id="fSpawnofDragon" parent="TowerButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-special-queenofblades-kerrigan.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-special-queenofblades-kerrigan.dds"/>
+    </CButton>
+    <CButton id="fWatcher" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+    </CButton>
+    <CButton id="fViolet">
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor-dark.dds"/>
+    </CButton>
+    <CButton id="fMudman" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-marauderkillsquad.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauderkillsquad.dds"/>
+    </CButton>
+    <CButton id="fGolem">
+        <Icon value="Assets\Textures\btn-unit-protoss-darkarchon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-goliath.dds"/>
+    </CButton>
+    <CButton id="fDisciple" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+    </CButton>
+    <CButton id="fMessiah">
+        <Icon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+    </CButton>
+    <CButton id="fSeerofDarkness" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot-dark.dds"/>
+    </CButton>
+    <CButton id="fSpectre" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+    </CButton>
+    <CButton id="fZerglingSavage">
+        <Icon value="Assets\Textures\btn-ability-terran-psidisruption.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-psidisruption.dds"/>
+    </CButton>
+    <CButton id="fZerglingWarrior" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+    </CButton>
+    <CButton id="EnergyCatalyst">
+        <Icon value="Starcraft 2 Assets\btn-wow-spell-.dds"/>
+    </CButton>
+    <CButton id="Fadestrike">
+        <Icon value="Assets\Textures\btn-ability-zerg-plague.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-plague.dds"/>
+    </CButton>
+    <CButton id="ElusiveShadow">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-permanentcloak.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-permanentcloak.dds"/>
+    </CButton>
+    <CButton id="ForbiddenFruit">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+    </CButton>
+    <CButton id="AdrenalineCloud">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-voodoo.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-ability-terran-voodoo.dds"/>
+    </CButton>
+    <CButton id="Precision">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-snipe-upgraded-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-huntermissile.dds"/>
+    </CButton>
+    <CButton id="Cleanse" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+    </CButton>
+    <CButton id="EtherealCloaking" parent="RacialButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+    </CButton>
+    <CButton id="VultureEye">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-terran-shockwavebatteries.dds"/>
+        <AlertIcon value="Assets\Textures\zergdroneeyesemmisive.dds"/>
+    </CButton>
+    <CButton id="FaerieLuck">
+        <Icon value="Assets\Textures\btn-ability-zerg-sporecloud.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-sporecloud.dds"/>
+    </CButton>
+    <CButton id="Afterburner">
+        <Icon value="Starcraft 2 Assets\btn-ability-zerg-consume-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-holdfire.dds"/>
+    </CButton>
+    <CButton id="HelpingHand">
+        <Icon value="Assets\Textures\btn-building-terran-reactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-reactor.dds"/>
+    </CButton>
+    <CButton id="ChronoTrigger">
+        <Icon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
+    </CButton>
+    <CButton id="ResilienceBoon">
+        <Icon value="Assets\Textures\btn-ability-stetmann-garypersonalstetzone-health.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-garypersonalstetzone-health.dds"/>
+    </CButton>
+    <CButton id="SacredBlessing" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration.dds"/>
+    </CButton>
+    <CButton id="WaterofLife" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration.dds"/>
+    </CButton>
+    <CButton id="PowerSurge">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-particlecannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-particlecannon.dds"/>
+    </CButton>
+    <CButton id="EmeraldFire">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-yamatocannon-ultra-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-weaponsfree.dds"/>
+    </CButton>
+    <CButton id="CustomBuilders">
+        <Icon value="Assets\Textures\ui_btn_generic_exclemation.dds"/>
+        <AlertIcon value="Assets\Textures\ui_btn_generic_exclemation.dds"/>
+    </CButton>
+    <CButton id="EnergyRage">
+        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+    </CButton>
+    <CButton id="Frenzy2">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-zerg-massiveinfestation.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+    </CButton>
+    <CButton id="FlamingArrows">
+        <Icon value="Assets\Textures\btn-ability-protoss-psytrousoxideon.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-protoss-immortalshield.dds"/>
+    </CButton>
+    <CButton id="Mindwarp" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Starcraft 2 Assets\btn-DOTA-Arthas-spell3.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-DOTA-Arthas-spell3.dds"/>
+    </CButton>
+    <CButton id="Leadership">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-ripwavemissiles.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-ripwavemissiles.dds"/>
+    </CButton>
+    <CButton id="Entangle" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+    </CButton>
+    <CButton id="Superiority">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-replenishablemagazine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-replenishablemagazine.dds"/>
+    </CButton>
+    <CButton id="Shrapnel">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-cloakdistortionfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-cloakdistortionfield.dds"/>
+    </CButton>
+    <CButton id="VitalSlice">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-maelstromrounds.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-maelstromrounds.dds"/>
+    </CButton>
+    <CButton id="StickyWebs" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Starcraft 2 Assets\btn-DOTA-item-net.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-contaminaite.dds"/>
+    </CButton>
+    <CButton id="ConjureFiend">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-ventralsacs.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-ventralsacs.dds"/>
+    </CButton>
+    <CButton id="ConjureFanatic">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+    </CButton>
+    <CButton id="BloodThirst" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+    </CButton>
+    <CButton id="SoundofMadness" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+    </CButton>
+    <CButton id="ShadowWalker">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+    </CButton>
+    <CButton id="Fatality">
+        <Icon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+    </CButton>
+    <CButton id="ConjureInferno">
+        <Icon value="Assets\Textures\btn-tips-walloffire.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-walloffire.dds"/>
+    </CButton>
+    <CButton id="Tier1">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
+    </CButton>
+    <CButton id="Tier2">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+    </CButton>
+    <CButton id="Tier3">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+    </CButton>
+    <CButton id="Tier4">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
+    </CButton>
+    <CButton id="Tier5">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+    </CButton>
+    <CButton id="Tier6">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-mobiusreactor.dds"/>
+    </CButton>
+    <CButton id="VenomSac" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+    </CButton>
+    <CButton id="Gash">
+        <Icon value="Assets\Textures\btn-ability-protoss-psytrousoxideoff.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psytrousoxideoff.dds"/>
+    </CButton>
+    <CButton id="DeepGash">
+        <Icon value="Assets\Textures\btn-ability-protoss-psytrousoxideon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psytrousoxideon.dds"/>
+    </CButton>
+    <CButton id="Fluorescence" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+    </CButton>
+    <CButton id="AdrenalineRush" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Starcraft 2 Assets\btn-ability-zerg-plague-classic.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+    </CButton>
+    <CButton id="UpgradeSupply">
+        <Icon value="Assets\Textures\btn-building-terran-supplydepot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-supplydepot.dds"/>
+    </CButton>
+    <CButton id="fWanderer" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+    </CButton>
+    <CButton id="fSoulofVillains">
+        <Icon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+    </CButton>
+    <CButton id="fMercurial">
+        <Icon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+    </CButton>
+    <CButton id="fPhantom" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-stalker-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-stalker-golden.dds"/>
+    </CButton>
+    <CButton id="fProton" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-purifier-probe.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-purifier-probe.dds"/>
+    </CButton>
+    <CButton id="fWraith" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-sellprotossartifacts.dds"/>
+    </CButton>
+    <CButton id="fHellRaiser">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-stalker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-stalker.dds"/>
+    </CButton>
+    <CButton id="fApparition" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-darkarchon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darkarchon.dds"/>
+    </CButton>
+    <CButton id="fGravekeeper">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+    </CButton>
+    <CButton id="fEidolon" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-ghostmengsk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ghostmengsk.dds"/>
+    </CButton>
+    <CButton id="fMelinoe">
+        <Icon value="Starcraft 2 Assets\btn-custom-terran-nova.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-terran-nova.dds"/>
+    </CButton>
+    <CButton id="fOutcast" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+    </CButton>
+    <CButton id="fForsakenOne" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-darktemplar-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-darktemplar-color.dds"/>
+    </CButton>
+    <CButton id="fSoulofHeroes" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-phaseshift.dds"/>
+    </CButton>
+    <CButton id="Disturb" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+    </CButton>
+    <CButton id="DespairAura">
+        <Icon value="Assets\Textures\btn-ability-protoss-voidprison.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-voidprison.dds"/>
+    </CButton>
+    <CButton id="EnergyBurst">
+        <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-singularitycharge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-prismaticbeam.dds"/>
+    </CButton>
+    <CButton id="EnergyShields">
+        <Icon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+    </CButton>
+    <CButton id="Traumatize" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="PhaseOut">
+        <Icon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
+    </CButton>
+    <CButton id="Send_Zergling">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+    </CButton>
+    <CButton id="SellTower">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+    </CButton>
+    <CButton id="Send_Thor">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-thor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-thor.dds"/>
+    </CButton>
+    <CButton id="Send_Roach">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+    </CButton>
+    <CButton id="Send_Zealot">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+    </CButton>
+    <CButton id="Send_Mutalisk">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-mutalisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-mutalisk.dds"/>
+    </CButton>
+    <CButton id="Send_Medic">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-medic.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-medic.dds"/>
+    </CButton>
+    <CButton id="Send_Marauder">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
+    </CButton>
+    <CButton id="Send_Goliath">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-goliath.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-goliath.dds"/>
+    </CButton>
+    <CButton id="Send_Immortal">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-immortal.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-immortal.dds"/>
+    </CButton>
+    <CButton id="Send_Mothership">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-purifier.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-purifier.dds"/>
+    </CButton>
+    <CButton id="Send_Siege_Tank">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+    </CButton>
+    <CButton id="Send_Marine">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+    </CButton>
+    <CButton id="Send_Firebat">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+    </CButton>
+    <CButton id="Send_Hydralisk">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+    </CButton>
+    <CButton id="Send_Hellion">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-collection-hellion-covertops.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+    </CButton>
+    <CButton id="Send_Powermortal">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+    </CButton>
+    <CButton id="Send_Dark_Templar">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+    </CButton>
+    <CButton id="Send_Queen">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+    </CButton>
+    <CButton id="Send_Wrathwalker">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-colossus.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+    </CButton>
+    <CButton id="Send_High_Templar">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+    </CButton>
+    <CButton id="Send_Feederling">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-feederling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-feederling.dds"/>
+    </CButton>
+    <CButton id="Send_Banshee">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-banshee.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-banshee.dds"/>
+    </CButton>
+    <CButton id="Send_Ultralisk">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+    </CButton>
+    <CButton id="Send_Shadow_Templar">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-permanentlycloaked-darktemplar.dds"/>
+    </CButton>
+    <CButton id="InfuseRedOrb">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+    </CButton>
+    <CButton id="InfuseGreenOrb">
+        <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+    </CButton>
+    <CButton id="InfuseBlueOrb">
+        <Icon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+        <AlertIcon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+    </CButton>
+    <CButton id="PoisonSac" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Assets\Textures\btn-ability-zerg-banelingspooge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-banelingspooge.dds"/>
+    </CButton>
+    <CButton id="Violate" parent="AbilityButtonTemplate" prio="NoDebuff">
+        <Icon value="Starcraft 2 Assets\btn-ability-terran-irradiate-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-irradiate.dds"/>
+    </CButton>
+    <CButton id="WaterSplash" parent="AbilityButtonTemplate" prio="Random">
+        <Icon value="Assets\Textures\btn-ability-terran-setrallypoint.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-setrallypoint.dds"/>
+    </CButton>
+    <CButton id="DelugeConvergence@Button" parent="AbilityButtonTemplate" prio="Random">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-explosiveglaive.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-explosiveglaive.dds"/>
+    </CButton>
+    <CButton id="fTreeofKnowledge">
+        <Icon value="Assets\Textures\btn-unit-terran-specialopsdropship.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-specialopsdropship.dds"/>
+    </CButton>
+    <CButton id="fRanger" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-marine-junker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-marine-junker.dds"/>
+    </CButton>
+    <CButton id="fMeliai">
+        <Icon value="Assets\Textures\btn-unit-terran-viking.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-viking.dds"/>
+    </CButton>
+    <CButton id="fSprite" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-collection-ghost-junker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-ghost-junker.dds"/>
+    </CButton>
+    <CButton id="fGuardian">
+        <Icon value="Assets\Textures\btn-unit-terran-medicmercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-medicmercenary.dds"/>
+    </CButton>
+    <CButton id="fThunderbird">
+        <Icon value="Starcraft 2 Assets\btn-custom-terran-spectre.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\btn-custom-terran-spectre.dds"/>
+    </CButton>
+    <CButton id="fTreeofTravel" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+    </CButton>
+    <CButton id="fTreeofTime">
+        <Icon value="Assets\Textures\btn-unit-protoss-disruptor-ihanrii.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-disruptor-ihanrii.dds"/>
+    </CButton>
+    <CButton id="fHalfbreed" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-marine-umojan.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marine-umojan.dds"/>
+    </CButton>
+    <CButton id="fHercules">
+        <Icon value="Assets\Textures\btn-unit-terran-marinetychus.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marinetychus.dds"/>
+    </CButton>
+    <CButton id="fYggdrasil" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-spectre.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-spectre.dds"/>
+    </CButton>
+    <CButton id="fTreeofLife">
+        <Icon value="Assets\Textures\btn-unit-terran-medicstetmann.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-medicstetmann.dds"/>
+    </CButton>
+    <CButton id="fPeewee" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+    </CButton>
+    <CButton id="fDoomsdayMachine">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetankmercenary-sieged.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetankmercenary-sieged.dds"/>
+    </CButton>
+    <CButton id="fInfantry" parent="TowerButtonTemplate">
+        <Icon value="Starcraft 2 Assets\btn-unit-terran-ghost-alpha.dds"/>
+        <AlertIcon value="Starcraft 2 Assets\ghost-alpha.dds"/>
+    </CButton>
+    <CButton id="fPyro">
+        <Icon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-firebat.dds"/>
+    </CButton>
+    <CButton id="fEnt" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestedscv.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedscv.dds"/>
+    </CButton>
+    <CButton id="fZeus">
+        <Icon value="Assets\Textures\btn-unit-terran-spectre.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-spectre.dds"/>
+    </CButton>
+    <CButton id="fVeteran">
+        <Icon value="Assets\Textures\btn-unit-terran-taurenspacemarine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-taurenspacemarine.dds"/>
+    </CButton>
+    <CButton id="fCaptain" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-vikingassault.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-vikingassault.dds"/>
+    </CButton>
+    <CButton id="fAdmiral">
+        <Icon value="Assets\Textures\btn-unit-terran-goliathmercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-goliathmercenary.dds"/>
+    </CButton>
+    <CButton id="fTempest" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-wraith.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-wraith.dds"/>
+    </CButton>
+    <CButton id="fLeviathan">
+        <Icon value="Assets\Textures\btn-unit-terran-bansheemercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-bansheemercenary.dds"/>
+    </CButton>
+    <CButton id="fCyborg" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-maraudermercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-maraudermercenary.dds"/>
+    </CButton>
+    <CButton id="fKrogoth">
+        <Icon value="Assets\Textures\btn-unit-terran-marauderswann.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauderswann.dds"/>
+    </CButton>
+    <CButton id="fNeotank" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetankmercenary-tank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetankmercenary-tank.dds"/>
+    </CButton>
+    <CButton id="fSentinel" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+    </CButton>
+    <CButton id="fDefender">
+        <Icon value="Assets\Textures\btn-ability-protoss-permanentlycloaked_zeratul.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-permanentlycloaked_zeratul.dds"/>
+    </CButton>
+    <CButton id="fEncoder" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+    </CButton>
+    <CButton id="fEncrypter">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
+    </CButton>
+    <CButton id="fMagnetosphereResonator" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-building-terran-sigmaprojector.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-sigmaprojector.dds"/>
+    </CButton>
+    <CButton id="fPrismaticResonator">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
+    </CButton>
+    <CButton id="fPreserver" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-preserver00.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-preserver00.dds"/>
+    </CButton>
+    <CButton id="fArchive">
+        <Icon value="Assets\Textures\btn-research-terran-sciencevessel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-terran-sciencevessel.dds"/>
+    </CButton>
+    <CButton id="fWarden" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-immortal.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-immortal.dds"/>
+    </CButton>
+    <CButton id="fEliteWarden">
+        <Icon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+    </CButton>
+    <CButton id="fMatriarch" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+    </CButton>
+    <CButton id="fElder">
+        <Icon value="Assets\Textures\btn-unit-protoss-stonezealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-stonezealot.dds"/>
+    </CButton>
+    <CButton id="CalltoArms">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-dualfusionwelders.dds"/>
+    </CButton>
+    <CButton id="Brotherhood">
+        <Icon value="Assets\Textures\btn-armor-protoss-ground.dds"/>
+    </CButton>
+    <CButton id="Decode" parent="AbilityButtonTemplate" prio="SpellImmune">
+        <Icon value="Assets\Textures\btn-tips-hacking.dds"/>
+    </CButton>
+    <CButton id="MatrixShield" parent="AbilityButtonTemplate" prio="HighestLife">
+        <Icon value="Assets\Textures\btn-tips-terran-psishield.dds"/>
+    </CButton>
+    <CButton id="Preservation">
+        <Icon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+    </CButton>
+    <CButton id="ParityCheck">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
+    </CButton>
+    <CButton id="WardenSuspend">
+        <Icon value="Assets\Textures\btn-ability-spearofadun-timestop.dds"/>
+    </CButton>
+    <CButton id="Empower">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+    </CButton>
+    <CButton id="Requiem" parent="AbilityButtonTemplate" prio="HighestDps">
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+    </CButton>
+    <CButton id="fTerminator" parent="TowerButtonTemplate">
+        <Icon value="btn-unit-terran-evisceratorbattlemech.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
+    </CButton>
+    <CButton id="fObliterator">
+        <Icon value="Assets\Textures\btn-unit-terran-marauderkillsquad.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauderkillsquad.dds"/>
+    </CButton>
+    <CButton id="fPulverizer">
+        <Icon value="Assets\Textures\btn-unit-terran-marauder-umojan.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauder-umojan.dds"/>
+    </CButton>
+    <CButton id="fSalvager" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-mule.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-mule.dds"/>
+    </CButton>
+    <CButton id="fAndroid">
+        <Icon value="Assets\Textures\btn-unit-terran-predator.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-predator.dds"/>
+    </CButton>
+    <CButton id="fBrawler">
+        <Icon value="Assets\Textures\btn-unit-terran-goliathmercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-goliathmercenary.dds"/>
+    </CButton>
+    <CButton id="fAstromechDroid">
+        <Icon value="Assets\Textures\btn-lostviking-terra-tron-missiledrone.dds"/>
+        <AlertIcon value="Assets\Textures\btn-lostviking-terra-tron-missiledrone.dds"/>
+    </CButton>
+    <CButton id="fWeldtechRelay">
+        <Icon value="btn-unit-terran-nomad.dds"/>
+        <AlertIcon value="btn-unit-terran-nomad.dds"/>
+    </CButton>
+    <CButton id="fOrbitalSatellite" parent="TowerButtonTemplate">
+        <Icon value="btn-unit-terran-blimp-ads.dds"/>
+        <AlertIcon value="btn-unit-terran-blimp-ads.dds"/>
+    </CButton>
+    <CButton id="fAsimov">
+        <Icon value="btn-unit-terran-thor-merc.dds"/>
+        <AlertIcon value="btn-unit-terran-thor-merc.dds"/>
+    </CButton>
+    <CButton id="fCenturion">
+        <Icon value="wireframe-terran-supercrane.dds"/>
+        <AlertIcon value="wireframe-terran-supercrane.dds"/>
+    </CButton>
+    <CButton id="fU87Prototype">
+        <Icon value="Assets\Textures\btn-research-terran-raven.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-terran-raven.dds"/>
+    </CButton>
+    <CButton id="fLaserBattery">
+        <Icon value="Assets\Textures\btn-unit-terran-battlecruiser.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-battlecruiser.dds"/>
+    </CButton>
+    <CButton id="fMissileBarrage">
+        <Icon value="Assets\Textures\btn-unit-terran-ares.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ares.dds"/>
+    </CButton>
+    <CButton id="fDreadnought" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
+        <AlertIcon value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
+    </CButton>
+    <CButton id="fSupportConstructs">
+        <Icon value="Assets\Textures\btn-building-terran-deepspacerelay.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-deepspacerelay.dds"/>
+    </CButton>
+    <CButton id="fExperimentalConstructs">
+        <Icon value="MetalGearConstruct.dds"/>
+        <AlertIcon value="MetalGearConstruct.dds"/>
+    </CButton>
+    <CButton id="fArtilleryConstructs">
+        <Icon value="ArtilleryConstruct.dds"/>
+        <AlertIcon value="ArtilleryConstruct.dds"/>
+    </CButton>
+    <CButton id="fExecutioner">
+        <Icon value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
+        <AlertIcon value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
+    </CButton>
+    <CButton id="fAnnihilator">
+        <Icon value="Annihilator.dds"/>
+        <AlertIcon value="Annihilator.dds"/>
+    </CButton>
+    <CButton id="fUpholder">
+        <Icon value="Upholder.dds"/>
+        <AlertIcon value="Upholder.dds"/>
+    </CButton>
+    <CButton id="ConcussionRounds">
+        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
+    </CButton>
+    <CButton id="NetworkedHP">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-rapiddeployment.dds"/>
+    </CButton>
+    <CButton id="ExperimentalUnit">
+        <Icon value="Assets\Textures\btn-research-terran-ultracapacitors.dds"/>
+    </CButton>
+    <CButton id="Uplink" parent="AbilityButtonTemplate" prio="Closest">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
+    </CButton>
+    <CButton id="Welder" parent="AbilityButtonTemplate" prio="HighestLostLife">
+        <Icon value="Assets\Textures\btn-upgrade-terran-weaponrefit.dds"/>
+    </CButton>
+    <CButton id="AnnihilatorHighIntensityBeam">
+        <Icon value="AnnihiliatorMeltArmor.dds"/>
+    </CButton>
+    <CButton id="QuarkShield">
+        <Icon value="Assets\Textures\btn-ability-protoss-stasisfield.dds"/>
+    </CButton>
+    <CButton id="ExecutionerBattleDomination">
+        <Icon value="Assets\Textures\btn-ability-terran-domination.dds"/>
+    </CButton>
+    <CButton id="AcidExplosion">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+    </CButton>
+    <CButton id="ChaoticInsanity">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-ocularimplants.dds"/>
+    </CButton>
+    <CButton id="Curse">
+        <Icon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+    </CButton>
+    <CButton id="DeadlyStrike">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-cleave.dds"/>
+    </CButton>
+    <CButton id="DivineJudgement">
+        <Icon value="Assets\Textures\btn-ability-zerg-disguise.dds"/>
+    </CButton>
+    <CButton id="EternalTorment">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-buildingarmor.dds"/>
+    </CButton>
+    <CButton id="Euphoria">
+        <Icon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
+    </CButton>
+    <CButton id="Focus">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+    </CButton>
+    <CButton id="Fragility">
+        <Icon value="Assets\Textures\btn-ability-protoss-forcefield-color.dds"/>
+    </CButton>
+    <CButton id="Healing">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
+    </CButton>
+    <CButton id="Hesitation">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+    </CButton>
+    <CButton id="Hierarchy">
+        <Icon value="Assets\Textures\btn-ability-terran-weaponsfree.dds"/>
+    </CButton>
+    <CButton id="Imprinting">
+        <Icon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
+    </CButton>
+    <CButton id="fSolo">
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+    </CButton>
+    <CButton id="fStaccato">
+        <Icon value="Assets\Textures\btn-ability-terran-pointdefenselaser.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-pointdefenselaser.dds"/>
+    </CButton>
+    <CButton id="fClef">
+        <Icon value="Lynx Close Combat Suit\btn-unit-terran-lynx.dds"/>
+        <AlertIcon value="Lynx Close Combat Suit\btn-unit-terran-lynx.dds"/>
+    </CButton>
+    <CButton id="fComposer">
+        <Icon value="Assets\Textures\btn-unit-zerg-leviathan.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-leviathan.dds"/>
+    </CButton>
+    <CButton id="fConductor">
+        <Icon value="Assets\Textures\btn-unit-protoss-arbiter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-arbiter.dds"/>
+    </CButton>
+    <CButton id="fSoprano">
+        <Icon value="Assets\Textures\btn-unit-terran-hellbat-silver.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellbat-silver.dds"/>
+    </CButton>
+    <CButton id="fFortissimo">
+        <Icon value="Assets\Textures\btn-unit-zerg-changeling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-changeling.dds"/>
+    </CButton>
+    <CButton id="fAllegro">
+        <Icon value="Assets\Textures\btn-unit-protoss-oracle-golden.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-oracle-golden.dds"/>
+    </CButton>
+    <CButton id="fCrescendo">
+        <Icon value="Assets\Textures\btn-unit-protoss-preserver02.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-preserver02.dds"/>
+    </CButton>
+    <CButton id="fGlissando">
+        <Icon value="Assets\Textures\btn-unit-collection-webby-drone.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-webby-drone.dds"/>
+    </CButton>
+    <CButton id="fTenor">
+        <Icon value="Assets\Textures\btn-unit-zerg-brutalisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-brutalisk.dds"/>
+    </CButton>
+    <CButton id="fAlto">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot-ihanrii.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot-ihanrii.dds"/>
+    </CButton>
+    <CButton id="fDramaturge">
+        <Icon value="Assets\Textures\btn-unit-collection-primal-baneling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-primal-baneling.dds"/>
+    </CButton>
+    <CButton id="fProducer">
+        <Icon value="Assets\Textures\btn-unit-collection-purifier-archon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-archon-dark.dds"/>
+    </CButton>
+    <CButton id="fUsher">
+        <Icon value="Assets\Textures\btn-unit-collection-reaper-junker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-reaper-junker.dds"/>
+    </CButton>
+    <CButton id="Overclock">
+        <Icon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+    </CButton>
+    <CButton id="Serenity">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+    </CButton>
+    <CButton id="SoulLeech">
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+    </CButton>
+    <CButton id="TimeRift">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-gravitoncatapult.dds"/>
+    </CButton>
+    <CButton id="fApprentice" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+    </CButton>
+    <CButton id="fArtisan" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-overseer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-overseer.dds"/>
+    </CButton>
+    <CButton id="fTremolo" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-scourge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-scourge.dds"/>
+    </CButton>
+    <CButton id="fPatron" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+    </CButton>
+    <CButton id="fNote" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-larva.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-larva.dds"/>
+    </CButton>
+    <CButton id="fKapelle" parent="TowerButtonTemplate">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+    </CButton>
+    <CButton id="ta_ChainLightning">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+    </CButton>
+    <CButton id="ta_EnhancedChainLightning">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+    </CButton>
+    <CButton id="ta_GreaterChainLightning">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-kerrigan-chainreaction.dds"/>
+    </CButton>
+    <CButton id="trophy_boss_defense_select">
+        <Icon value="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar6.dds"/>
+    </CButton>
+    <CButton id="trophy_boss_defense_any">
+        <Icon value="Starcraft 2 Assets\btn-flinks-tempestthing.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_1x_3rd">
+        <Icon value="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar6.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_1x_2nd">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-zeratul-color.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_1x_1st">
+        <Icon value="Starcraft 2 Assets\btn-custom-arcaneshield.dds"/>
+    </CButton>
+    <CButton id="trophy_boss_defense_winners">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-zeratul-color.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_3x_3rd">
+        <Icon value="Starcraft 2 Assets\btn-achievement-counterproof.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_3x_2nd">
+        <Icon value="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar6.dds"/>
+    </CButton>
+    <CButton id="trophy_max_eco_3x_1st">
+        <Icon value="Starcraft 2 Assets\btn-ability-protoss-blink-zeratul-color.dds"/>
+    </CButton>
+</Catalog>

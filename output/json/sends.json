@@ -1,0 +1,1802 @@
+{
+    "zergling": {
+        "id": "Send_Zergling",
+        "name": "Zergling",
+        "wpn": {
+            "id": "Send_Zergling",
+            "name": "Zergling Attack",
+            "damage": {
+                "id": "Send_Zergling",
+                "min": 5.0,
+                "max": 6.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.25,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 65.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 20.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "economic"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 1.0,
+        "income": 1.0
+    },
+    "marine": {
+        "id": "Send_Marine",
+        "name": "Marine",
+        "wpn": {
+            "id": "Send_Marine",
+            "name": "Marine Attack",
+            "damage": {
+                "id": "Send_Marine",
+                "min": 8.0,
+                "max": 10.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 65.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 40.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 2.0,
+        "income": 1.0
+    },
+    "roach": {
+        "id": "Send_Roach",
+        "name": "Roach",
+        "wpn": {
+            "id": "Send_Roach",
+            "name": "Roach Attack",
+            "damage": {
+                "id": "Send_Roach",
+                "min": 10.0,
+                "max": 12.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 129.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 55.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.8515,
+        "abilities": [
+            "death scout"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 2.75,
+        "income": 1.0
+    },
+    "zealot": {
+        "id": "Send_Zealot",
+        "name": "Zealot",
+        "wpn": {
+            "id": "Send_Zealot",
+            "name": "Zealot Attack",
+            "damage": {
+                "id": "Send_Zealot",
+                "min": 21.0,
+                "max": 23.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 188.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 60.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "mauling attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 3.0,
+        "income": 1.0
+    },
+    "titan strider": {
+        "id": "Send_Titan_Strider",
+        "name": "Titan Strider",
+        "wpn": {
+            "id": "Send_Titan_Strider",
+            "name": "Titan Strider Attack",
+            "damage": {
+                "id": "TitanStriderDamage",
+                "min": 15.0,
+                "max": 18.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 2.0,
+            "melee": true
+        },
+        "hp": 235.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 85.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "tank buster"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 12.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 4.25,
+        "income": 2.0
+    },
+    "mutalisk": {
+        "id": "Send_Mutalisk",
+        "name": "Mutalisk",
+        "wpn": {
+            "id": "Send_Mutalisk",
+            "name": "Mutalisk Attack",
+            "damage": {
+                "id": "MutaliskBounce0Damage",
+                "min": 25.0,
+                "max": 30.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 2.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 318.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 100.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "glaive",
+            "economic"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.75,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 5.0,
+        "income": 5.0
+    },
+    "medic": {
+        "id": "Send_Medic",
+        "name": "Medic",
+        "wpn": {
+            "id": "Send_Medic",
+            "name": "Medic Attack",
+            "damage": {
+                "id": "Send_Medic",
+                "min": 25.0,
+                "max": 27.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 2.5,
+            "melee": false
+        },
+        "hp": 271.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 110.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "healing aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 60.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 5.5,
+        "income": 3.0
+    },
+    "goliath": {
+        "id": "Send_Goliath",
+        "name": "Goliath",
+        "wpn": {
+            "id": "Send_Goliath",
+            "name": "Goliath Attack",
+            "damage": {
+                "id": "Send_Goliath",
+                "min": 30.0,
+                "max": 32.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 3.0,
+            "melee": false
+        },
+        "hp": 306.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 120.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "damage aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.08,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 6.0,
+        "income": 2.0
+    },
+    "marauder": {
+        "id": "Send_Marauder",
+        "name": "Marauder",
+        "wpn": {
+            "id": "Send_Marauder",
+            "name": "Marauder Attack",
+            "damage": {
+                "id": "Send_Marauder",
+                "min": 45.0,
+                "max": 50.0,
+                "kind": "Ranged",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 2.5,
+            "melee": false
+        },
+        "hp": 243.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 120.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.0,
+        "abilities": [
+            "slow speed"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 6.0,
+        "income": 4.0
+    },
+    "mind slug": {
+        "id": "Send_Mind_Slug",
+        "name": "Mind Slug",
+        "wpn": {
+            "id": "Send_Mind_Slug",
+            "name": "Mind Slug Attack",
+            "damage": {
+                "id": "Send_Mind_Slug_Damage",
+                "min": 20.0,
+                "max": 25.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.5,
+            "targets": 1,
+            "range": 0.25,
+            "melee": true
+        },
+        "hp": 370.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 125.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "scream attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 6.25,
+        "income": 4.0
+    },
+    "baneling": {
+        "id": "Send_Baneling",
+        "name": "Baneling",
+        "wpn": {
+            "id": "Send_Baneling_Attack",
+            "name": "Baneling Attack",
+            "damage": {
+                "id": "Send_Baneling_Damage",
+                "min": 190.0,
+                "max": 210.0,
+                "kind": "Splash",
+                "dmg_type": "Chaos",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.2,
+            "melee": true
+        },
+        "hp": 180.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 130.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "volatile explosive"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 0.23,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 6.5,
+        "income": 3.0
+    },
+    "immortal": {
+        "id": "Send_Immortal",
+        "name": "Immortal",
+        "wpn": {
+            "id": "Send_Immortal",
+            "name": "Immortal Attack",
+            "damage": {
+                "id": "Send_Immortal",
+                "min": 29.0,
+                "max": 40.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.4,
+            "melee": true
+        },
+        "hp": 367.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 150.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "armor aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 268.75,
+            "life_bonus_mult": 1.1,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 7.5,
+        "income": 2.0
+    },
+    "dark probe": {
+        "id": "Send_Dark_Probe",
+        "name": "Dark Probe",
+        "wpn": {
+            "id": "Send_Dark_Probe_Attack",
+            "name": "Dark Probe Attack",
+            "damage": {
+                "id": "Send_Dark_Probe_Damage",
+                "min": 42.0,
+                "max": 65.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.5,
+            "targets": 1,
+            "range": 3.5,
+            "melee": false
+        },
+        "hp": 412.0,
+        "shields": 0.0,
+        "energy": 5.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 170.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "dispel"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 8.5,
+        "income": 3.0
+    },
+    "mothership": {
+        "id": "Send_Mothership",
+        "name": "Mothership",
+        "wpn": {
+            "id": "Send_Mothership",
+            "name": "Mothership Attack",
+            "damage": {
+                "id": "Send_Mothership",
+                "min": 40.0,
+                "max": 45.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 3.0,
+            "melee": false
+        },
+        "hp": 447.0,
+        "shields": 0.0,
+        "energy": 10.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 180.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "infuse soul"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 9.0,
+        "income": 6.0
+    },
+    "blood beetle": {
+        "id": "Send_Blood_Beetle",
+        "name": "Blood Beetle",
+        "wpn": {
+            "id": "Send_Blood_Beetle",
+            "name": "Blood Beetle Attack",
+            "damage": {
+                "id": "Send_Blood_Beetle_Damage",
+                "min": 86.0,
+                "max": 104.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 3.1,
+            "melee": false
+        },
+        "hp": 100.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 190.0,
+            "supply": 0.0
+        },
+        "move_speed": 7.5,
+        "abilities": [
+            "super speed",
+            "proboscis"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 9.5,
+        "income": 7.0
+    },
+    "firebat": {
+        "id": "Send_Firebat",
+        "name": "Firebat",
+        "wpn": {
+            "id": "Send_Firebat",
+            "name": "Firebat Attack",
+            "damage": {
+                "id": "Send_Firebat",
+                "min": 66.0,
+                "max": 72.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 647.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 200.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "economic"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 10.0,
+        "income": 10.0
+    },
+    "siege tank": {
+        "id": "Send_Siege_Tank",
+        "name": "Siege Tank",
+        "wpn": {
+            "id": "Send_Siege_Tank",
+            "name": "Siege Tank Attack",
+            "damage": {
+                "id": "Send_Siege_Tank",
+                "min": 47.0,
+                "max": 51.0,
+                "kind": "Ranged",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.25,
+            "targets": 1,
+            "range": 6.9,
+            "melee": false
+        },
+        "hp": 306.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 200.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "tank decimator"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 48.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 10.0,
+        "income": 7.0
+    },
+    "abyss mage": {
+        "id": "Send_Abyss_Mage",
+        "name": "Abyss Mage",
+        "wpn": {
+            "id": "Send_Abyss_Mage_Attack",
+            "name": "Abyss Mage Attack",
+            "damage": {
+                "id": "AbyssMageDamage",
+                "min": 10.0,
+                "max": 12.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.5,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 456.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 230.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "decay",
+            "death cloud"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 11.5,
+        "income": 5.0
+    },
+    "observer": {
+        "id": "Send_Observer",
+        "name": "Observer",
+        "wpn": {
+            "id": "Send_Observer",
+            "name": "Observer Attack",
+            "damage": {
+                "id": "Send_Observer",
+                "min": 14.0,
+                "max": 20.0,
+                "kind": "Melee",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.4,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 430.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 240.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "spy"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 12.0,
+        "income": 6.0
+    },
+    "hydralisk": {
+        "id": "Send_Hydralisk",
+        "name": "Hydralisk",
+        "wpn": {
+            "id": "Send_Hydralisk",
+            "name": "Hydralisk Attack",
+            "damage": {
+                "id": "Send_Hydralisk_Damage",
+                "min": 54.0,
+                "max": 62.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 3.5,
+            "melee": false
+        },
+        "hp": 653.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 250.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "poison attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 45.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 12.5,
+        "income": 8.0
+    },
+    "queen": {
+        "id": "Send_Queen",
+        "name": "Queen",
+        "wpn": {
+            "id": "Send_Queen",
+            "name": "Queen Attack",
+            "damage": {
+                "id": "Send_Queen",
+                "min": 46.0,
+                "max": 54.0,
+                "kind": "Ranged",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.7,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 676.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 250.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "slow aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 12.5,
+        "income": 8.0
+    },
+    "aberration basher": {
+        "id": "Send_Aberration_Basher",
+        "name": "Aberration Basher",
+        "wpn": {
+            "id": "AberrationBasherAttack",
+            "name": "Aberration Basher Attack",
+            "damage": {
+                "id": "AberrationBasherDamage",
+                "min": 69.0,
+                "max": 78.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 2.0,
+            "targets": 1,
+            "range": 0.5,
+            "melee": true
+        },
+        "hp": 378.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 280.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "resistance aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.18,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 14.0,
+        "income": 10.0
+    },
+    "dark templar": {
+        "id": "Send_Dark_Templar",
+        "name": "Dark Templar",
+        "wpn": {
+            "id": "Send_Dark_Templar",
+            "name": "Dark Templar Attack",
+            "damage": {
+                "id": "Send_Dark_Templar",
+                "min": 65.0,
+                "max": 71.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 941.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 300.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "swift aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 15.0,
+        "income": 12.0
+    },
+    "powermortal": {
+        "id": "Send_Powermortal",
+        "name": "Powermortal",
+        "wpn": {
+            "id": "Send_Powermortal",
+            "name": "Powermortal Attack",
+            "damage": {
+                "id": "Send_Powermortal",
+                "min": 82.0,
+                "max": 90.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 826.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 300.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "improved parts",
+            "economic"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 105.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 15.0,
+        "income": 15.0
+    },
+    "hellion": {
+        "id": "Send_Hellion",
+        "name": "Hellion",
+        "wpn": {
+            "id": "Send_Hellion",
+            "name": "Hellion Attack",
+            "damage": {
+                "id": "Send_Hellion",
+                "min": 20.0,
+                "max": 25.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 735.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 300.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "sunder attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.2,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 15.0,
+        "income": 10.0
+    },
+    "wrathwalker": {
+        "id": "Send_Wrathwalker",
+        "name": "Wrathwalker",
+        "wpn": {
+            "id": "Send_Wrathwalker",
+            "name": "Wrathwalker Attack",
+            "damage": {
+                "id": "Send_Wrathwalker",
+                "min": 98.0,
+                "max": 108.0,
+                "kind": "Ranged",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 6.9,
+            "melee": false
+        },
+        "hp": 706.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 350.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "security codes"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 17.5,
+        "income": 13.0
+    },
+    "feederling": {
+        "id": "Send_Feederling",
+        "name": "Feederling",
+        "wpn": {
+            "id": "Send_Feederling",
+            "name": "Feederling Attack",
+            "damage": {
+                "id": "Send_Feederling",
+                "min": 141.0,
+                "max": 159.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.3,
+            "targets": 1,
+            "range": 2.0,
+            "melee": true
+        },
+        "hp": 1218.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 400.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "lifesteal aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 450.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 20.0,
+        "income": 10.0
+    },
+    "high templar": {
+        "id": "Send_High_Templar",
+        "name": "High Templar",
+        "wpn": {
+            "id": "Send_High_Templar",
+            "name": "High Templar Attack",
+            "damage": {
+                "id": "Send_High_Templar",
+                "min": 65.0,
+                "max": 73.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 918.0,
+        "shields": 0.0,
+        "energy": 10.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 400.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "bloodlust"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.2,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 20.0,
+        "income": 10.0
+    },
+    "broodlord": {
+        "id": "Send_Broodlord",
+        "name": "Broodlord",
+        "wpn": {
+            "id": "Send_Broodlord_Attack",
+            "name": "Spawn Broodlings",
+            "damage": {
+                "id": "BroodlingNeedleClaws",
+                "min": 22.0,
+                "max": 23.0,
+                "kind": "Spell",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 2,
+            "range": 6.0,
+            "melee": false
+        },
+        "hp": 588.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 425.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "spawn broodlings"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 1800.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 21.25,
+        "income": 9.0
+    },
+    "banshee": {
+        "id": "Send_Banshee",
+        "name": "Banshee",
+        "wpn": {
+            "id": "Send_Banshee",
+            "name": "Banshee Attack",
+            "damage": {
+                "id": "Send_Banshee",
+                "min": 90.0,
+                "max": 105.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 2.5,
+            "melee": false
+        },
+        "hp": 1294.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 450.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "explosive attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 3.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 22.5,
+        "income": 11.0
+    },
+    "quillgore": {
+        "id": "Send_Quillgore",
+        "name": "Quillgore",
+        "wpn": {
+            "id": "Send_Quillgore",
+            "name": "Quillgore Attack",
+            "damage": {
+                "id": "Send_Quillgore",
+                "min": 120.0,
+                "max": 130.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.3,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1758.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 500.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "economic"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 25.0,
+        "income": 25.0
+    },
+    "ultralisk": {
+        "id": "Send_Ultralisk",
+        "name": "Ultralisk",
+        "wpn": {
+            "id": "Send_Ultralisk",
+            "name": "Ultralisk Attack",
+            "damage": {
+                "id": "Send_Ultralisk",
+                "min": 138.0,
+                "max": 150.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.3,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1510.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 510.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "war stomp",
+            "spell immunity"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 185.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 25.5,
+        "income": 20.0
+    },
+    "hunterling": {
+        "id": "Send_Hunterling",
+        "name": "Hunterling",
+        "wpn": {
+            "id": "Send_HunterlingAttack",
+            "name": "Hunterling Attack",
+            "damage": {
+                "id": "Send_HunterlingAttack",
+                "min": 33.0,
+                "max": 36.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 4100.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 540.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "hunter's pounce"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.18,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 27.0,
+        "income": 12.0
+    },
+    "shadow templar": {
+        "id": "Send_Shadow_Templar",
+        "name": "Shadow Templar",
+        "wpn": {
+            "id": "Send_Shadow_Templar",
+            "name": "Shadow Templar Attack",
+            "damage": {
+                "id": "Send_Shadow_Templar",
+                "min": 168.0,
+                "max": 186.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1765.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 550.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "disturbance aura"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 27.5,
+        "income": 11.0
+    },
+    "aberration pulverizer": {
+        "id": "Send_Aberration_Pulverizer",
+        "name": "Aberration Pulverizer",
+        "wpn": {
+            "id": "AberrationPulverizerAttack",
+            "name": "Aberration Pulverizer Attack",
+            "damage": {
+                "id": "AberrationPulverizerDamage",
+                "min": 184.0,
+                "max": 220.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 2.0,
+            "targets": 1,
+            "range": 0.4,
+            "melee": true
+        },
+        "hp": 1800.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 560.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "massive sweep"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 4.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 28.0,
+        "income": 11.0
+    },
+    "thor": {
+        "id": "Send_Thor",
+        "name": "Thor",
+        "wpn": {
+            "id": "Send_Thor",
+            "name": "Thor Attack",
+            "damage": {
+                "id": "Send_Thor",
+                "min": 170.0,
+                "max": 184.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 1512.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 600.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "cripple",
+            "spell immunity"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 195.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 30.0,
+        "income": 12.0
+    },
+    "hybrid dominator": {
+        "id": "Send_Hybrid_Dominator",
+        "name": "Hybrid Dominator",
+        "wpn": {
+            "id": "Send_Hybrid_Dominator",
+            "name": "Hybrid Dominator Attack",
+            "damage": {
+                "id": "Send_Hybrid_Dominator",
+                "min": 210.0,
+                "max": 230.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 5.0,
+            "melee": false
+        },
+        "hp": 2332.0,
+        "shields": 0.0,
+        "energy": 100.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 800.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "energy leech",
+            "psionic shockwave"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 40.0,
+        "income": 13.0
+    },
+    "flame behemoth": {
+        "id": "Send_Flame_Behemoth",
+        "name": "Flame Behemoth",
+        "wpn": {
+            "id": "Send_Flame_Behemoth",
+            "name": "Flame Behemoth Attack",
+            "damage": {
+                "id": "Send_Flame_Behemoth",
+                "min": 226.0,
+                "max": 258.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.5,
+            "targets": 1,
+            "range": 5.0,
+            "melee": false
+        },
+        "hp": 2458.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 1000.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "scorching circle",
+            "stun immune"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 450.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 50.0,
+        "income": 14.0
+    },
+    "tyrannozor": {
+        "id": "Send_Tyrannozor",
+        "name": "Tyrannozor",
+        "wpn": {
+            "id": "Send_Tyrannozor",
+            "name": "Tyrannozor Attack",
+            "damage": {
+                "id": "Send_Tyrannozor",
+                "min": 152.0,
+                "max": 175.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 6050.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 1100.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "thorn armor"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 151.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 55.0,
+        "income": 15.0
+    }
+}

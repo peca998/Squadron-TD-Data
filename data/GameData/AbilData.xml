@@ -1,0 +1,3664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!-- Abil categories (note that most is handled via autocast behaviors, but few exceptions, i.e. raptorling jump):
+         1. User1 - Movement related (i.e. can't be used while rooted)
+    -->
+    <CAbilEffectInstant default="1" id="OrbsTemplate">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;-"/>
+        <AutoCastRange value="500"/>
+        <Cost>
+            <Charge>
+                <CountMax value="6"/>
+                <CountStart value="6"/>
+                <CountUse value="1"/>
+                <Link value="##id##"/>
+                <Location value="Player"/>
+            </Charge>
+            <Cooldown Location="Player" TimeUse="0.5"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget default="1" id="ProxyAbilityTemplate">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Range value="100"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget default="1" id="WeldingHealBeamTemplate" parent="ProxyAbilityTemplate">
+        <Range index="0" value="7"/>
+        <Effect index="0" value="WeldingHealBeamSet"/>
+        <AbilSetId value="WeldingHeal"/>
+    </CAbilEffectTarget>
+    <CAbilBuild id="BuildTaldarim">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fRetaliator" Time="1">
+            <Button DefaultButtonFace="fRetaliator" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fRiftblade" Time="1">
+            <Button DefaultButtonFace="fRiftblade" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fAegis" Time="1">
+            <Button DefaultButtonFace="fAegis" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fVoidSmasher" Time="1">
+            <Button DefaultButtonFace="fVoidSmasher" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fAscendant" Time="1">
+            <Button DefaultButtonFace="fAscendant" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fJinara" Time="1">
+            <Button DefaultButtonFace="fJinara" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilEffectTarget id="EMPShock" parent="ProxyAbilityTemplate">
+        <Effect index="0" value="EMPShock@CP"/>
+        <Cost>
+            <Vital index="Energy" value="30"/>
+        </Cost>
+        <Arc value="0.9997"/>
+    </CAbilEffectTarget>
+    <CAbilAugment id="RaptorlingLeap">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <AbilCmd value="attack,Execute"/>
+        <TargetType value="UnitOrPoint"/>
+        <Cost>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Effect value="RaptorlingLeapLM"/>
+        <AbilityCategories index="User1" value="1"/>
+    </CAbilAugment>
+    <CAbilEffectInstant id="AppraiseTower">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AppraiseTower"/>
+        <Cost>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <Flags index="BestUnit" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="DelugeConvergence@ProxyAbility" parent="ProxyAbilityTemplate">
+        <Effect index="0" value="DelugeConvergence@InitialMissle"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="SendAdvancedUnit">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Train1">
+            <Charge Link="Send_High_Templar"/>
+            <Cooldown Link="Send_High_Templar" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_High_Templar"/>
+            <Unit value="Send_High_Templar"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge Link="Send_Feederling"/>
+            <Cooldown Link="Send_Feederling" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_Feederling"/>
+            <Unit value="Send_Feederling"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge Link="Send_Broodlord"/>
+            <Cooldown Link="Send_Broodlord" TimeUse="9"/>
+            <Button DefaultButtonFace="Send_Broodlord"/>
+            <Unit value="Send_Broodlord"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge Link="Send_Banshee"/>
+            <Cooldown Link="Send_Banshee" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Banshee"/>
+            <Unit value="Send_Banshee"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Cooldown Link="Send_Hunterling" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_Hunterling"/>
+            <Unit value="Send_Hunterling"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge Link="Send_Quillgore"/>
+            <Cooldown Link="Send_Quillgore" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Quillgore"/>
+            <Unit value="Send_Quillgore"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge Link="Send_Ultralisk"/>
+            <Cooldown Link="Send_Ultralisk" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Ultralisk"/>
+            <Unit value="Send_Ultralisk"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge Link="Send_Shadow_Templar"/>
+            <Cooldown Link="Send_Shadow_Templar" TimeUse="11"/>
+            <Button DefaultButtonFace="Send_Shadow_Templar"/>
+            <Unit value="Send_Shadow_Templar"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge Link="Send_Aberration_Pulverizer"/>
+            <Cooldown Link="Send_Aberration_Pulverizer" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Aberration_Pulverizer"/>
+            <Unit value="Send_Aberration_Pulverizer"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge Link="Send_Thor"/>
+            <Cooldown Link="Send_Thor" TimeUse="12"/>
+            <Button DefaultButtonFace="Send_Thor"/>
+            <Unit value="Send_Thor"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge Link="Send_Hybrid_Dominator"/>
+            <Cooldown Link="Send_Hybrid_Dominator" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Hybrid_Dominator"/>
+            <Unit value="Send_Hybrid_Dominator"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge Link="Send_Flame_Behemoth"/>
+            <Cooldown Link="Send_Flame_Behemoth" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Flame_Behemoth"/>
+            <Unit value="Send_Flame_Behemoth"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge Link="Send_Tyrannozor"/>
+            <Cooldown Link="Send_Tyrannozor" TimeUse="10"/>
+            <Button DefaultButtonFace="Send_Tyrannozor"/>
+            <Unit value="Send_Tyrannozor"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <Alert value="SendComplete"/>
+    </CAbilTrain>
+    <CAbilTrain id="SendBasicUnit">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Train1">
+            <Charge Link="Send_Zergling"/>
+            <Cooldown Link="Send_Zergling" TimeUse="2"/>
+            <Button DefaultButtonFace="Send_Zergling"/>
+            <Unit value="Send_Zergling"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge Link="Send_Marine"/>
+            <Cooldown Link="Send_Marine" TimeUse="1.4"/>
+            <Button DefaultButtonFace="Send_Marine"/>
+            <Unit value="Send_Marine"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge Link="Send_Roach"/>
+            <Cooldown Link="Send_Roach" TimeUse="2"/>
+            <Button DefaultButtonFace="Send_Roach"/>
+            <Unit value="Send_Roach"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge Link="Send_Zealot"/>
+            <Cooldown Link="Send_Zealot" TimeUse="2"/>
+            <Button DefaultButtonFace="Send_Zealot"/>
+            <Unit value="Send_Zealot"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge Link="Send_Titan_Strider"/>
+            <Cooldown Link="Send_Titan_Strider" TimeUse="5"/>
+            <Button DefaultButtonFace="Send_Titan_Strider"/>
+            <Unit value="Send_Titan_Strider"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge Link="Send_Mutalisk"/>
+            <Cooldown Link="Send_Mutalisk" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Mutalisk"/>
+            <Unit value="Send_Mutalisk"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge Link="Send_Medic"/>
+            <Cooldown Link="Send_Medic" TimeUse="5"/>
+            <Button DefaultButtonFace="Send_Medic"/>
+            <Unit value="Send_Medic"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge Link="Send_Marauder"/>
+            <Cooldown Link="Send_Marauder" TimeUse="5"/>
+            <Button DefaultButtonFace="Send_Marauder"/>
+            <Unit value="Send_Marauder"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge Link="Send_Goliath"/>
+            <Cooldown Link="Send_Goliath" TimeUse="5"/>
+            <Button DefaultButtonFace="Send_Goliath"/>
+            <Unit value="Send_Goliath"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge Link="Send_Mind_Slug"/>
+            <Cooldown Link="Send_Mind_Slug" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Mind_Slug"/>
+            <Unit value="Send_Mind_Slug"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge Link="Send_Baneling"/>
+            <Cooldown Link="Send_Baneling" TimeUse="3"/>
+            <Button DefaultButtonFace="Send_Baneling"/>
+            <Unit value="Send_Baneling"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge Link="Send_Immortal"/>
+            <Cooldown Link="Send_Immortal" TimeUse="6"/>
+            <Button DefaultButtonFace="Send_Immortal"/>
+            <Unit value="Send_Immortal"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge Link="Send_Dark_Probe"/>
+            <Cooldown Link="Send_Dark_Probe" TimeUse="6"/>
+            <Button DefaultButtonFace="Send_Dark_Probe"/>
+            <Unit value="Send_Dark_Probe"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge Link="Send_Mothership"/>
+            <Cooldown Link="Send_Mothership" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Mothership"/>
+            <Unit value="Send_Mothership"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge Link="Send_Blood_Beetle"/>
+            <Cooldown Link="Send_Blood_Beetle" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Blood_Beetle"/>
+            <Unit value="Send_Blood_Beetle"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <Alert value="SendComplete"/>
+    </CAbilTrain>
+    <CAbilEffectTarget id="SoulFlashProxyAbility" parent="ProxyAbilityTemplate">
+        <Effect index="0" value="SoulFlashAutocastSet"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="SpellResistance">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="SpellResistancePeriodic"/>
+    </CAbilBehavior>
+    <CAbilEffectInstant id="SecurityOverride">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="SylphMergeArtisan">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetArtisan"/>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="fClef" Requirements="BuildPhase"/>
+        <AbilSetId value="SylphMerge"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SylphMergeKapelle">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetKapelle"/>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="fClef" Requirements="BuildPhase"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <AbilSetId value="SylphMerge"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SylphMergePatron">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetPatron"/>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="fClef" Requirements="BuildPhase"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <AbilSetId value="SylphMerge"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SylphMergeTremolo">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetTremolo"/>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SylphMergeTremolo" Requirements="BuildPhase"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <AbilSetId value="SylphMerge"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SylphMergeNote">
+        <AbilSetId value="SylphMerge"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetNote"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <SmartValidatorArray value="GroupNotRemoved"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SylphMergeNote" Requirements="BuildPhase"/>
+    </CAbilEffectTarget>
+    <CAbilBuild id="BuildSoul">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fEssence" Time="1">
+            <Button DefaultButtonFace="fEssence" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fFlux" Time="1">
+            <Button DefaultButtonFace="fFlux" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fNetherlord" Time="1">
+            <Button DefaultButtonFace="fNetherlord" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fCraggy" Time="1">
+            <Button DefaultButtonFace="fCraggy" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fShadowFist" Time="1">
+            <Button DefaultButtonFace="fShadowFist" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build7" Unit="fTeeter" Time="1">
+            <Button DefaultButtonFace="fTeeter" Requirements="BuildPhase"/>
+        </InfoArray>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilTrain id="TrainAncient">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Range value="10"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDefender" Requirements="BuildPhase"/>
+            <Unit value="fDefender"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fEncrypter" Requirements="BuildPhase"/>
+            <Unit value="fEncrypter"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fPrismaticResonator" Requirements="BuildPhase"/>
+            <Unit value="fPrismaticResonator"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fArchive" Requirements="BuildPhase"/>
+            <Unit value="fArchive"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fEliteWarden" Requirements="BuildPhase"/>
+            <Unit value="fEliteWarden"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fElder" Requirements="BuildPhase"/>
+            <Unit value="fElder"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train16">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train17">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train18">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train19">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train20">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train21">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train22">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train23">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train24">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train25">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train26">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train27">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train28">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train29">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train30">
+            <Charge Link="Abil/TrainBeast"/>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="KingandWorkerResearch">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Upgrade="RedUpgrade">
+            <Resource index="Vespene" value="80"/>
+            <Charge>
+                <CountMax value="30"/>
+                <CountStart value="30"/>
+                <CountUse value="1"/>
+                <Link value="RedOrbs"/>
+                <Location value="Player"/>
+            </Charge>
+            <Cooldown TimeUse="0.5"/>
+            <Button DefaultButtonFace="InfuseRedOrb"/>
+        </InfoArray>
+        <InfoArray index="Research2" Upgrade="BlueUpgrade">
+            <Resource index="Vespene" value="80"/>
+            <Charge>
+                <CountMax value="30"/>
+                <CountStart value="30"/>
+                <CountUse value="1"/>
+                <Link value="BlueOrbs"/>
+                <Location value="Player"/>
+            </Charge>
+            <Cooldown TimeUse="0.5"/>
+            <Button DefaultButtonFace="InfuseBlueOrb"/>
+        </InfoArray>
+        <InfoArray index="Research3" Upgrade="GreenUpgrade">
+            <Resource index="Vespene" value="80"/>
+            <Charge>
+                <CountMax value="30"/>
+                <CountStart value="30"/>
+                <CountUse value="1"/>
+                <Link value="GreenOrbs"/>
+                <Location value="Player"/>
+            </Charge>
+            <Cooldown TimeUse="0.5"/>
+            <Button DefaultButtonFace="InfuseGreenOrb"/>
+        </InfoArray>
+        <Flags index="Transient" value="1"/>
+    </CAbilResearch>
+    <CAbilBehavior id="ReflectiveShell">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="ReflectiveShell"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="SLBloodLift">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="SLBloodLift"/>
+    </CAbilBehavior>
+    <CAbilEffectTarget id="SalvageArmor">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <RefundArray index="Approach" value="0"/>
+        <RefundArray index="Prep" value="0"/>
+        <RefundArray index="Cast" value="0"/>
+        <Range value="5"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Dead;Ally,Neutral,Enemy,Structure,Worker,Missile,Hidden,Invulnerable"/>
+        <AutoCastRange value="5"/>
+        <AutoCastValidatorArray value="NotRevived"/>
+        <AutoCastValidatorArray value="CasterNotExpelled"/>
+        <PauseableArray index="Prep" value="0"/>
+        <PreemptableArray index="Prep" value="0"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <ValidatedArray index="Finish" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="ShadowWalker">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="ShadowWalker"/>
+    </CAbilBehavior>
+    <CAbilEffectTarget id="SylphMergeApprentice">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SylphMergeSetApprentice"/>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Structure,Worker,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="fClef" Requirements="BuildPhase"/>
+        <Arc value="360"/>
+        <SmartValidatorArray value="IsValidMergeTarget"/>
+        <AbilSetId value="SylphMerge"/>
+        <Cost>
+            <Cooldown Link="SylphyMerge" Location="Player" TimeUse="0.0625"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilTrain id="TrainAutomaton">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTerminator" Requirements="BuildPhase"/>
+            <Unit value="fTerminator"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fObliterator" Requirements="BuildPhase"/>
+            <Unit value="fObliterator"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fPulverizer" Requirements="BuildPhase"/>
+            <Unit value="fPulverizer"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSalvager" Requirements="BuildPhase"/>
+            <Unit value="fSalvager"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAndroid" Requirements="BuildPhase"/>
+            <Unit value="fAndroid"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fBrawler" Requirements="BuildPhase"/>
+            <Unit value="fBrawler"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAstromechDroid" Requirements="BuildPhase"/>
+            <Unit value="fAstromechDroid"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fWeldtechRelay" Requirements="BuildPhase"/>
+            <Unit value="fWeldtechRelay"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fOrbitalSatellite" Requirements="BuildPhase"/>
+            <Unit value="fOrbitalSatellite"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAsimov" Requirements="BuildPhase"/>
+            <Unit value="fAsimov"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fCenturion" Requirements="BuildPhase"/>
+            <Unit value="fCenturion"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fU87Prototype" Requirements="BuildPhase"/>
+            <Unit value="fU87Prototype"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGravLance" Requirements="BuildPhase"/>
+            <Unit value="fGravLance"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fLaserBattery" Requirements="BuildPhase"/>
+            <Unit value="fLaserBattery"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMissileBarrage" Requirements="BuildPhase"/>
+            <Unit value="fMissileBarrage"/>
+        </InfoArray>
+        <InfoArray index="Train16">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fExecutioner" Requirements="BuildPhase"/>
+            <Unit value="fExecutioner"/>
+        </InfoArray>
+        <InfoArray index="Train17">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAnnihilator" Requirements="BuildPhase"/>
+            <Unit value="fAnnihilator"/>
+        </InfoArray>
+        <InfoArray index="Train18">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fUpholder" Requirements="BuildPhase"/>
+            <Unit value="fUpholder"/>
+        </InfoArray>
+        <InfoArray index="Train19">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fRadar" Requirements="BuildPhase"/>
+            <Unit value="fRadar"/>
+        </InfoArray>
+        <Alert value="TowerUpgraded"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainAutomatonBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fTerminator" Requirements="BuildPhase"/>
+            <Unit value="fTerminator"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fSalvager" Requirements="BuildPhase"/>
+            <Unit value="fSalvager"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fSupportConstructs" Requirements="BuildPhase"/>
+            <Unit value="fSupportConstructs"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fExperimentalConstructs" Requirements="BuildPhase"/>
+            <Unit value="fExperimentalConstructs"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fArtilleryConstructs" Requirements="BuildPhase"/>
+            <Unit value="fArtilleryConstructs"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fDreadnought" Requirements="BuildPhase"/>
+            <Unit value="fDreadnought"/>
+        </InfoArray>
+        <Alert value="TowerComplete"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainBeastBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fZerglingWarrior" Requirements="BuildPhase"/>
+            <Unit value="fZerglingWarrior"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fHarpy" Requirements="BuildPhase"/>
+            <Unit value="fHarpy"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fRoachFighter" Requirements="BuildPhase"/>
+            <Unit value="fRoachFighter"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fGrizzly" Requirements="BuildPhase"/>
+            <Unit value="fGrizzly"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fSwarmHost" Requirements="BuildPhase"/>
+            <Unit value="fSwarmHost"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeast"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeast" TimeUse="1"/>
+            <Button DefaultButtonFace="fSpawnofDragon" Requirements="BuildPhase"/>
+            <Unit value="fSpawnofDragon"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainSylphy">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Range value="10"/>
+        <Alert value="TowersMerged"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fGlissando"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fClef"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fProducer"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fDramaturge"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fUsher"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fStaccato"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fTenor"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fAlto"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fSoprano"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fAllegro"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fSolo"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fConductor"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fFortissimo"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fCrescendo"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Unit value="fComposer"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainSoulBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fEssence" Requirements="BuildPhase"/>
+            <Unit value="fEssence"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fFlux" Requirements="BuildPhase"/>
+            <Unit value="fFlux"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fNetherlord" Requirements="BuildPhase"/>
+            <Unit value="fNetherlord"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fCraggy" Requirements="BuildPhase"/>
+            <Unit value="fCraggy"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fShadowFist" Requirements="BuildPhase"/>
+            <Unit value="fShadowFist"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainSoul"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainSoul" TimeUse="1"/>
+            <Button DefaultButtonFace="fTeeter" Requirements="BuildPhase"/>
+            <Unit value="fTeeter"/>
+        </InfoArray>
+        <Alert value="TowerComplete"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainSoul">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Range value="10"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fRuneguard" Requirements="BuildPhase"/>
+            <Unit value="fRuneguard"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fNethermaster" Requirements="BuildPhase"/>
+            <Unit value="fNethermaster"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fStahrry" Requirements="BuildPhase"/>
+            <Unit value="fStahrry"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fZee" Requirements="BuildPhase"/>
+            <Unit value="fZee"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fLordKaiser" Requirements="BuildPhase"/>
+            <Unit value="fLordKaiser"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fScornedHand" Requirements="BuildPhase"/>
+            <Unit value="fScornedHand"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHeisendonger" Requirements="BuildPhase"/>
+            <Unit value="fHeisendonger"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilBuild id="BuildCelestial">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fCherub" Time="1">
+            <Button DefaultButtonFace="fCherub" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fSpirit" Time="1">
+            <Button DefaultButtonFace="fSpirit" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fSaint" Time="1">
+            <Button DefaultButtonFace="fSaint" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fVanguard" Time="1">
+            <Button DefaultButtonFace="fVanguard" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fProphet" Time="1">
+            <Button DefaultButtonFace="fProphet" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fDeity" Time="1">
+            <Button DefaultButtonFace="fDeity" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilEffectInstant id="Earthshock">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="EarthshockSearch"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="95"/>
+            <Cooldown TimeUse="8"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Earthshock" Requirements="ActiveTest06"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="ExtremeHealing">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="150"/>
+            <Cooldown TimeUse="8"/>
+        </Cost>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;-"/>
+        <AutoCastRange value="500"/>
+        <AutoCastValidatorArray value="ExtremeHealingAutocast"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ExtremeHealing" Requirements="ActiveTest03"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="ElusiveBarrier">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="200"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ElusiveBarrier" Requirements="ActiveTest08"/>
+    </CAbilEffectInstant>
+    <CAbilBehavior id="SellTower">
+        <Cost>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <TimeStart value="1"/>
+                <TimeUse value="1"/>
+            </Charge>
+            <Cooldown TimeStart="0.2" TimeUse="1"/>
+        </Cost>
+        <BehaviorArray value="SellTower"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="SellTower" Requirements="BuildPhase">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="SolidPlating">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="SolidPlating"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="ImprovedTargeting">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="ImprovedTargeting"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="ImpenetrableShields">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="ImpenetrableShields"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="SapCannons">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="SapCannons"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="Overburn">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="Overburn" Requirements="ActiveTest07"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="Overburn2" Requirements="ActiveTest07"/>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+        </Cost>
+        <BehaviorArray value="OverburnCaster"/>
+    </CAbilBehavior>
+    <CAbilTrain id="TrainCelestialBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fCherub" Requirements="BuildPhase"/>
+            <Unit value="fCherub"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fSpirit" Requirements="BuildPhase"/>
+            <Unit value="fSpirit"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fSaint" Requirements="BuildPhase"/>
+            <Unit value="fSaint"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fVanguard" Requirements="BuildPhase"/>
+            <Unit value="fVanguard"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fProphet" Requirements="BuildPhase"/>
+            <Unit value="fProphet"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fDeity" Requirements="BuildPhase"/>
+            <Unit value="fDeity"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainCelestial">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Range value="10"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSeraphim" Requirements="BuildPhase"/>
+            <Unit value="fSeraphim"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDaemon" Requirements="BuildPhase"/>
+            <Unit value="fDaemon"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fCelestian" Requirements="BuildPhase"/>
+            <Unit value="fCelestian"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fFallen" Requirements="BuildPhase"/>
+            <Unit value="fFallen"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fCupid" Requirements="BuildPhase"/>
+            <Unit value="fCupid"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fArchangel" Requirements="BuildPhase"/>
+            <Unit value="fArchangel"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fKingsguard" Requirements="BuildPhase"/>
+            <Unit value="fKingsguard"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTemplar" Requirements="BuildPhase"/>
+            <Unit value="fTemplar"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAuror" Requirements="BuildPhase"/>
+            <Unit value="fAuror"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTheos" Requirements="BuildPhase"/>
+            <Unit value="fTheos"/>
+        </InfoArray>
+        <Alert value="TowerUpgraded"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainTaldarim">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSupplicant" Requirements="BuildPhase"/>
+            <Unit value="fSupplicant"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fEmpoweredSupplicant" Requirements="BuildPhase"/>
+            <Unit value="fEmpoweredSupplicant"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAmplifiedSupplicant" Requirements="BuildPhase"/>
+            <Unit value="fAmplifiedSupplicant"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAstralblade" Requirements="BuildPhase"/>
+            <Unit value="fAstralblade"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fThunderAstralblade" Requirements="BuildPhase"/>
+            <Unit value="fThunderAstralblade"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fWhirlwindAstralblade" Requirements="BuildPhase"/>
+            <Unit value="fWhirlwindAstralblade"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHavoc" Requirements="BuildPhase"/>
+            <Unit value="fHavoc"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSwiftHavoc" Requirements="BuildPhase"/>
+            <Unit value="fSwiftHavoc"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fChronoHavoc" Requirements="BuildPhase"/>
+            <Unit value="fChronoHavoc"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSlayer" Requirements="BuildPhase"/>
+            <Unit value="fSlayer"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fConcussiveSlayer" Requirements="BuildPhase"/>
+            <Unit value="fConcussiveSlayer"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fBarrageSlayer" Requirements="BuildPhase"/>
+            <Unit value="fBarrageSlayer"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fArchon" Requirements="BuildPhase"/>
+            <Unit value="fArchon"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGreaterArchon" Requirements="BuildPhase"/>
+            <Unit value="fGreaterArchon"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSummoningArchon" Requirements="BuildPhase"/>
+            <Unit value="fSummoningArchon"/>
+        </InfoArray>
+        <InfoArray index="Train16">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAlarak" Requirements="BuildPhase"/>
+            <Unit value="fAlarak"/>
+        </InfoArray>
+        <InfoArray index="Train17">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fShockingAlarak" Requirements="BuildPhase"/>
+            <Unit value="fShockingAlarak"/>
+        </InfoArray>
+        <InfoArray index="Train18">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDestructiveAlarak" Requirements="BuildPhase"/>
+            <Unit value="fDestructiveAlarak"/>
+        </InfoArray>
+        <Range value="10"/>
+        <Alert value="TowerUpgraded"/>
+    </CAbilTrain>
+    <CAbilEffectTarget id="Tributary" parent="ProxyAbilityTemplate">
+        <Effect index="0" value="Tributary@InitialDelay"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="TurnOffAutocasts">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="TurnOffAllAutocastsScript"/>
+        <Cost>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TurnOffAutocasts"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UndoMerge">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="0.5"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UndoMerge" Requirements="UndoMergeAvailable"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UndoUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UndoUpgrade" Requirements="UndoUpgradeAvailable"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="0.5"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilBuild id="BuildBeast">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fZerglingWarrior" Time="1">
+            <Button DefaultButtonFace="fZerglingWarrior" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fHarpy" Time="1">
+            <Button DefaultButtonFace="fHarpy" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fRoachFighter" Time="1">
+            <Button DefaultButtonFace="fRoachFighter" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fGrizzly" Time="1">
+            <Button DefaultButtonFace="fGrizzly" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fSwarmHost" Time="1">
+            <Button DefaultButtonFace="fSwarmHost" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fSpawnofDragon" Time="1">
+            <Button DefaultButtonFace="fSpawnofDragon" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildCustom">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="Tier1" Time="1">
+            <Button DefaultButtonFace="Tier1" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="Tier2" Time="1">
+            <Button DefaultButtonFace="Tier2" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="Tier3" Time="1">
+            <Button DefaultButtonFace="Tier3" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="Tier4" Time="1">
+            <Button DefaultButtonFace="Tier4" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="Tier5" Time="1">
+            <Button DefaultButtonFace="Tier5" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="Tier6" Time="1">
+            <Button DefaultButtonFace="Tier6" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildShadow">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fBoneWarrior" Time="1">
+            <Button DefaultButtonFace="fBoneWarrior" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fCarrionSpitter" Time="1">
+            <Button DefaultButtonFace="fCarrionSpitter" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fGateguard" Time="1">
+            <Button DefaultButtonFace="fGateguard" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fBoneOverseer" Time="1">
+            <Button DefaultButtonFace="fBoneOverseer" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fNightmare" Time="1">
+            <Button DefaultButtonFace="fNightmare" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fLordofDeath" Time="1">
+            <Button DefaultButtonFace="fLordofDeath" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildMechanical">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fPeewee" Time="1">
+            <Button DefaultButtonFace="fPeewee" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fInfantry" Time="1">
+            <Button DefaultButtonFace="fInfantry" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fCaptain" Time="1">
+            <Button DefaultButtonFace="fCaptain" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fTempest" Time="1">
+            <Button DefaultButtonFace="fTempest" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fCyborg" Time="1">
+            <Button DefaultButtonFace="fCyborg" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fNeotank" Time="1">
+            <Button DefaultButtonFace="fNeotank" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildNature">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fEnt" Time="1">
+            <Button DefaultButtonFace="fEnt" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fRanger" Time="1">
+            <Button DefaultButtonFace="fRanger" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fSprite" Time="1">
+            <Button DefaultButtonFace="fSprite" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fTreeofTravel" Time="1">
+            <Button DefaultButtonFace="fTreeofTravel" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fHalfbreed" Time="1">
+            <Button DefaultButtonFace="fHalfbreed" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fYggdrasil" Time="1">
+            <Button DefaultButtonFace="fYggdrasil" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBehavior id="BattleRoar">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="BattleRoarAutocast"/>
+        <ValidatorArray value="UnitSpottedEnemy"/>
+    </CAbilBehavior>
+    <CAbilBuild id="BuildElemental">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fProton" Time="1">
+            <Button DefaultButtonFace="fProton" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fAquaSpirit" Time="1">
+            <Button DefaultButtonFace="fAquaSpirit" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fWatcher" Time="1">
+            <Button DefaultButtonFace="fWatcher" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fMudman" Time="1">
+            <Button DefaultButtonFace="fMudman" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fDisciple" Time="1">
+            <Button DefaultButtonFace="fDisciple" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fSeerofDarkness" Time="1">
+            <Button DefaultButtonFace="fSeerofDarkness" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilTrain id="RefineryAmount">
+        <EditorCategories value="AbilityorEffectType:Structures"/>
+        <Activity value="UI/RefineryAmount"/>
+        <InfoArray index="Train1" Time="10">
+            <Charge CountMax="30" CountStart="30" CountUse="1"/>
+            <Cooldown TimeUse="0.0625"/>
+            <Button DefaultButtonFace="UpgradeAmount"/>
+            <Unit value="SquadronWorker"/>
+        </InfoArray>
+        <Alert value="RefineryAmount"/>
+        <RefundFraction>
+            <Resource index="Minerals" value="0"/>
+        </RefundFraction>
+    </CAbilTrain>
+    <CAbilTrain id="RefinerySupply">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Activity value="UI/RefinerySupply"/>
+        <InfoArray index="Train1" Time="5">
+            <Charge>
+                <CountMax value="40"/>
+                <CountStart value="40"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="UpgradeSupply" Requirements="NotUpgradingSupply"/>
+            <Unit value="SquadronSupply"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <Alert value="RefinerySupply"/>
+    </CAbilTrain>
+    <CAbilBehavior id="SpellImmunity">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray value="SpellImmunity"/>
+    </CAbilBehavior>
+    <CAbilTrain id="TrainElemental">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAdept" Requirements="BuildPhase"/>
+            <Unit value="fAdept"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fOceanus" Requirements="BuildPhase"/>
+            <Unit value="fOceanus"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fViolet" Requirements="BuildPhase"/>
+            <Unit value="fViolet"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGolem" Requirements="BuildPhase"/>
+            <Unit value="fGolem"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMessiah" Requirements="BuildPhase"/>
+            <Unit value="fMessiah"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fFenix" Requirements="BuildPhase"/>
+            <Unit value="fFenix"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fThalassotherapy" Requirements="BuildPhase"/>
+            <Unit value="fThalassotherapy"/>
+        </InfoArray>
+        <Range value="10"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainBeast">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fZerglingWarrior" Requirements="BuildPhase"/>
+            <Unit value="fZerglingWarrior"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fZerglingSavage" Requirements="BuildPhase"/>
+            <Unit value="fZerglingSavage"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHarpy" Requirements="BuildPhase"/>
+            <Unit value="fHarpy"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMedusa" Requirements="BuildPhase"/>
+            <Unit value="fMedusa"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fRoachFighter" Requirements="BuildPhase"/>
+            <Unit value="fRoachFighter"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fRoachChampion" Requirements="BuildPhase"/>
+            <Unit value="fRoachChampion"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGrizzly" Requirements="BuildPhase"/>
+            <Unit value="fGrizzly"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGreymane" Requirements="BuildPhase"/>
+            <Unit value="fGreymane"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSwarmHost" Requirements="BuildPhase"/>
+            <Unit value="fSwarmHost"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fPrimalHost" Requirements="BuildPhase"/>
+            <Unit value="fPrimalHost"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSpawnofDragon" Requirements="BuildPhase"/>
+            <Unit value="fSpawnofDragon"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDragonAspect" Requirements="BuildPhase"/>
+            <Unit value="fDragonAspect"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fRaptorling" Requirements="BuildPhase"/>
+            <Unit value="fRaptorling"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMechaHost" Requirements="BuildPhase"/>
+            <Unit value="fMechaHost"/>
+        </InfoArray>
+        <Range value="10"/>
+        <Alert value="TowerUpgraded"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainElementalBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fProton" Requirements="BuildPhase"/>
+            <Unit value="fProton"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fAquaSpirit" Requirements="BuildPhase"/>
+            <Unit value="fAquaSpirit"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fWatcher" Requirements="BuildPhase"/>
+            <Unit value="fWatcher"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fMudman" Requirements="BuildPhase"/>
+            <Unit value="fMudman"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fDisciple" Requirements="BuildPhase"/>
+            <Unit value="fDisciple"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fSeerofDarkness" Requirements="BuildPhase"/>
+            <Unit value="fSeerofDarkness"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainGhostBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fSpectre" Requirements="BuildPhase"/>
+            <Unit value="fSpectre"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fWanderer" Requirements="BuildPhase"/>
+            <Unit value="fWanderer"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fPhantom" Requirements="BuildPhase"/>
+            <Unit value="fPhantom"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fOutcast" Requirements="BuildPhase"/>
+            <Unit value="fOutcast"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fApparition" Requirements="BuildPhase"/>
+            <Unit value="fApparition"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fEidolon" Requirements="BuildPhase"/>
+            <Unit value="fEidolon"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainMechanical">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fVeteran" Requirements="BuildPhase"/>
+            <Unit value="fVeteran"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fPyro" Requirements="BuildPhase"/>
+            <Unit value="fPyro"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fZeus" Requirements="BuildPhase"/>
+            <Unit value="fZeus"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fAdmiral" Requirements="BuildPhase"/>
+            <Unit value="fAdmiral"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fLeviathan" Requirements="BuildPhase"/>
+            <Unit value="fLeviathan"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fKrogoth" Requirements="BuildPhase"/>
+            <Unit value="fKrogoth"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDoomsdayMachine" Requirements="BuildPhase"/>
+            <Unit value="fDoomsdayMachine"/>
+        </InfoArray>
+        <Range value="10"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainMechanicalBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fPeewee" Requirements="BuildPhase"/>
+            <Unit value="fPeewee"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fInfantry" Requirements="BuildPhase"/>
+            <Unit value="fInfantry"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fCaptain" Requirements="BuildPhase"/>
+            <Unit value="fCaptain"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fTempest" Requirements="BuildPhase"/>
+            <Unit value="fTempest"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fCyborg" Requirements="BuildPhase"/>
+            <Unit value="fCyborg"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fNeotank" Requirements="BuildPhase"/>
+            <Unit value="fNeotank"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainNatureBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fEnt" Requirements="BuildPhase"/>
+            <Unit value="fEnt"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fRanger" Requirements="BuildPhase"/>
+            <Unit value="fRanger"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fSprite" Requirements="BuildPhase"/>
+            <Unit value="fSprite"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fTreeofTravel" Requirements="BuildPhase"/>
+            <Unit value="fTreeofTravel"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fHalfbreed" Requirements="BuildPhase"/>
+            <Unit value="fHalfbreed"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fYggdrasil" Requirements="BuildPhase"/>
+            <Unit value="fYggdrasil"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TrainShadow">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSkeletor" Requirements="BuildPhase"/>
+            <Unit value="fSkeletor"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fFireArcher" Requirements="BuildPhase"/>
+            <Unit value="fFireArcher"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDarkMage" Requirements="BuildPhase"/>
+            <Unit value="fDarkMage"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fNightcrawler" Requirements="BuildPhase"/>
+            <Unit value="fNightcrawler"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHarbinger" Requirements="BuildPhase"/>
+            <Unit value="fHarbinger"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fKeeperofSouls" Requirements="BuildPhase"/>
+            <Unit value="fKeeperofSouls"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fDoppelganger" Requirements="BuildPhase"/>
+            <Unit value="fDoppelganger"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHades" Requirements="BuildPhase"/>
+            <Unit value="fHades"/>
+        </InfoArray>
+        <Range value="10"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainGhost">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fWraith" Requirements="BuildPhase"/>
+            <Unit value="fWraith"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMercurial" Requirements="BuildPhase"/>
+            <Unit value="fMercurial"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSoulofHeroes" Requirements="BuildPhase"/>
+            <Unit value="fSoulofHeroes"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSoulofLegends" Requirements="BuildPhase"/>
+            <Unit value="fSoulofLegends"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fSoulofVillains" Requirements="BuildPhase"/>
+            <Unit value="fSoulofVillains"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHellRaiser" Requirements="BuildPhase"/>
+            <Unit value="fHellRaiser"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fForsakenOne" Requirements="BuildPhase"/>
+            <Unit value="fForsakenOne"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGravekeeper" Requirements="BuildPhase"/>
+            <Unit value="fGravekeeper"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMelinoe" Requirements="BuildPhase"/>
+            <Unit value="fMelinoe"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fPhantasm" Requirements="BuildPhase"/>
+            <Unit value="fPhantasm"/>
+        </InfoArray>
+        <Range value="10"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainNature">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Flags index="UnitOrderQueue" value="1"/>
+        <Flags index="WaitForFood" value="0"/>
+        <Alert value="TowerUpgraded"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fGuardian" Requirements="BuildPhase"/>
+            <Unit value="fGuardian"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fMeliai" Requirements="BuildPhase"/>
+            <Unit value="fMeliai"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fThunderbird" Requirements="BuildPhase"/>
+            <Unit value="fThunderbird"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTreeofTime" Requirements="BuildPhase"/>
+            <Unit value="fTreeofTime"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fHercules" Requirements="BuildPhase"/>
+            <Unit value="fHercules"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTreeofLife" Requirements="BuildPhase"/>
+            <Unit value="fTreeofLife"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="fTreeofKnowledge" Requirements="BuildPhase"/>
+            <Unit value="fTreeofKnowledge"/>
+        </InfoArray>
+        <Range value="10"/>
+    </CAbilTrain>
+    <CAbilTrain id="TrainShadowBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fBoneWarrior" Requirements="BuildPhase"/>
+            <Unit value="fBoneWarrior"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fCarrionSpitter" Requirements="BuildPhase"/>
+            <Unit value="fCarrionSpitter"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fGateguard" Requirements="BuildPhase"/>
+            <Unit value="fGateguard"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fBoneOverseer" Requirements="BuildPhase"/>
+            <Unit value="fBoneOverseer"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fNightmare" Requirements="BuildPhase"/>
+            <Unit value="fNightmare"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Button DefaultButtonFace="fLordofDeath" Requirements="BuildPhase"/>
+            <Unit value="fLordofDeath"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Unit value=""/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+            <Unit value=""/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+            </Charge>
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train16">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train17">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train18">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train19">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train20">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train21">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train22">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train23">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train24">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train25">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train26">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train27">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train28">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train29">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train30">
+            <Cooldown TimeUse="1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="SendStandardUnit">
+        <EditorCategories value="AbilityorEffectType:Structures"/>
+        <InfoArray index="Train1">
+            <Charge Link="Send_Firebat"/>
+            <Cooldown Link="Send_Firebat" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Firebat"/>
+            <Unit value="Send_Firebat"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge Link="Send_Siege_Tank"/>
+            <Cooldown Link="Send_Siege_Tank" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Siege_Tank"/>
+            <Unit value="Send_Siege_Tank"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge Link="Send_Abyss_Mage"/>
+            <Cooldown Link="Send_Abyss_Mage" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Abyss_Mage"/>
+            <Unit value="Send_Abyss_Mage"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge Link="Send_Observer"/>
+            <Cooldown Link="Send_Observer" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Observer"/>
+            <Unit value="Send_Observer"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge Link="Send_Queen"/>
+            <Cooldown Link="Send_Queen" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Queen"/>
+            <Unit value="Send_Queen"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge Link="Send_Hydralisk"/>
+            <Cooldown Link="Send_Hydralisk" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Hydralisk"/>
+            <Unit value="Send_Hydralisk"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge Link="Send_Aberration_Basher"/>
+            <Cooldown Link="Send_Aberration_Basher" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Aberration_Basher"/>
+            <Unit value="Send_Aberration_Basher"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge Link="Send_Powermortal"/>
+            <Cooldown Link="Send_Powermortal" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_Powermortal"/>
+            <Unit value="Send_Powermortal"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge Link="Send_Dark_Templar"/>
+            <Cooldown Link="Send_Dark_Templar" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_Dark_Templar"/>
+            <Unit value="Send_Dark_Templar"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge Link="Send_Hellion"/>
+            <Cooldown Link="Send_Hellion" TimeUse="7"/>
+            <Button DefaultButtonFace="Send_Hellion"/>
+            <Unit value="Send_Hellion"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge Link="Send_Colossus"/>
+            <Cooldown Link="Send_Colossus" TimeUse="8"/>
+            <Button DefaultButtonFace="Send_Wrathwalker"/>
+            <Unit value="Send_Wrathwalker"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
+        <Alert value="SendComplete"/>
+    </CAbilTrain>
+    <CAbilBuild id="BuildGhost">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fSpectre" Time="1">
+            <Button DefaultButtonFace="fSpectre" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fWanderer" Time="1">
+            <Button DefaultButtonFace="fWanderer" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fApparition" Time="1">
+            <Button DefaultButtonFace="fApparition" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fEidolon" Time="1">
+            <Button DefaultButtonFace="fEidolon" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fOutcast" Time="1">
+            <Button DefaultButtonFace="fOutcast" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fPhantom" Time="1">
+            <Button DefaultButtonFace="fPhantom" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilEffectTarget id="WeldingHealBeam" parent="WeldingHealBeamTemplate"/>
+    <CAbilEffectTarget id="WeldingHealBeamExtraRange1" parent="WeldingHealBeamTemplate">
+        <Range index="0" value="8"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="WeldingHealBeamExtraRange2" parent="WeldingHealBeamTemplate">
+        <Range index="0" value="9"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="WeldingHealBeamExtraRange3" parent="WeldingHealBeamTemplate">
+        <Range index="0" value="9.9"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="RefinerySpeed">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="30" Alert="RefinerySpeed" Upgrade="RefinerySpeed">
+            <Resource index="Minerals" value="60"/>
+            <Charge CountMax="5" CountStart="5" CountUse="1"/>
+            <Button DefaultButtonFace="UpgradeSpeed" Requirements="NotUpgradingSpeed"/>
+        </InfoArray>
+        <Activity value="UI/RefinerySpeed"/>
+    </CAbilResearch>
+    <CAbilAttack id="attack">
+        <SupportedFilters value="-;Self,Player,Ally,Neutral,Outer"/>
+    </CAbilAttack>
+    <CAbilMove id="move">
+        <CmdButtonArray index="Move" Requirements="NotMoveSuppressed"/>
+        <CmdButtonArray index="Patrol" Requirements="NotMoveSuppressed"/>
+        <CmdButtonArray index="HoldPos" Requirements="NotMoveSuppressed"/>
+        <CmdButtonArray index="AcquireMove" Requirements="NotMoveSuppressed"/>
+        <CmdButtonArray index="Turn" Requirements="NotMoveSuppressed"/>
+    </CAbilMove>
+    <CAbilEffectInstant id="orbs111" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="120"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RBG" Requirements="AddUpgrade111"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs030" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="126"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BBB" Requirements="AddUpgrade030"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs003" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="126"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GGG" Requirements="AddUpgrade003"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs210" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RRB" Requirements="AddUpgrade210"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs201" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RRG" Requirements="AddUpgrade201"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs021" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BBG" Requirements="AddUpgrade021"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs120" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RBB" Requirements="AddUpgrade120"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs012" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BGG" Requirements="AddUpgrade012"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs102" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="122"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RGG" Requirements="AddUpgrade102"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="orbs300" parent="OrbsTemplate">
+        <Cost index="0">
+            <Resource index="Vespene" value="126"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RRR" Requirements="AddUpgrade300"/>
+    </CAbilEffectInstant>
+    <CAbilBuild id="BuildAncient">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fSentinel" Time="1">
+            <Button DefaultButtonFace="fSentinel" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fEncoder" Time="1">
+            <Button DefaultButtonFace="fEncoder" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fMagnetosphereResonator" Time="1">
+            <Button DefaultButtonFace="fMagnetosphereResonator" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fPreserver" Time="1">
+            <Button DefaultButtonFace="fPreserver" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fWarden" Time="1">
+            <Button DefaultButtonFace="fWarden" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fMatriarch" Time="1">
+            <Button DefaultButtonFace="fMatriarch" Requirements="BuildPhase"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilTrain id="TrainAncientBaseUnits">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="DisableCollision" value="1"/>
+        <Flags index="Select" value="1"/>
+        <Range value="10"/>
+        <Alert value="TowerComplete"/>
+        <InfoArray index="Train1">
+            <Charge HideCount="1" Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fSentinel" Requirements="BuildPhase"/>
+            <Unit value="fSentinel"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fEncoder" Requirements="BuildPhase"/>
+            <Unit value="fEncoder"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fMagnetosphereResonator" Requirements="BuildPhase"/>
+            <Unit value="fMagnetosphereResonator"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fPreserver" Requirements="BuildPhase"/>
+            <Unit value="fPreserver"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fWarden" Requirements="BuildPhase"/>
+            <Unit value="fWarden"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Link value="Abil/TrainBeastBaseUnits"/>
+            </Charge>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+            <Button DefaultButtonFace="fMatriarch" Requirements="BuildPhase"/>
+            <Unit value="fMatriarch"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train10">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train11">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train12">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train13">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train14">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train15">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train16">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train17">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train18">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train19">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train20">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train21">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train22">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train23">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train24">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train25">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train26">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train27">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train28">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train29">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+        <InfoArray index="Train30">
+            <Charge Link="Abil/TrainBeastBaseUnits"/>
+            <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilBuild id="BuildAutomaton">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fTerminator" Time="1">
+            <Button DefaultButtonFace="fTerminator" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fSalvager" Time="1">
+            <Button DefaultButtonFace="fSalvager" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fSupportConstructs" Time="1">
+            <Button DefaultButtonFace="fSupportConstructs" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fExperimentalConstructs" Time="1">
+            <Button DefaultButtonFace="fExperimentalConstructs" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fArtilleryConstructs" Time="1">
+            <Button DefaultButtonFace="fArtilleryConstructs" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fDreadnought" Time="1">
+            <Button DefaultButtonFace="fDreadnought" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build7" Unit="fAstromechDroid" Time="1">
+            <Button DefaultButtonFace="fAstromechDroid" Requirements="AllowSupportConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build8" Unit="fWeldtechRelay" Time="1">
+            <Button DefaultButtonFace="fWeldtechRelay" Requirements="AllowSupportConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build9" Unit="fOrbitalSatellite" Time="1">
+            <Button DefaultButtonFace="fOrbitalSatellite" Requirements="AllowSupportConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build10" Unit="fAsimov" Time="1">
+            <Button DefaultButtonFace="fAsimov" Requirements="AllowMetalGearConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build11" Unit="fCenturion" Time="1.5">
+            <Button DefaultButtonFace="fCenturion" Requirements="AllowMetalGearConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build12" Unit="fU87Prototype" Time="1">
+            <Button DefaultButtonFace="fU87Prototype" Requirements="AllowMetalGearConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build13" Unit="fGravLance" Time="1">
+            <Button DefaultButtonFace="fGravLance" Requirements="AllowWeaponsConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build14" Unit="fLaserBattery" Time="1">
+            <Button DefaultButtonFace="fLaserBattery" Requirements="AllowWeaponsConstructMenu"/>
+        </InfoArray>
+        <InfoArray index="Build15" Unit="fMissileBarrage" Time="1">
+            <Button DefaultButtonFace="fMissileBarrage" Requirements="AllowWeaponsConstructMenu"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilBuild id="BuildSylphy">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="fNote" Time="1">
+            <Button DefaultButtonFace="fNote" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fApprentice" Time="1">
+            <Button DefaultButtonFace="fApprentice" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fPatron" Time="1">
+            <Button DefaultButtonFace="fPatron" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fTremolo" Time="1">
+            <Button DefaultButtonFace="fTremolo" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fArtisan" Time="1">
+            <Button DefaultButtonFace="fArtisan" Requirements="BuildPhase"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fKapelle" Time="1">
+            <Button DefaultButtonFace="fKapelle" Requirements="BuildPhase"/>
+        </InfoArray>
+        <ConstructionMover value="Construction"/>
+        <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilMorph id="MorphToSolo">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fSolo" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToStaccato">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fStaccato" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToClef">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fClef" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToComposer">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fComposer" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToConductor">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fConductor" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToSoprano">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fSoprano" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToFortissimo">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fFortissimo" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToAllegro">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fAllegro" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToCrescendo">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fCrescendo" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToGlissando">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fGlissando" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToTenor">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fTenor" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToAlto">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fAlto" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToDramaturge">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fDramaturge" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToProducer">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Unit="fProducer" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+    </CAbilMorph>
+    <CAbilMorph id="MorphToUsher">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <InfoArray Unit="fUsher" RallyResetPhase="Delay" RallyResetSection="Abils"/>
+    </CAbilMorph>
+</Catalog>

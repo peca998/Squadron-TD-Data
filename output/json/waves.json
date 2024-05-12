@@ -1,0 +1,1420 @@
+{
+    "fat zergling": {
+        "id": "Wave01",
+        "name": "Fat Zergling",
+        "wpn": {
+            "id": "Wave01Attack",
+            "name": "Fat Zergling Attack",
+            "damage": {
+                "id": "Wave01Damage",
+                "min": 4.0,
+                "max": 5.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.25,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 35.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 1,
+        "bounty": 3.0,
+        "count": 36
+    },
+    "lava crawler": {
+        "id": "Wave02",
+        "name": "Lava Crawler",
+        "wpn": {
+            "id": "Wave02Attack",
+            "name": "Lava Crawler Attack",
+            "damage": {
+                "id": "Wave02Damage",
+                "min": 4.0,
+                "max": 6.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 41.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 2,
+        "bounty": 4.0,
+        "count": 45
+    },
+    "space cow": {
+        "id": "Wave03",
+        "name": "Space Cow",
+        "wpn": {
+            "id": "Wave03Attack",
+            "name": "Space Cow Attack",
+            "damage": {
+                "id": "Wave03Damage",
+                "min": 8.0,
+                "max": 10.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 59.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 3,
+        "bounty": 4.0,
+        "count": 45
+    },
+    "marine": {
+        "id": "Wave04",
+        "name": "Marine",
+        "wpn": {
+            "id": "Wave04Attack",
+            "name": "Marine Attack",
+            "damage": {
+                "id": "Wave04Damage",
+                "min": 7.0,
+                "max": 8.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 3.0,
+            "melee": false
+        },
+        "hp": 82.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.0,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 4,
+        "bounty": 5.0,
+        "count": 36
+    },
+    "hoverlord": {
+        "id": "Wave05",
+        "name": "Hoverlord",
+        "wpn": {
+            "id": "Wave05Attack",
+            "name": "Hoverlord Attack",
+            "damage": {
+                "id": "Wave05Damage",
+                "min": 11.0,
+                "max": 12.0,
+                "kind": "Melee",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 118.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 5,
+        "bounty": 5.0,
+        "count": 36
+    },
+    "roach": {
+        "id": "Wave06",
+        "name": "Roach",
+        "wpn": {
+            "id": "Wave06Attack",
+            "name": "Roach Attack",
+            "damage": {
+                "id": "Wave06Damage",
+                "min": 19.0,
+                "max": 20.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.4,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 160.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.0,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 6,
+        "bounty": 5.0,
+        "count": 36
+    },
+    "zealot": {
+        "id": "Wave07",
+        "name": "Zealot",
+        "wpn": {
+            "id": "Wave07Attack",
+            "name": "Zealot Attack",
+            "damage": {
+                "id": "Wave07Damage",
+                "min": 25.0,
+                "max": 27.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 229.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.75,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 7,
+        "bounty": 6.0,
+        "count": 30
+    },
+    "grim reaper": {
+        "id": "Wave08",
+        "name": "Grim Reaper",
+        "wpn": {
+            "id": "Wave08Attack",
+            "name": "Grim Reaper Attack",
+            "damage": {
+                "id": "Wave08Damage",
+                "min": 13.0,
+                "max": 17.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 3.0,
+            "melee": false
+        },
+        "hp": 182.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.0,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 8,
+        "bounty": 6.0,
+        "count": 36
+    },
+    "exotic": {
+        "id": "Wave09",
+        "name": "Exotic",
+        "wpn": {
+            "id": "Wave09Attack",
+            "name": "Exotic Attack",
+            "damage": {
+                "id": "Wave09Damage",
+                "min": 30.0,
+                "max": 32.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 218.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.3007,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 9,
+        "bounty": 6.0,
+        "count": 45
+    },
+    "the infestor": {
+        "id": "Wave10",
+        "name": "The Infestor",
+        "wpn": {
+            "id": "Wave10Attack",
+            "name": "Infestor Attack",
+            "damage": {
+                "id": "Wave10Damage",
+                "min": 153.0,
+                "max": 189.0,
+                "kind": "Melee",
+                "dmg_type": "Chaos",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.7,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 3529.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.0,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 10,
+        "bounty": 81.0,
+        "count": 3
+    },
+    "scantipede": {
+        "id": "Wave11",
+        "name": "Scantipede",
+        "wpn": {
+            "id": "Wave11Attack",
+            "name": "Scantipede Attack",
+            "damage": {
+                "id": "Wave11Damage",
+                "min": 15.0,
+                "max": 17.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 230.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.25,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 11,
+        "bounty": 6.0,
+        "count": 54
+    },
+    "hydralisk": {
+        "id": "Wave12",
+        "name": "Hydralisk",
+        "wpn": {
+            "id": "Wave12Attack",
+            "name": "Hydralisk Attack",
+            "damage": {
+                "id": "Wave12Damage",
+                "min": 16.0,
+                "max": 19.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 247.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 12,
+        "bounty": 5.0,
+        "count": 45
+    },
+    "broodlord": {
+        "id": "Wave13",
+        "name": "Broodlord",
+        "wpn": {
+            "id": "Wave13Attack",
+            "name": "Broodlord Attack",
+            "damage": {
+                "id": "Wave13Damage",
+                "min": 30.0,
+                "max": 33.0,
+                "kind": "Melee",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 335.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.75,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 13,
+        "bounty": 7.0,
+        "count": 45
+    },
+    "immortal": {
+        "id": "Wave14",
+        "name": "Immortal",
+        "wpn": {
+            "id": "Wave14Attack",
+            "name": "Immortal Attack",
+            "damage": {
+                "id": "Wave14Damage",
+                "min": 82.0,
+                "max": 86.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 830.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 14,
+        "bounty": 13.0,
+        "count": 24
+    },
+    "lurker": {
+        "id": "Wave15",
+        "name": "Lurker",
+        "wpn": {
+            "id": "Wave15Attack",
+            "name": "Lurker Attack",
+            "damage": {
+                "id": "Wave15Damage",
+                "min": 77.0,
+                "max": 87.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.5,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 605.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.75,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 15,
+        "bounty": 9.0,
+        "count": 36
+    },
+    "hellion": {
+        "id": "Wave16",
+        "name": "Hellion",
+        "wpn": {
+            "id": "Wave16Attack",
+            "name": "Hellion Attack",
+            "damage": {
+                "id": "Wave16Damage",
+                "min": 34.0,
+                "max": 40.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.1,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 435.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.25,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 16,
+        "bounty": 8.0,
+        "count": 45
+    },
+    "marauder": {
+        "id": "Wave17",
+        "name": "Marauder",
+        "wpn": {
+            "id": "Wave17Attack",
+            "name": "Marauder Attack",
+            "damage": {
+                "id": "Wave17Damage",
+                "min": 84.0,
+                "max": 88.0,
+                "kind": "Melee",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.4,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 893.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.25,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 17,
+        "bounty": 9.0,
+        "count": 36
+    },
+    "corruptor": {
+        "id": "Wave18",
+        "name": "Corruptor",
+        "wpn": {
+            "id": "Wave18Attack",
+            "name": "Corruptor Attack",
+            "damage": {
+                "id": "Wave18Damage",
+                "min": 55.0,
+                "max": 61.0,
+                "kind": "Melee",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 714.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.0,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 18,
+        "bounty": 8.0,
+        "count": 45
+    },
+    "lyote": {
+        "id": "Wave19",
+        "name": "Lyote",
+        "wpn": {
+            "id": "Wave19Attack",
+            "name": "Lyote Attack",
+            "damage": {
+                "id": "Wave19Damage",
+                "min": 70.0,
+                "max": 73.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.85,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1007.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 19,
+        "bounty": 10.0,
+        "count": 36
+    },
+    "fatty": {
+        "id": "Wave20",
+        "name": "Fatty",
+        "wpn": {
+            "id": "Wave20Attack",
+            "name": "Fatty Attack",
+            "damage": {
+                "id": "Wave20MainDamage",
+                "min": 181.0,
+                "max": 219.0,
+                "kind": "Ranged",
+                "dmg_type": "Chaos",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.51,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 11094.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [
+            "bounce attack"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 2.44,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 20,
+        "bounty": 126.0,
+        "count": 3
+    },
+    "acidolarvea": {
+        "id": "Wave21",
+        "name": "Acidolarvea",
+        "wpn": {
+            "id": "Wave21Attack",
+            "name": "Acidolarvic Attack",
+            "damage": {
+                "id": "Wave21Damage",
+                "min": 53.0,
+                "max": 60.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.7,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1218.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "haste"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 21,
+        "bounty": 10.0,
+        "count": 36
+    },
+    "aberration": {
+        "id": "Wave22",
+        "name": "Aberration",
+        "wpn": {
+            "id": "Wave22Attack",
+            "name": "Aberration Attack",
+            "damage": {
+                "id": "Wave22Damage",
+                "min": 118.0,
+                "max": 130.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.5,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 1075.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.75,
+        "abilities": [
+            "avenger"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 120.0,
+            "life_bonus_mult": 1.3,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.33,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 22,
+        "bounty": 13.0,
+        "count": 48
+    },
+    "ares": {
+        "id": "Wave23",
+        "name": "ARES",
+        "wpn": {
+            "id": "Wave23Attack",
+            "name": "ARES Attack",
+            "damage": {
+                "id": "Wave23Damage",
+                "min": 116.0,
+                "max": 128.0,
+                "kind": "Ranged",
+                "dmg_type": "Siege",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 2.0,
+            "melee": false
+        },
+        "hp": 1733.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [
+            "necrosis"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 60.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 23,
+        "bounty": 15.0,
+        "count": 36
+    },
+    "high templar": {
+        "id": "Wave24",
+        "name": "High Templar",
+        "wpn": {
+            "id": "Wave24Attack",
+            "name": "High Templar Attack",
+            "damage": {
+                "id": "Wave24Damage",
+                "min": 107.0,
+                "max": 117.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 1429.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.3007,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 24,
+        "bounty": 17.0,
+        "count": 36
+    },
+    "hybrid": {
+        "id": "Wave25",
+        "name": "Hybrid",
+        "wpn": {
+            "id": "Wave25Attack",
+            "name": "Hybrid Attack",
+            "damage": {
+                "id": "Wave25Damage",
+                "min": 286.0,
+                "max": 336.0,
+                "kind": "Melee",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 5741.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 4.1992,
+        "abilities": [
+            "cleave attack",
+            "time shift"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.75,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 25,
+        "bounty": 81.0,
+        "count": 12
+    },
+    "kerrigan": {
+        "id": "Wave26",
+        "name": "Kerrigan",
+        "wpn": {
+            "id": "Wave26Attack",
+            "name": "Kerrigan Attack",
+            "damage": {
+                "id": "Wave26Damage",
+                "min": 158.0,
+                "max": 217.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.3,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 2132.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.75,
+        "abilities": [
+            "kulminate"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 2984.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 26,
+        "bounty": 19.0,
+        "count": 36
+    },
+    "predator": {
+        "id": "Wave27",
+        "name": "Predator",
+        "wpn": {
+            "id": "Wave27Attack",
+            "name": "Predator Attack",
+            "damage": {
+                "id": "Wave27Damage",
+                "min": 128.0,
+                "max": 136.0,
+                "kind": "Melee",
+                "dmg_type": "Normal",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 0.1,
+            "melee": true
+        },
+        "hp": 2333.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Armored",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 4.0,
+        "abilities": [
+            "reflection field"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 140.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 27,
+        "bounty": 21.0,
+        "count": 36
+    },
+    "preserver": {
+        "id": "Wave28",
+        "name": "Preserver",
+        "wpn": {
+            "id": "Wave28Attack",
+            "name": "Preserver Attack",
+            "damage": {
+                "id": "Wave28Damage",
+                "min": 167.0,
+                "max": 187.0,
+                "kind": "Ranged",
+                "dmg_type": "Piercing",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.8,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 4660.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Mechanical",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.25,
+        "abilities": [],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 28,
+        "bounty": 25.0,
+        "count": 24
+    },
+    "nyx": {
+        "id": "Wave29",
+        "name": "Nyx",
+        "wpn": {
+            "id": "Wave29Attack",
+            "name": "Nyx Attack",
+            "damage": {
+                "id": "Wave29Damage",
+                "min": 210.0,
+                "max": 230.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.2,
+            "targets": 1,
+            "range": 5.0,
+            "melee": false
+        },
+        "hp": 3502.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Massive",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 3.5,
+        "abilities": [
+            "stealth assault"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 29,
+        "bounty": 27.0,
+        "count": 30
+    },
+    "experimental hybrid": {
+        "id": "Wave30",
+        "name": "Experimental Hybrid",
+        "wpn": {
+            "id": "Wave30Attack",
+            "name": "Experimental Hybrid Attack",
+            "damage": {
+                "id": "Wave30Damage",
+                "min": 210.0,
+                "max": 230.0,
+                "kind": "Ranged",
+                "dmg_type": "Chaos",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.5,
+            "targets": 4,
+            "range": 6.0,
+            "melee": false
+        },
+        "hp": 53191.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 4.0,
+        "abilities": [
+            "multishot",
+            "spellbane respite"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 30,
+        "bounty": 200.0,
+        "count": 3
+    },
+    "terratron": {
+        "id": "Wave31",
+        "name": "Terratron",
+        "wpn": {
+            "id": "Wave31Attack",
+            "name": "Terratron Attack",
+            "damage": {
+                "id": "Wave31Damage",
+                "min": 250.0,
+                "max": 275.0,
+                "kind": "Ranged",
+                "dmg_type": "Chaos",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 1.0,
+            "targets": 1,
+            "range": 2.25,
+            "melee": false
+        },
+        "hp": 5300.0,
+        "shields": 0.0,
+        "energy": 0.0,
+        "armor": "Biological",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 0.0,
+            "supply": 0.0
+        },
+        "move_speed": 4.0,
+        "abilities": [
+            "infinity protocol",
+            "current bonus"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 0.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": true,
+            "sort_with_life_bonus": true
+        },
+        "index": 31,
+        "bounty": 0.0,
+        "count": 18
+    }
+}

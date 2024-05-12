@@ -1,0 +1,40 @@
+name,wpn_bonus_add,wpn_period_mult,dps_bonus_add,wpn_bonus_mult,dps_bonus_mult,sort_with_dps_bonus,life_bonus_add,life_bonus_mult,sort_with_life_bonus,notes
+Zergling,0,1,0,1,1.0,True,0.0,1.0,True,
+Marine,0,1,0,1,1.0,True,0.0,1.0,True,
+Zealot,0,1,0,1,1.0,True,0.0,1.0,True,
+Roach,0,1,0,1,1.0,True,0.0,1.0,True,
+Titan Strider,12,1,0,1,1.0,True,0.0,1.0,True,Tank Buster: Deals increasing damage to the same target (+2/hit) (assume 6 stacks) | 6 * 2 = 12
+Mutalisk,0,1,0,1,1.75,True,0.0,1.0,True,Glaive: Attack bounces twice (50% less damage per bounce)
+Medic,0,1,0,1,1.0,True,60.0,1.0,True,Healing Aura: Heals nearby allies for 3 HP/s (assume 20s heal)
+Marauder,0,1,0,1,1.0,True,0.0,1.0,True,
+Goliath,0,1,0,1,1.08,True,0.0,1.0,True,Damage Aura: Nearby allies gain 8% damage (does not stack)
+Baneling,0,1,0,1,0.23,True,0.0,1.0,True,"Volatile Explosive: Explodes on contact damaging all enemies within 2.5 range (assume 7 hits, but only 1 attack over 30s = 7/30 = 0.23 multiplier)"
+Mind Slug,0,1,0,1,1.0,True,0.0,1.0,True,
+Immortal,0,1,0,1,1.0,True,268.75,1.1,True,Armor Aura: Allies ignore 5 damage per attack (does not stack)
+Dark Probe,0,1,0,1,1.0,True,0.0,1.0,True,
+Mothership,0,1,0,1,1.0,True,0.0,1.0,True,
+Blood Beetle,0,1,0,1,1.0,True,0.0,1.0,True,Proboscis: Attacks embed spines that slow movement by 75% for 6 seconds
+Firebat,0,1,0,1,1.0,True,0.0,1.0,True,
+Siege Tank,48,1,0,1,1.0,True,0.0,1.0,True,Tank Decimator: +6 dmg/hit (assume 8 stacks) | 6*8=48
+Abyss Mage,0,1,0,1,1.0,True,0.0,1.0,True,
+Observer,0,1,0,1,1.0,True,0.0,1.0,True,
+Queen,0,1,0,1,1.0,True,0.0,1.0,True,
+Hydralisk,0,1,45,1,1.0,True,0.0,1.0,True,Poison Attack: Target attacks 20% slower and takes 15 damage over 3 seconds
+Aberration Basher,0,1,0,1,1.0,True,0.0,1.18,True,Resistance Aura: Allies gain 15% damage reduction => 118% hp
+Powermortal,0,1,0,1,1.0,True,105.0,1.0,True,Improved Parts: Rapidly regenerates life (7 hp/s) | Assume 15s | survival = 105 HP
+Dark Templar,0,1,0,1,1.0,True,0.0,1.0,True,
+Hellion,0,1,0,1,1.2,True,0.0,1.0,True,Sunder Attack: Target takes 20% more damage over 10 seconds.
+Wrathwalker,0,1,0,1,1.0,True,0.0,1.0,True,
+Feederling,0,1,0,1,1.0,True,450.0,1.0,True,30% lifesteal: 150 damage; assume 10 attacks => 0.3*150*10=450
+High Templar,0,1,0,1,1.2,True,0.0,1.0,True,Bloodlust: One ally attacks and moves 20% faster
+Broodlord,0,1,0,1,1.0,True,1800.0,1.0,True,"Spawn Broodlings: 2 broodlings (30 hp, 30 damage) / 1s | Assume 30s wave  = 30 * 2 * 30 HP = 1800 HP"
+Banshee,0,1,0,1,3.0,True,0.0,1.0,True,Explosive Attack: 100% splash damage (assume 3 enemies hit)
+Hunterling,0,1,0,1,1.0,True,0.0,1.18,True,Hunters Pounce: Jumps towards the target reducing damage of nearby enemies by 30% | assume 50% of attackers hit => 0.3*0.5=0.15DR => 118% HP
+Quillgore,0,1,0,1,1.0,True,0.0,1.0,True,
+Ultralisk,185,1,0,1,1.0,True,0.0,1.0,True,War Stomp: Crushes the target and all units behind for 37 damage once every 2 attacks. | 37 dmg * 10 hits / 2 attacks = 185 dmg/attack
+Shadow Templar,0,1,0,1,1.0,True,0.0,1.0,True,
+Aberration Pulverizer,0,1,0,1,4.0,True,0.0,1.0,True,Massive Sweep: Attacks all enemies within reach (assume 4 enemies hit)
+Thor,0,1,195,1,1.0,True,0.0,1.0,True,Cripple: Target attacks and moves 20% slower while losing 65 HP/s for 6 seconds (assume only 3 seconds of Cripple)
+Hybrid Dominator,0,1,0,1,1.0,True,0.0,1.0,True,
+Flame Behemoth,0,1,450,1,1.0,True,0.0,1.0,True,"Scorching Circle: While 6+ foes are within attack range, inflicts 150 damage/s to enemies within 4 range. (assume 6 enemies struck 50% of the time)"
+Tyrannozor,0,1,151,1,1.0,True,0.0,1.0,True,Thorn Armor: Reflects 180% of non-melee damage back to the attacker (minimum 90 damage). Assume 50% HP (6k) reflected over 20s

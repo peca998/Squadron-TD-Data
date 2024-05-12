@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="BuilderData">
+        <Fields Id="Unit" Type="Unit"/>
+        <Fields Id="Name" Type="String"/>
+        <Fields Id="Portrait" Type="Model"/>
+        <Fields Id="ButtonImage" Type="Image"/>
+        <Fields Id="DescriptionPath" Type="String"/>
+        <Fields>
+            <Id value="Racial"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Behavior"/>
+            <Count value="3"/>
+        </Fields>
+        <Fields Id="Randomable" Type="Int"/>
+        <Fields Id="RacialImages" Type="Image" Count="3"/>
+        <Fields Id="RacialButton" Type="GameLink" GameLinkType="Button"/>
+        <Fields Id="RacialSimpleDescriptionPath" Type="String"/>
+        <Fields Id="BuildAbil" Type="GameLink" GameLinkType="Abil"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Random">
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-tips-tutorial.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Model Model="RandomBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Random">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Random">
+                <Field Id="DescriptionPath"/>
+            </String>
+        </Instances>
+        <Instances Id="Ghost">
+            <GameLink GameLink="EtherealCloakingTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="EtherealCloakingTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="EtherealCloakingTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="EtherealCloaking">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildGhost">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-ghost.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-terran-cloak-color.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-hornerhan-wraith-permanentcloak.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="GhostBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Ghost">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Ghost">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Ghost">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="GhostBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Elemental">
+            <GameLink GameLink="StaticChargeTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="StaticChargeTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="StaticChargeTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="StaticCharge">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildElemental">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-archon.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-psistorm-color.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-artanis-healingpsionicstorm.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-protoss-psistorm-greater-color.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="ElementalBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Elemental">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Elemental">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Elemental">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="ElementalBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Beast">
+            <GameLink GameLink="PrimalFeastTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="PrimalFeastTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="PrimalFeastTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="PrimalFeast">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildBeast">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-queen.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar6.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar5.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-flinks-zerg-ability-primalroar1.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="BeastBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Beast">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Beast">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Beast">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="BeastBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Shadow">
+            <GameLink GameLink="NecromancyTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="NecromancyTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="NecromancyTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Necromancy">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildShadow">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\smokecloud1.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zerg-disguise.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-zerg-disguise-red-color.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-zerg-disguise-green-color.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="ShadowBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Shadow">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Shadow">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Shadow">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="ShadowBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Mechanical">
+            <GameLink GameLink="VolleyFireTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="VolleyFireTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="VolleyFireTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="VolleyFire">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildMechanical">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-mule.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="MechanicalBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Mechanical">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Mechanical">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Mechanical">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="MechanicalBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Nature">
+            <GameLink GameLink="WintersGraspTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="WintersGraspTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="WintersGraspTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="WintersGrasp">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildNature">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-collection-drone-mecha.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-blink-color.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-blinkshieldrestore.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-nova-blink.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="NatureBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="NATURE">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Nature">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Nature">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="NatureBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Ancient">
+            <GameLink GameLink="AncestryTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="AncestryTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="AncestryTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Ancestry">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildAncient">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-blink-zeratul.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-protoss-blink-zeratul-color.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-hardenedshields-color.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="AncientBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Ancient">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Ancient">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Ancient">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="AncientBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Celestial">
+            <GameLink GameLink="DivineAuraTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="DivineAuraTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="DivineAuraTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="DivineAura">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildCelestial">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-mothership.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-custom-arcaneshield.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-custom-lightningshield.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-stetmann-banelingmanashieldefficiency.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="CelestialBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Celestial">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Celestial">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Celestial">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="CelestialBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Automaton">
+            <GameLink GameLink="ElectricalShockTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="ElectricalShockTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ElectricalShockTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ElectricalShock">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildAutomaton">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-neutral-utilitybot.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-terran-electricfield.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-vorazun-shadowstun.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-upgrade-stetmann-ultraliskburrowchargestun.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="AutomatonBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Automaton">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Automaton">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Automaton">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="AutomatonBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Soul">
+            <GameLink GameLink="RadianceTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="RadianceTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="RadianceTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Radiance">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildSoul">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-collection-purifier-adept.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-flinks-tempestthing.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-stasistrap.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\storm_ui_icon_artanis_disruptionweb.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="SoulBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Soul">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Soul">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Soul">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="SoulBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Sylphy">
+            <GameLink GameLink="ChromaticScaleTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="ChromaticScaleTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ChromaticScaleTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ChromaticScale">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildSylphy">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-kerrigan.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-protoss-wormhole.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-ability-protoss-wormhole-color.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="SylphyBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Sylphy">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Sylphy">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Sylphy">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="SylphyBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Taldarim">
+            <GameLink GameLink="FuryShieldTier1">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="FuryShieldTier2">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="FuryShieldTier3">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="FuryShield">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <GameLink GameLink="BuildTaldarim">
+                <Field Id="BuildAbil"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-alarak-taldarim-probe-collection.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel1-dark.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel2-dark.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel3-dark.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="Randomable"/>
+            </Int>
+            <Model Model="Probe_Taldarim_Portrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Tal&apos;darim">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Taldarim">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <String String="DOCSTR_Racial_SimpleDescription_Taldarim">
+                <Field Id="RacialSimpleDescriptionPath"/>
+            </String>
+            <Unit Unit="TaldarimBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Custom">
+            <GameLink GameLink="Amorphism">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="Amorphism">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Amorphism">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Amorphism">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-research-terran-sciencevessel.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zerg-fungalgrowth.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zerg-fungalgrowth.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zerg-fungalgrowth.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Model Model="CustomBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Custom">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Custom">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <Unit Unit="CustomBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="RandomCustom">
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="FakePassive">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-ravenblackops.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-border-transportslot-empty.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Model Model="RandomCustomBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="RCB">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_RandomCustom">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <Unit Unit="RandomCustomBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Chaos">
+            <GameLink GameLink="Prescience">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="Prescience">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Prescience">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Prescience">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-alarak-taldarim-zealot.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-mindcontrol.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-mindcontrol.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-mindcontrol.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Model Model="ChaosBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Chaos">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Chaos">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <Unit Unit="ChaosBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Temporal">
+            <GameLink GameLink="Decoherence">
+                <Field Id="Racial"/>
+            </GameLink>
+            <GameLink GameLink="Decoherence">
+                <Field Id="Racial" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Decoherence">
+                <Field Id="Racial" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Decoherence">
+                <Field Id="RacialButton"/>
+            </GameLink>
+            <Image Image="Assets\Textures\tip_voidthrasher.dds">
+                <Field Id="ButtonImage"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-spearofadun-temporalfield.dds">
+                <Field Id="RacialImages"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-spearofadun-temporalfield.dds">
+                <Field Id="RacialImages" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-spearofadun-temporalfield.dds">
+                <Field Id="RacialImages" Index="2"/>
+            </Image>
+            <Model Model="TemporalBuilderPortrait">
+                <Field Id="Portrait"/>
+            </Model>
+            <String String="Temporal">
+                <Field Id="Name"/>
+            </String>
+            <String String="DOCSTR_Builder_Description_Temporal">
+                <Field Id="DescriptionPath"/>
+            </String>
+            <Unit Unit="TemporalBuilder">
+                <Field Id="Unit"/>
+            </Unit>
+        </Instances>
+    </CUser>
+    <CUser id="MutatorData">
+        <Fields Id="icon" Type="Image"/>
+        <Fields Id="title" Type="Text"/>
+        <Fields Id="description" Type="Text"/>
+        <Fields Id="enabled" Type="Int"/>
+        <Fields Id="start" Type="Int"/>
+        <Fields Id="stop" Type="Int"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Heavy_Fog">
+            <Image Image="Assets\Textures\tip_terrazinefog.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Heavy_Fog_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Heavy_Fog_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Battle_Hardened">
+            <Image Image="Assets\Textures\btn-progression-zeratul-08-enpoweredlegions.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Battle_Hardened_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Battle_Hardened_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Unbearable_Heat">
+            <Image Image="Assets\Textures\lavaburst_coop.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Unbearable_Heat_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Unbearable_Heat_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Winter_Chill">
+            <Image Image="Assets\Textures\btn-ability-neutral-skinsnow.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Winter_Chill_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Winter_Chill_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Mini_Bosses">
+            <Image Image="Assets\Textures\btn-progression-zerg-dehaka-10-primalbossupgrades.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Mini_Bosses_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Mini_Bosses_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Rapid_Growth">
+            <Image Image="Assets\Textures\btn-ability-zerg-growth.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Rapid_Growth_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Rapid_Growth_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Necrotic_Hordes">
+            <Image Image="Assets\Textures\btn-ability-terran-advancedhealingai.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Necrotic_Hordes_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Necrotic_Hordes_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Trade_Tricks">
+            <Image Image="Assets\Textures\microtransactions_coop.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Trade_Tricks_title">
+                <Field Id="title"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Trade_Tricks_description">
+                <Field Id="description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Mineral_Meltdown">
+            <Image Image="Assets\Textures\mineralshields_coop.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Mineral_Meltdown_title">
+                <Field Id="title"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Mineral_Meltdown_description">
+                <Field Id="description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Rush_Hour">
+            <Image Image="Assets\Textures\btn-ability-mengsk-viking-speed.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Rush_Hour_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Rush_Hour_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+    </CUser>
+    <CUser id="Race">
+        <Fields Id="Builder" Type="GameLink" GameLinkType="Unit"/>
+        <Fields>
+            <Id value="Fighters"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="20"/>
+        </Fields>
+        <Fields Id="Passive" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields Id="Name" Type="String"/>
+        <Fields Id="Portrait" Type="Image"/>
+        <Fields Id="Description" Type="Text"/>
+        <Fields Id="Required Level" Type="Int"/>
+        <Fields Id="Required Prestige" Type="Int"/>
+        <Instances Id="[Default]">
+            <GameLink GameLink="SoulBuilder">
+                <Field Id="Builder"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="Soul Builder">
+            <GameLink GameLink="fEssence">
+                <Field Id="Fighters"/>
+            </GameLink>
+            <GameLink GameLink="fRuneguard">
+                <Field Id="Fighters" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\mengskhologramportrait_static.dds">
+                <Field Id="Portrait"/>
+            </Image>
+            <Int Int="10">
+                <Field Id="Required Level"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Required Prestige"/>
+            </Int>
+            <String String="Soul">
+                <Field Id="Name"/>
+            </String>
+            <Text Text="UserData/Race/Soul Builder_Description">
+                <Field Id="Description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Beast Builder">
+            <GameLink GameLink="BeastBuilder">
+                <Field Id="Builder"/>
+            </GameLink>
+            <GameLink GameLink="fZerglingWarrior">
+                <Field Id="Fighters"/>
+            </GameLink>
+            <GameLink GameLink="fZerglingSavage">
+                <Field Id="Fighters" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="fAberrationBasher">
+                <Field Id="Fighters" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="fAberrationPulverizer">
+                <Field Id="Fighters" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="fHarpy">
+                <Field Id="Fighters" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="fMedusa">
+                <Field Id="Fighters" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="fRoachFighter">
+                <Field Id="Fighters" Index="6"/>
+            </GameLink>
+            <GameLink GameLink="fRoachChampion">
+                <Field Id="Fighters" Index="7"/>
+            </GameLink>
+            <GameLink GameLink="fGrizzly">
+                <Field Id="Fighters" Index="8"/>
+            </GameLink>
+            <GameLink GameLink="fGreymane">
+                <Field Id="Fighters" Index="9"/>
+            </GameLink>
+            <GameLink GameLink="fSpawnofDragon">
+                <Field Id="Fighters" Index="10"/>
+            </GameLink>
+            <GameLink GameLink="fDragonAspect">
+                <Field Id="Fighters" Index="11"/>
+            </GameLink>
+            <GameLink GameLink="ToxicBlood">
+                <Field Id="Passive"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Required Level"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="1xContestBossBattles">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="6"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int" Count="6"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Easy_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Queen">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Broodlord">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Thor">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="3xContestBossBattles">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="6"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int" Count="6"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Easy_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Immortal">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Zergling">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="16">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Dark_Probe">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_Goliath">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="Send_Zergling">
+                <Field Id="Spawn Unit" Index="4"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+            <Int Int="30">
+                <Field Id="Spawn Count" Index="4"/>
+            </Int>
+        </Instances>
+        <Instances Id="Easy_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hard_Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <GameLink GameLink="Send_Hybrid_Dominator">
+                <Field Id="Spawn Unit" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Send_Ultralisk">
+                <Field Id="Spawn Unit" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Send_High_Templar">
+                <Field Id="Spawn Unit" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="Send_Dark_Probe">
+                <Field Id="Spawn Unit" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="Send_Zergling">
+                <Field Id="Spawn Unit" Index="5"/>
+            </GameLink>
+            <Int Int="3">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="2"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Spawn Count" Index="3"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Spawn Count" Index="4"/>
+            </Int>
+            <Int Int="20">
+                <Field Id="Spawn Count" Index="5"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="SquadWaveClassic">
+        <Fields>
+            <Id value="Spawn Unit"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="Spawn Count" Type="Int"/>
+        <Fields Id="Experience" Type="Int"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Fat Zerglings">
+            <GameLink GameLink="Wave01">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="6">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lava Crawler">
+            <GameLink GameLink="Wave02">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="6">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Space Cow">
+            <GameLink GameLink="Wave03">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="7">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Marine">
+            <GameLink GameLink="Wave04">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="10">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hoverlord">
+            <GameLink GameLink="Wave05">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="11">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Roach">
+            <GameLink GameLink="Wave06">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="12">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Zealot">
+            <GameLink GameLink="Wave07">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="10">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="16">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Grim Reaper">
+            <GameLink GameLink="Wave08">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="15">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Exotic">
+            <GameLink GameLink="Wave09">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="13">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="The Infestor">
+            <GameLink GameLink="Wave10">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="197">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Scantipede">
+            <GameLink GameLink="Wave11">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="18">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="9">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hydralisk">
+            <GameLink GameLink="Wave12">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="12">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Broodlord">
+            <GameLink GameLink="Wave13">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="13">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Immortal">
+            <GameLink GameLink="Wave14">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="8">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="27">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lurker">
+            <GameLink GameLink="Wave15">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="20">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hellion">
+            <GameLink GameLink="Wave16">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="17">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Marauder">
+            <GameLink GameLink="Wave17">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="23">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Corruptor">
+            <GameLink GameLink="Wave18">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="15">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="20">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Lyote">
+            <GameLink GameLink="Wave19">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="27">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Fatty">
+            <GameLink GameLink="Wave20">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="337">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Acidolarvea">
+            <GameLink GameLink="Wave21">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="14">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Aberration">
+            <GameLink GameLink="Wave22">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="16">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="12">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="ARES">
+            <GameLink GameLink="Wave23">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="19">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="High Templar">
+            <GameLink GameLink="Wave24">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="22">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Hybrid">
+            <GameLink GameLink="Wave25">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="4">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="72">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Kerrigan">
+            <GameLink GameLink="Wave26">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="27">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Predator">
+            <GameLink GameLink="Wave27">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="12">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="29">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Preserver">
+            <GameLink GameLink="Wave28">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="8">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="48">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Zukar">
+            <GameLink GameLink="Wave29">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="10">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="42">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Brutalisk">
+            <GameLink GameLink="Wave30">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="1">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="443">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+        <Instances Id="Terratron">
+            <GameLink GameLink="Wave31">
+                <Field Id="Spawn Unit"/>
+            </GameLink>
+            <Int Int="6">
+                <Field Id="Spawn Count"/>
+            </Int>
+            <Int Int="79">
+                <Field Id="Experience"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="SylphyMergeData">
+        <Fields Id="UnitsToMerge" Type="Unit" Count="2"/>
+        <Fields Id="Result" Type="Unit"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Glissando">
+            <Unit Unit="fGlissando">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fNote">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fNote">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Clef">
+            <Unit Unit="fClef">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fNote">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fApprentice">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Producer">
+            <Unit Unit="fProducer">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fNote">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Dramaturge">
+            <Unit Unit="fApprentice">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fApprentice">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fDramaturge">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Usher">
+            <Unit Unit="fUsher">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fApprentice">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Staccato">
+            <Unit Unit="fApprentice">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fStaccato">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Tenor">
+            <Unit Unit="fTenor">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Alto">
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fAlto">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Soprano">
+            <Unit Unit="fSoprano">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fPatron">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fArtisan">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Allegro">
+            <Unit Unit="fAllegro">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Solo">
+            <Unit Unit="fSolo">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fArtisan">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Conductor">
+            <Unit Unit="fTremolo">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fKapelle">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fConductor">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Fortissimo">
+            <Unit Unit="fArtisan">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fArtisan">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fFortissimo">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Crescendo">
+            <Unit Unit="fCrescendo">
+                <Field Id="Result"/>
+            </Unit>
+            <Unit Unit="fArtisan">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fKapelle">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Composer">
+            <Unit Unit="fKapelle">
+                <Field Id="UnitsToMerge"/>
+            </Unit>
+            <Unit Unit="fKapelle">
+                <Field Id="UnitsToMerge" Index="1"/>
+            </Unit>
+            <Unit Unit="fComposer">
+                <Field Id="Result"/>
+            </Unit>
+        </Instances>
+    </CUser>
+    <CUser id="UnpausedTowers">
+        <Instances Id="[Default]"/>
+        <Instances Id="fHavoc"/>
+        <Instances Id="fSwiftHavoc"/>
+        <Instances Id="fSoulofVillains"/>
+        <Instances Id="fChronoHavoc"/>
+    </CUser>
+</Catalog>

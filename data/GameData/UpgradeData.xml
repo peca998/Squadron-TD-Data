@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="ArmorPenetration">
+        <EffectArray Operation="Set" Reference="Effect,ForesightDamage,ArmorReduction[0]" Value="6"/>
+    </CUpgrade>
+    <CUpgrade id="AuraPeriod">
+        <EffectArray Reference="Behavior,SurveillanceAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,BigBrother@Autocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,AssemblanceAutocast,Period" Value="0.250000"/>
+        <EffectArray Reference="Behavior,DisturbanceAuraAutocast,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,ResistanceAuraAutocast,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,ChronoTriggerAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,ArmorAuraAutocast,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,SuperiorityAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,AmplifyMagicAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,LeadershipAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,HelpingHandAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,SlowAuraAutocast,Period" Value="0.250000"/>
+        <EffectArray Reference="Behavior,DespairAuraAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,HealingAuraCaster,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,DamageAuraPeriodic,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,LifestealAuraCaster,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,SwiftAura2,Period" Value="1.250000"/>
+        <EffectArray Reference="Behavior,BrotherhoodAutocast,Period" Value="0.500000"/>
+        <EffectArray Reference="Behavior,CalltoArmsAutocast,Period" Value="0.500000"/>
+        <EffectArray Reference="Behavior,EmpowerAutocast,Period" Value="1.000000"/>
+        <EffectArray Reference="Behavior,ForcefieldAutocast,Period" Value="0.250000"/>
+        <EffectArray Reference="Behavior,AntimatterShieldAutocast,Period" Value="0.250000"/>
+        <EffectArray Reference="Behavior,QuarkShieldCaster,Period" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="BossWave"/>
+    <CUpgrade id="BuildFilter"/>
+    <CUpgrade id="BuildPhase"/>
+    <CUpgrade id="BlueUpgradeCOST">
+        <Icon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+        <EffectArray Reference="Abil,KingandWorkerResearch,InfoArray[Research2].Resource[Vespene]" Value="10"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="22"/>
+    </CUpgrade>
+    <CUpgrade id="ExtraInfuseIncome">
+        <EffectArray Reference="Effect,InfuseIncomeDummy,Resources[Custom]" Value="2"/>
+        <MaxLevel value="2"/>
+    </CUpgrade>
+    <CUpgrade id="FinalWaveUpgrade">
+        <EffectArray Reference="Effect,Wave31Damage,Amount[0]" Value="40"/>
+        <EffectArray Reference="Unit,Wave31,LifeStart[0]" Value="650"/>
+        <EffectArray Reference="Unit,Wave31,LifeMax[0]" Value="650"/>
+        <EffectArray Reference="Unit,Wave31,LifeArmorLevel[0]" Value="1"/>
+        <EffectArray Reference="Weapon,Wave31Attack,Level[0]" Value="1"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Wave31Attack,Period" Value="0.950000"/>
+        <AffectedUnitArray value="Wave31"/>
+        <MaxLevel value="100"/>
+    </CUpgrade>
+    <CUpgrade id="GasLeak">
+        <EffectArray Operation="Subtract" Reference="Effect,GasLeak,Resources[Vespene]" Value="1"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="31"/>
+    </CUpgrade>
+    <CUpgrade id="GreenUpgradeCOST">
+        <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+        <EffectArray Reference="Abil,KingandWorkerResearch,InfoArray[Research3].Resource[Vespene]" Value="10"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="22"/>
+    </CUpgrade>
+    <CUpgrade id="FightPhase"/>
+    <CUpgrade id="Level">
+        <MaxLevel value="70"/>
+    </CUpgrade>
+    <CUpgrade id="RacialTiers">
+        <MaxLevel value="3"/>
+    </CUpgrade>
+    <CUpgrade id="RefineryAmount">
+        <Icon value="Assets\Textures\btn-doodad-vespenegeyser.dds"/>
+        <EffectArray Reference="Effect,AddVespeneRefinery,Resources[Vespene]" Value="1"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="30"/>
+    </CUpgrade>
+    <CUpgrade id="RefinerySpeed">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+        <EffectArray Reference="Abil,RefinerySpeed,InfoArray[Research1].Resource[Minerals]" Value="60"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="5"/>
+    </CUpgrade>
+    <CUpgrade id="RCBRacialDummyUps">
+        <MaxLevel value="15"/>
+    </CUpgrade>
+    <CUpgrade id="RedUpgradeCOST">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+        <EffectArray Reference="Abil,KingandWorkerResearch,InfoArray[Research1].Resource[Vespene]" Value="10"/>
+        <AffectedUnitArray value="WarCenter"/>
+        <MaxLevel value="22"/>
+    </CUpgrade>
+    <CUpgrade id="RedUpgrade">
+        <Icon value="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds"/>
+        <EffectArray Reference="Weapon,SecurityCannons,Level" Value="1"/>
+        <AffectedUnitArray value="SecuritySystem"/>
+        <MaxLevel value="30"/>
+    </CUpgrade>
+    <CUpgrade id="GreenUpgrade">
+        <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+        <EffectArray Reference="Unit,SecuritySystem,LifeArmorLevel" Value="1"/>
+        <AffectedUnitArray value="SecuritySystem"/>
+        <MaxLevel value="30"/>
+    </CUpgrade>
+    <CUpgrade id="BlueUpgrade">
+        <Icon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+        <EffectArray Reference="Unit,SecuritySystem,ShieldArmorLevel" Value="1"/>
+        <AffectedUnitArray value="SecuritySystem"/>
+        <MaxLevel value="30"/>
+    </CUpgrade>
+    <CUpgrade id="SpottedEnemy">
+        <MaxLevel value="2"/>
+    </CUpgrade>
+    <CUpgrade id="TooltipExpanded"/>
+</Catalog>

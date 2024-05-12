@@ -1,0 +1,958 @@
+{
+    "infusion": {
+        "name": "Infusion",
+        "desc": "Envelops an ally within 9.00 range in a shielded haven, initially granting 100.00 shields. Upon subsequent casts on same ally, Aegis only replenishes the existing shields by 100.00. 8.00 seconds cooldown."
+    },
+    "enhanced sacrifice": {
+        "name": "Enhanced Sacrifice",
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals."
+    },
+    "amplified soul detonation": {
+        "name": "Amplified Soul Detonation",
+        "desc": "Upon death, Supplicant releases his soul towards killer, doing 30.00 spell damage around 6.00 range, and cursing enemies on impact, amplifying damage taken by 5.00% (max 5.00 stacks [x])  for 10.00 seconds."
+    },
+    "enhanced chain lightning": {
+        "name": "Enhanced Chain Lightning",
+        "desc": "Archon's attack chains to 5.00 additional enemies."
+    },
+    "chain lightning": {
+        "name": "Chain Lightning",
+        "desc": "Ascendant's attack chains to 2.00 additional enemies."
+    },
+    "enhanced slash": {
+        "name": "Enhanced Slash",
+        "desc": "Astralblade attacks cleave foes within a cone. 2.00 range, 90.00 degrees arc"
+    },
+    "psiblast barrage": {
+        "name": "Psiblast Barrage",
+        "desc": "Every 5.00 seconds fires a barrage of 5.20 Psiblasts, each inflicting 400.00 spell damage (50.00% extra vs stunned targets), focusing same initial target. If that target dies, Slayer will find a new one till all Psiblasts are fired."
+    },
+    "chrono infusion": {
+        "name": "Chrono Infusion",
+        "desc": "Envelops an ally (not self) within 9.00 range in a shielded haven, initially granting 150.00 shields. Upon subsequent casts on same ally, Havoc only replenishes the existing shields by 150.00. Additionally grants healed ally 40.00% attack speed. This also increases Whirlwind's spin rate by same amount. 6.00 seconds cooldown."
+    },
+    "concussive psiblast": {
+        "name": "Concussive Psiblast",
+        "desc": "Fires a devastating blast onto a single target within 7.00 range every 5.00 seconds inflicting 1500.00 spell damage and stunning for 4 seconds."
+    },
+    "destructive sacrifice": {
+        "name": "Destructive Sacrifice",
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals.\nOn each sacrifice, Alarak releases a Destruction Wave towards attacker, damaging all units in its path for 20.00% of sacrificed unit's vitals."
+    },
+    "empowered soul detonation": {
+        "name": "Empowered Soul Detonation",
+        "desc": "Upon death, Supplicant releases his soul towards killer, doing 30.00 + 2.00% of killer's max vitality (hp + shields) spell damage around 6.00 range on impact."
+    },
+    "greater chain lightning": {
+        "name": "Greater Chain Lightning",
+        "desc": "Archon's attack chains to 5.00 additional enemies. Each bounce does 20.00% more damage."
+    },
+    "enhanced infusion": {
+        "name": "Enhanced Infusion",
+        "desc": "Envelops an ally within 9.00 range in a shielded haven, initially granting 150.00 shields. Upon subsequent casts on same ally, Havoc only replenishes the existing shields by 150.00. 6.00 seconds cooldown."
+    },
+    "sacrifice": {
+        "name": "Sacrifice",
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Ji'nara restores shields by 100.00% of consumed vitals."
+    },
+    "aftermath": {
+        "name": "Aftermath",
+        "desc": "Upon every 825.00 damage taken buffs allies within 9.00 range with 1.00% attack speed increase (max 50.00x stack)."
+    },
+    "elusive shadow": {
+        "name": "Elusive Shadow",
+        "desc": "Phantasm has 35.00% chance to evade incoming damage. Upon successfully evading 15.00 times, Phantasm escapes into the shadows, gaining 100% evasion for 1.00 second."
+    },
+    "shocking sacrifice": {
+        "name": "Shocking Sacrifice",
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals.\nOn each sacrifice, Alarak stuns nearby foes based on sacrificed vitals (1 sec per 2000.00 vitals drained)."
+    },
+    "enhanced psiblast": {
+        "name": "Enhanced Psiblast",
+        "desc": "Fires a devastating blast onto a single target within 7.00 range every 5.00 seconds inflicting 1000.00 spell damage."
+    },
+    "summoning chain lightning": {
+        "name": "Summoning Chain Lightning",
+        "desc": "Archon's attack chains to 5.00 additional enemies. Each bounce has 5.00% chance to spawn a Supplicant. Spawned Supplicant is either Amplified or Empowered, and is randomly picked. Supplicants do 50.00% less damage."
+    },
+    "swift infusion": {
+        "name": "Swift Infusion",
+        "desc": "Envelops an ally within 9.00 range in a shielded haven, initially granting 150.00 shields. Upon subsequent casts on same ally, Havoc only replenishes the existing shields by 150.00. 3.00 seconds cooldown."
+    },
+    "thunder slash": {
+        "name": "Thunder Slash",
+        "desc": "Astralblade attacks cleave foes within a cone. 2.00 range, 100.00 degrees arc. Every 3rd attack stuns enemies for 1.5 seconds."
+    },
+    "spawn primal locusts": {
+        "name": "Spawn Primal Locusts",
+        "desc": "Launches 2 Primal Locusts into the fray. Primal locusts expire after 6.00s; speed taking priority over their lives.\n\nPrimal Locust:\nBase Life: 300.00\nBase DPS: 112.50\nMelee range\nBiological, Normal"
+    },
+    "big brother": {
+        "name": "Big Brother",
+        "desc": "Increases ability cast range of allies within 7.00 range by 1.00 per Radar (max +3.00).\nDoes not increase aura abilities range."
+    },
+    "overwatch": {
+        "name": "Overwatch",
+        "desc": "This unit launches into orbit avoiding other units during combat, though not escaping weapons range."
+    },
+    "leap attack": {
+        "name": "Leap Attack",
+        "desc": "Leaps towards a target within 6 range (must be atleast 1.5 range away). On impact, slows attack speed of surrounding enemies by 50.00% and move speed by 80.00% for 8.00s (4.00 vs bosses)."
+    },
+    "soul detonation": {
+        "name": "Soul Detonation",
+        "desc": "Upon death, Retaliator releases her soul towards killer, doing 10.00 spell damage around 4.00 range on impact."
+    },
+    "slash": {
+        "name": "Slash",
+        "desc": "Riftblade attacks cleave foes within a cone. 1.50 range, 60.00 degrees arc"
+    },
+    "arclight bond": {
+        "name": "Arclight Bond",
+        "desc": "At the start of combat, the Soul of Legends binds to an ally in 4.00 range granting 15.00% damage reduction and +5.00 + 3.00% hp/second regeneration.\nUntil the bound unit dies, the Soul of Legends will be intangible to all attackers."
+    },
+    "spawn mecha locusts": {
+        "name": "Spawn Mecha Locusts",
+        "desc": "Spawns 2 Swarm Locusts to defend the hive. Swarm locusts expire after 4.00s; sacrificing longevity for strength.\n\nMecha Locust:\nBase Life: 500.00\nBase DPS: 18.75\nMelee range\nBiological, Normal"
+    },
+    "enhanced soul detonation": {
+        "name": "Enhanced Soul Detonation",
+        "desc": "Upon death, Supplicant releases his soul towards killer, doing 30.00 spell damage around 6.00 range on impact."
+    },
+    "spawn swarm locusts": {
+        "name": "Spawn Swarm Locusts",
+        "desc": "Spawns 2 Swarm Locusts to defend the hive. Swarm locusts expire after 6.00s; sacrificing longevity for strength.\n\nLocust:\nBase Life: 220.00\nBase DPS: 42.50\nMelee range\nBiological, Normal"
+    },
+    "tributary": {
+        "name": "Tributary",
+        "desc": "Thalassotherapy releases a wave towards an enemy within 8.00 range dealing 300.00 spell damage. Wave bounces 5.00 times to different enemies inflicting 10.00% less damage per bounce.\nOnce there are no more enemies to bounce on, or wave bounced max number of times, one final warmer wave is launched towards an allied unit, healing it for the total damage wave inflicted to enemies.\nCost 15 energy."
+    },
+    "psiblast": {
+        "name": "Psiblast",
+        "desc": "Fires a devastating blast onto a single target within 7.00 range every 7.00 seconds inflicting 400.00 spell damage."
+    },
+    "whirlwind slash": {
+        "name": "Whirlwind Slash",
+        "desc": "Astralblade gathers 1 energy with each attack. He consumes all energy upon reaching max, and spins nine times over 3.00 seconds damaging all enemies within 2.00 range for 12.00 damage each spin."
+    },
+    "parity check": {
+        "name": "Parity Check",
+        "desc": "Archive will periodically perform a system-wide check that will restore nearby allies to their rightful stature. \nRestores 24.00+8.00% shields every 8 seconds (on average) to 10.00 allies within 8.00 range."
+    },
+    "brotherhood": {
+        "name": "Brotherhood",
+        "desc": "Defenders know how to fight more effectively with allies within 4.00 range\n+5.00 damage for Defenders (max +40.00)\n+2.00 damage for other allies (max +16.00)"
+    },
+    "requiem": {
+        "name": "Requiem",
+        "desc": "The final song of the Elders. If called upon, they bestow the song of the requiem upon a lucky ally (not themselves) within 7.00 range. \n+32.00% attack speed and +24.00+16.00% damage"
+    },
+    "suspend": {
+        "name": "Suspend",
+        "desc": "Elite Wardens dominate any foes that threaten the Ancestor. Their powerful attack stun enemies for 3.00 seconds and inflicts 100.00 damage. Recharges over next 2 attacks.\n4.00 range, 45.00 degrees arc"
+    },
+    "decode": {
+        "name": "Decode",
+        "desc": "Analyzes the enemy within 7.00 range, allowing allies to attack the unit optimally (costs 3 energy) for 10.00 seconds. Target takes +8.00 spell damage per hit. Refunds energy if target dies."
+    },
+    "matrix shield": {
+        "name": "Matrix Shield",
+        "desc": "The Encrypter weaves together an impenetrable shield that blocks one attack (costs 6 energy).\n6.00 cast range"
+    },
+    "forcefield": {
+        "name": "Forcefield",
+        "desc": "Magnetosphere Resonators weave a defensive wavelength into Ancient shields increasing strength and repair.\n+45.00 shields and +1.00%/s shield regeneration to allies within 6.00 range (max 100.00 regen/s)."
+    },
+    "empower": {
+        "name": "Empower",
+        "desc": "Matriarchs strengthen ally shields within 8.00 range.\nEach grants +25.00% shields (max +150.00%)."
+    },
+    "preservation": {
+        "name": "Preservation",
+        "desc": "Preservers will preserve the bioenergies of the dead converting them into a makeshift Sentinel. \nFallen allies within 8.00 range are resurrected for 10 energy as a Sentinel"
+    },
+    "antimatter shielding": {
+        "name": "Antimatter Shielding",
+        "desc": "Enhances the Ancients shields by polarizing the wavelength for longer lasting protection.\n+90.00 shields and +2.00%/s shield regeneration to allies within 7.00 range (max 200.00 regen/s)."
+    },
+    "call to arms": {
+        "name": "Call to Arms",
+        "desc": "Inspires allies within 4.00 range to rush into battle.\n+5.00% movement speed (max 8.00 stack)\n+3.00% attack speed (max 8.00 stack)"
+    },
+    "restrain": {
+        "name": "Restrain",
+        "desc": "Wardens are tasked to defend the Ancestor by restraining their foes. Their charged attack stuns enemies for 2.00 seconds. Recharges over next 2 attacks.\n3.00 range, 45.00 degrees arc"
+    },
+    "reassembly": {
+        "name": "Reassembly",
+        "desc": "Androids have become sophisticated enough to reassemble themselves after death, but can only achieve a portion of its previous capability.\n\nRevives after 4.00 seconds with 80.00% health."
+    },
+    "high intensity beam": {
+        "name": "High Intensity Beam",
+        "desc": "Enemies take 0.50% extra damage from all sources per attack (max 50.00%)."
+    },
+    "align prisms": {
+        "name": "Align Prisms",
+        "desc": "Gradually optimizes attacks against the target; bonus is lost when switching targets.\n\n+20.00% damage/attack (+200.00% max)"
+    },
+    "concussive detonation": {
+        "name": "Concussive Detonation",
+        "desc": "The Asimov's massive cannon shatters enemy focus.\nEvery third attack, Asimov stuns all enemies within 2.00 range of the primary target."
+    },
+    "networked unit": {
+        "name": "Networked Unit",
+        "desc": "Centurions are hooked up to a massive defensive network that enables them to share structural integrity.\n\nEach Centurion gains 25.00% bonus HP for every other Centurion alive."
+    },
+    "mechanical rampage": {
+        "name": "Mechanical Rampage",
+        "desc": "On kill and every 100.00 damage taken, gains 3.00% damage reduction, 2.00% attack speed and 2.00% movement speed. Stacks 20.00 times."
+    },
+    "purify": {
+        "name": "Purify",
+        "desc": "Purifies an allied unit within 8.00 range, healing for 100.00 HP and granting 20.00% damage reduction for 6.00 seconds."
+    },
+    "battle domination": {
+        "name": "Battle Domination",
+        "desc": "Taunts an enemy within 5.00 range, for 5.00 seconds. In addition, Executioner that taunted them deals 100.00% more damage and takes 50.00% less damage.\nCosts 5 energy/taunt."
+    },
+    "gravity lance beam": {
+        "name": "Gravity Lance Beam",
+        "desc": "This highly experimental weapon pierces through enemies in a line."
+    },
+    "hellfire missiles": {
+        "name": "Hellfire Missiles",
+        "desc": "Missile Platform is capable of firing 10 splash damaging rockets."
+    },
+    "concussion shell": {
+        "name": "Concussion Shell",
+        "desc": "Pressurized sound wave shock the target and enemies within 1.00 range around the target .\n\nSlows targets attack and movement speed by 10.00% for 3.50s (max 50.00%)."
+    },
+    "surveillance": {
+        "name": "Surveillance",
+        "desc": "Observes and relays advanced battlefield information to allies for enhanced targeting.\nRanged allies within 7.00 range gain +1.00 attack range (3.00x max stack)."
+    },
+    "foresight": {
+        "name": "Foresight",
+        "desc": "The Prophet can foresee nearly all of his opponent's moves. Grants +50.00% evasion and a 40.00% chance to deal 200.00% damage."
+    },
+    "absolution": {
+        "name": "Absolution",
+        "desc": "+5.00% Attack Speed per attack (max +160.00%)\nGains 3 bonus stacks if attack kills enemy.\nCapped at 100% when teleporting to Security System and final waves."
+    },
+    "explosive rounds": {
+        "name": "Explosive Rounds",
+        "desc": "Pulverizer fires explosive rounds inflicting 50.00% damage to all enemies near primary target."
+    },
+    "salvage": {
+        "name": "Salvage",
+        "desc": "Salvager is capable of quickly scavenging the battlefield for additional defense. \nNearby fallen allies grant 10.00% damage reduction (Max 30.00%)"
+    },
+    "welding": {
+        "name": "Welding",
+        "desc": "Heals damaged ally within 7.00 range for 5.00 + 1.95% HP/s."
+    },
+    "celestial surge": {
+        "name": "Celestial Surge",
+        "desc": "Buffs an ally for 30.00 seconds, granting it the ability to get +2.00+2.00% (max 15.00 stacks) damage each time it deals damage (cooldown 0.07 sec) and to heal allies within ally weapon range+3.00 range for 10.00% of damage dealt.\nUpon reaching max stacks, healing fraction is increased to 20.00% of damage dealt for 5.00 seconds, after which all stacks are lost."
+    },
+    "tempt": {
+        "name": "Tempt",
+        "desc": "Grants +25.00% damage reduction and +15.00% increased healing and lifesteal to an ally within 8.00 range for 10.00 seconds.\nCosts 10 energy."
+    },
+    "infatuate": {
+        "name": "Infatuate",
+        "desc": "Infatuates enemy send (not zergling) within 8.00 range for 8.00s. Attacks from infatuated units instead heal targets HP for 40.00% of attempted damage.\nCosts 50.00% hp."
+    },
+    "purge": {
+        "name": "Purge",
+        "desc": "Purges an enemy unit within 10.00 range removing Spell Immunity and dealing 450.00 damage. Costs 7 energy."
+    },
+    "experimental unit": {
+        "name": "Experimental Unit",
+        "desc": "U87 Prototypes are extremely unstable machines. They have extremely high damage output, but their performance can vary. \nUnreliable components inflict -10.00 self-damage per attack."
+    },
+    "quark shield": {
+        "name": "Quark Shield",
+        "desc": "An advanced quark generator emits a temporal resonance field that reverts damage to allies within 5 range. Up to 50 damage reverted per energy."
+    },
+    "pacify": {
+        "name": "Pacify",
+        "desc": "Each attack reduces the target's damage by -10.00% and increases damage taken by 3.00%. Stacks up to 4.00x.\nLasts 10.00 seconds."
+    },
+    "conjure imps": {
+        "name": "Conjure Imps",
+        "desc": "Hades conjures 5.00 imps to fight for the Dark Lord. One Hades may have a maximum of 8.00 imps alive.\nCosts 20 energy.\nEach time Hades or his Imps kill a foe, Hades restores 1 energy to itself.\n\nImp:\nBase Life: 350.00\nBase DPS: 52.50\nMelee range\nBiological, Chaos"
+    },
+    "flaming arrows": {
+        "name": "Flaming Arrows",
+        "desc": "Using energy, flaming arrows launch into the target inflicting 20.00 spell damage. The target and nearby enemies suffer 3.00 damage/s and +5.00% damage from all sources for 3.50 seconds."
+    },
+    "frenzy": {
+        "name": "Frenzy",
+        "desc": "Skeletons move faster and regenerate hitpoints more quickly."
+    },
+    "vocant de furor": {
+        "name": "Vocant de Furor",
+        "desc": "The Dark Mage can entangle the mind of an ally within 5.00 range, increasing its attack speed by 30.00% for 20.00 seconds.\nNightmare's gain +1 attacks for Counter-Attacks .\nDoppelganger gains +2 extra damage per attack with Fatality.\nCosts 10 energy."
+    },
+    "sticky slime": {
+        "name": "Sticky Slime",
+        "desc": "The unit's attacks slow the target's movement speed by 10.00% and attack speed by 5.00% for 3.00 seconds (max 3.00 stack; 1.00 per spitter)."
+    },
+    "sticky webs": {
+        "name": "Sticky Webs",
+        "desc": "The unit's attacks slow the target's movement speed by 10.00% and attack speed by 7.00% for 4.00 seconds (max 6.00 stack; 2.00 per crawler)."
+    },
+    "plasma shields": {
+        "name": "Plasma Shields",
+        "desc": "This unit uses energy to block damage. Has -24.00% damage reduction. Consumes 2.00 energy per attack."
+    },
+    "energy rage": {
+        "name": "Energy Rage",
+        "desc": "With excess energy, this unit will attack furiously at the enemy, dealing an additional 40.00 damage for no cost. (Unit must have 10+ energy to use)"
+    },
+    "water splash": {
+        "name": "Water Splash",
+        "desc": "Attacks made by this unit splash to one other unit dealing 80% damage. Consumes 2 energy."
+    },
+    "deluge convergence": {
+        "name": "Deluge Convergence",
+        "desc": "This unit releases a shuriken towards an enemy within 8.00 range dealing 250.00 spell damage. Shuriken bounces 9.00 times to different enemies inflicting 10.00% less damage per bounce.\nCost 15 energy."
+    },
+    "energy catalyst": {
+        "name": "Energy Catalyst",
+        "desc": "The Adept can harness massive amounts of energy to increase attack speed by -96.00% for 2.00 seconds.\nConsumes 10 energy."
+    },
+    "cleanse": {
+        "name": "Cleanse",
+        "desc": "Cleanses an allied unit within 8.00 range, healing for 40.00 HP and granting 10.00% damage reduction for 4.00 seconds."
+    },
+    "ascend": {
+        "name": "Ascend",
+        "desc": "Raises one of your units to the heavens. Ascended units will respawn near your Security System with 40.00% life and 70.00% attack speed when they die. Respawned in place on final waves."
+    },
+    "torment": {
+        "name": "Torment",
+        "desc": "The Daemon torments enemies in front of him. He projects a line of 10.00 pulses every 3.00 seconds. Each pulse can damage a unit for 40.00 spell damage."
+    },
+    "righteousness": {
+        "name": "Righteousness",
+        "desc": "Attacks made against this unit increase the attack speeds of allies within 9.00 range by 1.00% for 4.00 seconds (max 30.00%)."
+    },
+    "spell attunement": {
+        "name": "Spell Attunement",
+        "desc": "Target within 6.00 range takes +50% spell damage for 6.00 seconds (max +150%). Half as effective vs bosses. Consumes 5 energy."
+    },
+    "fluorescence": {
+        "name": "Fluorescence",
+        "desc": "The Violet pulses energy towards a foe within 6.00 range applying Fluorescence. Units with Fluorescence restore 1.00 energy to their victims each time they inflict damage to them (lasts 6.00s). Additionally, each time they take damage, attacker gains 0.50 energy.\n5 energy cost."
+    },
+    "muddled armor": {
+        "name": "Muddled Armor",
+        "desc": "Mudman covers attackers in mud slowing movement by 40.00% for 7.00 seconds. Max 5.00 stacks.\nOn death applied applies a stack to enemies within 4.00 range, and refreshes duration of all existing stacks."
+    },
+    "deceleration shift": {
+        "name": "Deceleration Shift",
+        "desc": "Buffs an ally within 5.00 range to inflict -17.00% attack speed to enemies they struck (max -51.00%).\nCosts 5 energy. 10.00 second duration."
+    },
+    "energy burst": {
+        "name": "Energy Burst",
+        "desc": "Uses excess energy to overcharge next attack for +65.00 damage. Consumes 3 energy."
+    },
+    "amplify magic": {
+        "name": "Amplify Magic",
+        "desc": "Grants +1.00 energy/s to allies within 5.00 range (max +2.00)."
+    },
+    "energy shields": {
+        "name": "Energy Shields",
+        "desc": "This unit uses energy to block damage. Has -29.00% damage reduction. Consumes 3.00 energy per attack."
+    },
+    "undying will": {
+        "name": "Undying Will",
+        "desc": "Skeletor will absorb an attack that would kill it at a cost of 20 energy."
+    },
+    "death swamp": {
+        "name": "Death Swamp",
+        "desc": "Releases a fetid miasma on death that forms a dark swamp inflicting -1.00% hp/s on enemies caught within 2.00 range (max -4.00% hp/s). Additionally slows movement speed by 15.00% (max 60.00%). \nSwamp lasts 5.00 seconds."
+    },
+    "call of praesidio": {
+        "name": "Call of Praesidio",
+        "desc": "The Gateguard taunts enemies into attacking their conjured Fiend, which gains 5.00% damage resistance per attacker for 4.00 seconds (max 50.00%). 15.00s cooldown."
+    },
+    "conjure fiend": {
+        "name": "Conjure Fiend",
+        "desc": "Conjure Fiend for 60.00 seconds. Costs 30 energy.\n\nFiend:\nBase Life: 185.00\nBase DPS: 11.85\nMelee range\nMassive, Normal"
+    },
+    "conjure fanatic": {
+        "name": "Conjure Fanatic",
+        "desc": "Conjure Fanatic for 60.00 seconds. Costs 30 energy.\n\nFanatic:\nBase Life: 470.00\nBase DPS: 32.59\nMelee range\nMassive, Siege"
+    },
+    "figurandum mones": {
+        "name": "Figurandum Mones",
+        "desc": "The Harbinger taunts enemies into attacking their conjured Fanatic, which gains 5.00% damage resistance per attacker for 4.00 seconds (max 75.00%). 15.00s cooldown."
+    },
+    "blood thirst": {
+        "name": "Blood Thirst",
+        "desc": "4.00 allies within 7.50 range gain 10.00% lifesteal (max +50% HP; heals after max)"
+    },
+    "sound of madness": {
+        "name": "Sound of Madness",
+        "desc": "5.00 allies within 7.50 range gain 20.00% lifesteal (max +75% HP; heals after max)"
+    },
+    "counter attack": {
+        "name": "Counter Attack",
+        "desc": "Nightmare has a 10.00% chance to critically hit for an additional attack. The Nightmare is capable of quickly parrying attacks and delivering a deadly counter-attack. \n30.00% Chance to Attack Target Upon Hit Every 0.95s\nOnly counters targets within 1.00 range."
+    },
+    "fatality": {
+        "name": "Fatality",
+        "desc": "Each attack increases Doppelganger's weapon damage by 4.00 (max +199.50)."
+    },
+    "deflection": {
+        "name": "Deflection",
+        "desc": "Doppelganger reduces incoming ranged damage by 50.00%."
+    },
+    "conjure inferno": {
+        "name": "Conjure Inferno",
+        "desc": "The Lord of Death calls the great Inferno to aid him in battle for 60.00 seconds. Costs 15 energy.\n\nInferno:\nBase Life: 850.00\nBase DPS: 51.85\nMelee range\nArmored, Chaos"
+    },
+    "forbidden fruit": {
+        "name": "Forbidden Fruit",
+        "desc": "Reflects 100.00% of enemy damage. Deals 300.00 damage to 9.00 nearby enemies upon death."
+    },
+    "vulture eye": {
+        "name": "Vulture Eye",
+        "desc": "This unit has a 33.00% chance to deal 160.00% damage."
+    },
+    "precision": {
+        "name": "Precision",
+        "desc": "This unit has a 33.00% chance to deal 200.00% damage."
+    },
+    "entangle": {
+        "name": "Entangle",
+        "desc": "Roots an enemy send (not zergling) within 10.00 range in a plasma field and increases damage taken by 40.00% for 5.00s.\nRefunds energy if target dies."
+    },
+    "afterburner": {
+        "name": "Afterburner",
+        "desc": "THUNDERBIRD's weapon has a wide spread; up to 5.00 nearby enemies take 50.00 spell damage per attack.\n3.00 range, 150.00 degrees arc"
+    },
+    "helping hand": {
+        "name": "Helping Hand",
+        "desc": "Grants 50.00% movement speed to allies within 6.00 range."
+    },
+    "chrono trigger": {
+        "name": "Chrono Trigger",
+        "desc": "Debilitates enemies within 6.00 range, reducing their movement speed by 50.00%."
+    },
+    "resistant flesh": {
+        "name": "Resistant Flesh",
+        "desc": "30% chance to stun attackers for 1 second and reduce incoming damage by 10 + 25%"
+    },
+    "resilience boon": {
+        "name": "Resilience Boon",
+        "desc": "At start of wave, grants allies within 2.00 range 30.00% chance to stun attackers for 2 seconds. 1.00 seconds cooldown after stunning an enemy."
+    },
+    "sacred blessing": {
+        "name": "Sacred Blessing",
+        "desc": "Heals 4.00 allies within 7.00 range for 35.00 + 1.95% HP every 5.00 seconds (on average)."
+    },
+    "water of life": {
+        "name": "Water of Life",
+        "desc": "Heals 6.00 allies within 7.00 range for 35.00 + 1.95% HP every 2.50 seconds (on average)."
+    },
+    "heavy particle beam": {
+        "name": "Heavy Particle Beam",
+        "desc": "A solid beam that does 5.00% of primary damage as chaos. With each attack, beam damage increases by 5.00%, up to 40.00%."
+    },
+    "twin flamethrower": {
+        "name": "Twin Flamethrower",
+        "desc": "Twin flamethrowers inflict 50.00% damage to enemies near their target"
+    },
+    "power surge": {
+        "name": "Power Surge",
+        "desc": "Zeus infuses his weapon with lightning dealing an additional 65.00 damage for 10 energy. With each attack, Zeus gains 1 energy."
+    },
+    "adrenaline cloud": {
+        "name": "Adrenaline Cloud",
+        "desc": "When struck below 40% life, the Veteran releases a powerful Adrenaline Cloud granting allies within 6.00 range +8.00 damage for 10.00 seconds (15.00s recharge)."
+    },
+    "leadership": {
+        "name": "Leadership",
+        "desc": "The Captain is a commanding presence on the battlefield. All units within 8 range gain 7% attack damage (stacks with 50% diminishing return per Captain; max 3 stacks)."
+    },
+    "superiority": {
+        "name": "Superiority",
+        "desc": "The Admiral is a commanding presence on the battlefield. All units within 8 range gain 12% attack damage (stacks with 50% diminishing return per Admiral; max 4 stacks)."
+    },
+    "shrapnel": {
+        "name": "Shrapnel",
+        "desc": "Launches up to 3.00 concussive missiles dealing 80.00 piercing damage and slowing enemy attack and movement speed by 12.50% for 4.00 seconds (6.00x stack)."
+    },
+    "spring of life": {
+        "name": "Spring Of Life",
+        "desc": "Each time this unit is attacked, it heals allies within 4.00 range for 25.00% of the damage (up to 40.00 HP)."
+    },
+    "font of life": {
+        "name": "Font Of Life",
+        "desc": "Each time this unit is attacked, it heals allies within 4.00 range for 40.00% of the damage (up to 150.00 HP)."
+    },
+    "phase out": {
+        "name": "Phase Out",
+        "desc": "Evades 15.00% of attacks."
+    },
+    "clean cut": {
+        "name": "Clean Cut",
+        "desc": "Attacks do bonus damage equal to 2.00% of targets max life (0.50% vs bosses)."
+    },
+    "emp shock": {
+        "name": "EMP Shock",
+        "desc": "Melinoe uses all her energy in order to release a powerful EMP missile towards enemies within 8.00 range. On impact, EMP missile stuns all enemies within 3.00 range of impact site for 4.00 seconds. Requires 1.50s channel time (impact point may not be ideal after channel time).\nRequires atleast 3 nearby enemies in order to cast (1 on boss waves)."
+    },
+    "violate": {
+        "name": "Violate",
+        "desc": "Attacks by this unit make the enemy take +20.00% damage for 10.00 seconds from all sources per caster (max +120.00)."
+    },
+    "traumatize": {
+        "name": "Traumatize",
+        "desc": "Slows target's attack speed by 30.00% and movement speed by 40.00% for 7.00 seconds. Also affects enemies close to primary target.\nCosts 4 energy. Stacks with Disturb (Wraith)."
+    },
+    "fadestrike": {
+        "name": "Fadestrike",
+        "desc": "The Forsaken One evades 20.00% of all attacks. Whenever an attack is evaded, he gains 40.00 extra damage on his next attack (stacks up to 200.00 extra damage)."
+    },
+    "despair aura": {
+        "name": "Despair Aura",
+        "desc": "Nearby enemy units have their melee damage reduced by 15.00% and ranged damage reduced by 10.00%. Stacks at 50% diminishing returns. Max 5 stacks."
+    },
+    "disturb": {
+        "name": "Disturb",
+        "desc": "Slows an enemy's attack speed and movement speed by 20.00% for 7.00 seconds.\nCosts 4 energy. Stacks with Traumatize (Mercurial)."
+    },
+    "emerald fire": {
+        "name": "Emerald Fire",
+        "desc": "The Dragon Aspect fires emerald-colored globules. Every third globule explodes on impact dealing 300.00 splash damage to nearby enemies (falls off with distance from target)."
+    },
+    "cannibalize": {
+        "name": "Cannibalize",
+        "desc": "The Greymane consumes the essence of dying allies within 5 range gaining 25% of ally base HP (max +200% HP; heals after max)."
+    },
+    "protective shell": {
+        "name": "Protective Shell",
+        "desc": "On wave start, gains 50.00% damage reduction for 4.00 seconds."
+    },
+    "primal hunger": {
+        "name": "Primal Hunger",
+        "desc": "Consumes essence of slain foes gaining 26% of enemy HP to max HP and heals (max +150% HP; heals after max)."
+    },
+    "poison sac": {
+        "name": "Poison Sac",
+        "desc": "This unit fires venomous sacs that poison the enemy, slowing its attack speed by 15.00% and movement speed by 25.00% for 5.00 seconds. Deals 3.00 damage per second."
+    },
+    "venom sac": {
+        "name": "Venom Sac",
+        "desc": "This unit fires venomous sacs that poison a group of enemies, slowing their attack speeds by 25.00% and movement speeds by 35.00% for 5.00 seconds. Deals 11.00 damage per second to each unit.\nEnvenoms a maximum of 2.00 targets per attack."
+    },
+    "adrenaline rush": {
+        "name": "Adrenaline Rush",
+        "desc": "The Roach Champion and three allied towers within 5.00 range gain a 18.00% bonus to attack speed."
+    },
+    "circle slash": {
+        "name": "Circle Slash",
+        "desc": "This unit attacks everything around it, dealing 40.00% damage to a small area."
+    },
+    "deep gash": {
+        "name": "Deep Gash",
+        "desc": "The Zergling Savage's claws are able to pierce through one enemy and deeply gashes units it attacks. Gashed unit take 10.00 spell damage per second, move 70.00% slower, and attack 50.00% slower."
+    },
+    "gash": {
+        "name": "Gash",
+        "desc": "The Zergling Warrior gashes units it attacks. Gashing a unit slows its movement by 50.00% and attack speed by 10.00%."
+    },
+    "uplink": {
+        "name": "Uplink",
+        "desc": "This Astromech Droid will uplink to a nearby Automaton unit. \nAdds 300.00 Life, 5.00 + 10.00% Damage, 10.00% Attack speed, 10.00% Movement Speed, and reduces damage taken by 10.00%."
+    },
+    "soul flash": {
+        "name": "Soul Flash",
+        "desc": "The Runeguard engraves Soul Flash on allies within 5.00 range for 5 energy. Their souls rupture upon taking 500.00 damage and upon death, inflicting 25.00 damage to nearby enemies (expires after 60.00s)."
+    },
+    "assemblance": {
+        "name": "Assemblance",
+        "desc": "The Netherlord assembles allies within 3.00 range, reducing their damage taken by 20.00%."
+    },
+    "essence fortification": {
+        "name": "Essence Fortification",
+        "desc": "Upon evading or enemies missing, heals itself for 50.00% of evaded damage."
+    },
+    "blinding light": {
+        "name": "Blinding Light",
+        "desc": "Fires a blast at enemy within 6.00 range that deals 20.00 damage."
+    },
+    "crescent": {
+        "name": "Crescent",
+        "desc": "Crescent hits an enemy within 6.00 range for 200.00 spell damage, blinds them for 2.00 seconds, and blinds 3.00 nearby enemies for 1.00 second."
+    },
+    "throw feast": {
+        "name": "Throw Feast",
+        "desc": "Lord Kaiser throws a Feast that attacks and taunts non-boss enemies.\nCosts 8 energy.\n\nFeast:\nBase Life: 400.00\nBase DPS: 20.50\nMelee range\nLight, Normal"
+    },
+    "dark blade": {
+        "name": "Dark Blade",
+        "desc": "Attacks slice through targets inflicting 30.00 chaos damage.\n2.00 range, 20.00 degrees arc"
+    },
+    "shadow fury": {
+        "name": "Shadow Fury",
+        "desc": "Rapid attacks violently ripple dark energies forward inflicting 70.00 chaos damage.\n3.00 range, 45.00 degrees arc"
+    },
+    "feed": {
+        "name": "Feed",
+        "desc": "Teeter feeds on the hate of the condemned. Attack damage increases 10.00% per second if there is an enemy unit within 6 range (max 40.00%). Triggers On the Brink upon reaching max stacks."
+    },
+    "on the brink": {
+        "name": "On the Brink",
+        "desc": "When triggered, attacks are 400.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAdditionally buffs 2.00 allies within 3.00 range. Their attacks are 100.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAll stacks of Feed are lost when this ability ends."
+    },
+    "ding": {
+        "name": "Ding",
+        "desc": "Fires three missiles at random units within attack range: a small missile dealing 100.00 damage, a medium missile dealing 200.00 damage, and a large missile dealing 400.00 damage. Missiles inflict 50.00% splash damage near the target and may impact the same target multiple times."
+    },
+    "feed (heisendonger)": {
+        "name": "Feed (Heisendonger)",
+        "desc": "Heisendonger feeds on the hate of the condemned. Attack damage increased by 10.00% per attack. Ding is triggered after reaching +50.00% attack damage."
+    },
+    "cadenza": {
+        "name": "Cadenza",
+        "desc": "Solo throws a psi orb towards the target within 8.00 range, stunning it for 6.00 seconds (3.00 vs Bosses). Upon landing the orb, Solo launches himself towards the target, gaining 150.00% damage reflection for 8.00 seconds.\nCooldown 10.00 seconds."
+    },
+    "vigor - level 2": {
+        "name": "Vigor - Level 2",
+        "desc": "Grants composer 3 vigor mastery stacks.\nEach vigor stack grants +5.00% damage."
+    },
+    "resolve - level 2": {
+        "name": "Resolve - Level 2",
+        "desc": "Grants composer 3 resolve mastery stacks.\nEach resolve stack grants 6.00% lifesteal from attacks."
+    },
+    "aptitude - level 1": {
+        "name": "Aptitude - Level 1",
+        "desc": "Grants composer 2 aptitude mastery stack.\nEach aptitude stack grants +15.00% movement speed and +10.00% attack speed."
+    },
+    "resolve - level 1": {
+        "name": "Resolve - Level 1",
+        "desc": "Grants composer 2 resolve mastery stack.\nEach resolve stack grants 6.00% lifesteal from attacks."
+    },
+    "accent": {
+        "name": "Accent",
+        "desc": "25.00% chance for an attack to deal 350.00% damage."
+    },
+    "aptitude - level 2": {
+        "name": "Aptitude - Level 2",
+        "desc": "Grants composer 3 aptitude mastery stacks.\nEach aptitude stack grants +15.00% movement speed and +10.00% attack speed."
+    },
+    "poco-a-poco": {
+        "name": "Poco-a-Poco",
+        "desc": "Every time Clef attacks, allies within 4.00 range gain +1.00 damage for 3.00 seconds (max +10.00)."
+    },
+    "recovery - level 2": {
+        "name": "Recovery - Level 2",
+        "desc": "Grants composer 3 recovery mastery stacks.\nEach recovery stack grants +15.00 life regen."
+    },
+    "masterpiece": {
+        "name": "Masterpiece",
+        "desc": "The traits of nearby units enhance the Composer's own strength. Each Sylphy unit within 10.00 range grants a stack of Mastery over each of its traits to the Composer.\n\nMastery can stack up to 10 times."
+    },
+    "inspiration": {
+        "name": "Inspiration",
+        "desc": "The Conductor inspires Sylphy allies within 10.00 range. These units gain Mastery over their traits (max 10.00 trait stacks)."
+    },
+    "tenuto": {
+        "name": "Tenuto",
+        "desc": "Soprano's dark energy reneges upon its attackers, weakening their defenses.\n\nEach attack onto Soprano causes the attacker to gain 1 stack of Tenuto (maximum 8.00). Each stack of Tenuto increases all incoming damage by 5.00%."
+    },
+    "tactics - level 2": {
+        "name": "Tactics - Level 2",
+        "desc": "Grants composer 3 Tactics mastery stacks.\nEach stack grants +5.00% damage reduction."
+    },
+    "vigor - level 1": {
+        "name": "Vigor - Level 1",
+        "desc": "Grants composer 2 vigor mastery stack.\nEach vigor stack grants +5.00% damage."
+    },
+    "glockenspiel": {
+        "name": "Glockenspiel",
+        "desc": "Upon death, Fortissimo detonates itself dealing damage based on total damage taken before death to all enemies within 6.00 range (falls off with distance from epicenter)."
+    },
+    "resolve - level 3": {
+        "name": "Resolve - Level 3",
+        "desc": "Grants composer 4 resolve mastery stacks.\nEach resolve stack grants 6.00% lifesteal from attacks."
+    },
+    "stringendo": {
+        "name": "Stringendo",
+        "desc": "Upon reaching 10 energy, gains +150.00% weapon damage for 4.00 seconds."
+    },
+    "vigor - level 3": {
+        "name": "Vigor - Level 3",
+        "desc": "Grants composer 4 vigor mastery stacks.\nEach vigor stack grants +5.00% damage."
+    },
+    "unison": {
+        "name": "Unison",
+        "desc": "At start of wave, launches a sound wave towards an ally within 2.50 range, which can bounce 3 more times.\nLinked unit takes only 60.00% of any incoming damage, while the rest is distributed between entire linked group. A unit cannot die from distributed damage.\nAll units effected by Unison also gain 20.00% increased healing and lifesteal.\nDoes not stack."
+    },
+    "tactics - level 1": {
+        "name": "Tactics - Level 1",
+        "desc": "Grants composer 2 Tactics mastery stack.\nEach stack grants +5.00% damage reduction."
+    },
+    "wiederholungszeichen": {
+        "name": "Wiederholungszeichen",
+        "desc": "This tower can be sold for at least 90% of its original cost."
+    },
+    "recovery - level 3": {
+        "name": "Recovery - Level 3",
+        "desc": "Grants composer 4 recovery mastery stacks.\nEach recovery stack grants +15.00 life regen."
+    },
+    "dal segno": {
+        "name": "Dal Segno",
+        "desc": "This unit has no energy regeneration, instead gaining 1 energy each time it's attacked.\n\nUpon reaching max energy, Tenor stomps the ground, releasing a paralyzing shockwave that briefly stuns nearby enemies. Enemies struck by the shockwave become brittle, reducing their attack speed by 15.00% slower and causing them to deal 10.00% less damage (max 45.00% slow and 30.00% less damage)."
+    },
+    "tactics - level 3": {
+        "name": "Tactics - Level 3",
+        "desc": "Grants composer 4 Tactics mastery stacks.\nEach stack grants +5.00% damage reduction."
+    },
+    "fermata": {
+        "name": "Fermata",
+        "desc": "Each attack grants +1 energy to Alto. Upon reaching 10 energy, Alto pulls foes within 4.00 range to him, slowing their movement speed by 70.00% for 4.00 seconds.\nAlto starts with 0 energy, and passively loses -1.00 energy/sec."
+    },
+    "adagio": {
+        "name": "Adagio",
+        "desc": "The Dramaturge's attack detonates upon hitting an enemy, dealing 25.00% damage in a small radius around it.\nAll units hit have their movement speed slowed by 50.00% for 0.55 seconds."
+    },
+    "aptitude - level 3": {
+        "name": "Aptitude - Level 3",
+        "desc": "Grants composer 4 aptitude mastery stacks.\nEach aptitude stack grants +15.00% movement speed and +10.00% attack speed."
+    },
+    "recovery - level 1": {
+        "name": "Recovery - Level 1",
+        "desc": "Grants composer 2 recovery mastery stack.\nEach recovery stack grants +15.00 life regen."
+    },
+    "sostenuto": {
+        "name": "Sostenuto",
+        "desc": "20.00% chance to reduce incoming damage by 50.00%.\nUpon reaching 20% life, producer regenerates 100% HP over 5 seconds."
+    },
+    "legato": {
+        "name": "Legato",
+        "desc": "Each attack damage dealt is recorded. Upon reaching 325.00 damage dealt, heals ally within 7.00 range for 100.00 hp and resets the damage dealt."
+    },
+    "volatile explosive": {
+        "name": "Volatile Explosive",
+        "desc": "Explodes on contact damaging all enemies within 2.50 range."
+    },
+    "super speed": {
+        "name": "Super Speed",
+        "desc": "Moves faster than normal sends"
+    },
+    "proboscis": {
+        "name": "Proboscis",
+        "desc": "Inflicts -75% move speed for 10s"
+    },
+    "decay": {
+        "name": "Decay",
+        "desc": "Target gains 50.00% less from healing, lifesteal, and regeneration (including shield regen) (does not stack)."
+    },
+    "death cloud": {
+        "name": "Death Cloud",
+        "desc": "Enemies near target gain 10.00% less from healing, lifesteal, and regeneration (including shield regen) (max 4.00 stacks). Does not prevent shield restorations."
+    },
+    "scorching circle": {
+        "name": "Scorching Circle",
+        "desc": "While 5+ foes are within attack range, inflicts 150.00 damage/s to 5.00 enemies within 5.00 range (does not stack)."
+    },
+    "stun immune": {
+        "name": "Stun Immune",
+        "desc": "Not affected by most stun abilities."
+    },
+    "hunter's pounce": {
+        "name": "Hunter's Pounce",
+        "desc": "Jumps towards an enemy unit, disorienting nearby enemies and reducing their damage output by 30.00%."
+    },
+    "energy leech": {
+        "name": "Energy Leech",
+        "desc": "Steals 0.50 energy/s from enemies within 10.00 range (max -5.00 energy/s)."
+    },
+    "psionic shockwave": {
+        "name": "Psionic Shockwave",
+        "desc": "Strips 20.00 energy and 200.00 shields from foes within 10.00 range for 100 energy."
+    },
+    "economic": {
+        "name": "Economic",
+        "desc": "Gives ideal income for the cost"
+    },
+    "thorn armor": {
+        "name": "Thorn Armor",
+        "desc": "Reflects 180.00% of damage taken back to the attacker (minimum 90.00 damage)."
+    },
+    "spy": {
+        "name": "Spy",
+        "desc": "Reveals enemy units during combat"
+    },
+    "scream attack": {
+        "name": "Scream Attack",
+        "desc": "20% panics target for 0.5s"
+    },
+    "dispel": {
+        "name": "Dispel",
+        "desc": "Removes blind and stun from a nearby ally. Uses 1 energy."
+    },
+    "tank buster": {
+        "name": "Tank Buster",
+        "desc": "Deals increasing damage to the same target (+2/attack). Bonus resets on target switch."
+    },
+    "spawn broodlings": {
+        "name": "Spawn Broodlings",
+        "desc": "Attacks spawn two broodlings"
+    },
+    "resistance aura": {
+        "name": "Resistance Aura",
+        "desc": "Allies gain 15% damage reduction (does not stack)"
+    },
+    "massive sweep": {
+        "name": "Massive Sweep",
+        "desc": "Attacks all enemies within reach"
+    },
+    "disturbance aura": {
+        "name": "Disturbance Aura",
+        "desc": "Grants nearby allies significant resistance to movement speed debuffs."
+    },
+    "war stomp": {
+        "name": "War Stomp",
+        "desc": "Crushes the target and all units behind for 37.00 damage once every 2 attacks."
+    },
+    "spell immunity": {
+        "name": "Spell Immunity",
+        "desc": "Untargetable by abilities and takes no spell damage"
+    },
+    "explosive attack": {
+        "name": "Explosive Attack",
+        "desc": "100% splash damage"
+    },
+    "lifesteal aura": {
+        "name": "Lifesteal Aura",
+        "desc": "Nearby melee allies gain 30.00% lifesteal to attacks (does not stack)"
+    },
+    "bloodlust": {
+        "name": "Bloodlust",
+        "desc": "One ally attacks and moves 20% faster (does not stack)"
+    },
+    "security codes": {
+        "name": "Security Codes",
+        "desc": "2x damage to Security Systems"
+    },
+    "swift aura": {
+        "name": "Swift Aura",
+        "desc": "Nearby allies move 20% faster (does not stack)"
+    },
+    "improved parts": {
+        "name": "Improved Parts",
+        "desc": "Rapidly regenerates life"
+    },
+    "sunder attack": {
+        "name": "Sunder Attack",
+        "desc": "Line of targets take 10.00% more damage over 10.00 seconds (max 4.00 stacks)"
+    },
+    "cripple": {
+        "name": "Cripple",
+        "desc": "Target attacks and moves 20% slower while losing 65 HP/s for 6 seconds (does not stack)"
+    },
+    "poison attack": {
+        "name": "Poison Attack",
+        "desc": "Target attacks 20% slower and takes 45 damage over 3 seconds (does not stack)"
+    },
+    "tank decimator": {
+        "name": "Tank Decimator",
+        "desc": "Deals increased damage to same target (+6/attack). Bonus resets on target switch."
+    },
+    "infuse soul": {
+        "name": "Infuse Soul",
+        "desc": "Infuses up to two sends and grants them bonus 40.00% attack speed."
+    },
+    "armor aura": {
+        "name": "Armor Aura",
+        "desc": "Allies ignore 5 damage per attack (does not stack)"
+    },
+    "slow aura": {
+        "name": "Slow Aura",
+        "desc": "Slows enemies in 6.5 range by 40.00% (does not stack)"
+    },
+    "damage aura": {
+        "name": "Damage Aura",
+        "desc": "Nearby allies gain 8% damage (does not stack)"
+    },
+    "slow speed": {
+        "name": "Slow Speed",
+        "desc": "Moves slower than normal sends."
+    },
+    "healing aura": {
+        "name": "Healing Aura",
+        "desc": "Heals nearby allies 3 HP/s (does not stack)"
+    },
+    "glaive": {
+        "name": "Glaive",
+        "desc": "Attack bounces twice"
+    },
+    "mauling attack": {
+        "name": "Mauling Attack",
+        "desc": "Every 4.00th attack stuns the target for 1 second. Starts with random amount of stacks."
+    },
+    "death scout": {
+        "name": "Death Scout",
+        "desc": "Reveals its surroundings on death."
+    },
+    "multishot": {
+        "name": "Multishot",
+        "desc": "Can attack 4.00 targets with each attack."
+    },
+    "spellbane respite": {
+        "name": "Spellbane Respite",
+        "desc": "After being stunned or blinded for 3.00 seconds, gain spell immunity for the next 5.00 seconds."
+    },
+    "stealth assault": {
+        "name": "Stealth Assault",
+        "desc": "Every 8.00 seconds unleashes a surge of ghostly energy, gaining 50.00% bonus attack speed, and ensuring a 100% critical hit chance for 4.00 seconds. Critical hits inflict 200.00% extra damage. May not use Stealth Assault outside of lanes."
+    },
+    "reflection field": {
+        "name": "Reflection Field",
+        "desc": "Predator releases a field each time its attacked, dealing 40.00% of damage taken to foes within 1.20 range. Cooldown of 0.10 seconds."
+    },
+    "kulminate": {
+        "name": "Kulminate",
+        "desc": "Clamps incoming damage to 50.00"
+    },
+    "cleave attack": {
+        "name": "Cleave Attack",
+        "desc": "Attacks all enemies within reach for 25.00% damage."
+    },
+    "time shift": {
+        "name": "Time Shift",
+        "desc": "After attacking 5.00 times, gains bonus 150.00% timescale for 4.00 sec."
+    },
+    "necrosis": {
+        "name": "Necrosis",
+        "desc": "Attacks apply Necrosis for 5.00 seconds. Necrosis prevents most forms of healing, lifesteal and regeneration."
+    },
+    "avenger": {
+        "name": "Avenger",
+        "desc": "Aberrations gain +10.00% attack speed, +10.00% movement speed, +15.00% max hp and +2.00 hp/s bonus whenever nearby Aberrations dies. Stacks up to 10.00 times."
+    },
+    "infinity protocol": {
+        "name": "Infinity Protocol",
+        "desc": "Each wave gains +40.00 damage, +650.00hp, +5.00% attack speed. Every 5th wave gains 5 upgrades instead of 1."
+    },
+    "current bonus": {
+        "name": "Current bonus",
+        "desc": "+<d ref=\"Upgrade,FinalWaveUpgrade,EffectArray[0].Value*$UpgradeLevel:FinalWaveUpgrade$\" player=\"current\"/> damage, +<d ref=\"Upgrade,FinalWaveUpgrade,EffectArray[1].Value*$UpgradeLevel:FinalWaveUpgrade$\" player=\"current\"/> hp, +<d ref=\"(1-Upgrade,FinalWaveUpgrade,EffectArray[5].Value)*100*$UpgradeLevel:FinalWaveUpgrade$\" player=\"current\"/>% attack speed."
+    },
+    "haste": {
+        "name": "Haste",
+        "desc": "Has 5.50 minimum movement speed"
+    },
+    "bounce attack": {
+        "name": "Bounce Attack",
+        "desc": "Attacks bounce to two other enemies, dealing 80% as much damage per bounce"
+    }
+}
