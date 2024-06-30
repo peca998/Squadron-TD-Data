@@ -777,6 +777,7 @@
         <Fields Id="enabled" Type="Int"/>
         <Fields Id="start" Type="Int"/>
         <Fields Id="stop" Type="Int"/>
+        <Fields Id="activation" Type="Text"/>
         <Instances Id="[Default]"/>
         <Instances Id="Heavy_Fog">
             <Image Image="Assets\Textures\tip_terrazinefog.dds">
@@ -924,6 +925,9 @@
             </Text>
             <Text Text="UserData/MutatorData/Trade_Tricks_description">
                 <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Trade_Tricks_activation">
+                <Field Id="activation"/>
             </Text>
         </Instances>
         <Instances Id="Mineral_Meltdown">

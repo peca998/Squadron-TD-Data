@@ -1072,7 +1072,7 @@
         "cost": {
             "minerals": 655.0,
             "vespene": 0.0,
-            "supply": -3.0
+            "supply": -5.0
         },
         "move_speed": 2.3984,
         "abilities": [
@@ -2720,7 +2720,7 @@
             "purge"
         ],
         "bonuses": {
-            "dps_bonus_add": 64.29,
+            "dps_bonus_add": 42.86,
             "dps_bonus_mult": 1.0,
             "life_bonus_add": 0.0,
             "life_bonus_mult": 1.0,
@@ -2756,7 +2756,7 @@
             "range": 0.1,
             "melee": true
         },
-        "hp": 1248.0,
+        "hp": 1040.0,
         "shields": 0.0,
         "energy": 0.0,
         "armor": "Mechanical",
@@ -3044,13 +3044,13 @@
             "name": "Theos Attack",
             "damage": {
                 "id": "TheosDamage",
-                "min": 150.0,
-                "max": 150.0,
+                "min": 0.0,
+                "max": 0.0,
                 "kind": "Ranged",
                 "dmg_type": "Magic",
                 "effect_type": "WeaponDamage"
             },
-            "period": 1.4,
+            "period": 4.0,
             "targets": 1,
             "range": 7.0,
             "melee": false
@@ -3066,12 +3066,12 @@
         },
         "move_speed": 2.3984,
         "abilities": [
-            "celestial surge"
+            "creation"
         ],
         "bonuses": {
-            "dps_bonus_add": 0.0,
+            "dps_bonus_add": 153.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 0.0,
+            "life_bonus_add": 2840.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
@@ -4207,7 +4207,7 @@
             "range": 0.1,
             "melee": true
         },
-        "hp": 1145.0,
+        "hp": 1040.0,
         "shields": 0.0,
         "energy": 0.0,
         "armor": "Massive",
@@ -4258,7 +4258,7 @@
         "hp": 1975.0,
         "shields": 0.0,
         "energy": 0.0,
-        "armor": "Massive",
+        "armor": "Light",
         "cost": {
             "minerals": 405.0,
             "vespene": 0.0,
@@ -4310,7 +4310,7 @@
         "hp": 3300.0,
         "shields": 0.0,
         "energy": 0.0,
-        "armor": "Massive",
+        "armor": "Light",
         "cost": {
             "minerals": 580.0,
             "vespene": 0.0,

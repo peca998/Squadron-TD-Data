@@ -153,7 +153,7 @@
     },
     "decode": {
         "name": "Decode",
-        "desc": "Analyzes the enemy within 7.00 range, allowing allies to attack the unit optimally (costs 3 energy) for 10.00 seconds. Target takes +8.00 spell damage per hit. Refunds energy if target dies."
+        "desc": "Analyzes the enemy within 7.00 range, allowing allies to attack the unit optimally (costs 5 energy) for 10.00 seconds. Target loses Spell Immunity and takes +8.00 spell damage per hit.\nDamage cooldown of 0.75 second."
     },
     "matrix shield": {
         "name": "Matrix Shield",
@@ -237,7 +237,7 @@
     },
     "absolution": {
         "name": "Absolution",
-        "desc": "+5.00% Attack Speed per attack (max +160.00%)\nGains 3 bonus stacks if attack kills enemy.\nCapped at 100% when teleporting to Security System and final waves."
+        "desc": "+4.00% Attack Speed per attack (max +160.00%)\nGains 3 bonus stacks if attack kills enemy.\nCapped at 100% when teleporting to Security System and final waves."
     },
     "explosive rounds": {
         "name": "Explosive Rounds",
@@ -251,9 +251,9 @@
         "name": "Welding",
         "desc": "Heals damaged ally within 7.00 range for 5.00 + 1.95% HP/s."
     },
-    "celestial surge": {
-        "name": "Celestial Surge",
-        "desc": "Buffs an ally for 30.00 seconds, granting it the ability to get +2.00+2.00% (max 15.00 stacks) damage each time it deals damage (cooldown 0.07 sec) and to heal allies within ally weapon range+3.00 range for 10.00% of damage dealt.\nUpon reaching max stacks, healing fraction is increased to 20.00% of damage dealt for 5.00 seconds, after which all stacks are lost."
+    "creation": {
+        "name": "Creation",
+        "desc": "Each attack binds a Celestian to this Theos. Celestians so bound are released after 20.00s and have no collision."
     },
     "tempt": {
         "name": "Tempt",
@@ -265,7 +265,7 @@
     },
     "purge": {
         "name": "Purge",
-        "desc": "Purges an enemy unit within 10.00 range removing Spell Immunity and dealing 450.00 damage. Costs 7 energy."
+        "desc": "Purges an enemy unit within 10.00 range removing Spell Immunity and dealing 300.00 damage. Costs 7 energy."
     },
     "experimental unit": {
         "name": "Experimental Unit",

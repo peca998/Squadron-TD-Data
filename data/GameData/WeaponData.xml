@@ -380,11 +380,12 @@
         <Period value="0.33"/>
         <Effect value="TerminatorDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="TheosAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="TheosAttack" parent="RangedWeaponLifeFractionSort" damage_type="Creation">
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
         <DisplayEffect value="TheosDamage"/>
         <Range value="7"/>
-        <Period value="1.4"/>
-        <Effect value="TheosDamage"/>
+        <Period value="4"/>
+        <Effect value="CreationSet"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="FallenAttack" parent="RangedWeaponDistanceSort" damage_type="Normal">
         <DisplayEffect value="FallenDamage"/>
@@ -1170,7 +1171,7 @@
     <CWeaponLegacy id="Wave31Attack" parent="RangedWeaponDistanceSort" damage_type="Chaos">
         <DisplayEffect value="Wave31Damage"/>
         <Range value="2.25"/>
-        <Period value="1"/>
+        <Period value="0.8"/>
         <DamagePoint value="0.05"/>
         <Backswing value="0.75"/>
         <Effect value="Wave31Damage"/>

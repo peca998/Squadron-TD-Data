@@ -160,10 +160,6 @@
         <AlignV value="Bottom"/>
         <HeightOffset value="1.000000"/>
     </CActorText>
-    <CActorModel id="CelestialSurge@Buff" parent="ModelAnimationStyleContinuousBuff" buff="CelestialSurge@DamageResponse">
-        <HostSiteOps Ops="SOpAttachOrigin"/>
-        <AutoScaleFactor value="1.000000"/>
-    </CActorModel>
     <CActorModel id="MuddledArmorExplosion" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.MuddledArmorSearch.Start" Send="Create"/>
@@ -1324,7 +1320,7 @@
         <On Terms="Effect.fHavoc@AttackBeam.Stop" Send="Create"/>
         <Sound value="Sentry_WeaponEnd"/>
     </CActorSound>
-    <CActorUnit id="fPhantasm" parent="TowerActorBaseMassive" unitName="fPhantasm">
+    <CActorUnit id="fPhantasm" parent="TowerActorBaseLight" unitName="fPhantasm">
         <DeathArray index="Normal" ModelLink="fPhantasm@Death" VoiceLink="DarkTemplar_Death"/>
         <BarOffset value="50"/>
         <BarWidth value="42"/>
@@ -1671,7 +1667,7 @@
     </CActorModel>
     <CActorModel id="Legato@SFX" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
-        <On Terms="Effect.Legato@TriggerHealMissingHPSortHeal.Start; At Target" Send="Create"/>
+        <On Terms="Effect.Legato@Heal.Start; At Target" Send="Create"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead"/>
     </CActorModel>
@@ -2114,8 +2110,8 @@
         <ImpactMap index="None" Model="Send_Flame_Behemoth_Missile_Impact" Sound="Yagdra_Fireball_Impact"/>
     </CActorAction>
     <CActorSound id="WeldingHealSound" parent="SoundContinuous">
-        <On Terms="Effect.WeldingHealAutocastMissingHPSortHeal.TargetStart; At Target" Send="Create"/>
-        <On Terms="Effect.WeldingHealAutocastMissingHPSortHeal.TargetStop; At Target" Send="Destroy"/>
+        <On Terms="Effect.WeldingHealBeam.TargetStart; At Target" Send="Create"/>
+        <On Terms="Effect.WeldingHealBeam.TargetStop; At Target" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="Create MedicHealSoundStart"/>
         <On Terms="ActorDestruction" Send="Create MedicHealSoundStop"/>
@@ -4592,7 +4588,7 @@
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
         </GroupIcon>
-        <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
         </Wireframe>
@@ -4609,7 +4605,7 @@
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
         </GroupIcon>
-        <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
         </Wireframe>
@@ -5237,6 +5233,10 @@
         <LaunchAssets Sound="Colossus_AttackLaunch"/>
         <ImpactMap index="None" Sound="Colossus_AttackImpact"/>
     </CActorAction>
+    <CActorModel id="CreationSFX" parent="ModelAnimationStyleOneShotUNIT">
+        <EditorCategories value=""/>
+        <On Terms="Effect.Creation.Create; At Effect" Send="Create"/>
+    </CActorModel>
     <CActorAction id="AurorAttack" parent="GenericAttack" effectAttack="AurorDamage" effectImpact="" effectLaunch="">
         <EditorCategories value=""/>
         <On index="0" Terms="Effect.Start; At Caster; FromEffectTreeDescendant" Send="ActionImpact"/>
@@ -6092,7 +6092,7 @@
         <AcquisitionPitchHalfArc value="15.000000"/>
         <AccuracyHalfArc value="5.000000"/>
     </CActorAction>
-    <CActorAction id="SacredBlessing" parent="GenericAttack" effectAttack="SacredBlessingAutocastMissingHPSortHeal">
+    <CActorAction id="SacredBlessing" parent="GenericAttack" effectAttack="SacredBlessingHeal">
         <EditorCategories value=""/>
     </CActorAction>
     <CActorAction id="AquaSpiritBounce1" parent="GenericAttack" effectImpact="AquaSpiritBounce1Damage" effectLaunch="AquaSpiritBounce1Missle">
@@ -6163,7 +6163,7 @@
         <ImpactMap index="None" Model="TychusChaingunAttackImpact" Sound="Tychus_ChaingunAttackImpact"/>
         <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
     </CActorAction>
-    <CActorAction id="WaterofLife" parent="GenericAttack" effectAttack="WaterofLifeAutocastMissingHPSortHeal">
+    <CActorAction id="WaterofLife" parent="GenericAttack" effectAttack="WaterofLifeHeal">
         <EditorCategories value=""/>
         <LaunchAttachQuery Methods="AMFilterCenter"/>
     </CActorAction>
@@ -9929,7 +9929,7 @@
             <Image value="Assets\Textures\Wireframe-Protoss-DarkTemplar01-Shield03.dds"/>
         </WireframeShieldVariations>
     </CActorUnit>
-    <CActorUnit id="fForsakenOne" parent="TowerActorBaseMassive" unitName="fForsakenOne">
+    <CActorUnit id="fForsakenOne" parent="TowerActorBaseLight" unitName="fForsakenOne">
         <On Terms="UnitPortrait.*.Customize; ModelVariation 1" Send="PortraitCustomize DarkTemplar2Portrait"/>
         <On Terms="UnitPortrait.*.Customize; ModelVariation 0" Send="PortraitCustomize DarkTemplarPortrait"/>
         <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
@@ -11501,8 +11501,8 @@
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
     <CActorBeamSimple id="WeldingHealBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <On Terms="Effect.WeldingHealAutocastMissingHPSortHeal.TargetStart" Send="Create"/>
-        <On Terms="Effect.WeldingHealAutocastMissingHPSortHeal.TargetStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.WeldingHealBeam.TargetStart" Send="Create"/>
+        <On Terms="Effect.WeldingHealBeam.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="ActorCreation" Send="SetTintColor 255,255,0"/>
         <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
         <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>

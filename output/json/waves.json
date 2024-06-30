@@ -1383,7 +1383,7 @@
                 "dmg_type": "Chaos",
                 "effect_type": "WeaponDamage"
             },
-            "period": 1.0,
+            "period": 0.8,
             "targets": 1,
             "range": 2.25,
             "melee": false

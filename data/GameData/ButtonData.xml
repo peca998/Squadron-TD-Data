@@ -12,10 +12,6 @@
         <TooltipAppender Validator="TooltipExpanded" Text="Button/Tooltip/##id##_Upgrades"/>
         <TooltipAppender Validator="TooltipExpanded" Text="DOCSTR_CollapseTooltip"/>
     </CButton>
-    <CButton id="CelestialSurge" parent="AbilityButtonTemplate" prio="HighestDps">
-        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
-        <AlertIcon value="Assets\Textures\btn-tips-biosample.dds"/>
-    </CButton>
     <CButton id="ChronoInfusion" parent="AbilityButtonTemplate" prio="HighestDps">
         <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
@@ -668,6 +664,9 @@
     </CButton>
     <CButton id="FigurandumMones">
         <Icon value="Assets\Textures\btn-ability-protoss-blink-zeratul.dds"/>
+    </CButton>
+    <CButton id="Creation">
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
     </CButton>
     <CButton id="Earthshock">
         <Icon value="Assets\Textures\btn-techupgrade-terran-burstcapacitors.dds"/>

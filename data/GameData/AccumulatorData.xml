@@ -81,39 +81,6 @@
         <Ratio value="1"/>
         <ModificationType value="PerUnit"/>
     </CAccumulatorVitals>
-    <CAccumulatorSwitch id="CelestialSurge@FractionSwitch">
-        <CaseArray Validator="CelestialSurge@NotMaxIndicator" Accumulator="CelestialSurge@NormalFraction"/>
-        <CaseDefault value="CelestialSurge@FullFraction"/>
-    </CAccumulatorSwitch>
-    <CAccumulatorConstant id="CelestialSurge@FullFraction">
-        <Amount value="0.2"/>
-    </CAccumulatorConstant>
-    <CAccumulatorArithmetic id="CelestialSurge@HealFormular">
-        <Parameters value="0">
-            <AccumulatorArray value="DamageInherited"/>
-        </Parameters>
-        <Parameters value="0">
-            <AccumulatorArray value="CelestialSurge@FractionSwitch"/>
-        </Parameters>
-        <Operation value="Multiply"/>
-    </CAccumulatorArithmetic>
-    <CAccumulatorArithmetic id="CelestialSurge@HealRange">
-        <Parameters value="0">
-            <AccumulatorArray value="CelestialSurge@RangeBonus"/>
-        </Parameters>
-        <Parameters value="0">
-            <AccumulatorArray value="CurrentWeaponRange"/>
-        </Parameters>
-    </CAccumulatorArithmetic>
-    <CAccumulatorConstant id="CelestialSurge@MaxCount">
-        <Amount value="15"/>
-    </CAccumulatorConstant>
-    <CAccumulatorConstant id="CelestialSurge@NormalFraction">
-        <Amount value="0.1"/>
-    </CAccumulatorConstant>
-    <CAccumulatorConstant id="CelestialSurge@RangeBonus">
-        <Amount value="3"/>
-    </CAccumulatorConstant>
     <CAccumulatorSwitch id="ChronoInfusion@WhirlwindMultiplier">
         <CaseArray Validator="ChronoInfusion@NoChronoInfusion" Accumulator="Const1"/>
         <CaseDefault value="Const1_5"/>

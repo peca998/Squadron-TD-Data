@@ -53,14 +53,14 @@ Celestial,5,Prophet,0,1,1.0,0.0,1.4,True,0.0,1.0,True,Foresight: 40% to deal 200
 Celestial,6,Deity,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,1u,Seraphim,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,2u,Daemon,0,1,1.0,67.0,1.0,True,0.0,1.0,True,Torment: Assume 5 units hit for 40 damage | every 3 sec => 200/3=67
-Celestial,3u,Archangel,0,1,1.0,64.29,1.0,True,0.0,1.0,True,Purge: +450 damage for 7 energy = 450/7 = 64.29
+Celestial,3u,Archangel,0,1,1.0,42.86,1.0,True,0.0,1.0,True,Purge: +300 damage for 7 energy = 300/7 = 42.86
 Celestial,3u,Cupid,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,3u,Fallen,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,3u,Celestian,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,4u,Templar,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,4uu,Kingsguard,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Celestial,5u,Auror,0,1,1.0,0.0,2.2,True,0.0,1.0,True,Absolution: +4% attack speed per attack | max 40 stacks | use adjusted midpoint of 30*4%
-Celestial,6u,Theos,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
+Celestial,6u,Theos,0,1,1.0,153.0,1.0,True,2840.0,1.0,True,Creation: Spawn 1 Celestian per attack (4.5s). Assume 20s round | spawn 4 Celestian with average DPS 76.5 * 2 = 153 and HP add of 710 * 4 = 2840
 Elemental,1,Proton,0,1,1.0,0.0,1.0,True,0.0,1.0,True,
 Elemental,2,Aqua Spirit,0,1,1.0,0.0,1.8,True,0.0,1.0,True,Water Splash: 2 energy for +80% dmg (10 hits in a row at 80% then 50% hit extra 80%)| 1.8 DPS
 Elemental,3,Watcher,0,1,1.0,0.0,1.0,True,0.0,1.0,True,

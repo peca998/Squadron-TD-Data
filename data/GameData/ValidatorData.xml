@@ -50,16 +50,6 @@
         <Value value="1"/>
         <Vital value="Energy"/>
     </CValidatorUnitCompareVital>
-    <CValidatorUnitCompareBehaviorCount id="CelestialSurge@NoResponseBuff">
-        <Behavior value="CelestialSurge@DamageResponse"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="CelestialSurge@NotMaxIndicator">
-        <WhichUnit Value="Source"/>
-        <Behavior value="CelestialSurge@MaxIndicator"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="CelestialSurge@NotOnCooldown">
-        <Behavior value="CelestialSurge@Cooldown"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="ChronoInfusion@HasMaxShieldsBuff">
         <CombineArray value="ChronoInfusion@NoMaxShieldsBuff"/>
         <Negate value="1"/>
@@ -1851,6 +1841,10 @@
         <Type value="Fraction"/>
         <Value value="1"/>
     </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="NoDecodeDamageCooldown">
+        <WhichUnit Value="Source"/>
+        <Behavior value="DecodeDamageCooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareField id="IsNotRanged">
         <Compare value="LT"/>
         <Field value="CUnit_WeaponArray[0].CWeapon_Range"/>

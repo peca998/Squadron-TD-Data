@@ -247,47 +247,6 @@
         <DamageResponse ModifyFraction="1.05"/>
         <Duration value="10"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="CelestialSurge@Autocast" parent="AutocastBase">
-        <DisableValidatorArray value="CelestialSurge@NotOnCooldown"/>
-        <PeriodicEffect value="CelestialSurge@SearchAlly"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="CelestialSurge@CelestialSurgeDamage" parent="SquadronBuffTemplate">
-        <Alignment value="Positive"/>
-        <MaxStackCount value="15"/>
-        <Modification>
-            <DamageDealtScaled index="Spell" value="2"/>
-            <DamageDealtScaled index="Melee" value="2"/>
-            <DamageDealtScaled index="Ranged" value="2"/>
-            <DamageDealtScaled index="Splash" value="2"/>
-            <DamageDealtFraction index="Spell" value="0.02"/>
-            <DamageDealtFraction index="Melee" value="0.02"/>
-            <DamageDealtFraction index="Ranged" value="0.02"/>
-            <DamageDealtFraction index="Splash" value="0.02"/>
-        </Modification>
-        <InfoIcon value="Assets\Textures\btn-tips-biosample.dds"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="CelestialSurge@Cooldown" parent="SquadronBuffTemplate">
-        <Alignment value="Negative"/>
-        <InfoIcon value="Assets\Textures\btn-tips-biosample.dds"/>
-        <Duration value="31"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="CelestialSurge@DamageResponse" parent="SquadronBuffTemplate">
-        <DamageResponse Handled="CelestialSurge@ResponseSet" Location="Attacker" HandledValue="Remaining">
-            <Chance value="1"/>
-            <Cost>
-                <Cooldown TimeUse="0.07"/>
-            </Cost>
-        </DamageResponse>
-        <InfoFlags index="Hidden" value="1"/>
-        <Duration value="30"/>
-        <FinalEffect value="CelestialSurge@FinalSet"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="CelestialSurge@MaxIndicator" parent="SquadronBuffTemplate">
-        <Alignment value="Positive"/>
-        <Duration value="5"/>
-        <FinalEffect value="CelestialSurge@RemoveAllStacks"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="ChronoInfusion" parent="SquadronBuffTemplate">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
@@ -408,10 +367,6 @@
         </Modification>
         <Alignment value="Positive"/>
         <InfoIcon value="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel3-dark.dds"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="MiniBossDamageReduction" parent="DamageReductionTemplate">
-        <InfoFlags index="Hidden" value="1"/>
-        <DamageResponse ModifyFraction="0.8"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Psiblast@InitialAutocast" parent="AutocastOnce">
         <DisableValidatorArray value="HasEnemiesIn7Range"/>
@@ -2079,7 +2034,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="DecodeAutocast" parent="AutocastBase">
         <PeriodicEffect value="DecodeSearch"/>
-        <DisableValidatorArray value="Has03Energy"/>
+        <DisableValidatorArray value="Has05Energy"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="DespairAuraDebuff1Stack">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -3599,6 +3554,14 @@
         <DamageResponse ModifyFraction="0.9" ModifyMinimumDamage="1"/>
         <DisableValidatorArray value="CasterNotExpelled"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="CreationTrigger">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DamageResponse Handled="Creation" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
+        <DisableValidatorArray value="CasterNotExpelled"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="EarthshockStun" parent="StunGeneric">
         <InfoIcon value="Assets\Textures\btn-techupgrade-terran-burstcapacitors.dds"/>
         <Duration value="2"/>
@@ -3988,9 +3951,9 @@
         <InfoIcon value="Assets\Textures\btn-tips-challengecounter.dds"/>
         <BehaviorCategories index="Temporary" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <MaxStackCount value="32"/>
+        <MaxStackCount value="40"/>
         <Modification>
-            <AdditiveAttackSpeedFactor value="0.05"/>
+            <AdditiveAttackSpeedFactor value="0.04"/>
         </Modification>
         <DisableValidatorArray value="CasterNotExpelled"/>
         <BuffFlags index="RefreshStack" value="1"/>
@@ -4041,6 +4004,12 @@
             <Chance value="1"/>
             <DamageType index="Defensive" value="0"/>
         </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TimedLifeTheos" parent="SquadronTimedLifeTemplate">
+        <Duration value="20"/>
+        <Modification>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="WintersGraspTier1">
         <Alignment value="Positive"/>
@@ -4510,6 +4479,7 @@
         </DamageResponse>
         <Alignment value="Positive"/>
         <InfoIcon value="Starcraft 2 Assets\btn-ability-terran-defensivematrix-blue.dds"/>
+        <DisableValidatorArray value="NotDecoded"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="SwiftAura2" parent="AuraCasterTemplate">
         <PeriodicEffect value="SwiftAuraSearchArea"/>
@@ -4770,16 +4740,22 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
         <Alignment value="Negative"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Decoded" parent="SquadronBuffTemplate">
+    <CBehaviorBuff id="DecodeDamageCooldown">
         <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Decoded">
         <InfoIcon value="Assets\Textures\btn-tips-hacking.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="10"/>
-        <DamageResponse Handled="DecodeDamage">
+        <DamageResponse Handled="DecodeDamageSet">
             <Chance value="1"/>
         </DamageResponse>
-        <Modification>
-            <DeathResponse Chance="1" Effect="DecodeRecharge"/>
-        </Modification>
+        <DisableValidatorArray value="CasterNotExpelled"/>
+        <Alignment value="Negative"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="ConcussionShell">
         <Alignment value="Negative"/>

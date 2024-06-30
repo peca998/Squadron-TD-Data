@@ -976,7 +976,7 @@
         </CardLayouts>
     </CUnit>
     <CUnit id="fPhantasm" parent="SquadronUnitTemplate">
-        <Attributes index="Massive" value="1"/>
+        <Attributes index="Light" value="1"/>
         <LifeStart value="3300"/>
         <LifeMax value="3300"/>
         <LifeArmorName value="Unit/LifeArmorName/Light"/>
@@ -1106,7 +1106,7 @@
             <LayoutButtons Face="BigBrother" Type="Passive" Row="2" Column="4"/>
             <LayoutButtons Face="Overwatch" Type="Passive" Row="2" Column="3"/>
         </CardLayouts>
-        <Food value="-1"/>
+        <Food value="-3"/>
     </CUnit>
     <CUnit id="fRaptorling" parent="SquadronUnitTemplate">
         <Attributes index="Light" value="1"/>
@@ -2747,9 +2747,8 @@
         <CostResource index="Minerals" value="550"/>
         <WeaponArray Link="TheosAttack"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="CelestialSurge" Type="Passive" Row="2" Column="4"/>
+            <LayoutButtons Face="Creation" Type="Passive" Row="2" Column="4"/>
         </CardLayouts>
-        <BehaviorArray Link="CelestialSurge@Autocast"/>
     </CUnit>
     <CUnit id="fFallen" parent="SquadronUnitTemplate">
         <Attributes index="Massive" value="1"/>
@@ -2853,8 +2852,8 @@
     </CUnit>
     <CUnit id="fVanguard" parent="SquadronUnitTemplate">
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="1248"/>
-        <LifeMax value="1248"/>
+        <LifeStart value="1040"/>
+        <LifeMax value="1040"/>
         <LifeArmorName value="Unit/LifeArmorName/Mechanical"/>
         <Food value="-2"/>
         <CostResource index="Minerals" value="180"/>
@@ -4308,8 +4307,8 @@
     </CUnit>
     <CUnit id="fOutcast" parent="SquadronUnitTemplate">
         <Attributes index="Massive" value="1"/>
-        <LifeStart value="1145"/>
-        <LifeMax value="1145"/>
+        <LifeStart value="1040"/>
+        <LifeMax value="1040"/>
         <LifeArmorName value="Unit/LifeArmorName/Massive"/>
         <Food value="-2"/>
         <CostResource index="Minerals" value="175"/>
@@ -4322,7 +4321,7 @@
         <InnerRadius value="0"/>
     </CUnit>
     <CUnit id="fForsakenOne" parent="SquadronUnitTemplate">
-        <Attributes index="Massive" value="1"/>
+        <Attributes index="Light" value="1"/>
         <LifeStart value="1975"/>
         <LifeMax value="1975"/>
         <LifeArmorName value="Unit/LifeArmorName/Light"/>
