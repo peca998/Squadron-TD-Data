@@ -384,7 +384,7 @@
         <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
         <DisplayEffect value="TheosDamage"/>
         <Range value="7"/>
-        <Period value="4"/>
+        <Period value="3.4"/>
         <Effect value="CreationSet"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="FallenAttack" parent="RangedWeaponDistanceSort" damage_type="Normal">

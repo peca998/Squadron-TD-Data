@@ -481,8 +481,8 @@
     <CUnit id="Send_Hunterling" parent="SendBase">
         <PushPriority value="32"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="4100"/>
-        <LifeMax value="4100"/>
+        <LifeStart value="3075"/>
+        <LifeMax value="3075"/>
         <LifeArmorName value="Unit/LifeArmorName/Mechanical"/>
         <CostResource index="Vespene" value="540"/>
         <KillXP value="540"/>
@@ -4307,8 +4307,8 @@
     </CUnit>
     <CUnit id="fOutcast" parent="SquadronUnitTemplate">
         <Attributes index="Massive" value="1"/>
-        <LifeStart value="1040"/>
-        <LifeMax value="1040"/>
+        <LifeStart value="1145"/>
+        <LifeMax value="1145"/>
         <LifeArmorName value="Unit/LifeArmorName/Massive"/>
         <Food value="-2"/>
         <CostResource index="Minerals" value="175"/>

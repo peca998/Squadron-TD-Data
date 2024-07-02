@@ -765,6 +765,7 @@
         <FinalEffect value="Masterpiece@Trigger"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MaulingAttack">
+        <InfoFlags index="Hidden" value="1"/>
         <Alignment value="Positive"/>
         <MaxStackCount value="4"/>
     </CBehaviorBuff>
@@ -831,11 +832,8 @@
     <CBehaviorBuff id="PauseWarCenter">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <TimeScaleSource Value="Global"/>
         <Modification>
-            <AbilClassDisableArray index="CAbilQueue" value="1"/>
-            <AbilClassDisableArray index="CAbilResearch" value="1"/>
-            <AbilClassDisableArray index="CAbilTrain" value="1"/>
+            <StateFlags index="Stun" value="1"/>
             <BehaviorLinkDisableArray value="RefineryHarvester"/>
             <BehaviorLinkDisableArray value="RefineryTickCountdown"/>
         </Modification>
@@ -2508,7 +2506,7 @@
         <InfoIcon value="Assets\Textures\btn-upgrade-tychus-armor-level5.dds"/>
         <BehaviorCategories index="Restorable" value="1"/>
         <RemoveValidatorArray value="CasterIn7RangeAndNotDead"/>
-        <DamageResponse ModifyFraction="0.85"/>
+        <DamageResponse ModifyFraction="0.80"/>
         <Alignment value="Positive"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Pocoapoco@Bonus">

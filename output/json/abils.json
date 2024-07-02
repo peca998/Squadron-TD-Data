@@ -261,7 +261,7 @@
     },
     "infatuate": {
         "name": "Infatuate",
-        "desc": "Infatuates enemy send (not zergling) within 8.00 range for 8.00s. Attacks from infatuated units instead heal targets HP for 40.00% of attempted damage.\nCosts 50.00% hp."
+        "desc": "Infatuates enemy send (not zergling) within 12.00 range for 8.00s. Attacks from infatuated units instead heal targets HP for 40.00% of attempted damage.\nCosts 45.00% hp."
     },
     "purge": {
         "name": "Purge",
@@ -809,7 +809,7 @@
     },
     "resistance aura": {
         "name": "Resistance Aura",
-        "desc": "Allies gain 15% damage reduction (does not stack)"
+        "desc": "Allies gain 20.00%% damage reduction (does not stack)"
     },
     "massive sweep": {
         "name": "Massive Sweep",

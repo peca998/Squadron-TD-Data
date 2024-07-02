@@ -951,7 +951,7 @@
             <Image Image="Assets\Textures\btn-ability-mengsk-viking-speed.dds">
                 <Field Id="icon"/>
             </Image>
-            <Int Int="1">
+            <Int Int="0">
                 <Field Id="enabled"/>
             </Int>
             <Int Int="2">

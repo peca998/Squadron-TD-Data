@@ -2948,7 +2948,7 @@
         <EditorCategories value=""/>
         <ImpactUnit Value="Caster"/>
         <VitalArray index="Life">
-            <ChangeFraction value="-0.5"/>
+            <ChangeFraction value="-0.45"/>
         </VitalArray>
     </CEffectModifyUnit>
     <CEffectCreateHealer id="InfatuatedHeal" parent="HealOnceTemplate">
@@ -4619,7 +4619,7 @@
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSPriority"/>
         </TargetSorts>
-        <AreaArray MaxCount="1" Radius="8" Effect="InfatuateSet"/>
+        <AreaArray MaxCount="1" Radius="12" Effect="InfatuateSet"/>
     </CEffectEnumArea>
     <CEffectModifyPlayer id="GasLeak">
         <EditorCategories value=""/>
@@ -7891,7 +7891,7 @@
         <Type value="WeaponDamage"/>
     </CEffectDamage>
     <CEffectDamage id="Send_Zealot" parent="NormalDamage">
-        <Amount value="21"/>
+        <Amount value="24"/>
         <Random value="2"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>

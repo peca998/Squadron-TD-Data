@@ -143,8 +143,8 @@
             "name": "Zealot Attack",
             "damage": {
                 "id": "Send_Zealot",
-                "min": 21.0,
-                "max": 23.0,
+                "min": 24.0,
+                "max": 26.0,
                 "kind": "Melee",
                 "dmg_type": "Normal",
                 "effect_type": "WeaponDamage"
@@ -1493,7 +1493,7 @@
             "range": 0.1,
             "melee": true
         },
-        "hp": 4100.0,
+        "hp": 3075.0,
         "shields": 0.0,
         "energy": 0.0,
         "armor": "Mechanical",
