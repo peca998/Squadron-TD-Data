@@ -912,9 +912,6 @@
                 <Field Id="icon"/>
             </Image>
             <Int Int="1">
-                <Field Id="enabled"/>
-            </Int>
-            <Int Int="1">
                 <Field Id="start"/>
             </Int>
             <Int Int="31">
@@ -946,14 +943,14 @@
             <Text Text="UserData/MutatorData/Mineral_Meltdown_description">
                 <Field Id="description"/>
             </Text>
+            <Text Text="UserData/MutatorData/Mineral_Meltdown_activation">
+                <Field Id="activation"/>
+            </Text>
         </Instances>
         <Instances Id="Rush_Hour">
             <Image Image="Assets\Textures\btn-ability-mengsk-viking-speed.dds">
                 <Field Id="icon"/>
             </Image>
-            <Int Int="0">
-                <Field Id="enabled"/>
-            </Int>
             <Int Int="2">
                 <Field Id="start"/>
             </Int>
@@ -965,6 +962,69 @@
             </Text>
             <Text Text="UserData/MutatorData/Rush_Hour_title">
                 <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Glass_Cannon">
+            <Image Image="Assets\Textures\btn-doodad-korhalcannon.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Glass_Cannon_title">
+                <Field Id="title"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Glass_Cannon_description">
+                <Field Id="description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Economic_Sends">
+            <Image Image="Assets\Textures\economiccrisis_coop.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Economic_Sends_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Economic_Sends_title">
+                <Field Id="title"/>
+            </Text>
+        </Instances>
+        <Instances Id="Refund_Rush">
+            <Image Image="Assets\Textures\btn-ability-hornerhan-salvagebonus.dds">
+                <Field Id="icon"/>
+            </Image>
+            <Int Int="1">
+                <Field Id="enabled"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="start"/>
+            </Int>
+            <Int Int="31">
+                <Field Id="stop"/>
+            </Int>
+            <Text Text="UserData/MutatorData/Refund_Rush_title">
+                <Field Id="title"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Refund_Rush_description">
+                <Field Id="description"/>
+            </Text>
+            <Text Text="UserData/MutatorData/Refund_Rush_activation">
+                <Field Id="activation"/>
             </Text>
         </Instances>
     </CUser>
@@ -1305,8 +1365,10 @@
         </Fields>
         <Fields Id="Spawn Count" Type="Int"/>
         <Fields Id="Experience" Type="Int"/>
+        <Fields Id="Ability Icons" Type="Image" Count="2"/>
+        <Fields Id="Recommended Value" Type="String"/>
         <Instances Id="[Default]"/>
-        <Instances Id="Fat Zerglings">
+        <Instances Id="Wave01">
             <GameLink GameLink="Wave01">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1316,8 +1378,11 @@
             <Int Int="6">
                 <Field Id="Experience"/>
             </Int>
+            <String String="180+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Lava Crawler">
+        <Instances Id="Wave02">
             <GameLink GameLink="Wave02">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1327,8 +1392,11 @@
             <Int Int="6">
                 <Field Id="Experience"/>
             </Int>
+            <String String="250+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Space Cow">
+        <Instances Id="Wave03">
             <GameLink GameLink="Wave03">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1338,8 +1406,11 @@
             <Int Int="7">
                 <Field Id="Experience"/>
             </Int>
+            <String String="350+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Marine">
+        <Instances Id="Wave04">
             <GameLink GameLink="Wave04">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1349,8 +1420,11 @@
             <Int Int="10">
                 <Field Id="Experience"/>
             </Int>
+            <String String="475+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Hoverlord">
+        <Instances Id="Wave05">
             <GameLink GameLink="Wave05">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1360,8 +1434,11 @@
             <Int Int="11">
                 <Field Id="Experience"/>
             </Int>
+            <String String="690+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Roach">
+        <Instances Id="Wave06">
             <GameLink GameLink="Wave06">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1371,8 +1448,11 @@
             <Int Int="12">
                 <Field Id="Experience"/>
             </Int>
+            <String String="800+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Zealot">
+        <Instances Id="Wave07">
             <GameLink GameLink="Wave07">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1382,8 +1462,11 @@
             <Int Int="16">
                 <Field Id="Experience"/>
             </Int>
+            <String String="975+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Grim Reaper">
+        <Instances Id="Wave08">
             <GameLink GameLink="Wave08">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1393,8 +1476,11 @@
             <Int Int="15">
                 <Field Id="Experience"/>
             </Int>
+            <String String="1100+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Exotic">
+        <Instances Id="Wave09">
             <GameLink GameLink="Wave09">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1404,8 +1490,11 @@
             <Int Int="13">
                 <Field Id="Experience"/>
             </Int>
+            <String String="1300+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="The Infestor">
+        <Instances Id="Wave10">
             <GameLink GameLink="Wave10">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1415,8 +1504,11 @@
             <Int Int="197">
                 <Field Id="Experience"/>
             </Int>
+            <String String="1700+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Scantipede">
+        <Instances Id="Wave11">
             <GameLink GameLink="Wave11">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1426,8 +1518,11 @@
             <Int Int="9">
                 <Field Id="Experience"/>
             </Int>
+            <String String="1950+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Hydralisk">
+        <Instances Id="Wave12">
             <GameLink GameLink="Wave12">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1437,8 +1532,11 @@
             <Int Int="12">
                 <Field Id="Experience"/>
             </Int>
+            <String String="2150+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Broodlord">
+        <Instances Id="Wave13">
             <GameLink GameLink="Wave13">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1448,8 +1546,11 @@
             <Int Int="13">
                 <Field Id="Experience"/>
             </Int>
+            <String String="2400+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Immortal">
+        <Instances Id="Wave14">
             <GameLink GameLink="Wave14">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1459,8 +1560,11 @@
             <Int Int="27">
                 <Field Id="Experience"/>
             </Int>
+            <String String="3000+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Lurker">
+        <Instances Id="Wave15">
             <GameLink GameLink="Wave15">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1470,8 +1574,11 @@
             <Int Int="20">
                 <Field Id="Experience"/>
             </Int>
+            <String String="3200+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Hellion">
+        <Instances Id="Wave16">
             <GameLink GameLink="Wave16">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1481,8 +1588,11 @@
             <Int Int="17">
                 <Field Id="Experience"/>
             </Int>
+            <String String="3600+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Marauder">
+        <Instances Id="Wave17">
             <GameLink GameLink="Wave17">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1492,8 +1602,11 @@
             <Int Int="23">
                 <Field Id="Experience"/>
             </Int>
+            <String String="4000+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Corruptor">
+        <Instances Id="Wave18">
             <GameLink GameLink="Wave18">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1503,8 +1616,11 @@
             <Int Int="20">
                 <Field Id="Experience"/>
             </Int>
+            <String String="4500+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Lyote">
+        <Instances Id="Wave19">
             <GameLink GameLink="Wave19">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1514,52 +1630,79 @@
             <Int Int="27">
                 <Field Id="Experience"/>
             </Int>
+            <String String="5000+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Fatty">
+        <Instances Id="Wave20">
             <GameLink GameLink="Wave20">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\btn-ability-zerg-contaminate-color.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="1">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="337">
                 <Field Id="Experience"/>
             </Int>
+            <String String="6000+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Acidolarvea">
+        <Instances Id="Wave21">
             <GameLink GameLink="Wave21">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\speedfreaks_coop.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="12">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="14">
                 <Field Id="Experience"/>
             </Int>
+            <String String="6750+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Aberration">
+        <Instances Id="Wave22">
             <GameLink GameLink="Wave22">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\avenger_coop.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="16">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="12">
                 <Field Id="Experience"/>
             </Int>
+            <String String="8000+">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="ARES">
+        <Instances Id="Wave23">
             <GameLink GameLink="Wave23">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\btn-ability-dehaka-healing.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="12">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="19">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="High Templar">
+        <Instances Id="Wave24">
             <GameLink GameLink="Wave24">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1569,41 +1712,65 @@
             <Int Int="22">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Hybrid">
+        <Instances Id="Wave25">
             <GameLink GameLink="Wave25">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\btn-upgrade-zerg-cleave.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
+            <Image Image="Assets\Textures\bioticleech_coop.dds">
+                <Field Id="Ability Icons" Index="1"/>
+            </Image>
             <Int Int="4">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="72">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Kerrigan">
+        <Instances Id="Wave26">
             <GameLink GameLink="Wave26">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Starcraft 2 Assets\btn-upgrade-protoss-airarmorlevel2-dark.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="12">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="27">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Predator">
+        <Instances Id="Wave27">
             <GameLink GameLink="Wave27">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\btn-ability-terran-emp-color.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="12">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="29">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Preserver">
+        <Instances Id="Wave28">
             <GameLink GameLink="Wave28">
                 <Field Id="Spawn Unit"/>
             </GameLink>
@@ -1613,39 +1780,63 @@
             <Int Int="48">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Zukar">
+        <Instances Id="Wave29">
             <GameLink GameLink="Wave29">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="10">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="42">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Brutalisk">
+        <Instances Id="Wave30">
             <GameLink GameLink="Wave30">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Starcraft 2 Assets\btn-flinks-protoss-colossuslasers.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-protoss-stealth-blink.dds">
+                <Field Id="Ability Icons" Index="1"/>
+            </Image>
             <Int Int="1">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="443">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
-        <Instances Id="Terratron">
+        <Instances Id="Wave31">
             <GameLink GameLink="Wave31">
                 <Field Id="Spawn Unit"/>
             </GameLink>
+            <Image Image="Assets\Textures\talent-swann-level12-immortalityprotocol.dds">
+                <Field Id="Ability Icons"/>
+            </Image>
             <Int Int="6">
                 <Field Id="Spawn Count"/>
             </Int>
             <Int Int="79">
                 <Field Id="Experience"/>
             </Int>
+            <String String="-">
+                <Field Id="Recommended Value"/>
+            </String>
         </Instances>
     </CUser>
     <CUser id="SylphyMergeData">

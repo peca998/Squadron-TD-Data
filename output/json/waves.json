@@ -404,9 +404,9 @@
         "bounty": 6.0,
         "count": 45
     },
-    "the infestor": {
+    "infestor": {
         "id": "Wave10",
-        "name": "The Infestor",
+        "name": "Infestor",
         "wpn": {
             "id": "Wave10Attack",
             "name": "Infestor Attack",
@@ -491,7 +491,7 @@
             "sort_with_life_bonus": true
         },
         "index": 11,
-        "bounty": 6.0,
+        "bounty": 4.0,
         "count": 54
     },
     "hydralisk": {
@@ -547,8 +547,8 @@
             "name": "Broodlord Attack",
             "damage": {
                 "id": "Wave13Damage",
-                "min": 30.0,
-                "max": 33.0,
+                "min": 37.0,
+                "max": 40.0,
                 "kind": "Melee",
                 "dmg_type": "Magic",
                 "effect_type": "WeaponDamage"
@@ -648,7 +648,7 @@
             "range": 0.1,
             "melee": true
         },
-        "hp": 605.0,
+        "hp": 695.0,
         "shields": 0.0,
         "energy": 0.0,
         "armor": "Massive",
@@ -854,9 +854,9 @@
         "bounty": 10.0,
         "count": 36
     },
-    "fatty": {
+    "blightbringer": {
         "id": "Wave20",
-        "name": "Fatty",
+        "name": "Blightbringer",
         "wpn": {
             "id": "Wave20Attack",
             "name": "Fatty Attack",
@@ -1321,9 +1321,9 @@
         "bounty": 27.0,
         "count": 30
     },
-    "experimental hybrid": {
+    "phase shifter": {
         "id": "Wave30",
-        "name": "Experimental Hybrid",
+        "name": "Phase Shifter",
         "wpn": {
             "id": "Wave30Attack",
             "name": "Experimental Hybrid Attack",

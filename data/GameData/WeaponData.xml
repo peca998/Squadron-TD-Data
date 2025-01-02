@@ -41,6 +41,15 @@
             <SortArray value="Within1Range"/>
         </AcquireTargetSorts>
     </CWeaponLegacy>
+    <!-- Used for units like adepts or captain, where we do want them to focus low hp targets,-->
+    <!-- but they require special care so they don't move in weird ways on ranged waves -->
+    <!-- by chasing low hp targets on other side of lane -->
+    <CWeaponLegacy default="1" id="LowRangedWeaponLifeFractionSort" parent="RangedWeapon">
+        <AcquireTargetSorts>
+            <SortArray value="Within4Range"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
+    </CWeaponLegacy>
     <CWeaponLegacy default="1" id="RangedWeaponDistanceSort" parent="RangedWeapon">
         <AcquireTargetSorts>
             <SortArray value="TSDistance"/>
@@ -86,6 +95,10 @@
         <Period value="1.5"/>
         <Effect value="Send_Flame_Behemoth_Missile"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="Send_Ghost" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+        <Period value="0.9"/>
+        <Range value="4"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="Send_HunterlingAttack" parent="MeleeWeapon" damage_type="Normal">
         <Period value="1.2"/>
     </CWeaponLegacy>
@@ -119,7 +132,7 @@
         <Icon value="Assets\Textures\btn-unit-zerg-locustflyerex3.dds"/>
         <DisplayEffect value="LaunchPrimalLocustDamage"/>
         <Range value="6"/>
-        <Period value="4"/>
+        <Period value="3.8"/>
         <Effect value="SpawnPrimalLocusts"/>
         <RandomDelayMin value="-0.5"/>
         <RandomDelayMax value="0.5"/>
@@ -128,7 +141,7 @@
         <Icon value="Assets\Textures\btn-unit-collection-creeperhostspawn-mecha.dds"/>
         <DisplayEffect value="SpawnMechaLocustsDamage"/>
         <Range value="8"/>
-        <Period value="4"/>
+        <Period value="3.8"/>
         <DamagePoint value="0"/>
         <Backswing value="0"/>
         <RandomDelayMin value="-0.5"/>
@@ -237,7 +250,7 @@
         <Period value="1.1"/>
         <Effect value="ElderPersistentBeam"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="EncoderAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="EncoderAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Magic">
         <DisplayEffect value="EncoderDamage"/>
         <Range value="3"/>
         <Period value="1.1"/>
@@ -316,7 +329,7 @@
     <CWeaponLegacy id="LaserBatteryAttack" parent="BaseAttackAngleSort" damage_type="Piercing">
         <DisplayEffect value="LaserBatteryDamage"/>
         <DisplayAttackCount value="5"/>
-        <Range value="3"/>
+        <Range value="4.5"/>
         <Period value="0.3"/>
         <Effect value="LaserBatteryLM"/>
     </CWeaponLegacy>
@@ -384,7 +397,7 @@
         <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
         <DisplayEffect value="TheosDamage"/>
         <Range value="7"/>
-        <Period value="3.4"/>
+        <Period value="4"/>
         <Effect value="CreationSet"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="FallenAttack" parent="RangedWeaponDistanceSort" damage_type="Normal">
@@ -421,6 +434,9 @@
         <Arc value="19.995"/>
         <Period value="0.33"/>
         <Effect value="UpholderPersistentDamage"/>
+        <AcquireTargetSorts>
+            <SortArray value="HasFluorescence"/>
+        </AcquireTargetSorts>
     </CWeaponLegacy>
     <CWeaponLegacy id="VanguardAttack" parent="MeleeWeapon" damage_type="Siege">
         <DisplayEffect value="VanguardDamage"/>
@@ -492,7 +508,7 @@
         <Period value="1.4"/>
         <Effect value="MeliaiDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="SpriteAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="SpriteAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Magic">
         <DisplayEffect value="SpriteDamage"/>
         <Range value="3"/>
         <Period value="0.6"/>
@@ -535,7 +551,7 @@
         <Period value="1.2"/>
         <Effect value="YggdrasilDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="TreeofLifeAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="TreeofLifeAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Magic">
         <DisplayEffect value="TreeofLifeDamage"/>
         <Range value="3"/>
         <Period value="1.8"/>
@@ -609,11 +625,15 @@
         <Period value="0.5"/>
         <Effect value="PyroDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="ZeusAttack" parent="RangedWeaponLifeFractionSort" damage_type="Piercing">
+    <CWeaponLegacy id="ZeusAttack" parent="RangedWeapon" damage_type="Piercing">
         <DisplayEffect value="ZeusDamage"/>
         <Range value="8"/>
         <Period value="0.2"/>
         <Effect value="ZeusAttackSet"/>
+        <AcquireTargetSorts>
+            <SortArray value="HasFluorescence"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
     </CWeaponLegacy>
     <CWeaponLegacy id="EntAttack" parent="MeleeWeapon" damage_type="Normal">
         <DisplayEffect value="EntDamage"/>
@@ -625,19 +645,19 @@
         <Period value="1.3"/>
         <Effect value="VeteranDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="CaptainAttack" parent="RangedWeaponLifeFractionSort" damage_type="Normal">
+    <CWeaponLegacy id="CaptainAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Normal">
         <DisplayEffect value="CaptainDamage"/>
         <Range value="3"/>
         <Period value="0.25"/>
         <Effect value="CaptainDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AdmiralAttack" parent="RangedWeaponLifeFractionSort" damage_type="Normal">
+    <CWeaponLegacy id="AdmiralAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Normal">
         <DisplayEffect value="AdmiralDamage"/>
         <Range value="3"/>
         <Period value="0.3"/>
         <Effect value="AdmiralDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="TempestAttack" parent="RangedWeaponLifeFractionSort" damage_type="Siege">
+    <CWeaponLegacy id="TempestAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Siege">
         <DisplayEffect value="TempestDamageEffect"/>
         <Range value="3.5"/>
         <Period value="0.6"/>
@@ -771,12 +791,17 @@
         <DamagePoint value="0"/>
         <Effect value="AquaSpiritBounce0Missle"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AdeptAttack" parent="RangedWeaponLifeFractionSort" damage_type="Chaos">
+    <CWeaponLegacy id="AdeptAttack" parent="RangedWeapon" damage_type="Chaos">
         <DisplayEffect value="fAdeptDamage"/>
         <Range value="3"/>
         <Period value="1.45"/>
         <Backswing value="0"/>
         <Effect value="AdeptDamageSet"/>
+        <AcquireTargetSorts>
+            <SortArray value="Within4Range"/>
+            <SortArray value="HasFluorescence"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
     </CWeaponLegacy>
     <CWeaponLegacy id="AberrationPulverizerAttack" parent="MeleeWeapon" damage_type="Siege">
         <DisplayEffect value="AberrationPulverizerDamage"/>
@@ -801,7 +826,7 @@
         <Period value="1.5"/>
         <Effect value="SpawnofDragonDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="WatcherAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="WatcherAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Magic">
         <DisplayEffect value="WatcherDamage"/>
         <Range value="3"/>
         <Period value="0.8"/>
@@ -809,7 +834,7 @@
         <Backswing value="1.167"/>
         <Effect value="WatcherDamage"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="VioletAttack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="VioletAttack" parent="LowRangedWeaponLifeFractionSort" damage_type="Magic">
         <DisplayEffect value="VioletDamage"/>
         <Range value="3"/>
         <Period value="0.8"/>
@@ -1442,13 +1467,13 @@
         <Period value="0.9"/>
         <Effect value="fAmplifiedSupplicant@AttackMissile"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="fArchon@Attack" parent="BaseAttack" damage_type="Magic">
+    <CWeaponLegacy id="fArchon@Attack" parent="RangedWeaponDistanceSort" damage_type="Magic">
         <DisplayEffect value="ta_EnhancedChainLightning@MainDamage"/>
         <Range value="6"/>
         <Period value="1.3"/>
         <Effect value="ta_EnhancedChainLightning@InitialDelay"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="fAscendant@Attack" parent="BaseAttack" damage_type="Magic">
+    <CWeaponLegacy id="fAscendant@Attack" parent="RangedWeaponDistanceSort" damage_type="Magic">
         <Range value="6"/>
         <Period value="1.35"/>
         <DisplayEffect value="ta_ChainLightning@MainDamage"/>
@@ -1478,7 +1503,7 @@
         <Period value="0.9"/>
         <Effect value="fEmpoweredSupplicant@AttackMissile"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="fGreaterArchon@Attack" parent="BaseAttack" damage_type="Magic">
+    <CWeaponLegacy id="fGreaterArchon@Attack" parent="RangedWeaponDistanceSort" damage_type="Magic">
         <DisplayEffect value="ta_GreaterChainLightning@MainDamage"/>
         <Range value="6"/>
         <Period value="1.3"/>
@@ -1505,7 +1530,7 @@
         <Range value="4"/>
         <Period value="1.2"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="fSummoningArchon@Attack" parent="BaseAttack" damage_type="Magic">
+    <CWeaponLegacy id="fSummoningArchon@Attack" parent="RangedWeaponDistanceSort" damage_type="Magic">
         <DisplayEffect value="ta_SummoningChainLightning@MainDamage"/>
         <Range value="6"/>
         <Period value="1.3"/>
@@ -1593,9 +1618,13 @@
     <CWeaponLegacy id="fFortissimo@Attack" parent="MeleeWeapon" damage_type="Siege">
         <Period value="1.3"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="fAllegro@Attack" parent="RangedWeaponLifeFractionSort" damage_type="Magic">
+    <CWeaponLegacy id="fAllegro@Attack" parent="RangedWeapon" damage_type="Magic">
         <RangeSlop value="0"/>
         <Period value="0.2"/>
+        <AcquireTargetSorts>
+            <SortArray value="HasFluorescence"/>
+            <SortArray value="TSLifeFraction"/>
+        </AcquireTargetSorts>
     </CWeaponLegacy>
     <CWeaponLegacy id="fCrescendo@Attack" parent="RangedWeaponLifeFractionSort" damage_type="Siege">
         <Period value="2"/>

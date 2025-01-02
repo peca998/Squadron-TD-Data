@@ -10,6 +10,7 @@
     -->
     <CUnit default="1" id="BuilderBase">
         <Race value=""/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
         <Collide index="Ground" value="1"/>
@@ -104,7 +105,7 @@
             <LayoutButtons Face="fVanguard" Type="AbilCmd" AbilCmd="BuildCelestial,Build4" Row="2" Column="0"/>
             <LayoutButtons Face="fPreserver" Type="AbilCmd" AbilCmd="BuildAncient,Build4" Row="2" Column="0"/>
             <LayoutButtons Face="fTremolo" Type="AbilCmd" AbilCmd="BuildSylphy,Build4" Row="2" Column="0"/>
-            <LayoutButtons Face="fNetherlord" Type="AbilCmd" AbilCmd="BuildSoul,Build3" Row="2" Column="0"/>
+            <LayoutButtons Face="fNetherlord" Type="AbilCmd" AbilCmd="BuildSoul,Build4" Row="2" Column="0"/>
             <LayoutButtons Face="fVoidSmasher" Type="AbilCmd" AbilCmd="BuildTaldarim,Build4" Row="2" Column="0"/>
             <LayoutButtons>
                 <Face value="fExperimentalConstructs"/>
@@ -137,7 +138,7 @@
             <LayoutButtons Face="fSaint" Type="AbilCmd" AbilCmd="BuildCelestial,Build3" Row="1" Column="2"/>
             <LayoutButtons Face="fMagnetosphereResonator" Type="AbilCmd" AbilCmd="BuildAncient,Build3" Row="1" Column="2"/>
             <LayoutButtons Face="fPatron" Type="AbilCmd" AbilCmd="BuildSylphy,Build3" Row="1" Column="2"/>
-            <LayoutButtons Face="fCraggy" Type="AbilCmd" AbilCmd="BuildSoul,Build5" Row="1" Column="2"/>
+            <LayoutButtons Face="fCraggy" Type="AbilCmd" AbilCmd="BuildSoul,Build3" Row="1" Column="2"/>
             <LayoutButtons Face="fAegis" Type="AbilCmd" AbilCmd="BuildTaldarim,Build3" Row="1" Column="2"/>
             <LayoutButtons>
                 <Face value="fSupportConstructs"/>
@@ -156,7 +157,7 @@
             <LayoutButtons Face="fCyborg" Type="AbilCmd" AbilCmd="BuildMechanical,Build5" Row="2" Column="1"/>
             <LayoutButtons Face="fProphet" Type="AbilCmd" AbilCmd="BuildCelestial,Build5" Row="2" Column="1"/>
             <LayoutButtons Face="fWarden" Type="AbilCmd" AbilCmd="BuildAncient,Build5" Row="2" Column="1"/>
-            <LayoutButtons Face="fShadowFist" Type="AbilCmd" AbilCmd="BuildSoul,Build6" Row="2" Column="1"/>
+            <LayoutButtons Face="fShadowFist" Type="AbilCmd" AbilCmd="BuildSoul,Build5" Row="2" Column="1"/>
             <LayoutButtons Face="fArtisan" Type="AbilCmd" AbilCmd="BuildSylphy,Build5" Row="2" Column="1"/>
             <LayoutButtons Face="fAscendant" Type="AbilCmd" AbilCmd="BuildTaldarim,Build5" Row="2" Column="1"/>
             <LayoutButtons>
@@ -177,7 +178,7 @@
             <LayoutButtons Face="fDeity" Type="AbilCmd" AbilCmd="BuildCelestial,Build6" Row="2" Column="2"/>
             <LayoutButtons Face="fDreadnought" Type="AbilCmd" AbilCmd="BuildAutomaton,Build6" Row="2" Column="2"/>
             <LayoutButtons Face="fMatriarch" Type="AbilCmd" AbilCmd="BuildAncient,Build6" Row="2" Column="2"/>
-            <LayoutButtons Face="fTeeter" Type="AbilCmd" AbilCmd="BuildSoul,Build7" Row="2" Column="2"/>
+            <LayoutButtons Face="fTeeter" Type="AbilCmd" AbilCmd="BuildSoul,Build6" Row="2" Column="2"/>
             <LayoutButtons Face="fKapelle" Type="AbilCmd" AbilCmd="BuildSylphy,Build6" Row="2" Column="2"/>
             <LayoutButtons Face="fJinara" Type="AbilCmd" AbilCmd="BuildTaldarim,Build6" Row="2" Column="2"/>
         </CardLayouts>
@@ -210,6 +211,7 @@
         <Description value=""/>
         <EditorCategories value=""/>
         <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="NoScore" value="1"/>
         <PlaneArray index="Ground" value="1"/>
@@ -243,6 +245,7 @@
         <Race value=""/>
         <Mob value="Multiplayer"/>
         <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
@@ -285,6 +288,7 @@
         <DeathRevealRadius value="3"/>
         <Race value=""/>
         <Mob value="Multiplayer"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
@@ -312,6 +316,7 @@
     <CUnit default="1" id="SquadronUnitTemplate">
         <Race value=""/>
         <DeathTime value="-1"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
@@ -478,6 +483,21 @@
     <CUnit id="Send_Flame_Behemoth_Missile" parent="MISSILE_TEMPLATE">
         <Mover value="SquadTDMissileMover"/>
     </CUnit>
+    <CUnit id="Send_Ghost" parent="SendBase">
+        <PushPriority value="22"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="575"/>
+        <LifeMax value="575"/>
+        <LifeArmorName value="Unit/LifeArmorName/Light"/>
+        <CostResource index="Vespene" value="245"/>
+        <KillXP value="245"/>
+        <KillResource index="Minerals" value="7"/>
+        <WeaponArray Link="Send_Ghost"/>
+        <EditorCategories value=""/>
+        <EnergyStart value="5"/>
+        <EnergyMax value="5"/>
+        <BehaviorArray Link="EMPBlast@Autocast"/>
+    </CUnit>
     <CUnit id="Send_Hunterling" parent="SendBase">
         <PushPriority value="32"/>
         <Attributes index="Mechanical" value="1"/>
@@ -579,6 +599,7 @@
         <Facing value="315"/>
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="Movable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="PreventDefeat" value="1"/>
         <FlagArray index="PreventDestroy" value="1"/>
         <FlagArray index="PenaltyRevealed" value="1"/>
@@ -696,6 +717,9 @@
     </CUnit>
     <CUnit id="Wave20AttackMissile" parent="MISSILE_TEMPLATE">
         <Mover value="AcidSalivaWeapon"/>
+    </CUnit>
+    <CUnit id="Wave28AttackMissile" parent="MISSILE_TEMPLATE">
+        <EditorCategories value=""/>
     </CUnit>
     <CUnit id="fAegis" parent="SquadronUnitTemplate">
         <Attributes index="Light" value="1"/>
@@ -827,7 +851,6 @@
         <WeaponArray Link="fBarrageSlayer@Attack"/>
         <CardLayouts index="0">
             <LayoutButtons Face="PsiblastBarrage" Type="Passive" Row="2" Column="4"/>
-            <LayoutButtons Face="fConcussiveSlayer" Type="AbilCmd" AbilCmd="TrainTaldarim,Train11" Row="2" Column="0"/>
         </CardLayouts>
         <EditorCategories value=""/>
     </CUnit>
@@ -1291,6 +1314,7 @@
         <Facing value="45"/>
         <Race value=""/>
         <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="PreventDefeat" value="1"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -2749,6 +2773,7 @@
         <CardLayouts index="0">
             <LayoutButtons Face="Creation" Type="Passive" Row="2" Column="4"/>
         </CardLayouts>
+        <BehaviorArray Link="CreationUnitTracker"/>
     </CUnit>
     <CUnit id="fFallen" parent="SquadronUnitTemplate">
         <Attributes index="Massive" value="1"/>
@@ -2834,8 +2859,8 @@
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
         <LifeArmorName value="Unit/LifeArmorName/Mechanical"/>
-        <EnergyStart value="50"/>
-        <EnergyMax value="50"/>
+        <EnergyStart value="25"/>
+        <EnergyMax value="25"/>
         <LateralAcceleration value="30"/>
         <StationaryTurningRate value="49.9218"/>
         <TurningRate value="49.9218"/>
@@ -3412,6 +3437,7 @@
         <KillResource index="Terrazine" value="4"/>
         <AbilArray Link="TrainShadow"/>
         <BehaviorArray Link="NightmareCounterAttack"/>
+        <BehaviorArray Link="NightmareCounterAttackCrit"/>
         <WeaponArray Link="NightmareAttack"/>
         <CardLayouts index="0">
             <LayoutButtons Face="fDoppelganger" Type="AbilCmd" AbilCmd="TrainShadow,Train7" Row="2" Column="0"/>
@@ -4245,7 +4271,7 @@
         <LifeArmorName value="Unit/LifeArmorName/Armored"/>
         <Speed value="3.8515"/>
         <CostResource index="Vespene" value="55"/>
-        <KillXP value="70"/>
+        <KillXP value="55"/>
         <KillResource index="Minerals" value="1"/>
         <WeaponArray Link="Send_Roach"/>
     </CUnit>
@@ -4370,7 +4396,7 @@
         <LifeArmorName value="Unit/LifeArmorName/Mechanical"/>
         <Speed value="3.25"/>
         <KillXP value="120"/>
-        <KillResource index="Minerals" value="6"/>
+        <KillResource index="Minerals" value="4"/>
         <WeaponArray Link="Wave11Attack"/>
         <Radius value="0.5"/>
     </CUnit>
@@ -4581,8 +4607,8 @@
     </CUnit>
     <CUnit id="Wave15" parent="WaveCreepBase">
         <Attributes index="Massive" value="1"/>
-        <LifeStart value="605"/>
-        <LifeMax value="605"/>
+        <LifeStart value="695"/>
+        <LifeMax value="695"/>
         <LifeArmorName value="Unit/LifeArmorName/Massive"/>
         <Speed value="3.75"/>
         <KillXP value="220"/>
@@ -4741,6 +4767,7 @@
         <Facing value="315"/>
         <Race value=""/>
         <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="PreventDefeat" value="1"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -4763,6 +4790,7 @@
             <LayoutButtons Face="Send_Dark_Templar" Type="AbilCmd" AbilCmd="SendStandardUnit,Train12" Row="2" Column="1"/>
             <LayoutButtons Face="Send_Hellion" Type="AbilCmd" AbilCmd="SendStandardUnit,Train13" Row="2" Column="2"/>
             <LayoutButtons Face="Send_Wrathwalker" Type="AbilCmd" AbilCmd="SendStandardUnit,Train14" Row="2" Column="3"/>
+            <LayoutButtons Face="Send_Ghost" Type="AbilCmd" AbilCmd="SendStandardUnit,Train5" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="1.5"/>
         <SeparationRadius value="1.5"/>
@@ -4781,6 +4809,7 @@
         <Facing value="315"/>
         <Race value=""/>
         <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="PreventDefeat" value="1"/>
         <FlagArray index="PreventDestroy" value="1"/>
@@ -4849,6 +4878,7 @@
         <LifeStart value="5000"/>
         <LifeMax value="5000"/>
         <LifeRegenRate value="1"/>
+        <FlagArray index="Unhighlightable" value="0"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="attack"/>
@@ -4948,6 +4978,7 @@
         <BehaviorArray Link="ElusiveBarrierPassive"/>
         <BehaviorArray Link="SecuritySystemRadar"/>
         <BehaviorArray Link="AllUnitHelperBehavior"/>
+        <BehaviorArray Link="ScannedUnitgroup"/>
         <Attributes index="Structure" value="1"/>
         <Attributes index="Heroic" value="1"/>
         <ShieldsStart value="1000"/>
@@ -5004,7 +5035,6 @@
         <CardLayouts index="0">
             <LayoutButtons Face="EmeraldFire" Type="Passive" Row="2" Column="4"/>
         </CardLayouts>
-        <Radius value="0.75"/>
     </CUnit>
     <CUnit id="fGreymane" parent="SquadronUnitTemplate">
         <Attributes index="Armored" value="1"/>
@@ -5022,7 +5052,6 @@
             <LayoutButtons Face="CannibalizeGreymane" Type="Passive" Row="2" Column="4"/>
             <LayoutButtons Face="ProtectiveShell" Type="Passive" Row="2" Column="3"/>
         </CardLayouts>
-        <Radius value="0.75"/>
     </CUnit>
     <CUnit id="fGrizzly" parent="SquadronUnitTemplate">
         <Attributes index="Armored" value="1"/>
@@ -5166,7 +5195,7 @@
         <LateralAcceleration value="30"/>
         <StationaryTurningRate value="49.9218"/>
         <TurningRate value="49.9218"/>
-        <Height value="1.5"/>
+        <Height value="3"/>
         <Food value="-1"/>
         <CostResource index="Minerals" value="105"/>
         <AbilArray Link="TrainAutomaton"/>
@@ -5190,10 +5219,10 @@
         <CardLayouts index="0">
             <LayoutButtons Face="fEssence" Type="AbilCmd" AbilCmd="BuildSoul,Build1" Row="1" Column="0"/>
             <LayoutButtons Face="fFlux" Type="AbilCmd" AbilCmd="BuildSoul,Build2" Row="1" Column="1"/>
-            <LayoutButtons Face="fCraggy" Type="AbilCmd" AbilCmd="BuildSoul,Build5" Row="1" Column="2"/>
-            <LayoutButtons Face="fShadowFist" Type="AbilCmd" AbilCmd="BuildSoul,Build6" Row="2" Column="1"/>
-            <LayoutButtons Face="fTeeter" Type="AbilCmd" AbilCmd="BuildSoul,Build7" Row="2" Column="2"/>
-            <LayoutButtons Face="fNetherlord" Type="AbilCmd" AbilCmd="BuildSoul,Build3" Row="2" Column="0"/>
+            <LayoutButtons Face="fCraggy" Type="AbilCmd" AbilCmd="BuildSoul,Build3" Row="1" Column="2"/>
+            <LayoutButtons Face="fNetherlord" Type="AbilCmd" AbilCmd="BuildSoul,Build4" Row="2" Column="0"/>
+            <LayoutButtons Face="fShadowFist" Type="AbilCmd" AbilCmd="BuildSoul,Build5" Row="2" Column="1"/>
+            <LayoutButtons Face="fTeeter" Type="AbilCmd" AbilCmd="BuildSoul,Build6" Row="2" Column="2"/>
         </CardLayouts>
         <Description value="DOCSTR_Builder_Description_Soul"/>
     </CUnit>

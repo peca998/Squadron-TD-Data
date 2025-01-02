@@ -4,6 +4,7 @@
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <SearchFilters value="Visible;Player,Ally,Neutral,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <WhichLocation Value="CasterUnitOrPoint"/>
+        <ResultFailed value="CantFindEnoughTargets"/>
     </CValidatorLocationEnumArea>
     <CValidatorLocationEnumArea default="1" id="FindEnemyUnitsEmpty" parent="FindEnemyUnits">
         <Compare value="Eq"/>
@@ -123,6 +124,19 @@
         <Value value="0.75"/>
         <Vital value="Shields"/>
     </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Has50Shields">
+        <Compare value="GE"/>
+        <Value value="50"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="HasCreationCelestianCollision">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="CreationCelestianCollision"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="OverburnHasEnemiesInRange" parent="FindEnemyUnits">
+        <AreaArray Compare="GE" Count="1" Radius="14"/>
+    </CValidatorLocationEnumArea>
     <CValidatorCombine id="Infusion@HasMaxShieldsBuff">
         <CombineArray value="Infusion@NoMaxShieldsBuff"/>
         <Negate value="1"/>
@@ -132,13 +146,25 @@
         <CombineArray value="IsBoss"/>
         <CombineArray value="TargetIsStunned"/>
     </CValidatorCombine>
+    <CValidatorLocationCompareCliffLevel id="PlayableCliffLevel">
+        <ResultFailed value="CantLandLocationInvalid"/>
+        <Value value="1"/>
+    </CValidatorLocationCompareCliffLevel>
     <CValidatorCombine id="SwiftInfusion@HasMaxShieldsBuff">
         <CombineArray value="SwiftInfusion@NoMaxShieldsBuff"/>
         <Negate value="1"/>
     </CValidatorCombine>
+    <CValidatorUnitType id="TargetIsTheos">
+        <Value value="fTheos"/>
+    </CValidatorUnitType>
     <CValidatorLocationCompareCliffLevel id="TargetPointCliffLevelSameAsCaster">
         <OtherLocation Value="CasterUnit"/>
     </CValidatorLocationCompareCliffLevel>
+    <CValidatorEffectTreeUserData id="TowerFighterDied">
+        <Compare value="NE"/>
+        <Key value="TowerFighterDied"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+    </CValidatorEffectTreeUserData>
     <CValidatorLocationCompareRange id="Within14Range">
         <ResultFailed value="TargetIsOutOfRange"/>
         <WhichLocation Value="TargetUnitOrPoint"/>
@@ -873,6 +899,10 @@
         <Compare value="LT"/>
         <Value value="3"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoLeadershipCounterFromCaster">
+        <Behavior value="LeadershipCounter"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="NoHelpingHand">
         <Behavior value="HelpingHand"/>
     </CValidatorUnitCompareBehaviorCount>
@@ -1193,9 +1223,10 @@
             <Validator value="Unison@NoUnison"/>
         </AreaArray>
     </CValidatorLocationEnumArea>
-    <CValidatorUnitCompareBehaviorCount id="UnitNotSpottedEnemy">
-        <Behavior value="SpottedEnemy"/>
-    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="UnitNotSpottedEnemy">
+        <CombineArray value="UnitSpottedEnemy"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="PlayerSpottedEnemy">
         <Value value="SpottedEnemy"/>
     </CValidatorPlayerRequirement>
@@ -1275,10 +1306,11 @@
         <CombineArray value="TargetOrderIsStop"/>
         <CombineArray value="TargetHasNoOrders"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareBehaviorCount id="UnitSpottedEnemy">
-        <Behavior value="SpottedEnemy"/>
+    <CValidatorEffectTreeUserData id="UnitSpottedEnemy">
         <Compare value="GT"/>
-    </CValidatorUnitCompareBehaviorCount>
+        <Key value="SpottedEnemy"/>
+        <BehaviorScope Value="Target" Behavior="AllUnitHelperBehavior"/>
+    </CValidatorEffectTreeUserData>
     <CValidatorUnitCompareBehaviorCount id="StaticChargeTier1@GreaterEqual15">
         <WhichUnit Value="Source"/>
         <Compare value="GE"/>
@@ -1762,21 +1794,13 @@
         <CombineArray value="ScannedUnitgroupIsEmpty"/>
     </CValidatorCombine>
     <CValidatorCombine id="WeldingHealTargetValidator">
+        <CombineArray value="TargetLifeNotFull"/>
         <CombineArray value="NotDead"/>
         <CombineArray value="NotHealImmune"/>
         <CombineArray value="IsNotSupport"/>
-        <CombineArray value="TargetLifeNotFull"/>
         <CombineArray value="CasterNotDead"/>
         <Type value="And"/>
     </CValidatorCombine>
-    <CValidatorLocationEnumArea id="WeldingHealValidTargetsWithinRange" parent="FriendlySearchTemplate">
-        <AreaArray>
-            <Compare value="GT"/>
-            <Count value="0"/>
-            <Radius value="7"/>
-            <Validator value="WeldingHealTargetValidator"/>
-        </AreaArray>
-    </CValidatorLocationEnumArea>
     <CValidatorUnitOrderQueue id="WeldtechIsHealing">
         <AbilLink value="WeldingHealBeam"/>
     </CValidatorUnitOrderQueue>
@@ -1841,10 +1865,6 @@
         <Type value="Fraction"/>
         <Value value="1"/>
     </CValidatorUnitCompareVital>
-    <CValidatorUnitCompareBehaviorCount id="NoDecodeDamageCooldown">
-        <WhichUnit Value="Source"/>
-        <Behavior value="DecodeDamageCooldown"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareField id="IsNotRanged">
         <Compare value="LT"/>
         <Field value="CUnit_WeaponArray[0].CWeapon_Range"/>
@@ -2001,6 +2021,10 @@
         <Compare value="LT"/>
         <Value value="4"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoSuperiorityCounterFromCaster">
+        <Behavior value="SuperiorityCounter"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="fWhirlwindAstralblade@HasWhirlwind">
         <WhichUnit Value="Caster"/>
         <Compare value="GT"/>
@@ -2089,4 +2113,8 @@
         <CombineArray value="ta_ShockingSacrifice@AllyShieldThreshold"/>
         <CombineArray value="NotHaveSacrifice"/>
     </CValidatorCombine>
+    <CValidatorIsUnitTracked id="AncestryTier3AttackerNotTracked">
+        <BehaviorLink value="AncestryVictimTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CValidatorIsUnitTracked>
 </Catalog>

@@ -25,38 +25,64 @@
         <Range value="100"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget default="1" id="WeldingHealBeamTemplate" parent="ProxyAbilityTemplate">
-        <Range index="0" value="7"/>
-        <Effect index="0" value="WeldingHealBeamSet"/>
-        <AbilSetId value="WeldingHeal"/>
-    </CAbilEffectTarget>
-    <CAbilBuild id="BuildTaldarim">
+    <CAbilBuild default="1" id="SquadronBuildTemplate">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <FlagArray index="Interruptible" value="1"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
         <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fRetaliator" Time="1">
-            <Button DefaultButtonFace="fRetaliator" Requirements="BuildPhase"/>
+        <InfoArray index="Build1" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fRiftblade" Time="1">
-            <Button DefaultButtonFace="fRiftblade" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fAegis" Time="1">
-            <Button DefaultButtonFace="fAegis" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fVoidSmasher" Time="1">
-            <Button DefaultButtonFace="fVoidSmasher" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fAscendant" Time="1">
-            <Button DefaultButtonFace="fAscendant" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fJinara" Time="1">
-            <Button DefaultButtonFace="fJinara" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Time="1">
+            <Button Requirements="BuildPhase"/>
+            <ValidatorArray value="PlayableCliffLevel"/>
         </InfoArray>
         <FidgetDelayMin value="5"/>
         <FidgetDelayMax value="10"/>
         <ConstructionMover value="Construction"/>
         <Alert value="TowerComplete"/>
+    </CAbilBuild>
+    <CAbilEffectTarget default="1" id="WeldingHealBeamTemplate" parent="ProxyAbilityTemplate">
+        <Range index="0" value="7"/>
+        <Effect index="0" value="WeldingHealBeamSet"/>
+        <AbilSetId value="WeldingHeal"/>
+    </CAbilEffectTarget>
+    <CAbilBuild id="BuildTaldarim" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fRetaliator">
+            <Button DefaultButtonFace="fRetaliator"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="fRiftblade">
+            <Button DefaultButtonFace="fRiftblade"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="fAegis">
+            <Button DefaultButtonFace="fAegis"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="fVoidSmasher">
+            <Button DefaultButtonFace="fVoidSmasher"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="fAscendant">
+            <Button DefaultButtonFace="fAscendant"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="fJinara">
+            <Button DefaultButtonFace="fJinara"/>
+        </InfoArray>
     </CAbilBuild>
     <CAbilEffectTarget id="EMPShock" parent="ProxyAbilityTemplate">
         <Effect index="0" value="EMPShock@CP"/>
@@ -368,31 +394,25 @@
         <SmartValidatorArray value="GroupNotRemoved"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="SylphMergeNote" Requirements="BuildPhase"/>
     </CAbilEffectTarget>
-    <CAbilBuild id="BuildSoul">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fEssence" Time="1">
-            <Button DefaultButtonFace="fEssence" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildSoul" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fEssence">
+            <Button DefaultButtonFace="fEssence"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fFlux" Time="1">
-            <Button DefaultButtonFace="fFlux" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fFlux">
+            <Button DefaultButtonFace="fFlux"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fNetherlord" Time="1">
-            <Button DefaultButtonFace="fNetherlord" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fCraggy">
+            <Button DefaultButtonFace="fCraggy"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fCraggy" Time="1">
-            <Button DefaultButtonFace="fCraggy" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fNetherlord">
+            <Button DefaultButtonFace="fNetherlord"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fShadowFist" Time="1">
-            <Button DefaultButtonFace="fShadowFist" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fShadowFist">
+            <Button DefaultButtonFace="fShadowFist"/>
         </InfoArray>
-        <InfoArray index="Build7" Unit="fTeeter" Time="1">
-            <Button DefaultButtonFace="fTeeter" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fTeeter">
+            <Button DefaultButtonFace="fTeeter"/>
         </InfoArray>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilTrain id="TrainAncient">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1313,33 +1333,25 @@
             <Unit value="fHeisendonger"/>
         </InfoArray>
     </CAbilTrain>
-    <CAbilBuild id="BuildCelestial">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fCherub" Time="1">
-            <Button DefaultButtonFace="fCherub" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildCelestial" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fCherub">
+            <Button DefaultButtonFace="fCherub"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fSpirit" Time="1">
-            <Button DefaultButtonFace="fSpirit" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fSpirit">
+            <Button DefaultButtonFace="fSpirit"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fSaint" Time="1">
-            <Button DefaultButtonFace="fSaint" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fSaint">
+            <Button DefaultButtonFace="fSaint"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fVanguard" Time="1">
-            <Button DefaultButtonFace="fVanguard" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fVanguard">
+            <Button DefaultButtonFace="fVanguard"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fProphet" Time="1">
-            <Button DefaultButtonFace="fProphet" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fProphet">
+            <Button DefaultButtonFace="fProphet"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fDeity" Time="1">
-            <Button DefaultButtonFace="fDeity" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fDeity">
+            <Button DefaultButtonFace="fDeity"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilEffectInstant id="Earthshock">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1428,6 +1440,7 @@
             <Vital index="Energy" value="25"/>
         </Cost>
         <BehaviorArray value="OverburnCaster"/>
+        <ValidatorArray value="OverburnHasEnemiesInRange"/>
     </CAbilBehavior>
     <CAbilTrain id="TrainCelestialBaseUnits">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1830,145 +1843,105 @@
             <Cooldown Location="Player" TimeUse="0.5"/>
         </Cost>
     </CAbilEffectInstant>
-    <CAbilBuild id="BuildBeast">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fZerglingWarrior" Time="1">
-            <Button DefaultButtonFace="fZerglingWarrior" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildBeast" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fZerglingWarrior">
+            <Button DefaultButtonFace="fZerglingWarrior"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fHarpy" Time="1">
-            <Button DefaultButtonFace="fHarpy" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fHarpy">
+            <Button DefaultButtonFace="fHarpy"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fRoachFighter" Time="1">
-            <Button DefaultButtonFace="fRoachFighter" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fRoachFighter">
+            <Button DefaultButtonFace="fRoachFighter"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fGrizzly" Time="1">
-            <Button DefaultButtonFace="fGrizzly" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fGrizzly">
+            <Button DefaultButtonFace="fGrizzly"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fSwarmHost" Time="1">
-            <Button DefaultButtonFace="fSwarmHost" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fSwarmHost">
+            <Button DefaultButtonFace="fSwarmHost"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fSpawnofDragon" Time="1">
-            <Button DefaultButtonFace="fSpawnofDragon" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fSpawnofDragon">
+            <Button DefaultButtonFace="fSpawnofDragon"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
-    <CAbilBuild id="BuildCustom">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="Tier1" Time="1">
-            <Button DefaultButtonFace="Tier1" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildCustom" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="Tier1">
+            <Button DefaultButtonFace="Tier1"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="Tier2" Time="1">
-            <Button DefaultButtonFace="Tier2" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="Tier2">
+            <Button DefaultButtonFace="Tier2"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="Tier3" Time="1">
-            <Button DefaultButtonFace="Tier3" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="Tier3">
+            <Button DefaultButtonFace="Tier3"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="Tier4" Time="1">
-            <Button DefaultButtonFace="Tier4" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="Tier4">
+            <Button DefaultButtonFace="Tier4"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="Tier5" Time="1">
-            <Button DefaultButtonFace="Tier5" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="Tier5">
+            <Button DefaultButtonFace="Tier5"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="Tier6" Time="1">
-            <Button DefaultButtonFace="Tier6" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="Tier6">
+            <Button DefaultButtonFace="Tier6"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
-    <CAbilBuild id="BuildShadow">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fBoneWarrior" Time="1">
-            <Button DefaultButtonFace="fBoneWarrior" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildShadow" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fBoneWarrior">
+            <Button DefaultButtonFace="fBoneWarrior"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fCarrionSpitter" Time="1">
-            <Button DefaultButtonFace="fCarrionSpitter" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fCarrionSpitter">
+            <Button DefaultButtonFace="fCarrionSpitter"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fGateguard" Time="1">
-            <Button DefaultButtonFace="fGateguard" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fGateguard">
+            <Button DefaultButtonFace="fGateguard"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fBoneOverseer" Time="1">
-            <Button DefaultButtonFace="fBoneOverseer" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fBoneOverseer">
+            <Button DefaultButtonFace="fBoneOverseer"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fNightmare" Time="1">
-            <Button DefaultButtonFace="fNightmare" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fNightmare">
+            <Button DefaultButtonFace="fNightmare"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fLordofDeath" Time="1">
-            <Button DefaultButtonFace="fLordofDeath" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fLordofDeath">
+            <Button DefaultButtonFace="fLordofDeath"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
-    <CAbilBuild id="BuildMechanical">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fPeewee" Time="1">
-            <Button DefaultButtonFace="fPeewee" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildMechanical" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fPeewee">
+            <Button DefaultButtonFace="fPeewee"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fInfantry" Time="1">
-            <Button DefaultButtonFace="fInfantry" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fInfantry">
+            <Button DefaultButtonFace="fInfantry"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fCaptain" Time="1">
-            <Button DefaultButtonFace="fCaptain" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fCaptain">
+            <Button DefaultButtonFace="fCaptain"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fTempest" Time="1">
-            <Button DefaultButtonFace="fTempest" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fTempest">
+            <Button DefaultButtonFace="fTempest"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fCyborg" Time="1">
-            <Button DefaultButtonFace="fCyborg" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fCyborg">
+            <Button DefaultButtonFace="fCyborg"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fNeotank" Time="1">
-            <Button DefaultButtonFace="fNeotank" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fNeotank">
+            <Button DefaultButtonFace="fNeotank"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
-    <CAbilBuild id="BuildNature">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fEnt" Time="1">
-            <Button DefaultButtonFace="fEnt" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildNature" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fEnt">
+            <Button DefaultButtonFace="fEnt"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fRanger" Time="1">
-            <Button DefaultButtonFace="fRanger" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fRanger">
+            <Button DefaultButtonFace="fRanger"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fSprite" Time="1">
-            <Button DefaultButtonFace="fSprite" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fSprite">
+            <Button DefaultButtonFace="fSprite"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fTreeofTravel" Time="1">
-            <Button DefaultButtonFace="fTreeofTravel" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fTreeofTravel">
+            <Button DefaultButtonFace="fTreeofTravel"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fHalfbreed" Time="1">
-            <Button DefaultButtonFace="fHalfbreed" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fHalfbreed">
+            <Button DefaultButtonFace="fHalfbreed"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fYggdrasil" Time="1">
-            <Button DefaultButtonFace="fYggdrasil" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fYggdrasil">
+            <Button DefaultButtonFace="fYggdrasil"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilBehavior id="BattleRoar">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -1976,33 +1949,25 @@
         <BehaviorArray value="BattleRoarAutocast"/>
         <ValidatorArray value="UnitSpottedEnemy"/>
     </CAbilBehavior>
-    <CAbilBuild id="BuildElemental">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fProton" Time="1">
-            <Button DefaultButtonFace="fProton" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildElemental" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fProton">
+            <Button DefaultButtonFace="fProton"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fAquaSpirit" Time="1">
-            <Button DefaultButtonFace="fAquaSpirit" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fAquaSpirit">
+            <Button DefaultButtonFace="fAquaSpirit"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fWatcher" Time="1">
-            <Button DefaultButtonFace="fWatcher" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fWatcher">
+            <Button DefaultButtonFace="fWatcher"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fMudman" Time="1">
-            <Button DefaultButtonFace="fMudman" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fMudman">
+            <Button DefaultButtonFace="fMudman"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fDisciple" Time="1">
-            <Button DefaultButtonFace="fDisciple" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fDisciple">
+            <Button DefaultButtonFace="fDisciple"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fSeerofDarkness" Time="1">
-            <Button DefaultButtonFace="fSeerofDarkness" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fSeerofDarkness">
+            <Button DefaultButtonFace="fSeerofDarkness"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilTrain id="RefineryAmount">
         <EditorCategories value="AbilityorEffectType:Structures"/>
@@ -3110,6 +3075,13 @@
             <Unit value="Send_Observer"/>
             <Flags index="AutoCast" value="1"/>
         </InfoArray>
+        <InfoArray index="Train5">
+            <Charge Link="Send_Ghost"/>
+            <Cooldown Link="Send_Ghost" TimeUse="4"/>
+            <Button DefaultButtonFace="Send_Ghost"/>
+            <Unit value="Send_Ghost"/>
+            <Flags index="AutoCast" value="1"/>
+        </InfoArray>
         <InfoArray index="Train6">
             <Charge Link="Send_Queen"/>
             <Cooldown Link="Send_Queen" TimeUse="7"/>
@@ -3161,33 +3133,25 @@
         </InfoArray>
         <Alert value="SendComplete"/>
     </CAbilTrain>
-    <CAbilBuild id="BuildGhost">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fSpectre" Time="1">
-            <Button DefaultButtonFace="fSpectre" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildGhost" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fSpectre">
+            <Button DefaultButtonFace="fSpectre"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fWanderer" Time="1">
-            <Button DefaultButtonFace="fWanderer" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fWanderer">
+            <Button DefaultButtonFace="fWanderer"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fApparition" Time="1">
-            <Button DefaultButtonFace="fApparition" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fApparition">
+            <Button DefaultButtonFace="fApparition"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fEidolon" Time="1">
-            <Button DefaultButtonFace="fEidolon" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fEidolon">
+            <Button DefaultButtonFace="fEidolon"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fOutcast" Time="1">
-            <Button DefaultButtonFace="fOutcast" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fOutcast">
+            <Button DefaultButtonFace="fOutcast"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fPhantom" Time="1">
-            <Button DefaultButtonFace="fPhantom" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fPhantom">
+            <Button DefaultButtonFace="fPhantom"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilEffectTarget id="WeldingHealBeam" parent="WeldingHealBeamTemplate"/>
     <CAbilEffectTarget id="WeldingHealBeamExtraRange1" parent="WeldingHealBeamTemplate">
@@ -3278,33 +3242,25 @@
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="RRR" Requirements="AddUpgrade300"/>
     </CAbilEffectInstant>
-    <CAbilBuild id="BuildAncient">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fSentinel" Time="1">
-            <Button DefaultButtonFace="fSentinel" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildAncient" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fSentinel">
+            <Button DefaultButtonFace="fSentinel"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fEncoder" Time="1">
-            <Button DefaultButtonFace="fEncoder" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fEncoder">
+            <Button DefaultButtonFace="fEncoder"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fMagnetosphereResonator" Time="1">
-            <Button DefaultButtonFace="fMagnetosphereResonator" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fMagnetosphereResonator">
+            <Button DefaultButtonFace="fMagnetosphereResonator"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fPreserver" Time="1">
-            <Button DefaultButtonFace="fPreserver" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fPreserver">
+            <Button DefaultButtonFace="fPreserver"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fWarden" Time="1">
-            <Button DefaultButtonFace="fWarden" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fWarden">
+            <Button DefaultButtonFace="fWarden"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fMatriarch" Time="1">
-            <Button DefaultButtonFace="fMatriarch" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fMatriarch">
+            <Button DefaultButtonFace="fMatriarch"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
     <CAbilTrain id="TrainAncientBaseUnits">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -3475,28 +3431,24 @@
             <Cooldown Link="Abil/TrainBeastBaseUnits" TimeUse="1"/>
         </InfoArray>
     </CAbilTrain>
-    <CAbilBuild id="BuildAutomaton">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fTerminator" Time="1">
-            <Button DefaultButtonFace="fTerminator" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildAutomaton" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fTerminator">
+            <Button DefaultButtonFace="fTerminator"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fSalvager" Time="1">
-            <Button DefaultButtonFace="fSalvager" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fSalvager">
+            <Button DefaultButtonFace="fSalvager"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fSupportConstructs" Time="1">
-            <Button DefaultButtonFace="fSupportConstructs" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fSupportConstructs">
+            <Button DefaultButtonFace="fSupportConstructs"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fExperimentalConstructs" Time="1">
-            <Button DefaultButtonFace="fExperimentalConstructs" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fExperimentalConstructs">
+            <Button DefaultButtonFace="fExperimentalConstructs"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fArtilleryConstructs" Time="1">
-            <Button DefaultButtonFace="fArtilleryConstructs" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fArtilleryConstructs">
+            <Button DefaultButtonFace="fArtilleryConstructs"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fDreadnought" Time="1">
-            <Button DefaultButtonFace="fDreadnought" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fDreadnought">
+            <Button DefaultButtonFace="fDreadnought"/>
         </InfoArray>
         <InfoArray index="Build7" Unit="fAstromechDroid" Time="1">
             <Button DefaultButtonFace="fAstromechDroid" Requirements="AllowSupportConstructMenu"/>
@@ -3525,36 +3477,28 @@
         <InfoArray index="Build15" Unit="fMissileBarrage" Time="1">
             <Button DefaultButtonFace="fMissileBarrage" Requirements="AllowWeaponsConstructMenu"/>
         </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
     </CAbilBuild>
-    <CAbilBuild id="BuildSylphy">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <FlagArray index="PeonMaintained" value="0"/>
-        <InfoArray index="Build1" Unit="fNote" Time="1">
-            <Button DefaultButtonFace="fNote" Requirements="BuildPhase"/>
+    <CAbilBuild id="BuildSylphy" parent="SquadronBuildTemplate">
+        <InfoArray index="Build1" Unit="fNote">
+            <Button DefaultButtonFace="fNote"/>
         </InfoArray>
-        <InfoArray index="Build2" Unit="fApprentice" Time="1">
-            <Button DefaultButtonFace="fApprentice" Requirements="BuildPhase"/>
+        <InfoArray index="Build2" Unit="fApprentice">
+            <Button DefaultButtonFace="fApprentice"/>
         </InfoArray>
-        <InfoArray index="Build3" Unit="fPatron" Time="1">
-            <Button DefaultButtonFace="fPatron" Requirements="BuildPhase"/>
+        <InfoArray index="Build3" Unit="fPatron">
+            <Button DefaultButtonFace="fPatron"/>
         </InfoArray>
-        <InfoArray index="Build4" Unit="fTremolo" Time="1">
-            <Button DefaultButtonFace="fTremolo" Requirements="BuildPhase"/>
+        <InfoArray index="Build4" Unit="fTremolo">
+            <Button DefaultButtonFace="fTremolo"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="fArtisan" Time="1">
-            <Button DefaultButtonFace="fArtisan" Requirements="BuildPhase"/>
+        <InfoArray index="Build5" Unit="fArtisan">
+            <Button DefaultButtonFace="fArtisan"/>
         </InfoArray>
-        <InfoArray index="Build6" Unit="fKapelle" Time="1">
-            <Button DefaultButtonFace="fKapelle" Requirements="BuildPhase"/>
+        <InfoArray index="Build6" Unit="fKapelle">
+            <Button DefaultButtonFace="fKapelle"/>
         </InfoArray>
-        <ConstructionMover value="Construction"/>
-        <Alert value="TowerComplete"/>
+        <FidgetDelayMin value="0"/>
+        <FidgetDelayMax value="0"/>
     </CAbilBuild>
     <CAbilMorph id="MorphToSolo">
         <EditorCategories value="AbilityorEffectType:Units"/>

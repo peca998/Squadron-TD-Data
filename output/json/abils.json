@@ -5,7 +5,7 @@
     },
     "enhanced sacrifice": {
         "name": "Enhanced Sacrifice",
-        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals."
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 85.00% of consumed vitals (200.00% if summon or tier 1 Tal'darim consumed)."
     },
     "amplified soul detonation": {
         "name": "Amplified Soul Detonation",
@@ -21,7 +21,7 @@
     },
     "enhanced slash": {
         "name": "Enhanced Slash",
-        "desc": "Astralblade attacks cleave foes within a cone. 2.00 range, 90.00 degrees arc"
+        "desc": "Astralblade attacks cleave foes within a cone. 1.50 range, 90.00 degrees arc"
     },
     "psiblast barrage": {
         "name": "Psiblast Barrage",
@@ -37,7 +37,7 @@
     },
     "destructive sacrifice": {
         "name": "Destructive Sacrifice",
-        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals.\nOn each sacrifice, Alarak releases a Destruction Wave towards attacker, damaging all units in its path for 20.00% of sacrificed unit's vitals."
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 85.00% of consumed vitals (200.00% if summon or tier 1 Tal'darim consumed).\nOn each sacrifice, Alarak releases a Destruction Wave towards attacker, damaging all units in its path for 20.00% of sacrificed unit's vitals."
     },
     "empowered soul detonation": {
         "name": "Empowered Soul Detonation",
@@ -53,7 +53,7 @@
     },
     "sacrifice": {
         "name": "Sacrifice",
-        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Ji'nara restores shields by 100.00% of consumed vitals."
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Ji'nara restores shields by 50.00% of consumed vitals (150.00% if summon or tier 1 Tal'darim consumed)."
     },
     "aftermath": {
         "name": "Aftermath",
@@ -65,7 +65,7 @@
     },
     "shocking sacrifice": {
         "name": "Shocking Sacrifice",
-        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 125.00% of consumed vitals.\nOn each sacrifice, Alarak stuns nearby foes based on sacrificed vitals (1 sec per 2000.00 vitals drained)."
+        "desc": "Prevents fatal blow by consuming a summon or a tier 1 Tal'darim unit within 10.10 radius. If no such units exist, instead consumes all shields of an ally (ally must have more than 750.00 current shields). By doing so, Alarak restores shields by 85.00% of consumed vitals (200.00% if summon or tier 1 Tal'darim consumed).\nOn each sacrifice, Alarak stuns nearby foes based on sacrificed vitals (1 sec per 2000.00 vitals drained)."
     },
     "enhanced psiblast": {
         "name": "Enhanced Psiblast",
@@ -81,7 +81,7 @@
     },
     "thunder slash": {
         "name": "Thunder Slash",
-        "desc": "Astralblade attacks cleave foes within a cone. 2.00 range, 100.00 degrees arc. Every 3rd attack stuns enemies for 1.5 seconds."
+        "desc": "Astralblade attacks cleave foes within a cone. 1.50 range, 100.00 degrees arc. Every 3rd attack stuns enemies for 1.5 seconds."
     },
     "spawn primal locusts": {
         "name": "Spawn Primal Locusts",
@@ -137,7 +137,7 @@
     },
     "parity check": {
         "name": "Parity Check",
-        "desc": "Archive will periodically perform a system-wide check that will restore nearby allies to their rightful stature. \nRestores 24.00+8.00% shields every 8 seconds (on average) to 10.00 allies within 8.00 range."
+        "desc": "Archive will periodically perform a system-wide check that will restore nearby allies to their rightful stature. \nRestores 24.00+8.00% shields every 8 seconds (on average) to 8.00 allies within 8.00 range."
     },
     "brotherhood": {
         "name": "Brotherhood",
@@ -153,7 +153,7 @@
     },
     "decode": {
         "name": "Decode",
-        "desc": "Analyzes the enemy within 7.00 range, allowing allies to attack the unit optimally (costs 5 energy) for 10.00 seconds. Target loses Spell Immunity and takes +8.00 spell damage per hit.\nDamage cooldown of 0.75 second."
+        "desc": "Analyzes the enemy within 7.00 range, allowing allies to attack the unit optimally (costs 3 energy) for 10.00 seconds. Target takes +10.00 spell damage per hit."
     },
     "matrix shield": {
         "name": "Matrix Shield",
@@ -165,7 +165,7 @@
     },
     "empower": {
         "name": "Empower",
-        "desc": "Matriarchs strengthen ally shields within 8.00 range.\nEach grants +25.00% shields (max +150.00%)."
+        "desc": "Matriarchs strengthen ally shields within 8.00 range.\nEach grants +20.00% shields (max +120.00%)."
     },
     "preservation": {
         "name": "Preservation",
@@ -253,7 +253,7 @@
     },
     "creation": {
         "name": "Creation",
-        "desc": "Each attack binds a Celestian to this Theos. Celestians so bound are released after 20.00s and have no collision."
+        "desc": "Each attack spawns 1.00 Blessed Celestians that heal for an additional 3.00% life and ignore collisions. Every second attack spawns 1 additional Blessed Celestian. Limited to 130.00 alive at once per player."
     },
     "tempt": {
         "name": "Tempt",
@@ -261,11 +261,11 @@
     },
     "infatuate": {
         "name": "Infatuate",
-        "desc": "Infatuates enemy send (not zergling) within 12.00 range for 8.00s. Attacks from infatuated units instead heal targets HP for 40.00% of attempted damage.\nCosts 45.00% hp."
+        "desc": "Infatuates enemy send (not zergling) within 12.00 range for 8.00s. Attacks from infatuated units instead heal targets HP for 40.00% of attempted damage and restore 1.00 energy.\nCosts 45.00% hp."
     },
     "purge": {
         "name": "Purge",
-        "desc": "Purges an enemy unit within 10.00 range removing Spell Immunity and dealing 300.00 damage. Costs 7 energy."
+        "desc": "Purges an enemy unit within 10.00 range removing Spell Immunity and dealing 300.00 damage. Costs 5 energy."
     },
     "experimental unit": {
         "name": "Experimental Unit",
@@ -273,7 +273,7 @@
     },
     "quark shield": {
         "name": "Quark Shield",
-        "desc": "An advanced quark generator emits a temporal resonance field that reverts damage to allies within 5 range. Up to 50 damage reverted per energy."
+        "desc": "An advanced quark generator emits a temporal resonance field that reverts damage to allies within 6 range. Up to 100 damage reverted per energy."
     },
     "pacify": {
         "name": "Pacify",
@@ -293,7 +293,7 @@
     },
     "vocant de furor": {
         "name": "Vocant de Furor",
-        "desc": "The Dark Mage can entangle the mind of an ally within 5.00 range, increasing its attack speed by 30.00% for 20.00 seconds.\nNightmare's gain +1 attacks for Counter-Attacks .\nDoppelganger gains +2 extra damage per attack with Fatality.\nCosts 10 energy."
+        "desc": "The Dark Mage can entangle the mind of an ally within 5.00 range, increasing its attack speed by 30.00% for 20.00 seconds.\nNightmare's gain +1 attacks for Counter-Attacks.\nDoppelganger gains +2 extra damage per attack with Fatality.\nCosts 10 energy."
     },
     "sticky slime": {
         "name": "Sticky Slime",
@@ -301,7 +301,7 @@
     },
     "sticky webs": {
         "name": "Sticky Webs",
-        "desc": "The unit's attacks slow the target's movement speed by 10.00% and attack speed by 7.00% for 4.00 seconds (max 6.00 stack; 2.00 per crawler)."
+        "desc": "The unit's attacks slow the target's movement speed by 15.00% and attack speed by 11.00% for 4.00 seconds (max 4.00 stack; 2.00 per crawler)."
     },
     "plasma shields": {
         "name": "Plasma Shields",
@@ -349,7 +349,7 @@
     },
     "muddled armor": {
         "name": "Muddled Armor",
-        "desc": "Mudman covers attackers in mud slowing movement by 40.00% for 7.00 seconds. Max 5.00 stacks.\nOn death applied applies a stack to enemies within 4.00 range, and refreshes duration of all existing stacks."
+        "desc": "Mudman covers attackers in mud slowing movement by 40.00% for 7.00 seconds. Max 5.00 stacks.\nOn death applies a stack to enemies within 4.00 range, and refreshes duration of all existing stacks."
     },
     "deceleration shift": {
         "name": "Deceleration Shift",
@@ -373,7 +373,7 @@
     },
     "death swamp": {
         "name": "Death Swamp",
-        "desc": "Releases a fetid miasma on death that forms a dark swamp inflicting -1.00% hp/s on enemies caught within 2.00 range (max -4.00% hp/s). Additionally slows movement speed by 15.00% (max 60.00%). \nSwamp lasts 5.00 seconds."
+        "desc": "Releases a fetid miasma on death that forms a dark swamp inflicting --1.00% hp/s on enemies caught within 2.00 range (max -4.00% hp/s). Additionally slows movement speed by 15.00% (max 60.00%). \nSwamp lasts 5.00 seconds."
     },
     "call of praesidio": {
         "name": "Call of Praesidio",
@@ -449,7 +449,7 @@
     },
     "resilience boon": {
         "name": "Resilience Boon",
-        "desc": "At start of wave, grants allies within 2.00 range 30.00% chance to stun attackers for 2 seconds. 1.00 seconds cooldown after stunning an enemy."
+        "desc": "At start of wave, grants allies within 2.00 range 30.00% chance to stun attackers for 2 seconds and reduce incoming damage by 20.00 + 50.00%.\n1.00 second cooldown after stunning an enemy."
     },
     "sacred blessing": {
         "name": "Sacred Blessing",
@@ -457,7 +457,7 @@
     },
     "water of life": {
         "name": "Water of Life",
-        "desc": "Heals 6.00 allies within 7.00 range for 35.00 + 1.95% HP every 2.50 seconds (on average)."
+        "desc": "Heals 6.00 allies within 7.00 range for 35.00 + 1.95% HP every 2.00 seconds (on average)."
     },
     "heavy particle beam": {
         "name": "Heavy Particle Beam",
@@ -609,7 +609,7 @@
     },
     "on the brink": {
         "name": "On the Brink",
-        "desc": "When triggered, attacks are 400.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAdditionally buffs 2.00 allies within 3.00 range. Their attacks are 100.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAll stacks of Feed are lost when this ability ends."
+        "desc": "When triggered, attacks are 400.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAdditionally buffs 2.00 allies within 4.00 range. Their attacks are 100.00% faster for 2.00 seconds and blind victims for 1.00 second.\nAll stacks of Feed are lost when this ability ends."
     },
     "ding": {
         "name": "Ding",
@@ -629,7 +629,7 @@
     },
     "resolve - level 2": {
         "name": "Resolve - Level 2",
-        "desc": "Grants composer 3 resolve mastery stacks.\nEach resolve stack grants 6.00% lifesteal from attacks."
+        "desc": "Grants composer 3 resolve mastery stacks.\nEach resolve stack grants 5.00% lifesteal from attacks."
     },
     "aptitude - level 1": {
         "name": "Aptitude - Level 1",
@@ -637,7 +637,7 @@
     },
     "resolve - level 1": {
         "name": "Resolve - Level 1",
-        "desc": "Grants composer 2 resolve mastery stack.\nEach resolve stack grants 6.00% lifesteal from attacks."
+        "desc": "Grants composer 2 resolve mastery stack.\nEach resolve stack grants 5.00% lifesteal from attacks."
     },
     "accent": {
         "name": "Accent",
@@ -681,7 +681,7 @@
     },
     "resolve - level 3": {
         "name": "Resolve - Level 3",
-        "desc": "Grants composer 4 resolve mastery stacks.\nEach resolve stack grants 6.00% lifesteal from attacks."
+        "desc": "Grants composer 4 resolve mastery stacks.\nEach resolve stack grants 5.00% lifesteal from attacks."
     },
     "stringendo": {
         "name": "Stringendo",
@@ -809,7 +809,7 @@
     },
     "resistance aura": {
         "name": "Resistance Aura",
-        "desc": "Allies gain 20.00%% damage reduction (does not stack)"
+        "desc": "Allies gain 20.00% damage reduction (does not stack)"
     },
     "massive sweep": {
         "name": "Massive Sweep",

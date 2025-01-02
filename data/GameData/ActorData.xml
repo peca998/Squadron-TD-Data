@@ -28,6 +28,15 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
     </CActorArc>
+    <CActorUnit default="1" id="BuilderBase" parent="GenericUnitBase">
+        <EditorCategories value=""/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <Macros value="PreTargetHaloMacro"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
+    </CActorUnit>
     <CActorRange default="1">
         <Icon value="Assets\Textures\ui_rangeicon.dds"/>
         <IconScale value="0.003000,0.003000"/>
@@ -59,6 +68,9 @@
             <ColorArray index="6" removed="1"/>
             <ColorArray index="7" removed="1"/>
         </StatusColors>
+        <Macros value="PreTargetHaloMacro"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
         <BarOffset value="30"/>
         <BarWidth value="36"/>
@@ -80,8 +92,11 @@
     </CActorUnit>
     <CActorUnit default="1" id="TowerActorBase" parent="GenericUnitStandard">
         <EditorCategories value=""/>
+        <Macros value="PreTargetHaloMacro"/>
         <On Terms="Signal.*.GroundIndicator" Send="Create SquareTaken"/>
         <On Terms="Signal.*.GroundIndicatorOff" Target="SquareTaken" Send="Destroy Immediate"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
     </CActorUnit>
     <CActorUnit default="1" id="TowerActorBaseArmored" parent="TowerActorBase">
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
@@ -125,13 +140,17 @@
             <ColorArray index="6" removed="1"/>
             <ColorArray index="7" removed="1"/>
         </StatusColors>
+        <Macros value="PreTargetHaloMacro"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <DeathArray index="Normal" ModelLink="ZergSmallUnitDeath" SoundLink="Zerg_ExplosionSmall"/>
     </CActorUnit>
     <CActorUnit default="1" id="WaveBossActorBase" parent="WaveActorBase">
         <DeathArray index="Normal" ModelLink="ZergLargeUnitDeath" SoundLink="Zerg_ExplosionLarge"/>
         <BarOffset value="105"/>
         <BarWidth value="180"/>
-        <CustomUnitStatusFrame value="HotS_UnitStatus/KerriganHeroUnitStatusFrameTemplate"/>
+        <CustomUnitStatusFrame value="Squad_UnitStatus/Squad_BossNoEnergyStatusFrame"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
         <NameOffset value="100"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -160,11 +179,84 @@
         <AlignV value="Bottom"/>
         <HeightOffset value="1.000000"/>
     </CActorText>
+    <CActorSound id="HellfireMissileImpactSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.HellfireMissilesLeftImpactDummy.Start" Send="Create"/>
+        <On Terms="Effect.HellfireMissilesRightImpactDummy.Start" Send="Create"/>
+        <Sound value="Loki_HurricaneAttackImpact"/>
+    </CActorSound>
+    <CActorModel id="HellfireMissileImpactModel" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.HellfireMissilesLeftImpactDummy.Start" Send="Create"/>
+        <On Terms="Effect.HellfireMissilesRightImpactDummy.Start" Send="Create"/>
+        <Model value="LokiHurricaneAttackImpact"/>
+    </CActorModel>
+    <CActorSound id="EMPShock@ImpactSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.EMPShock@Search.Start" Send="Create"/>
+        <Sound value="Ghost_EMPAttackImpact"/>
+    </CActorSound>
+    <CActorEventMacro id="PreTargetHaloMacro">
+        <EditorCategories value=""/>
+        <!-- Sadly Halo doesn't seem to work with any Opacity <1, which means we need to adjust it, and then restore individual units (i.e. phantom) -->
+        <On Terms="StatusOn.*.PreTargetingHalo" Send="SetOpacity 1.000000"/>
+        <On Terms="StatusOn.*.PreTargetingHalo; HasAllianceTypeWith Self" Send="HaloSetColor 51,255,51"/>
+        <On Terms="StatusOn.*.PreTargetingHalo; HasAllianceTypeWith Ally" Send="HaloSetColor 255,215,0"/>
+        <On Terms="StatusOn.*.PreTargetingHalo; HasAllianceTypeWith Enemy" Send="HaloSetColor 255,17,17"/>
+        <!-- not really used anywhere, but the default white is fine in case its needed -->
+        <On Terms="StatusOn.*.PreTargetingHalo; HasAllianceTypeWith Neutral" Send="HaloSetColorFromAllianceType Neutral"/>
+        <On Terms="StatusOn.*.PreTargetingHalo" Send="HaloStart"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="HaloStop"/>
+    </CActorEventMacro>
+    <CActorModel id="EMPBlast@Impact" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.EMPBlast@Search.Start" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="HitTestSphere">
+        <EditorCategories value=""/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+    </CActorModel>
+    <!-- in case we don't want opacity to 1, i.e. SS Elusive barrier we want to communicate properly to player -->
+    <CActorEventMacro id="PreTargetHaloMacroRemoveOpacity">
+        <EditorCategories value=""/>
+        <Remove Terms="StatusOn.*.PreTargetingHalo" Send="SetOpacity 1.000000"/>
+    </CActorEventMacro>
+    <CActorAction id="Send_GhostAttack" parent="GenericAttack" effectAttack="Send_Ghost">
+        <EditorCategories value=""/>
+        <LaunchAssets Model="GhostAttackLaunch" Sound="Ghost_AttackLaunch"/>
+        <ImpactMap index="None" Model="GhostAttackImpact" Sound="Ghost_AttackImpact"/>
+    </CActorAction>
     <CActorModel id="MuddledArmorExplosion" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.MuddledArmorSearch.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="SetTintColor 94,255,94"/>
     </CActorModel>
+    <CActorUnit id="Send_Ghost" parent="LightSendActorBase" unitName="Send_Ghost">
+        <PortraitModel value="GhostPortrait"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-terran-ghost.dds"/>
+        </GroupIcon>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-ghost.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="UnitDeathModelNoLoop" parent="UnitDeathModel">
+        <EditorCategories value=""/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+    </CActorModel>
+    <CActorModel id="UnitDeathModelUnscaledNoLoop" parent="UnitDeathModelUnscaled">
+        <EditorCategories value=""/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+    </CActorModel>
+    <CActorSound id="Wave20BirthSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <Sound value="BlightBringer_VxFx_03"/>
+    </CActorSound>
+    <CActorMissile id="Wave28AttackMissile" parent="GenericAttackMissile" unitName="Wave28AttackMissile">
+        <EditorCategories value=""/>
+    </CActorMissile>
     <CActorModel id="ta_DestructiveSacrifice@Impact" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.ta_DestructiveSacrifice@Damage.Start; At Target" Send="Create"/>
@@ -256,7 +348,6 @@
         <DeathArray index="Normal" ModelLink="fAlarak@Death" SoundLink="Alarak_Death"/>
         <PortraitActor value="AlarakEx2Portrait"/>
         <PortraitModel value="AlarakEx2Portrait"/>
-        <BarOffset value="115"/>
         <BarWidth value="85"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-alarak.dds"/>
@@ -284,7 +375,6 @@
         <DeathArray index="Normal" ModelLink="fDestructiveAlarak@Death" SoundLink="Alarak_Death"/>
         <PortraitActor value="AlarakEx2Portrait"/>
         <PortraitModel value="AlarakEx2Portrait"/>
-        <BarOffset value="115"/>
         <BarWidth value="85"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-alarak.dds"/>
@@ -341,7 +431,6 @@
         <DeathArray index="Normal" ModelLink="fShockingAlarak@Death" SoundLink="Alarak_Death"/>
         <PortraitActor value="AlarakEx2Portrait"/>
         <PortraitModel value="AlarakEx2Portrait"/>
-        <BarOffset value="115"/>
         <BarWidth value="85"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-alarak.dds"/>
@@ -463,6 +552,7 @@
         <PortraitModel value="HighTemplar_Taldarim_Portrait"/>
         <DeathArray index="Normal" ModelLink="fAscendant@Death" SoundLink="HighTemplar_Death"/>
         <On index="65" Send="AnimBracketStart Attack Spell,B"/>
+        <BarOffset value="80"/>
     </CActorUnit>
     <CActorUnit id="fGreaterArchon" parent="TowerActorBaseLight" unitName="fGreaterArchon">
         <DeathArray index="Normal" ModelLink="fGreaterArchon@Death" SoundLink="Archon_Death"/>
@@ -679,8 +769,7 @@
     <CActorSplat id="SwiftInfusion@CastRange" parent="AbilRangeVisualIndicatorTemplate">
         <Scale value="9.375000,9.000000,9.000000"/>
     </CActorSplat>
-    <CActorUnit id="TaldarimBuilder" parent="GenericUnitBase" unitName="TaldarimBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="TaldarimBuilder" parent="BuilderBase" unitName="TaldarimBuilder">
         <PortraitModel value="TalDarim_Probe_Portrait"/>
         <SoundArray index="Birth" value="Alarak_Ready"/>
         <SoundArray index="Ready" value="Alarak_Ready"/>
@@ -688,9 +777,6 @@
         <SoundArray index="What" value="Alarak_What"/>
         <SoundArray index="Yes" value="Alarak_Yes"/>
         <SoundArray index="Pissed" value="Alarak_Pissed"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-probe.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-collection-taldarim-probe.dds"/>
@@ -707,6 +793,7 @@
     <CActorRegionCircle id="ReduceOpacityOnTargetingModeBuild">
         <EditorCategories value=""/>
         <Radius value="100.000000"/>
+        <!-- Creation -->
         <On Terms="ActorCreation" Send="QueryRegion ::Self TargetingModeBuildQueryResponse AgainstCenter"/>
         <On Terms="Abil.BuildAutomaton.TargetOn; ValidatePlayer BuildFilterOn" Send="Create"/>
         <On Terms="Abil.BuildAncient.TargetOn; ValidatePlayer BuildFilterOn" Send="Create"/>
@@ -720,23 +807,20 @@
         <On Terms="Abil.BuildSoul.TargetOn; ValidatePlayer BuildFilterOn" Send="Create"/>
         <On Terms="Abil.BuildSylphy.TargetOn; ValidatePlayer BuildFilterOn" Send="Create"/>
         <On Terms="Abil.BuildTaldarim.TargetOn; ValidatePlayer BuildFilterOn" Send="Create"/>
-    </CActorRegionCircle>
-    <CActorRegionCircle id="SetNormalOpacityOnTargetingOff">
-        <EditorCategories value=""/>
-        <Radius value="100.000000"/>
-        <On Terms="ActorCreation" Send="QueryRegion ::Self TargetingModeBuildQueryResponseOff AgainstCenter"/>
-        <On Terms="Abil.BuildAutomaton.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildAncient.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildBeast.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildCelestial.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildMechanical.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildNature.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildShadow.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildElemental.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildGhost.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildSoul.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildSylphy.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
-        <On Terms="Abil.BuildTaldarim.TargetOff; ValidatePlayer BuildFilterOn" Send="Create"/>
+        <!-- Destruction -->
+        <On Terms="ActorDestruction" Send="QueryRegion ::Self TargetingModeBuildQueryResponseOff AgainstCenter"/>
+        <On Terms="Abil.BuildAutomaton.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildAncient.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildBeast.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildCelestial.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildMechanical.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildNature.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildShadow.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildElemental.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildGhost.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildSoul.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildSylphy.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
+        <On Terms="Abil.BuildTaldarim.TargetOff; ValidatePlayer BuildFilterOn" Send="Destroy"/>
     </CActorRegionCircle>
     <CActorQueryResponse id="TargetingModeBuildQueryResponse">
         <EditorCategories value=""/>
@@ -815,14 +899,12 @@
         <LaunchAttachQuery Methods="AMFilterWeapon02"/>
         <Missile value="HellfireMissileLeft"/>
         <LaunchAssets Sound="Loki_HurricaneAttackLaunch"/>
-        <ImpactMap index="None" Model="LokiHurricaneAttackImpact" Sound="Loki_HurricaneAttackImpact"/>
     </CActorAction>
     <CActorAction id="HellfireMissileRightAttack" parent="GenericAttack" effectImpact="HellfireMissilesRightImpactDummy" effectLaunch="HellfireMissilesLMRight">
         <EditorCategories value=""/>
         <LaunchAttachQuery Methods="AMFilterWeapon03"/>
         <Missile value="HellfireMissileRight"/>
         <LaunchAssets Sound="Loki_HurricaneAttackLaunch"/>
-        <ImpactMap index="None" Model="LokiHurricaneAttackImpact" Sound="Loki_HurricaneAttackImpact"/>
     </CActorAction>
     <CActorModel id="ElectricalShockTier3StunImpact" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
@@ -868,7 +950,6 @@
         <EditorCategories value=""/>
         <Missile value="EMPShock@Missile"/>
         <LaunchAssets Sound="Ghost_EMPAttackLaunch"/>
-        <ImpactMap index="None" Sound="Ghost_EMPAttackImpact"/>
     </CActorAction>
     <CActorModelMaterial id="EMPShock@Stun" parent="BehaviorGlaze" buff="EMPShock@Stun">
         <EditorCategories value=""/>
@@ -974,6 +1055,7 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-collection-primal-zerglingupgrade.dds"/>
         </Wireframe>
+        <BarOffset value="40"/>
     </CActorUnit>
     <CActorRange id="MechaHostRange">
         <EditorCategories value=""/>
@@ -1058,7 +1140,7 @@
         </WireframeShield>
         <PortraitModel value="SentryPortrait"/>
         <DeathArray index="Normal" ModelLink="fAegis@Death" SoundLink="Sentry_Explode"/>
-        <BarOffset value="65"/>
+        <BarOffset value="55"/>
     </CActorUnit>
     <CActorAction id="fAegis@Attack" parent="GenericAttack">
         <EditorCategories value=""/>
@@ -1099,7 +1181,7 @@
         <On Terms="TimerExpired; TimerName Tint" Target="::PortraitGameSelf" Send="SetTintColor 124,81,159"/>
         <DeathArray index="Normal" ModelLink="fSupplicant@Death" SoundLink="fSupplicant@Death"/>
         <PortraitModel value="fSupplicant@Portrait"/>
-        <BarOffset value="75"/>
+        <BarOffset value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss--supplicant-taldarim.dds"/>
         </GroupIcon>
@@ -1152,14 +1234,14 @@
     <CActorRange id="fAstralblade@AttackRange" parent="AttackRangeTemplate" unit="fAstralblade"/>
     <CActorArc id="fAstralblade@SlashCone" parent="ArcVisualIndicatorTemplate">
         <Angle value="90.000000"/>
-        <Radius value="2.500000"/>
+        <Radius value="2.000000"/>
     </CActorArc>
     <CActorUnit id="fChronoHavoc" parent="TowerActorBaseLight" unitName="fChronoHavoc">
         <On Terms="SelectionLocalUpdate.*.Start" Send="Create ChronoInfusion@CastRange"/>
         <On Terms="SelectionLocalUpdate.*.Stop" Target="ChronoInfusion@CastRange" Send="Destroy"/>
         <DeathArray index="Normal" ModelLink="fChronoHavoc@Death" SoundLink="Sentry_Explode"/>
         <PortraitModel value="SentryPurifierPortrait"/>
-        <BarOffset value="65"/>
+        <BarOffset value="55"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-sentry-purifier.dds"/>
         </GroupIcon>
@@ -1242,7 +1324,7 @@
         <On Terms="TimerExpired; TimerName Tint" Target="::PortraitGameSelf" Send="SetTintColor 107,22,24"/>
         <DeathArray index="Normal" ModelLink="fSupplicant@Death" SoundLink="fSupplicant@Death"/>
         <PortraitModel value="fSupplicant@Portrait"/>
-        <BarOffset value="75"/>
+        <BarOffset value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss--supplicant-taldarim.dds"/>
         </GroupIcon>
@@ -1272,7 +1354,7 @@
         <On Terms="TimerExpired; TimerName Tint" Target="::PortraitGameSelf" Send="ClearTintColor"/>
         <DeathArray index="Normal" ModelLink="fHavoc@Death" SoundLink="Sentry_Explode"/>
         <PortraitModel value="Sentry_Taldarim_Collection_Portrait"/>
-        <BarOffset value="65"/>
+        <BarOffset value="55"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-sentry-taldarim.dds"/>
         </GroupIcon>
@@ -1323,7 +1405,7 @@
     <CActorUnit id="fPhantasm" parent="TowerActorBaseLight" unitName="fPhantasm">
         <DeathArray index="Normal" ModelLink="fPhantasm@Death" VoiceLink="DarkTemplar_Death"/>
         <BarOffset value="50"/>
-        <BarWidth value="42"/>
+        <BarWidth value="50"/>
         <SoundArray index="What" value="DarkTemplar_What_MC"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-darktemplar-ihanrii.dds"/>
         <Wireframe>
@@ -1387,7 +1469,7 @@
         <On Terms="TimerExpired; TimerName Tint" Target="::PortraitGameSelf" Send="SetTintColor 64,100,225"/>
         <DeathArray index="Normal" ModelLink="fSwiftHavoc@Death" SoundLink="Sentry_Explode"/>
         <PortraitModel value="Sentry_Taldarim_Collection_Portrait"/>
-        <BarOffset value="65"/>
+        <BarOffset value="55"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-sentry-taldarim.dds"/>
         </GroupIcon>
@@ -1470,7 +1552,7 @@
     <CActorRange id="fThunderAstralblade@AttackRange" parent="AttackRangeTemplate" unit="fThunderAstralblade"/>
     <CActorArc id="fThunderAstralblade@SlashCone" parent="ArcVisualIndicatorTemplate">
         <Angle value="100.000000"/>
-        <Radius value="2.500000"/>
+        <Radius value="2.000000"/>
     </CActorArc>
     <CActorAction id="fRaptorlingAttack" parent="GenericAttack" effectAttack="fRaptorlingAttack">
         <EditorCategories value=""/>
@@ -1791,16 +1873,8 @@
     </CActorText>
     <CActorText id="CriticalText" parent="TextDisplayBase">
         <On index="3" Terms="TimerExpired; TimerName StartMover" Send="Create CriticalTextMover"/>
-        <On Terms="Behavior.PrecisionCritical.DamageHandled" Send="Create"/>
-        <On Terms="Behavior.PrecisionCritical.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
-        <On Terms="Behavior.VultureEyeCritical.DamageHandled" Send="Create"/>
-        <On Terms="Behavior.VultureEyeCritical.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
-        <On Terms="Behavior.ForesightCritical.DamageHandled" Send="Create"/>
-        <On Terms="Behavior.ForesightCritical.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
-        <On Terms="Behavior.Accent@Critical.DamageHandled" Send="Create"/>
-        <On Terms="Behavior.Accent@Critical.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
-        <On Terms="Behavior.Wave29StealthAssaultCrit.DamageHandled" Send="Create"/>
-        <On Terms="Behavior.Wave29StealthAssaultCrit.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
+        <On Terms="BehaviorStackAlias.Crit.DamageHandled" Send="Create"/>
+        <On Terms="BehaviorStackAlias.Crit.DamageHandled" Send="SetTextLocalized Button/Tooltip/CriticalTextTag"/>
         <FixedSize value="26"/>
         <HeightOffset value="2.700000"/>
         <Text value="Button/Tooltip/CriticalTextTag"/>
@@ -1899,7 +1973,7 @@
         <On Terms="ActorCreation" Send="SetTintColor 6,182,27"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <PortraitModel value="DarkArchonEx2Portrait"/>
-        <BarOffset value="120"/>
+        <BarOffset value="85"/>
         <BarWidth value="66"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-darkarchon.dds"/>
@@ -2391,19 +2465,14 @@
         <LifeArmorIcon value="Assets\Textures\btn-building-terran-mineralstoragedepot.dds"/>
         <StatusBarFlags index="Life" value="0"/>
     </CActorUnit>
-    <CActorUnit id="TemporalBuilder" parent="GenericUnitStandard" unitName="TemporalBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="TemporalBuilder" parent="BuilderBase" unitName="TemporalBuilder">
         <PortraitModel value="TemporalBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\tip_voidthrasher.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-voidthrasherwalker.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorModel id="RefineryLeakDebuff" parent="ModelAnimationStyleContinuousUNIT">
-        <Supporter Subject="::Creator"/>
         <On Terms="ActorCreation" Send="Create SoundEmitter RefineryLeakDebuff"/>
         <On Terms="Behavior.RefineryLeakDebuff.On" Send="Create"/>
         <On Terms="Behavior.RefineryLeakDebuff.Off" Send="Destroy"/>
@@ -2421,6 +2490,7 @@
     <CActorUnit id="WarCenter" parent="TerranBuilding" unitName="WarCenter">
         <Aliases value="_UnitHuge"/>
         <EditorCategories value="DoodadType:Structures"/>
+        <Macros value="PreTargetHaloMacro"/>
         <On index="76" Terms="Effect.AddVespeneRefinery" Send="TimerKill Stopped"/>
         <On index="77" Terms="Effect.AddVespeneRefinery" Target="_BuildingTerrainFlatten" Send="TimerSet 5.000000 Stopped"/>
         <On index="78" Terms="Effect.AddVespeneRefinery; IsStatus Mining 0" Send="AnimPlay Work Stand,Work"/>
@@ -2447,6 +2517,8 @@
         <On Terms="UnitBirth" Send="Create PlayerLogoDoodadList"/>
         <On Terms="Behavior.PauseWarCenter.On" Send="AnimSetPausedAll"/>
         <On Terms="Behavior.PauseWarCenter.Off" Send="AnimSetPausedAll 0"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <Model value="AutomatedRefinery"/>
         <BuildModel value="AutomatedRefinery"/>
         <DeathArray index="Normal" ModelLink="AutomatedRefineryDeath" SoundLink="AutomatedRefinery_Explode"/>
@@ -2574,6 +2646,8 @@
             <Image value="Assets\Textures\wireframe-protoss-colossus-purifier-shield02.dds"/>
             <Image value="Assets\Textures\wireframe-protoss-colossus-purifier-shield03.dds"/>
         </WireframeShield>
+        <BarOffset value="150"/>
+        <BarWidth value="85"/>
     </CActorUnit>
     <CActorAction id="fKingsguardAttack" parent="GenericAttack" effectAttack="fKingsguardAttack">
         <EditorCategories value=""/>
@@ -2591,6 +2665,7 @@
         <SoundArray index="Attack" value="SwarmHost_Attack"/>
         <UnitIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
         <PortraitModel value="PrimalSwarmHostPortrait"/>
+        <BarOffset value="60"/>
     </CActorUnit>
     <CActorRange id="SwarmHostAttackRANGE">
         <EditorCategories value=""/>
@@ -2618,6 +2693,7 @@
             <Image value="Assets\Textures\btn-unit-terran-blimpmengsk.dds"/>
         </Wireframe>
         <DeathArray index="Normal" ModelLink="fPulverizerDeath"/>
+        <BarOffset value="80"/>
     </CActorUnit>
     <CActorUnit id="fRetaliator" parent="TowerActorBaseMassive" unitName="fRetaliator">
         <GroupIcon>
@@ -2634,7 +2710,7 @@
         </WireframeShield>
         <PortraitModel value="Adept_Taldarim_Collection_Portrait"/>
         <DeathArray index="Normal" ModelLink="fRetaliator@Death"/>
-        <BarOffset value="75"/>
+        <BarOffset value="65"/>
     </CActorUnit>
     <CActorAction id="fRetaliator@Attack" parent="GenericAttack" effectImpact="fRetaliator@Attack" effectLaunch="fRetaliator@AttackMissile">
         <EditorCategories value=""/>
@@ -2679,11 +2755,12 @@
         <On Terms="ActorCreation" Send="TextureSelectById Zealot_Specula2"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.600000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.600000"/>
         <DeathArray index="Normal" ModelLink="ZealotDeath" SoundLink="Zealot_DeathFX"/>
         <PortraitModel value="DarkTemplar_Purifier_Portrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
         <BarOffset value="45"/>
-        <BarWidth value="42"/>
+        <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-collection-purifier-darktemplar.dds"/>
         </GroupIcon>
@@ -2709,11 +2786,12 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-collection-primal-swarmhost.dds"/>
         </Wireframe>
+        <BarOffset value="60"/>
     </CActorUnit>
     <CActorUnit id="fSupplicant" parent="TowerActorBaseMassive" unitName="fSupplicant">
         <DeathArray index="Normal" ModelLink="fSupplicant@Death" SoundLink="fSupplicant@Death"/>
         <PortraitModel value="fSupplicant@Portrait"/>
-        <BarOffset value="75"/>
+        <BarOffset value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss--supplicant-taldarim.dds"/>
         </GroupIcon>
@@ -2925,7 +3003,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorUnit id="BasicSends" parent="TerranBuilding" unitName="BasicSends">
+        <Macros value="PreTargetHaloMacro"/>
         <On Terms="UnitBirth.EconomicSendsFlying" Send="Create"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <Scale value="0.650000"/>
         <PortraitModel value="AdjutantPortrait"/>
         <BarOffset value="165"/>
@@ -2978,6 +3059,7 @@
         <SoundArray index="Attack" value="SwarmHost_Attack"/>
         <UnitIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
         <PortraitModel value="SwarmHostPortrait"/>
+        <BarOffset value="55"/>
     </CActorUnit>
     <CActorAction id="WardenRestrainAttack" parent="GenericAttack" effectAttack="WardenDamage">
         <EditorCategories value=""/>
@@ -3151,12 +3233,8 @@
         <On Terms="ActorCreation" Send="SetOpacity"/>
         <Model value="ShapeSphere"/>
     </CActorModel>
-    <CActorUnit id="SoulBuilder" parent="GenericUnitStandard" unitName="SoulBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="SoulBuilder" parent="BuilderBase" unitName="SoulBuilder">
         <PortraitModel value="SoulBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-collection-purifier-adept.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-adept-purifier-champion.dds"/>
@@ -3641,7 +3719,7 @@
             <Image value="Assets\Textures\wireframe-collection-nerazim-warpprism-shield02.dds"/>
             <Image value="Assets\Textures\wireframe-collection-nerazim-warpprism-shield03.dds"/>
         </WireframeShield>
-        <BarOffset value="50"/>
+        <BarOffset value="15"/>
         <BarWidth value="45"/>
         <DeathArray index="Normal" ModelLink="WarpPrism_Ihanrii_Death"/>
     </CActorUnit>
@@ -4524,8 +4602,7 @@
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 4.000000}"/>
         <DeathArray index="Normal" ModelLink="ProtossMediumUnitDeath"/>
         <PortraitModel value="fArchivePortrait"/>
-        <BarOffset value="25"/>
-        <BarWidth value="57"/>
+        <BarOffset value="85"/>
         <GroupIcon>
             <Image value="Eye of Khas\wireframe-protoss-eyeofkhas.dds"/>
         </GroupIcon>
@@ -4540,7 +4617,7 @@
         <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="ZealotPortrait"/>
-        <BarOffset value="25"/>
+        <BarOffset value="47"/>
         <BarWidth value="57"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-zeratul.dds"/>
@@ -4583,17 +4660,17 @@
         <On index="65" Send="AnimBracketStart Spell A"/>
         <On index="67" Send="AnimBracketStop Spell"/>
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 1.250000}"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
+        <BarOffset value="55"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
         </GroupIcon>
-        <UnitIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplarnocord.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
         </Wireframe>
         <PortraitModel value="EncoderPortrait"/>
         <DeathArray index="Normal" ModelLink="HighTemplarDeath"/>
+        <BarWidth value="50"/>
     </CActorUnit>
     <CActorUnit id="fEncrypter" parent="TowerActorBaseBiological" unitName="fEncrypter">
         <On index="65" Send="AnimBracketStart Spell A"/>
@@ -4601,19 +4678,19 @@
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 1.250000}"/>
         <DeathArray index="Normal" ModelLink="HighTemplarDeath"/>
         <BarOffset value="70"/>
-        <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
         </GroupIcon>
-        <UnitIcon value="Assets\Textures\btn-unit-protoss-immortal-dark.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplar-ihanrii.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\btn-unit-protoss-hightemplar-dark.dds"/>
         </Wireframe>
         <PortraitModel value="EncrypterPortrait"/>
+        <BarWidth value="50"/>
     </CActorUnit>
     <CActorUnit id="fMagnetosphereResonator" parent="TowerActorBaseMassive" unitName="fMagnetosphereResonator">
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 1.250000}"/>
-        <BarOffset value="70"/>
+        <BarOffset value="40"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-building-terran-sigmaprojector.dds"/>
@@ -4628,7 +4705,7 @@
     <CActorUnit id="fMatriarch" parent="TowerActorBaseBiological" unitName="fMatriarch">
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 1.250000}"/>
         <On Terms="ActorCreation" Send="Create SelectionField"/>
-        <BarOffset value="70"/>
+        <BarOffset value="85"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
@@ -4642,8 +4719,8 @@
     </CActorUnit>
     <CActorUnit id="fPreserver" parent="TowerActorBaseMechanical" unitName="fPreserver">
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 6.250000}"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
+        <BarOffset value="60"/>
+        <BarWidth value="70"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-preserver00.dds"/>
         </GroupIcon>
@@ -4658,7 +4735,7 @@
     <CActorUnit id="fPrismaticResonator" parent="TowerActorBaseMassive" unitName="fPrismaticResonator">
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 1.250000}"/>
         <On Terms="ActorCreation" Send="AnimBaselineStop"/>
-        <BarOffset value="70"/>
+        <BarOffset value="10"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
@@ -4755,7 +4832,7 @@
         <DeathArray index="Normal" ModelLink="SentryDeath" SoundLink="Sentry_Explode"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="SentryPortrait"/>
-        <BarOffset value="40"/>
+        <BarOffset value="35"/>
         <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Protoss-sentry.dds"/>
@@ -5065,7 +5142,7 @@
         <On Terms="Effect.NightmareCounterAttack.Start" Send="Create"/>
     </CActorSound>
     <CActorModel id="NightmareCounterAttackSFX" parent="ModelAnimationStyleOneShot">
-        <On index="2" Terms="ActorCreation" Send="SetTintColor {0,255,255 2.000000}"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,255 2.000000}"/>
         <On Terms="Effect.NightmareCounterAttack.Start" Send="Create"/>
         <HostSiteOps Ops="SOpShadow"/>
     </CActorModel>
@@ -5075,23 +5152,15 @@
     <CActorSound id="ColossusAttackLaunchSound">
         <EditorCategories value=""/>
     </CActorSound>
-    <CActorUnit id="RandomCustomBuilder" parent="GenericUnitStandard" unitName="RandomCustomBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="RandomCustomBuilder" parent="BuilderBase" unitName="RandomCustomBuilder">
         <PortraitModel value="RandomCustomBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-ravenblackops.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-terran-ravenblackops.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorUnit id="ChaosBuilder" parent="GenericUnitStandard" unitName="ChaosBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="ChaosBuilder" parent="BuilderBase" unitName="ChaosBuilder">
         <PortraitModel value="ChaosBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-zealot.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-reanimator-mutator.dds"/>
@@ -5966,22 +6035,20 @@
         <BarHeight value="1"/>
         <BarWidth value="1"/>
     </CActorMissile>
-    <CActorUnit id="CelestialBuilder" parent="GenericUnitBase" unitName="CelestialBuilder">
+    <CActorUnit id="CelestialBuilder" parent="BuilderBase" unitName="CelestialBuilder">
         <AcceptedTransfers index="Rotation" value="0"/>
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
         <On Terms="ActorCreation" Send="SetTintColor 255,237,13"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.600000"/>
+        <PortraitModel value="CelestialBuilderPortrait"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-mothership.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-mothership.dds"/>
         </Wireframe>
-        <PortraitModel value="CelestialBuilderPortrait"/>
-        <UnitIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
-        <AcceptedHostedPropTransfers index="Scale" value="0"/>
     </CActorUnit>
     <CActorModel id="ThunderbirdSFX" parent="ModelAnimationStyleContinuous">
         <Inherits index="Visibility" value="1"/>
@@ -6422,7 +6489,7 @@
         <BarHeight value="1"/>
         <BarWidth value="1"/>
     </CActorMissile>
-    <CActorUnit id="MechanicalBuilder" parent="GenericUnitBase" unitName="MechanicalBuilder">
+    <CActorUnit id="MechanicalBuilder" parent="BuilderBase" unitName="MechanicalBuilder">
         <PortraitModel value="MechanicalBuilderPortrait"/>
         <BarOffset value="50"/>
         <BarWidth value="42"/>
@@ -6441,9 +6508,6 @@
         <SoundArray index="Movement" value="SCVMovement"/>
         <SoundArray index="Turning" value="SCVTurning"/>
         <SoundArray index="Board" value="SCVBoard"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-mule.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\Wireframe-Terran-mule.dds"/>
@@ -6709,7 +6773,7 @@
         <BarHeight value="1"/>
         <BarWidth value="1"/>
     </CActorMissile>
-    <CActorUnit id="BeastBuilder" parent="GenericUnitBase" unitName="BeastBuilder">
+    <CActorUnit id="BeastBuilder" parent="BuilderBase" unitName="BeastBuilder">
         <PortraitModel value="BeastBuilderPortrait"/>
         <WalkAnimMoveSpeed value="2.7031"/>
         <GroupIcon>
@@ -6719,36 +6783,28 @@
         <SoundArray index="Help" value="QueenHelp"/>
         <SoundArray index="What" value="QueenWhat"/>
         <SoundArray index="Yes" value="QueenYes"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorUnit id="NatureBuilder" parent="GenericUnitBase" unitName="NatureBuilder">
+    <CActorUnit id="NatureBuilder" parent="BuilderBase" unitName="NatureBuilder">
+        <On Terms="ActorCreation" Send="Create HitTestSphere"/>
         <PortraitModel value="NatureBuilderPortrait"/>
         <WalkAnimMoveSpeed value="3.5"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-collection-blizzcon17-drone.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-collection-drone-mecha.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-collection-blizzcon17-drone.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorUnit id="ShadowBuilder" parent="GenericUnitBase" unitName="ShadowBuilder">
+    <CActorUnit id="ShadowBuilder" parent="BuilderBase" unitName="ShadowBuilder">
         <PortraitModel value="ShadowBuilderPortrait"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-archon-shield02.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\smokecloud1.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-archon-shield02.dds"/>
@@ -6812,12 +6868,8 @@
         <StatusBarFlags index="Life" value="0"/>
         <StatusBarFlags index="Energy" value="0"/>
     </CActorUnit>
-    <CActorUnit id="CustomBuilder" parent="GenericUnitStandard" unitName="CustomBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="CustomBuilder" parent="BuilderBase" unitName="CustomBuilder">
         <PortraitModel value="CustomBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-research-terran-sciencevessel.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-terran-sciencevessel.dds"/>
@@ -7061,7 +7113,8 @@
     </CActorUnit>
     <CActorUnit id="fCelestian" parent="TowerActorBaseLight" unitName="fCelestian">
         <On Terms="ActorCreation" Send="SetTintColor {128,128,255 4.000000}"/>
-        <On Terms="Behavior.TimedLifeTheos.On" Send="SetOpacity 0.400000"/>
+        <On Terms="Behavior.CreationCelestianCollision.On" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo; ValidateUnit HasCreationCelestianCollision" Send="SetOpacity 0.400000"/>
         <DeathArray index="Normal" ModelLink="ZealotDeath" SoundLink="Zealot_Death"/>
         <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
@@ -7080,7 +7133,7 @@
     </CActorUnit>
     <CActorUnit id="fCenturion" parent="TowerActorBaseMassive" unitName="fCenturion">
         <On Terms="ActorCreation" Send="SetTintColor {89,89,89 5.000000}"/>
-        <BarOffset value="70"/>
+        <BarOffset value="80"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="wireframe-terran-supercrane.dds"/>
@@ -7097,7 +7150,7 @@
         <On Terms="WeaponStart" Send="AnimBracketStart Attack Attack {} {} 0 1.000000 AsTimeScale"/>
         <On Terms="UnitDeath" Send="AnimSetTimeScaleGlobal 15.000000"/>
         <On Terms="ActorCreation" Send="Create SelectionField"/>
-        <BarOffset value="70"/>
+        <BarOffset value="50"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
@@ -7114,7 +7167,7 @@
         <On Terms="UnitDeath" Send="AnimSetTimeScaleGlobal 15.000000"/>
         <On Terms="WeaponStart" Send="AnimBracketStart Attack Attack {} {} 0 1.000000 AsTimeScale"/>
         <On Terms="ActorCreation" Send="Create SelectionField"/>
-        <BarOffset value="70"/>
+        <BarOffset value="60"/>
         <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-lostvinking-terra-tron.dds"/>
@@ -7212,7 +7265,7 @@
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="HybridProtossPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="75"/>
+        <BarOffset value="80"/>
         <BarWidth value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-hybrid-destroyer.dds"/>
@@ -7273,7 +7326,7 @@
         <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="33"/>
+        <BarOffset value="75"/>
         <BarWidth value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-sentry.dds"/>
@@ -7361,8 +7414,8 @@
         <On Terms="ActorCreation" Send="SetTintColor {89,89,89 5.000000}"/>
         <OverkillByDamagePastRemainingHealth TestType="PercentageOfMaxLife"/>
         <OverkillByDamageOverInterval TestType="PercentageOfMaxLife"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
+        <BarOffset value="50"/>
+        <BarWidth value="70"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-research-terran-raven.dds"/>
         </GroupIcon>
@@ -7395,8 +7448,7 @@
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="ColossusPortrait"/>
         <WalkAnimMoveSpeed value="2.1445"/>
-        <BarOffset value="80"/>
-        <BarWidth value="82"/>
+        <BarWidth value="75"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-colossus.dds"/>
         </GroupIcon>
@@ -7466,7 +7518,7 @@
         <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="ObserverPortrait"/>
-        <BarOffset value="25"/>
+        <BarOffset value="5"/>
         <BarWidth value="57"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-observer.dds"/>
@@ -7483,7 +7535,7 @@
         <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="Observer_Golden_Portrait"/>
-        <BarOffset value="35"/>
+        <BarOffset value="15"/>
         <BarWidth value="65"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-observer.dds"/>
@@ -7497,7 +7549,7 @@
     <CActorUnit id="fTreeofKnowledge" parent="TowerActorBaseMassive" unitName="fTreeofKnowledge">
         <DeathArray index="Normal" ModelLink="ExplodingBarrelLarge" SoundLink="SpecialOpsDropship_Explode"/>
         <WalkAnimMoveSpeed value="2.1992"/>
-        <BarOffset value="70"/>
+        <BarOffset value="40"/>
         <BarWidth value="75"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-dropshipspecialops.dds"/>
@@ -7538,7 +7590,7 @@
     </CActorUnit>
     <CActorUnit id="fSprite" parent="TowerActorBaseLight" unitName="fSprite">
         <WalkAnimMoveSpeed value="2.1992"/>
-        <BarOffset value="45"/>
+        <BarOffset value="40"/>
         <BarWidth value="40"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-nova.dds"/>
@@ -7568,7 +7620,7 @@
     </CActorUnit>
     <CActorUnit id="fThunderbird" parent="TowerActorBaseMassive" unitName="fThunderbird">
         <WalkAnimMoveSpeed value="2.1992"/>
-        <BarOffset value="45"/>
+        <BarOffset value="63"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-spectre.dds"/>
         </GroupIcon>
@@ -7593,7 +7645,7 @@
         <PortraitModel value="Hellion_Umojan_Portrait"/>
     </CActorUnit>
     <CActorUnit id="fTreeofTime" parent="TowerActorBaseArmored" unitName="fTreeofTime">
-        <BarOffset value="65"/>
+        <BarOffset value="60"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-disruptor-ihanrii.dds"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-disruptor.dds"/>
@@ -7644,12 +7696,12 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-colossus.dds"/>
         </Wireframe>
+        <BarOffset value="130"/>
     </CActorUnit>
     <CActorUnit id="fYggdrasil" parent="TowerActorBaseMechanical" unitName="fYggdrasil">
         <DeathArray index="Normal" ModelLink="SpecterDeath"/>
         <WalkAnimMoveSpeed value="2.1992"/>
         <BarOffset value="65"/>
-        <BarWidth value="70"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-spectre.dds"/>
         </GroupIcon>
@@ -7716,7 +7768,7 @@
         <PortraitModel value="DarkVoicePortrait"/>
         <StandAnimTurnTime value="5"/>
         <WalkAnimMoveSpeed value="1.75"/>
-        <BarOffset value="60"/>
+        <BarOffset value="50"/>
         <BarWidth value="70"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-darktemplar00.dds"/>
@@ -7731,7 +7783,7 @@
         <On Terms="ActorCreation" Send="SetTintColor 255,128,128"/>
         <On Terms="ActorCreation" Send="TextureSelectById ShadowDiffuse"/>
         <PortraitModel value="ReaperPortrait"/>
-        <BarOffset value="60"/>
+        <BarOffset value="35"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-reaper.dds"/>
         </GroupIcon>
@@ -7938,8 +7990,8 @@
         <DeathArray index="Normal" ModelLink="Viking_MercAssault_Death"/>
     </CActorUnit>
     <CActorUnit id="fTempest" parent="TowerActorBaseMassive" unitName="fTempest">
-        <BarOffset value="40"/>
-        <BarWidth value="35"/>
+        <BarOffset value="45"/>
+        <BarWidth value="45"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-terran-wraith.dds"/>
         </GroupIcon>
@@ -8027,7 +8079,7 @@
         <DeathArray index="Normal" ModelLink="FirebatDeath" SoundLink="Firebat_Explode"/>
         <PortraitModel value="FirebatPortrait"/>
         <WalkAnimMoveSpeed value="1.875"/>
-        <BarOffset value="70"/>
+        <BarOffset value="50"/>
         <BarWidth value="45"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Terran-firebat.dds"/>
@@ -8047,7 +8099,7 @@
         <DeathArray index="Silentkill" SoundLink="Uni_DeathFXSilentKill"/>
         <PortraitModel value="MarauderPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="85"/>
+        <BarOffset value="70"/>
         <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Terran-Marauder.dds"/>
@@ -8066,7 +8118,7 @@
         <DeathArray index="Normal" ModelLink="PhoenixDeath" SoundLink="Phoenix_Explode"/>
         <DeathActorModel value="PhoenixDeathModel"/>
         <PortraitModel value="PhoenixPortrait"/>
-        <BarOffset value="40"/>
+        <BarOffset value="20"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Protoss-Phoenix.dds"/>
         </GroupIcon>
@@ -8089,7 +8141,7 @@
         <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
         <DeathArray index="Normal" ModelLink="PhoenixHeroDeath" SoundLink="Urun_Explode"/>
         <PortraitModel value="UrunPortrait"/>
-        <BarOffset value="40"/>
+        <BarOffset value="30"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Protoss-Urun-Phoenix.dds"/>
         </GroupIcon>
@@ -8135,7 +8187,7 @@
         <PortraitModel value="StalkerPortrait"/>
         <StandAnimTurnTime value="5"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="70"/>
+        <BarOffset value="60"/>
         <BarWidth value="70"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-stalker.dds"/>
@@ -8360,7 +8412,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="WarpPrismPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="45"/>
+        <BarOffset value="20"/>
         <BarWidth value="42"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-phaseprism.dds"/>
@@ -8383,7 +8435,7 @@
         <DeathArray index="Silentkill" SoundLink="Uni_DeathFXSilentKill"/>
         <PortraitModel value="MarauderPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="60"/>
+        <BarOffset value="55"/>
         <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Terran-Marauder.dds"/>
@@ -8399,7 +8451,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="WarpPrism_Ihanrii_Portrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="45"/>
+        <BarOffset value="20"/>
         <BarWidth value="42"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-phaseprism-dark.dds"/>
@@ -8410,15 +8462,11 @@
         <DeathArray index="Normal" ModelLink="DarkWarpPrismDeath"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-phaseprism-dark.dds"/>
     </CActorUnit>
-    <CActorUnit id="ElementalBuilder" parent="GenericUnitBase" unitName="ElementalBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="ElementalBuilder" parent="BuilderBase" unitName="ElementalBuilder">
         <PortraitModel value="ElementalBuilderPortrait"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-archon.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-archon.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-archon.dds"/>
@@ -8490,7 +8538,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="CarrierPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="45"/>
+        <BarOffset value="20"/>
         <BarWidth value="42"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
@@ -8550,7 +8598,8 @@
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.400000 0.500000"/>
         <On Terms="ActorCreation" Send="SetTintColor {94,223,220 0.700000}"/>
-        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000 0.500000"/>
+        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <Scale value="1.300000"/>
         <AnimBlendTime value="-0.800000"/>
         <DeathArray index="Normal" ModelLink="GhostDeath" SoundLink="Ghost_Explode"/>
@@ -8633,7 +8682,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="ProbePortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="45"/>
+        <BarOffset value="40"/>
         <BarWidth value="42"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-collection-purifier-probe.dds"/>
@@ -8654,7 +8703,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="Carrier_Ihanrii_Portrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="45"/>
+        <BarOffset value="20"/>
         <BarWidth value="42"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-interceptor-dark.dds"/>
@@ -8681,9 +8730,9 @@
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide"/>
     </CActorAction>
     <CActorAction id="Wave28Attack" parent="GenericAttack" effectImpact="Wave28Damage" effectLaunch="Wave28">
-        <LaunchAttachQuery Methods="AMFilterWeaponSetA1 AMPatternThorAA"/>
         <LaunchAssets Sound="Thor_AntiAirAttackLaunch"/>
         <ImpactMap index="None" Sound="Thor_AntiAirAttackImpact"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
     </CActorAction>
     <CActorAction id="Wave27Attack" parent="GenericAttack" effectAttack="Wave27Damage">
         <LaunchAttachQuery Methods="Weapon"/>
@@ -8717,8 +8766,7 @@
         <DamageMap index="Metal" Sound="HybridFPlasmaAttackDamageMetal" ModelReaction="HybridFPlasmaAttackDamageReactionMetal"/>
         <DamageMap index="Shield" Sound="HybridFPlasmaAttackDamageShield" ModelReaction="HybridFPlasmaAttackDamageReactionShield"/>
     </CActorAction>
-    <CActorAction id="Wave24Attack" parent="GenericAttack" effectLaunch="Wave24Damage">
-        <LaunchAttachQuery Methods="AMFilterWeaponSetA0 AMPatternThor"/>
+    <CActorAction id="Wave24Attack" parent="GenericAttack" effectAttack="Wave24Damage">
         <LaunchAssets Model="ThorHandGunAttackLaunch" Sound="Ascendant_AttackLaunch"/>
         <ImpactMap index="None" Model="HighTemplarAttackImpact" Sound="Ascendant_AttackImpact" ModelReaction="ThorAttackImpactReaction"/>
     </CActorAction>
@@ -9086,7 +9134,7 @@
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <AnimBlendTime value="0.300000"/>
-        <DeathArray index="Normal" ModelLink="ZergMediumUnitDeath" SoundLink="Zergling_Death"/>
+        <DeathArray index="Normal" ModelLink="Wave22Death" SoundLink="InfestedAbominationDeath"/>
         <PortraitModel value="AberrationPortrait"/>
         <WalkAnimMoveSpeed value="2.9375"/>
         <BarOffset value="30"/>
@@ -9096,18 +9144,15 @@
         <UnitIcon value="Assets\Textures\wireframe-zerg-aberration.dds"/>
     </CActorUnit>
     <CActorUnit id="Wave20" parent="WaveBossActorBase" unitName="Wave20">
-        <On Terms="ActorCreation" Send="StatusSet Roar 1"/>
-        <On Terms="Abil.attack.ReadyStart; IsStatus Roar 1" Send="Create Brutalisk_Roar"/>
-        <On Terms="Abil.attack.ReadyStart; IsStatus Roar 1" Send="StatusSet Roar 0"/>
-        <On Terms="Abil.attack.ReadyStart" Send="TimerKill ReRoar"/>
-        <On Terms="Abil.attack.ReadyStart" Send="TimerSet 10.000000 ReRoar"/>
-        <On Terms="TimerExpired; TimerName ReRoar" Send="StatusSet Roar 1"/>
-        <DeathArray index="Normal" ModelLink="BrutaliskDeath" SoundLink="Brutalisk_Explode"/>
-        <DeathActorModelLow value="UnitDeathModel"/>
+        <On Terms="UnitBirth" Send="Create Wave20BirthSound"/>
+        <DeathArray index="Normal" ModelLink="Wave20Death" SoundLink=""/>
+        <DeathActorModel value="UnitDeathModelNoLoop"/>
+        <DeathActorModelLow value="UnitDeathModelUnscaledNoLoop"/>
         <PortraitModel value="Blightbringer_Portrait"/>
         <WalkAnimMoveSpeed value="2.0976"/>
         <LifeArmorIcon value="Starcraft 2 Assets\btn-armor-protoss-buildingplating-dark.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-zerg-kraith.dds"/>
+        <CustomUnitStatusOffset value="0,50"/>
     </CActorUnit>
     <CActorUnit id="Wave18" parent="WaveActorBase" unitName="Wave18">
         <HostSiteOps Ops="SOpBankerCorruptor"/>
@@ -9223,6 +9268,7 @@
         <PortraitModel value="ZealotPortrait"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-protoss-zealot.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave07Death"/>
     </CActorUnit>
     <CActorUnit id="fApparition" parent="TowerActorBaseArmored" unitName="fApparition">
         <On Terms="UnitBirth.*.Normal" Send="AnimPlay Birth Stand,Work,End 0 0.000000"/>
@@ -9236,12 +9282,13 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
         <On Terms="ActorCreation" Send="SetTintColor {143,228,220 5.000000}"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <Scale value="0.700000"/>
         <DeathArray index="Normal" ModelLink="ArchonDeath" SoundLink="Archon_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="ProtossMediumUnitDeath" SoundLink="Archon_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathLarge" Name="Hallucination"/>
         <PortraitModel value="ArchonPortrait"/>
-        <BarOffset value="120"/>
+        <BarOffset value="85"/>
         <BarWidth value="66"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Protoss-Archon.dds"/>
@@ -9311,6 +9358,7 @@
         <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
         <On Terms="UnitDeathCustomize; ModelVariation 1" Send="DeathCustomize Variation1"/>
         <On Terms="ActorCreation.Send_Shadow_Templar" Send="SetOpacity 0.250000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <Model value="DarkTemplar"/>
         <Scale value="2.000000"/>
         <AnimBlendTime value="0.250000"/>
@@ -9734,7 +9782,7 @@
         <DeathArray index="UnderConstruction" ModelLink="ProtossMediumUnitDeath" SoundLink="Archon_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathLarge" Name="Hallucination"/>
         <PortraitModel value="DarkArchonEx2Portrait"/>
-        <BarOffset value="120"/>
+        <BarOffset value="95"/>
         <BarWidth value="66"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Protoss-Archon.dds"/>
@@ -9937,14 +9985,15 @@
         <On Terms="ActorCreation" Send="TextureSelectById Zealot_Specula2"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
         <On Terms="ActorCreation" Send="SetTintColor {143,228,220 5.000000}"/>
-        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000 0.500000"/>
+        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <AnimBlendTime value="0.250000"/>
         <DeathArray index="Normal" ModelLink="DarkTemplarDeath" SoundLink="DarkTemplar_DeathFX"/>
         <DeathCustoms ModelLink="DarkTemplarDeath00" Name="Variation0"/>
         <DeathCustoms ModelLink="DarkTemplarDeath01" Name="Variation1"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <BarOffset value="50"/>
-        <BarWidth value="42"/>
+        <BarWidth value="45"/>
         <GroupIconVariations Number="0">
             <Image value="Assets\Textures\Wireframe-Protoss-DarkTemplar00.dds"/>
         </GroupIconVariations>
@@ -9990,7 +10039,8 @@
         <On Terms="ActorCreation.fHellRaiser" Send="SetTintColor {158,18,39 5.000000}"/>
         <On Terms="ActorCreation" Send="TextureSelectById Zealot_Specula2"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
-        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000 0.500000"/>
+        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <DeathArray index="Normal" ModelLink="StalkerDeath" SoundLink="Stalker_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
@@ -10073,6 +10123,7 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.750000"/>
         <On Terms="ActorCreation" Send="SetTintColor {255,255,255 4.000000}"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.750000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.750000"/>
         <DeathArray index="Normal" ModelLink="ZealotDeath" SoundLink="Zealot_DeathFX"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="ZealotPurifierPortrait"/>
@@ -10152,6 +10203,7 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
         <On Terms="ActorCreation" Send="TextureSelectById Zealot_Specula2"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.600000"/>
         <DeathArray index="Normal" ModelLink="DarkStalkerDeath" SoundLink="Stalker_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
@@ -10302,6 +10354,7 @@
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.350000"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.350000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.350000"/>
         <Scale value="1.300000"/>
         <AnimBlendTime value="-0.800000"/>
         <DeathArray index="Normal" ModelLink="GhostDeath" SoundLink="Ghost_Explode"/>
@@ -10330,17 +10383,20 @@
         <PortraitModel value="InfestorPortrait"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-zerg-infestor.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave10Death"/>
     </CActorUnit>
     <CActorUnit id="Wave08" parent="WaveActorBase" unitName="Wave08">
         <PortraitModel value="ReaperPortrait"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-terran-reaper.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave08Death" SoundLink=""/>
     </CActorUnit>
     <CActorUnit id="Wave09" parent="WaveActorBase" unitName="Wave09">
         <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Fidget"/>
         <PortraitModel value="UrsadakExoticPortrait"/>
         <LifeArmorIcon value="Starcraft 2 Assets\btn-armor-protoss-buildingplating-dark.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-critter-ursadakmale.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave09Death"/>
     </CActorUnit>
     <CActorUnit id="Wave05" parent="WaveActorBase" unitName="Wave05">
         <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Dance Dance Dance Dance OpeningPlayForever"/>
@@ -10357,6 +10413,7 @@
         <PortraitModel value="PrimalRoachPortrait"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-zerg-roachex1b.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave06Death"/>
     </CActorUnit>
     <CActorUnit id="Wave03" parent="WaveActorBase" unitName="Wave03">
         <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Walk"/>
@@ -10365,11 +10422,15 @@
         <PortraitModel value="SpaceCowDeadPortrait"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\wireframe-critter-cow.dds"/>
+        <DeathArray index="Normal" ModelLink="Wave03Death"/>
     </CActorUnit>
     <CActorUnit id="StandardSends" parent="TerranBuildingFlyer" unitName="StandardSends">
         <Macros value="QueueAnim"/>
+        <Macros value="PreTargetHaloMacro"/>
         <On Terms="ActorCreation" Send="AnimGroupRemove A"/>
         <On Terms="ActorCreation" Send="AnimGroupRemove B"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <HostSiteOps Ops="SOpBankerBuilding"/>
         <Model value="Barracks"/>
         <BuildModel value="BarracksBuild"/>
@@ -10428,8 +10489,11 @@
     </CActorUnit>
     <CActorUnit id="AdvancedSends" parent="TerranBuildingFlyer" unitName="AdvancedSends">
         <Macros value="QueueAnim"/>
+        <Macros value="PreTargetHaloMacro"/>
         <On Terms="ActorCreation" Send="AnimGroupRemove A"/>
         <On Terms="ActorCreation" Send="AnimGroupRemove B"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <HostSiteOps Ops="SOpBankerBuilding"/>
         <Model value="Factory"/>
         <BuildModel value="FactoryBuild"/>
@@ -10472,16 +10536,14 @@
         <On Terms="Effect.ApplyScream.Start" Send="Create"/>
         <Sound value="MutaliskScream"/>
     </CActorSound>
-    <CActorUnit id="GhostBuilder" parent="GenericUnitBase" unitName="GhostBuilder">
-        <EditorCategories value=""/>
+    <CActorUnit id="GhostBuilder" parent="BuilderBase" unitName="GhostBuilder">
         <Scale value="1.500000"/>
         <PortraitModel value="GhostBuilderPortrait"/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
     </CActorUnit>
     <CActorUnit id="SecuritySystem" parent="GenericUnitBase" unitName="SecuritySystem">
+        <Macros value="PreTargetHaloMacro"/>
+        <Macros value="PreTargetHaloMacroRemoveOpacity"/>
         <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverStand Cover,Stand PlayForever 0.000000"/>
         <On Terms="TimerExpired; TimerName CoverDelay" Send="AnimClear Cover"/>
@@ -10496,6 +10558,8 @@
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <On Terms="WeaponStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="UnitDeathCustomize" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingHalo"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingHalo"/>
         <EventDataFootprint index="0" Actor="" Model=""/>
         <DeathArray index="Normal" ModelLink="ThorDeath" SoundLink=""/>
         <DeathCustoms ModelLink="ThorCEDeath" Name="Variation0"/>
@@ -10518,6 +10582,7 @@
         <Flags index="SuppressCreationErrors" value="1"/>
         <ModelFlags index="SuppressMissingAttachErrors" value="1"/>
         <ShieldArmorIcon value="Assets\Textures\btn-lostvinking-bomb.dds"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="0"/>
     </CActorUnit>
     <CActorAction id="SecuritySystemAttack" parent="GenericAttack" effectLaunch="KingAttackSet">
         <LaunchAttachQuery Methods="AMFilterWeaponSetA0 AMPatternThor"/>
@@ -10550,7 +10615,8 @@
         <On Terms="UnitBirth.fWanderer" Send="SetOpacity 0.600000 0.500000"/>
         <On Terms="ActorCreation" Send="TextureSelectById Zealot_Specula2"/>
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
-        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.600000 0.500000"/>
+        <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.600000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.600000"/>
         <DeathArray index="Normal" ModelLink="ZealotDeath" SoundLink="Zealot_DeathFX"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
@@ -10586,6 +10652,7 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
         <On Terms="ActorCreation" Send="SetTintColor {203,87,227 12.000000}"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.400000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.400000"/>
         <Scale value="1.500000"/>
         <AnimBlendTime value="-0.800000"/>
         <DeathArray index="Normal" ModelLink="GhostDeath" SoundLink="Ghost_Explode"/>
@@ -10807,6 +10874,7 @@
         <PortraitModel value="PrimalGuardianPortrait"/>
         <DeathArray index="Normal" ModelLink="SS_SwarmGuardianDeath"/>
         <UnitIcon value="Assets\Textures\btn-lostvinking-swarmguardian.dds"/>
+        <BarOffset value="65"/>
     </CActorUnit>
     <CActorUnit id="fGreymane" parent="TowerActorBaseArmored" unitName="fGreymane">
         <Scale value="1.500000"/>
@@ -10818,8 +10886,8 @@
         <DeathArray index="Fire" ModelLink="Ultralisk_Webby_DeathFire" SoundLink="Uni_DeathFXFireLarge"/>
         <PortraitModel value="Ultralisk_Webby_Collection_Portrait"/>
         <WalkAnimMoveSpeed value="2.9375"/>
-        <BarOffset value="30"/>
-        <BarWidth value="120"/>
+        <BarOffset value="20"/>
+        <BarWidth value="100"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-collection-webby-ultralisk.dds"/>
         </GroupIcon>
@@ -10840,8 +10908,8 @@
         <DeathArray index="Fire" ModelLink="UltraliskDeathFire" SoundLink="Uni_DeathFXFireLarge"/>
         <PortraitModel value="UltraliskPortrait"/>
         <WalkAnimMoveSpeed value="2.9375"/>
-        <BarOffset value="30"/>
-        <BarWidth value="100"/>
+        <BarOffset value="15"/>
+        <BarWidth value="80"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Zerg-Ultralisk.dds"/>
         </GroupIcon>
@@ -10861,7 +10929,7 @@
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Spectre_KillerPhantasmDeath" Name="Hallucination"/>
         <PortraitModel value="MutaliskPortrait"/>
         <WalkAnimMoveSpeed value="2"/>
-        <BarOffset value="60"/>
+        <BarOffset value="50"/>
         <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Zerg-Mutalisk.dds"/>
@@ -10882,7 +10950,7 @@
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Spectre_KillerPhantasmDeath" Name="Hallucination"/>
         <PortraitModel value="MutaliskViperPortrait"/>
         <WalkAnimMoveSpeed value="2"/>
-        <BarOffset value="60"/>
+        <BarOffset value="50"/>
         <BarWidth value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Zerg-Mutalisk.dds"/>
@@ -11061,17 +11129,15 @@
             <Image value="Assets\Textures\Wireframe-Terran-CivilianMale.dds"/>
         </Wireframe>
     </CActorUnit>
-    <CActorUnit id="AncientBuilder" parent="GenericUnitBase" unitName="AncientBuilder">
+    <CActorUnit id="AncientBuilder" parent="BuilderBase" unitName="AncientBuilder">
         <AcceptedTransfers index="Rotation" value="0"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
         <On Terms="ActorCreation" Send="SetTintColor {128,0,255 1.250000}"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.600000"/>
         <PortraitModel value="AncientBuilderPortrait"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\btn-unit-protoss-warpprism-stationary-dark.dds"/>
@@ -11305,15 +11371,12 @@
         <Model value="ArchonMerge"/>
         <AutoScaleFactor value="0.550000"/>
     </CActorModel>
-    <CActorUnit id="AutomatonBuilder" parent="GenericUnitBase" unitName="AutomatonBuilder">
+    <CActorUnit id="AutomatonBuilder" parent="BuilderBase" unitName="AutomatonBuilder">
         <AcceptedTransfers index="Rotation" value="0"/>
         <PortraitModel value="AutomatonBuilderPortrait"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-critter-utilitybot.dds"/>
         </GroupIcon>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
         <UnitIcon value="Assets\Textures\btn-unit-neutral-utilitybot.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-critter-utilitybot.dds"/>
@@ -11322,8 +11385,7 @@
     <CActorUnit id="fAstromechDroid" parent="TowerActorBaseLight" unitName="fAstromechDroid">
         <On Terms="ActorCreation" Send="SetTintColor {89,89,89 5.000000}"/>
         <On Terms="ActorCreation" Send="Create SelectionField"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
+        <BarOffset value="15"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-lostviking-terra-tron-missiledrone.dds"/>
         </GroupIcon>
@@ -11332,6 +11394,10 @@
             <Image value="Assets\Textures\wireframe-terran-pointdefensedrone.dds"/>
         </Wireframe>
         <PortraitModel value="RavenPortrait"/>
+        <StatusColors index="Life">
+            <ColorArray index="6" value="150,22,229,0"/>
+            <ColorArray index="7" value="150,22,229,0"/>
+        </StatusColors>
     </CActorUnit>
     <CActorUnit id="fWeldtechRelay" parent="TowerActorBaseLight" unitName="fWeldtechRelay">
         <On Terms="ActorCreation" Send="SetTintColor {89,89,89 5.000000}"/>
@@ -11355,8 +11421,7 @@
         <BuildModel value="fSatellite"/>
         <DeathArray index="Normal" ModelLink="BlimpDeath"/>
         <PlacementModel value="fSatellite"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
+        <BarOffset value="50"/>
         <GroupIcon>
             <Image value="btn-unit-terran-blimp-ads.dds"/>
         </GroupIcon>
@@ -11603,8 +11668,9 @@
         <On Terms="ActorCreation" Send="Create SelectionField"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
         <On Terms="Signal.*.GroundIndicatorOff" Send="SetOpacity 0.500000"/>
+        <On Terms="StatusOff.*.PreTargetingHalo" Send="SetOpacity 0.500000"/>
         <DeathArray index="Normal" ModelLink="ProtossMediumUnitDeath"/>
-        <BarOffset value="70"/>
+        <BarOffset value="65"/>
         <BarWidth value="67"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-pylon-taldarim.dds"/>
@@ -11619,7 +11685,6 @@
         <ImpactMap index="None" Model="DarkStalkerAttackImpact" Sound="Archon_AttackImpact"/>
     </CActorAction>
     <CActorUnit id="fNetherlord" parent="TowerActorBaseArmored" unitName="fNetherlord">
-        <AcceptedTransfers index="Rotation" value="0"/>
         <On Terms="WeaponStart" Send="SetTintColor {255,255,255 2.000000} 0.100000"/>
         <On Terms="WeaponStop" Send="ClearTintColor 0.250000"/>
         <BarOffset value="67"/>
@@ -11805,7 +11870,7 @@
         <ImpactMap index="None" Model="ImmortalAttackImpact" Sound="Immortal_AttackImpact"/>
     </CActorAction>
     <CActorUnit id="fHeisendonger" parent="TowerActorBaseMassive" unitName="fHeisendonger">
-        <BarOffset value="47"/>
+        <BarOffset value="43"/>
         <BarWidth value="95"/>
         <DeathArray index="Normal" ModelLink="ProtossMediumUnitDeath"/>
         <GroupIcon>
@@ -11885,13 +11950,9 @@
         <On Terms="ActorCreation" Send="SetTintColor 255,255,0"/>
         <Scale value="0.750000"/>
     </CActorMissile>
-    <CActorUnit id="SylphyBuilder" parent="GenericUnitStandard" unitName="SylphyBuilder">
-        <EditorCategories value=""/>
-        <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
-        <StatusBarFlags index="Energy" value="0"/>
-        <UnitIcon value="Assets\Textures\btn-unit-zerg-kerrigan.dds"/>
+    <CActorUnit id="SylphyBuilder" parent="BuilderBase" unitName="SylphyBuilder">
         <PortraitModel value="SylphyBuilderPortrait"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-kerrigan.dds"/>
     </CActorUnit>
     <CActorAction id="fKapelle@Attack" parent="GenericAttack" effectAttack="" effectImpact="fKapelle@Attack" effectLaunch="fKapelle@AttackMissile">
         <EditorCategories value=""/>
@@ -11993,7 +12054,7 @@
     <CActorUnit id="fConductor" parent="TowerActorBaseLight" unitName="fConductor">
         <DeathArray index="Normal" ModelLink="ScoutDeath" SoundLink="Scout_Explode"/>
         <PortraitModel value="ArbiterMPPortrait"/>
-        <BarOffset value="65"/>
+        <BarOffset value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-arbiter.dds"/>
         </GroupIcon>
@@ -12086,7 +12147,7 @@
         <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
         <DeathArray index="Normal" ModelLink="Oracle_Golden_Death" SoundLink="Oracle_Death"/>
         <PortraitModel value="Oracle_Golden_Portrait"/>
-        <BarOffset value="65"/>
+        <BarOffset value="35"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-oracle.dds"/>
         </GroupIcon>
@@ -12101,6 +12162,7 @@
             <Image value="Assets\Textures\wireframe-protoss-oracle-shield02.dds"/>
             <Image value="Assets\Textures\wireframe-protoss-oracle-shield03.dds"/>
         </WireframeShield>
+        <BarWidth value="50"/>
     </CActorUnit>
     <CActorUnit id="fCrescendo" parent="TowerActorBaseLight" unitName="fCrescendo">
         <Scale value="1.200000,1.200000,1.500000"/>
@@ -12160,8 +12222,7 @@
         <DeathArray index="Disintegrate" ModelLink="DroneDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="DroneDeathFire" SoundLink="Uni_DeathFXFire"/>
         <PortraitModel value="Drone_Webby_Portrait"/>
-        <BarHeight value="5"/>
-        <BarOffset value="65"/>
+        <BarOffset value="50"/>
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-collection-webby-drone.dds"/>
         </GroupIcon>
@@ -12208,7 +12269,7 @@
         <DeathCustoms ModelLink="DarkZealotDeath" Name="DarkProtoss"/>
         <PortraitModel value="Zealot_Ihanrii_Portrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <BarOffset value="65"/>
+        <BarOffset value="75"/>
         <GroupIcon>
             <Image value="Assets\Textures\btn-unit-protoss-zealot-ihanrii.dds"/>
         </GroupIcon>
@@ -12240,7 +12301,7 @@
         <DeathArray index="Normal" ModelLink="BanelingDeath" SoundLink=""/>
         <PortraitModel value="Baneling_Primal_Portrait"/>
         <WalkAnimMoveSpeed value="2"/>
-        <BarOffset value="65"/>
+        <BarOffset value="60"/>
         <GroupIcon>
             <Image value="Assets\Textures\Wireframe-Zerg-Baneling.dds"/>
         </GroupIcon>

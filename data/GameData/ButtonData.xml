@@ -24,6 +24,11 @@
         <Icon value="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel1-dark.dds"/>
         <AlertIcon value="Starcraft 2 Assets\btn-upgrade-protoss-shieldslevel1-dark.dds"/>
     </CButton>
+    <CButton id="Send_Ghost">
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+    </CButton>
     <CButton id="ta_DestructiveSacrifice">
         <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
@@ -269,7 +274,7 @@
         <Icon value="Assets\Textures\btn-unit-zerg-tyrannozor.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-tyrannozor.dds"/>
     </CButton>
-    <CButton id="SoulFlash" parent="AbilityButtonTemplate" prio="HighestLife">
+    <CButton id="SoulFlash" parent="AbilityButtonTemplate" prio="HighestVitality">
         <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
     </CButton>
     <CButton id="SpawnPrimalLocusts">
@@ -697,7 +702,7 @@
         <Icon value="Assets\Textures\btn-techupgrade-terran-charonboosters.dds"/>
     </CButton>
     <CButton id="Overburn2">
-        <Icon value="Assets\Textures\btn-techupgrade-terran-charonboosters.dds"/>
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
         <HotkeyAlias value="Overburn"/>
     </CButton>
     <CButton id="Pacify" parent="AbilityButtonTemplate" prio="NoDebuff">
@@ -1673,7 +1678,7 @@
     <CButton id="Brotherhood">
         <Icon value="Assets\Textures\btn-armor-protoss-ground.dds"/>
     </CButton>
-    <CButton id="Decode" parent="AbilityButtonTemplate" prio="SpellImmune">
+    <CButton id="Decode" parent="AbilityButtonTemplate" prio="HighestLife">
         <Icon value="Assets\Textures\btn-tips-hacking.dds"/>
     </CButton>
     <CButton id="MatrixShield" parent="AbilityButtonTemplate" prio="HighestLife">

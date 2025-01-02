@@ -1257,7 +1257,7 @@
             },
             "period": 0.3,
             "targets": 5,
-            "range": 3.0,
+            "range": 4.5,
             "melee": false
         },
         "hp": 850.0,
@@ -1555,7 +1555,7 @@
         },
         "hp": 2500.0,
         "shields": 0.0,
-        "energy": 50.0,
+        "energy": 25.0,
         "armor": "Mechanical",
         "cost": {
             "minerals": 750.0,
@@ -2099,7 +2099,7 @@
                 "dmg_type": "Normal",
                 "effect_type": "WeaponDamage"
             },
-            "period": 4.0,
+            "period": 3.8,
             "targets": 1,
             "range": 8.0,
             "melee": false
@@ -2149,7 +2149,7 @@
                 "dmg_type": "Normal",
                 "effect_type": "WeaponDamage"
             },
-            "period": 4.0,
+            "period": 3.8,
             "targets": 1,
             "range": 6.0,
             "melee": false
@@ -3050,7 +3050,7 @@
                 "dmg_type": "Magic",
                 "effect_type": "WeaponDamage"
             },
-            "period": 3.4,
+            "period": 4.0,
             "targets": 1,
             "range": 7.0,
             "melee": false
@@ -7509,8 +7509,8 @@
             "name": "Staccato Attack",
             "damage": {
                 "id": "fStaccato@Attack",
-                "min": 35.0,
-                "max": 40.0,
+                "min": 41.0,
+                "max": 46.0,
                 "kind": "Ranged",
                 "dmg_type": "Piercing",
                 "effect_type": "WeaponDamage"
@@ -8998,9 +8998,7 @@
         },
         "tier": "4uu",
         "builder": "Taldarim",
-        "upgrades": [
-            "concussive slayer"
-        ],
+        "upgrades": [],
         "predecessors": [
             "slayer",
             "void smasher"
@@ -9030,7 +9028,7 @@
         "energy": 0.0,
         "armor": "Armored",
         "cost": {
-            "minerals": 405.0,
+            "minerals": 330.0,
             "vespene": 0.0,
             "supply": -1.0
         },
@@ -9053,8 +9051,8 @@
         "builder": "Taldarim",
         "upgrades": [],
         "predecessors": [
-            "barrage slayer",
-            "slayer"
+            "slayer",
+            "void smasher"
         ]
     },
     "ascendant": {

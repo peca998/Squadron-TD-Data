@@ -110,6 +110,10 @@
     <CAccumulatorConstant id="Const4">
         <Amount value="4"/>
     </CAccumulatorConstant>
+    <CAccumulatorUserData id="CreationAdditionalSpawn">
+        <Key value="CreationAdditional"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+    </CAccumulatorUserData>
     <CAccumulatorArithmetic id="CurrentWeaponRange">
         <Parameters value="0">
             <AccumulatorArray value="BaseWeaponRange"/>
@@ -121,9 +125,32 @@
     <CAccumulatorEffectAmount id="DamageInflictedInEffectTree">
         <Total value="1"/>
     </CAccumulatorEffectAmount>
+    <CAccumulatorArithmetic id="DeathSwamp@DamageFormular">
+        <Parameters value="0">
+            <AccumulatorArray value="DeathSwamp@LifeFraction"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="TargetMaxLife"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="DeathSwamp@LifeFraction">
+        <Amount value="0.01"/>
+    </CAccumulatorConstant>
     <CAccumulatorUnitCustomValue id="FuryShieldBonus">
         <Index value="27"/>
     </CAccumulatorUnitCustomValue>
+    <CAccumulatorConstant id="MultishotExtendAmount">
+        <Amount value="1.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorArithmetic id="MultishotRange">
+        <Parameters value="0">
+            <AccumulatorArray value="CurrentWeaponRange"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="MultishotExtendAmount"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
     <CAccumulatorConstant id="PsiblastBarrage@BaseDamage">
         <Amount value="400"/>
     </CAccumulatorConstant>
@@ -143,6 +170,15 @@
     <CAccumulatorConstant id="PsiblastBarrage@StunMultiplier">
         <Amount value="1.5"/>
     </CAccumulatorConstant>
+    <CAccumulatorSwitch id="TheosCelestianHealingSwitch">
+        <CaseArray Validator="HasCreationCelestianCollision" Accumulator="TheosHealingFraction"/>
+        <CaseDefault value="Const0"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorVitals id="TheosHealingFraction">
+        <Ratio value="0.03"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
     <CAccumulatorArithmetic id="ta_DestructiveSacrifice@DamageFormular">
         <Parameters value="0">
             <AccumulatorArray value="ta_DestructiveSacrifice@StoredVitalsOnMissile"/>
@@ -165,7 +201,7 @@
         <Operation value="Multiply"/>
     </CAccumulatorArithmetic>
     <CAccumulatorConstant id="ta_DestructiveSacrifice@HealFraction">
-        <Amount value="1.25"/>
+        <Amount value="0.85"/>
     </CAccumulatorConstant>
     <CAccumulatorDistance id="DistanceBetweenCasterTargetMult">
         <ApplicationRule value="Multiply"/>
@@ -448,6 +484,7 @@
     </CAccumulatorConstant>
     <CAccumulatorEffectAmount id="DamageInherited">
         <AmountType value="DamageInherited"/>
+        <MinAccumulation value="0"/>
     </CAccumulatorEffectAmount>
     <CAccumulatorUserData id="SoundOfMadnessLifestealAmount">
         <Key value="Lifesteal"/>
@@ -588,10 +625,6 @@
     <CAccumulatorUserData id="Wave20DamageLoss">
         <Key value="DamageLoss"/>
     </CAccumulatorUserData>
-    <CAccumulatorSwitch id="WeldingAreaSearch">
-        <CaseArray Validator="WeldingHealValidTargetsWithinRange" Accumulator="Const0"/>
-        <CaseDefault value="Const4"/>
-    </CAccumulatorSwitch>
     <CAccumulatorConstant id="fArchon@BaseDamage">
         <Amount value="95"/>
     </CAccumulatorConstant>
@@ -603,6 +636,18 @@
     </CAccumulatorConstant>
     <CAccumulatorConstant id="fSummoningArchon@BaseDamage">
         <Amount value="95"/>
+    </CAccumulatorConstant>
+    <CAccumulatorArithmetic id="ta_DestructiveSacrifice@SpecialHealFormular">
+        <Parameters value="0">
+            <AccumulatorArray value="ta_DestructiveSacrifice@SpecialHealFraction"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="UserDataHelperStorage"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="ta_DestructiveSacrifice@SpecialHealFraction">
+        <Amount value="2"/>
     </CAccumulatorConstant>
     <CAccumulatorUserData id="ta_DestructiveSacrifice@StoredVitalsOnMissile">
         <Key value="ta_Sacrifice_Vitals"/>
@@ -618,7 +663,19 @@
         <Operation value="Multiply"/>
     </CAccumulatorArithmetic>
     <CAccumulatorConstant id="ta_EnhancedSacrifice@HealFraction">
-        <Amount value="1.25"/>
+        <Amount value="0.85"/>
+    </CAccumulatorConstant>
+    <CAccumulatorArithmetic id="ta_EnhancedSacrifice@SpecialHealFormular">
+        <Parameters value="0">
+            <AccumulatorArray value="ta_EnhancedSacrifice@SpecialHealFraction"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="UserDataHelperStorage"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="ta_EnhancedSacrifice@SpecialHealFraction">
+        <Amount value="2"/>
     </CAccumulatorConstant>
     <CAccumulatorArithmetic id="ta_GreaterChainLightning@DamageFormular">
         <Parameters value="0">
@@ -643,7 +700,19 @@
         <Operation value="Multiply"/>
     </CAccumulatorArithmetic>
     <CAccumulatorConstant id="ta_Sacrifice@HealFraction">
-        <Amount value="1"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorArithmetic id="ta_Sacrifice@SpecialHealFormular">
+        <Parameters value="0">
+            <AccumulatorArray value="ta_Sacrifice@SpecialHealFraction"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="UserDataHelperStorage"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="ta_Sacrifice@SpecialHealFraction">
+        <Amount value="1.5"/>
     </CAccumulatorConstant>
     <CAccumulatorArithmetic id="ta_ShockingSacrifice@HealFormular">
         <Parameters value="0">
@@ -655,7 +724,19 @@
         <Operation value="Multiply"/>
     </CAccumulatorArithmetic>
     <CAccumulatorConstant id="ta_ShockingSacrifice@HealFraction">
-        <Amount value="1.25"/>
+        <Amount value="0.85"/>
+    </CAccumulatorConstant>
+    <CAccumulatorArithmetic id="ta_ShockingSacrifice@SpecialHealFormular">
+        <Parameters value="0">
+            <AccumulatorArray value="ta_ShockingSacrifice@SpecialHealFraction"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="UserDataHelperStorage"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="ta_ShockingSacrifice@SpecialHealFraction">
+        <Amount value="2"/>
     </CAccumulatorConstant>
     <CAccumulatorUserData id="ta_ShockingSacrifice@StoredTargetVitals">
         <Key value="ta_Sacrifice_StunDuration"/>

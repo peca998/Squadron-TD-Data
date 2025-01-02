@@ -105,13 +105,77 @@
         <LaunchLocation Value="TargetUnit"/>
         <ExcludeArray Value="Target"/>
         <SearchFlags index="Multishot" value="1"/>
+        <AreaArray/>
         <ExtraRadiusBonus value="0">
-            <AccumulatorArray value="SurveillanceStackCount"/>
+            <AccumulatorArray value="MultishotRange"/>
         </ExtraRadiusBonus>
     </CEffectEnumArea>
     <CEffectEnumArea default="1" id="SmartTargetingSearchBase" parent="FindEnemyUnits">
         <MaxCount value="1"/>
     </CEffectEnumArea>
+    <CEffectRemoveBehavior id="LeadershipCounterRemoveAll">
+        <EditorCategories value=""/>
+        <BehaviorLink value="LeadershipCounter"/>
+    </CEffectRemoveBehavior>
+    <CEffectSwitch id="LeadershipSwitch">
+        <EditorCategories value=""/>
+        <CaseArray Validator="LeadershipCounterEqual1" Effect="Leadership1Stack"/>
+        <CaseArray Validator="LeadershipCounterEqual2" Effect="Leadership2Stacks"/>
+        <CaseArray Validator="LeadershipCounterEqual3" Effect="Leadership3Stacks"/>
+    </CEffectSwitch>
+    <CEffectRemoveBehavior id="SuperiorityCounterRemoveAll">
+        <EditorCategories value=""/>
+        <BehaviorLink value="SuperiorityCounter"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="CreationThresholdSet">
+        <EditorCategories value=""/>
+        <EffectArray value="CreationResetAttackCounter"/>
+        <EffectArray value="CreationSetAdditionalSpawnCount"/>
+    </CEffectSet>
+    <CEffectUserData id="CreationResetAdditionalSpawnCount">
+        <EditorCategories value=""/>
+        <Operation value="Set"/>
+        <Key value="CreationAdditional"/>
+        <SourceKey value="CreationAdditional"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+        <Amount value="0"/>
+    </CEffectUserData>
+    <CEffectUserData id="CreationSetAdditionalSpawnCount">
+        <EditorCategories value=""/>
+        <Operation value="Set"/>
+        <Key value="CreationAdditional"/>
+        <SourceKey value="CreationAdditional"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+    </CEffectUserData>
+    <CEffectAddTrackedUnit id="CreationAddToTracker">
+        <EditorCategories value=""/>
+        <BehaviorLink value="CreationUnitTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectUserData id="CreationAttackCounter">
+        <EditorCategories value=""/>
+        <Key value="CreationCounter"/>
+        <SourceKey value="CreationCounter"/>
+        <ValidateMax value="1"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+        <SourceFailBackValue value="2"/>
+        <EffectFailure value="CreationThresholdSet"/>
+    </CEffectUserData>
+    <CEffectUserData id="CreationResetAttackCounter">
+        <EditorCategories value=""/>
+        <Key value="CreationCounter"/>
+        <SourceKey value="CreationCounter"/>
+        <BehaviorScope Behavior="AllUnitHelperBehavior"/>
+        <Amount value="0"/>
+        <Operation value="Set"/>
+    </CEffectUserData>
+    <CEffectModifyUnit id="EMPBlast@StripShields">
+        <EditorCategories value=""/>
+        <VitalArray index="Shields">
+            <Change value="-100"/>
+            <ChangeFraction value="-0.05"/>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectApplyBehavior id="ConcussivePsiblast@Autocast">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
@@ -130,6 +194,32 @@
         <EditorCategories value=""/>
         <WhichUnit Value="Source"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="EMPBlast@ImpactSet">
+        <ValidatorArray value="NotSpellImmune"/>
+        <EditorCategories value=""/>
+        <EffectArray value="EMPBlast@StripShields"/>
+    </CEffectSet>
+    <CEffectEnumArea id="EMPBlast@InitialSearch" parent="FindEnemyUnitsModifiableRange">
+        <AreaArray Radius="10" Effect="EMPBlast@InitialSearchSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="EMPBlast@InitialSearchSet">
+        <ValidatorArray value="NotSpellImmune"/>
+        <ValidatorArray value="Has50Shields"/>
+        <EditorCategories value=""/>
+        <EffectArray value="AddToScannedUnitgroup"/>
+    </CEffectSet>
+    <CEffectSet id="EMPBlast@InitialSet">
+        <EditorCategories value=""/>
+        <EffectArray value="ApplyScannedUnitgroupTracker"/>
+        <EffectArray value="EMPBlast@InitialSearch"/>
+        <EffectArray value="EMPBlast@TriggerIndicator"/>
+    </CEffectSet>
+    <CEffectEnumArea id="EMPBlast@Search" parent="FindEnemyUnits">
+        <AreaArray Radius="3" Effect="EMPBlast@ImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="EMPBlast@TriggerIndicator">
+        <EditorCategories value=""/>
+    </CEffectSet>
     <CEffectApplyBehavior id="EnhancedPsiblast@Autocast">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
@@ -145,6 +235,20 @@
     <CEffectApplyBehavior id="FuryShieldTier3Buff">
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
+    <CEffectSet id="HighestVitalitySort">
+        <EditorCategories value=""/>
+    </CEffectSet>
+    <CEffectSet id="InfatuatedAttackSet">
+        <EditorCategories value=""/>
+        <EffectArray value="InfatuatedHeal"/>
+        <EffectArray value="InfatuatedRestoreEnergy"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="InfatuatedRestoreEnergy">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <Change value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectSet id="MuddledArmorScript">
         <EditorCategories value=""/>
     </CEffectSet>
@@ -174,6 +278,10 @@
         <EffectArray value="PsiblastBarrage@SearchTarget"/>
         <EffectArray value="PsiblastBarrage@Autocast"/>
     </CEffectSet>
+    <CEffectRemoveBehavior id="RemoveLeaverDebuff">
+        <EditorCategories value=""/>
+        <StackAlias value="LeaverDebuff"/>
+    </CEffectRemoveBehavior>
     <CEffectModifyUnit id="RestoreLifeToCaster">
         <EditorCategories value=""/>
         <LaunchUnit Value="Caster"/>
@@ -182,7 +290,50 @@
             <ChangeFraction value="1"/>
         </VitalArray>
     </CEffectModifyUnit>
+    <CEffectEnumArea id="SearchSendRegion" parent="FindFriendlyUnits">
+        <DebugTrace value="1"/>
+        <AreaArray Radius="9" Effect="AddToScannedUnitgroup"/>
+        <TargetSorts>
+            <SortArray value="SendValue"/>
+        </TargetSorts>
+    </CEffectEnumArea>
+    <CEffectDamage id="Send_Ghost" parent="MagicDamage">
+        <Kind value="Ranged"/>
+        <Type value="WeaponDamage"/>
+        <Amount value="30"/>
+        <Random value="3"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="SoulFlashAutocastHighestVitalitySortDummy" parent="FindFriendlyUnitsModifiableRange">
+        <AreaArray MaxCount="1" Radius="5" Effect="SoulFlashProxyAbility"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="SoulFlashSearchInitSet">
+        <EditorCategories value=""/>
+        <EffectArray value="ApplyScannedUnitgroupTracker"/>
+        <EffectArray value="SoulFlashAutocastHighestVitalitySort"/>
+        <EffectArray value="HighestVitalitySort"/>
+    </CEffectSet>
+    <CEffectSet id="SoulFlashSearchSet">
+        <EditorCategories value=""/>
+        <ValidatorArray value="Has05Energy"/>
+        <ValidatorArray value="NoSoulFlash"/>
+        <ValidatorArray value="IsNotSupport"/>
+        <ValidatorArray value="NotSpellImmune"/>
+        <EffectArray value="AddToScannedUnitgroup"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="Stun_4_Seconds" parent="HostileBehavior"/>
+    <CEffectSwitch id="SuperioritySwitch">
+        <EditorCategories value=""/>
+        <CaseArray Validator="SuperiorityCounterEqual1" Effect="Superiority1Stack"/>
+        <CaseArray Validator="SuperiorityCounterEqual2" Effect="Superiority2Stacks"/>
+        <CaseArray Validator="SuperiorityCounterEqual3" Effect="Superiority3Stacks"/>
+        <CaseArray Validator="SuperiorityCounterEqual4" Effect="Superiority4Stacks"/>
+    </CEffectSwitch>
+    <CEffectEnumArea id="WeldingHealSearchExtended" parent="FindFriendlyUnitsBuffModifiableRange">
+        <AreaArray Radius="11" Effect="WeldingHealSearchSet"/>
+        <SearchFilters value="Visible;Self,Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
+        <ValidatorArray value="ScannedUnitgroupIsEmpty"/>
+    </CEffectEnumArea>
     <CEffectSwitch id="ta_DestructiveSacrifice@AllySwitch">
         <ValidatorArray value="ta_DestructiveSacrifice@ValidAlly"/>
         <EditorCategories value=""/>
@@ -231,7 +382,6 @@
         <LaunchEffect value="ta_DestructiveSacrifice@StoreVitalsOnMissile"/>
     </CEffectLaunchMissile>
     <CEffectEnumArea id="ta_DestructiveSacrifice@MissileSearch" parent="FindEnemyUnits">
-        <DebugTrace value="1"/>
         <AreaArray RectangleWidth="1" RectangleHeight="3" Effect="ta_DestructiveSacrifice@Damage"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="ta_DestructiveSacrifice@SearchAlly" parent="FindFriendlyUnits">
@@ -245,12 +395,22 @@
     <CEffectSet id="ta_DestructiveSacrifice@SpecialAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetVitals"/>
-        <EffectArray value="ta_DestructiveSacrifice@Heal"/>
+        <EffectArray value="ta_DestructiveSacrifice@SpecialHeal"/>
         <EffectArray value="RestoreLifeToCaster"/>
         <EffectArray value="ta_DestructiveSacrifice@Destination"/>
         <EffectArray value="KillAllyDefensiveAllowBehResponse"/>
         <EffectArray value="ClearStorage"/>
     </CEffectSet>
+    <CEffectModifyUnit id="ta_DestructiveSacrifice@SpecialHeal">
+        <ValidatorArray value="NotHealImmune"/>
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Shields">
+            <Change value="0">
+                <AccumulatorArray value="ta_DestructiveSacrifice@SpecialHealFormular"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectSet id="ta_DestructiveSacrifice@StandardAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetShields"/>
@@ -303,7 +463,6 @@
         <AmmoUnit value="AmplifiedSoulDetonation@Missile"/>
     </CEffectLaunchMissile>
     <CEffectEnumArea id="AmplifiedSoulDetonation@Search" parent="FindEnemyUnits">
-        <DebugTrace value="1"/>
         <AreaArray Radius="6" Effect="AmplifiedSoulDetonation@SearchSet"/>
     </CEffectEnumArea>
     <CEffectSet id="AmplifiedSoulDetonation@SearchSet">
@@ -415,7 +574,6 @@
         <AmmoUnit value="EmpoweredSoulDetonation@Missile"/>
     </CEffectLaunchMissile>
     <CEffectEnumArea id="EmpoweredSoulDetonation@Search" parent="FindEnemyUnits">
-        <DebugTrace value="1"/>
         <AreaArray Radius="6" Effect="EmpoweredSoulDetonation@Damage"/>
     </CEffectEnumArea>
     <CEffectSet id="EmpoweredSoulDetonation@Set">
@@ -511,7 +669,6 @@
         <AmmoUnit value="EnhancedSoulDetonation@Missile"/>
     </CEffectLaunchMissile>
     <CEffectEnumArea id="EnhancedSoulDetonation@Search" parent="FindEnemyUnits">
-        <DebugTrace value="1"/>
         <AreaArray Radius="6" Effect="EnhancedSoulDetonation@Damage"/>
     </CEffectEnumArea>
     <CEffectSet id="EnhancedSoulDetonation@Set">
@@ -677,7 +834,6 @@
         <AmmoUnit value="SoulDetonation@Missile"/>
     </CEffectLaunchMissile>
     <CEffectEnumArea id="SoulDetonation@Search" parent="FindEnemyUnits">
-        <DebugTrace value="1"/>
         <AreaArray Radius="4" Effect="SoulDetonation@Damage"/>
     </CEffectEnumArea>
     <CEffectSet id="SoulDetonation@Set">
@@ -761,11 +917,21 @@
     <CEffectSet id="ta_EnhancedSacrifice@SpecialAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetVitals"/>
-        <EffectArray value="ta_EnhancedSacrifice@Heal"/>
+        <EffectArray value="ta_EnhancedSacrifice@SpecialHeal"/>
         <EffectArray value="RestoreLifeToCaster"/>
         <EffectArray value="KillAllyDefensiveAllowBehResponse"/>
         <EffectArray value="ClearStorage"/>
     </CEffectSet>
+    <CEffectModifyUnit id="ta_EnhancedSacrifice@SpecialHeal">
+        <ValidatorArray value="NotHealImmune"/>
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Shields">
+            <Change value="0">
+                <AccumulatorArray value="ta_EnhancedSacrifice@SpecialHealFormular"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectSet id="ta_EnhancedSacrifice@StandardAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetShields"/>
@@ -812,10 +978,20 @@
     <CEffectSet id="ta_Sacrifice@SpecialAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetVitals"/>
-        <EffectArray value="ta_Sacrifice@Heal"/>
+        <EffectArray value="ta_Sacrifice@SpecialHeal"/>
         <EffectArray value="KillAllyDefensiveAllowBehResponse"/>
         <EffectArray value="ClearStorage"/>
     </CEffectSet>
+    <CEffectModifyUnit id="ta_Sacrifice@SpecialHeal">
+        <ValidatorArray value="NotHealImmune"/>
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Shields">
+            <Change value="0">
+                <AccumulatorArray value="ta_Sacrifice@SpecialHealFormular"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectSet id="ta_Sacrifice@StandardAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetShields"/>
@@ -862,7 +1038,7 @@
     <CEffectSet id="ta_ShockingSacrifice@SpecialAllySet">
         <EditorCategories value=""/>
         <EffectArray value="StoreCurrentTargetVitals"/>
-        <EffectArray value="ta_ShockingSacrifice@Heal"/>
+        <EffectArray value="ta_ShockingSacrifice@SpecialHeal"/>
         <EffectArray value="RestoreLifeToCaster"/>
         <EffectArray value="ta_ShockingSacrifice@SearchEnemies"/>
         <EffectArray value="KillAllyDefensiveAllowBehResponse"/>
@@ -887,6 +1063,16 @@
         <Operation value="Set"/>
         <BehaviorScope Value="Target" Behavior="AllUnitHelperBehavior"/>
     </CEffectUserData>
+    <CEffectModifyUnit id="ta_ShockingSacrifice@SpecialHeal">
+        <ValidatorArray value="NotHealImmune"/>
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Shields">
+            <Change value="0">
+                <AccumulatorArray value="ta_ShockingSacrifice@SpecialHealFormular"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectCreateUnit id="ta_SummoningChainLightning@CreateAmplifiedSupplicant">
         <EditorCategories value=""/>
         <CreateFlags index="ProvideFood" value="0"/>
@@ -1115,7 +1301,7 @@
         <TargetSorts>
             <SortArray value="RankedDamageDealt"/>
         </TargetSorts>
-        <AreaArray MaxCount="100" Radius="500" Effect="RankedUnitDamageSearchSet"/>
+        <AreaArray MaxCount="90" Radius="100" Effect="RankedUnitDamageSearchSet"/>
     </CEffectEnumArea>
     <CEffectSet id="RankedUnitDamageTrigger">
         <EditorCategories value=""/>
@@ -1124,7 +1310,6 @@
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Leadership3Stacks">
-        <ValidatorArray value="LeadershipCounterEqual3"/>
         <ValidatorArray value="HasNoLeadership3Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
@@ -1142,18 +1327,15 @@
         <Resources index="Custom" value="6"/>
     </CEffectModifyPlayer>
     <CEffectApplyBehavior id="Leadership1Stack">
-        <ValidatorArray value="LeadershipCounterEqual1"/>
         <ValidatorArray value="HasNoLeadership1Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Leadership2Stacks">
-        <ValidatorArray value="LeadershipCounterEqual2"/>
         <ValidatorArray value="HasNoLeadership2Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="LeadershipCounter">
         <EditorCategories value=""/>
-        <ValidatorArray value="LeadershipCounterNotMax"/>
     </CEffectApplyBehavior>
     <CEffectSet id="Masterpiece@Trigger">
         <ValidatorArray value="CasterNotDead"/>
@@ -1489,7 +1671,7 @@
         <EditorCategories value=""/>
         <ImpactUnit Value="Source"/>
         <VitalArray index="Life">
-            <ChangeFraction value="0.1"/>
+            <ChangeFraction value="0.33"/>
         </VitalArray>
     </CEffectModifyUnit>
     <CEffectSet id="DivineAuraTier2">
@@ -1525,7 +1707,7 @@
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="Tributary@RecordTotalDamageDealt"/>
         <EffectArray value="Tributary@MissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectSet id="Tributary@AllySearchSet">
         <ValidatorArray value="LifeNotFull"/>
@@ -1597,6 +1779,7 @@
         <EditorCategories value=""/>
         <BehaviorLink value="AncestryVictimTracker"/>
         <TrackedUnit Value="Target"/>
+        <ValidatorArray value="AncestryTier3AttackerNotTracked"/>
     </CEffectAddTrackedUnit>
     <CEffectSet id="LeapAttackImpactSet">
         <EditorCategories value=""/>
@@ -1919,7 +2102,7 @@
         <EditorCategories value=""/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="Legato@TriggerHealMissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectEnumArea id="Legato@TriggerHealMissingHPSortDummy" parent="FindFriendlyUnitsBuffModifiableRange">
         <MaxCount value="1"/>
@@ -1950,7 +2133,7 @@
         <EditorCategories value=""/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="CleanseAutocastMissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectSet id="CleanseSearchSet">
         <EditorCategories value=""/>
@@ -2031,7 +2214,7 @@
             <SortArray value="RankedUnitDPS"/>
             <SortArray value="TSDistance"/>
         </TargetSorts>
-        <AreaArray MaxCount="2" Radius="3" Effect="OnTheBrinkAlly"/>
+        <AreaArray MaxCount="2" Radius="4" Effect="OnTheBrinkAlly"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="PurifyAutocastMissingHPSort" parent="FindFriendlyUnitsPlusSelfModifiableRange">
         <ValidatorArray value="Has07Energy"/>
@@ -2087,7 +2270,7 @@
         <EditorCategories value=""/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="PurifyAutocastMissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectRemoveTrackedUnit id="RemoveFromScannedUnitgroup">
         <EditorCategories value=""/>
@@ -2271,7 +2454,7 @@
         <!-- This results in an inability to validate UserData value in Legato@HealSet -->
         <BehaviorScope Behavior="Legato@Response"/>
     </CEffectUserData>
-    <CEffectSet id="MissingHPSortTriggerIndicator">
+    <CEffectSet id="MissingHPSort">
         <EditorCategories value=""/>
     </CEffectSet>
     <CEffectSet id="Stringendo@Set">
@@ -2591,6 +2774,7 @@
     <CEffectEnumArea id="BloodlustSearch" parent="FindFriendlyUnits">
         <AreaArray MaxCount="1" Radius="7" Effect="BloodlustSet"/>
         <TargetSorts>
+            <SortArray value="RankedUnitDPS"/>
             <SortArray value="TSLifeLargestFirst"/>
         </TargetSorts>
         <ValidatorArray value="Has10Energy"/>
@@ -2832,18 +3016,15 @@
         <ValidatorArray value="NotSpellImmune"/>
         <ValidatorArray value="DeathSwamp@Limit"/>
         <EffectArray value="DeathSwamp@ApplyDebuff"/>
-        <EffectArray value="DeathSwamp@StripHealth"/>
+        <EffectArray value="DeathSwamp@Damage"/>
     </CEffectSet>
-    <CEffectModifyUnit id="DeathSwamp@StripHealth">
-        <EditorCategories value=""/>
-        <VitalArray index="Life">
-            <ChangeFraction value="-0.01"/>
-        </VitalArray>
-    </CEffectModifyUnit>
-    <!-- Can target spell immune units -->
+    <CEffectDamage id="DeathSwamp@Damage" parent="MagicDamage">
+        <Amount value="0">
+            <AccumulatorArray value="DeathSwamp@DamageFormular"/>
+        </Amount>
+    </CEffectDamage>
     <CEffectApplyBehavior id="Decode" parent="HostileBehavior">
         <Behavior value="Decoded"/>
-        <ValidatorArray index="4" removed="1"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="DeepGashApply" parent="HostileBehavior">
         <Behavior value="DeepGash"/>
@@ -3035,7 +3216,7 @@
             <SortArray value="TSDistance"/>
             <SortArray value="TSLifeFraction"/>
         </TargetSorts>
-        <AreaArray Arc="119.9926" Radius="4" FacingAdjustment="180"/>
+        <AreaArray index="0" Arc="119.9926" FacingAdjustment="180"/>
         <MaxCount value="4"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="Recovery@CasterAddPoints">
@@ -3393,12 +3574,10 @@
         <Random value="23"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>
-    <CEffectDamage id="TrackedUnitReplaceFate">
+    <CEffectModifyUnit id="TrackedUnitReplaceFate">
         <EditorCategories value=""/>
-        <Flags index="Kill" value="1"/>
-        <Flags index="NoKillCredit" value="1"/>
-        <Flags index="NoBehaviorResponse" value="1"/>
-    </CEffectDamage>
+        <ModifyFlags index="Remove" value="1"/>
+    </CEffectModifyUnit>
     <CEffectAddTrackedUnit id="Unison@AddTracked">
         <EditorCategories value=""/>
         <BehaviorLink value="Unison@Tracker"/>
@@ -3536,27 +3715,28 @@
         <AreaArray MaxCount="1" Radius="4.9" Effect="SmartTargetingSet"/>
     </CEffectEnumArea>
     <CEffectDamage id="SoulFlashExplosionDamage" parent="ChaosDamage">
+        <DamageModifierSource Value="Source"/>
         <Kind value="Spell"/>
         <Amount value="25"/>
-        <DamageModifierSource Value="Source"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="SoulFlashApply">
         <EditorCategories value=""/>
         <Behavior value="SoulFlash"/>
     </CEffectApplyBehavior>
-    <CEffectEnumArea id="SoulFlashAutocastSearch" parent="FindFriendlyUnitsBuffModifiableRange">
+    <CEffectEnumArea id="SoulFlashAutocastHighestVitalitySort" parent="FindFriendlyUnitsBuffModifiableRange">
         <ValidatorArray value="Has05Energy"/>
         <TargetSorts>
             <SortArray value="NoSoulFlash"/>
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSDistance"/>
         </TargetSorts>
-        <AreaArray MaxCount="1" Radius="5" Effect="SoulFlashProxyAbility"/>
+        <AreaArray Radius="5" Effect="SoulFlashSearchSet"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="InfuseSoulSearch" parent="FindFriendlyUnits">
         <AreaArray MaxCount="1" Radius="7" Effect="InfuseSoulSet"/>
         <TargetSorts>
             <SortArray value="NoInfuseSoulAutocast"/>
+            <SortArray value="RankedUnitDPS"/>
             <SortArray value="TSLifeLargestFirst"/>
         </TargetSorts>
         <ValidatorArray value="Has05Energy"/>
@@ -3727,7 +3907,9 @@
     </CEffectSet>
     <CEffectSet id="CreationSet">
         <EditorCategories value=""/>
+        <EffectArray value="CreationAttackCounter"/>
         <EffectArray value="Creation"/>
+        <EffectArray value="CreationResetAdditionalSpawnCount"/>
     </CEffectSet>
     <CEffectApplyBehavior id="Expel">
         <EditorCategories value=""/>
@@ -3892,9 +4074,6 @@
     <CEffectEnumArea id="WeldingHealAutocastMissingHPSort" parent="FindFriendlyUnitsBuffModifiableRange">
         <AreaArray Radius="7" Effect="WeldingHealSearchSet"/>
         <SearchFilters value="Visible;Self,Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
-        <ExtraRadiusBonus value="0">
-            <AccumulatorArray value="WeldingAreaSearch"/>
-        </ExtraRadiusBonus>
     </CEffectEnumArea>
     <CEffectEnumArea id="WeldingHealAutocastMissingHPSortDummy" parent="FindFriendlyUnitsBuffModifiableRange">
         <MaxCount value="1"/>
@@ -3919,8 +4098,9 @@
         <EditorCategories value=""/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="WeldingHealAutocastMissingHPSort"/>
+        <EffectArray value="WeldingHealSearchExtended"/>
         <EffectArray value="WeldingHealCancelSet"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectIssueOrder id="WeldingHealProxyAbility">
         <EditorCategories value=""/>
@@ -4103,7 +4283,8 @@
     </CEffectCancelOrder>
     <CEffectSet id="CreationSetEffects">
         <EditorCategories value=""/>
-        <EffectArray value="CreationApplyTimedLife"/>
+        <EffectArray value="CreationCelestianCollision"/>
+        <EffectArray value="CreationAddToTracker"/>
     </CEffectSet>
     <CEffectApplyBehavior id="CrescentBlindNeighbors">
         <EditorCategories value=""/>
@@ -4193,7 +4374,7 @@
         <Chance value="0.1"/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="SacredBlessingAutocastMissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectSet id="Send_Baneling_Explode">
         <EditorCategories value=""/>
@@ -4460,13 +4641,11 @@
         <Kind value="Spell"/>
     </CEffectDamage>
     <CEffectEnumArea id="DecodeSearch" parent="FindEnemyUnitsModifiableRange">
-        <ValidatorArray value="Has05Energy"/>
-        <TargetSorts RequestCount="1">
-            <SortArray value="IsSpellImmune"/>
+        <TargetSorts>
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSDistance"/>
         </TargetSorts>
-        <AreaArray MaxCount="1" Radius="7" Effect="DecodeSearchSet"/>
+        <AreaArray MaxCount="5" Radius="7" Effect="DecodeSearchSet"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="DespairAuraDebuffCounter">
         <ValidatorArray value="CasterNotExpelled"/>
@@ -4513,7 +4692,7 @@
         <AreaArray Radius="5" Effect="DispelTrigger"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="DispelTrigger">
-        <ValidatorArray value="NotDispelTrigger"/>
+        <ValidatorArray value="NoDispelTrigger"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectSet id="DivineAuraTier1">
@@ -4683,8 +4862,8 @@
         <Behavior value="PrimalFeastTrigger"/>
     </CEffectApplyBehavior>
     <CEffectEnumArea id="PurgeSearch" parent="FindEnemyUnitsModifiableRange">
-        <ValidatorArray value="Has07Energy"/>
-        <TargetSorts RequestCount="1">
+        <ValidatorArray value="Has05Energy"/>
+        <TargetSorts>
             <SortArray value="IsSpellImmune"/>
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSDistance"/>
@@ -5439,9 +5618,8 @@
         <Random value="32"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>
-    <CEffectApplyBehavior id="CreationApplyTimedLife">
+    <CEffectApplyBehavior id="CreationCelestianCollision">
         <EditorCategories value=""/>
-        <Behavior value="TimedLifeTheos"/>
     </CEffectApplyBehavior>
     <CEffectUserData id="ApplyEmeraldFireCounter">
         <EditorCategories value=""/>
@@ -5490,6 +5668,12 @@
     <CEffectApplyBehavior id="ElusiveBarrier">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
+        <!--
+          we can reuse this one since its highest range abil
+          alternative approach would be checking if ss is in battle, but this is probably too late
+          considering late game we want to use this slightly before wave attacks
+        -->
+        <ValidatorArray value="OverburnHasEnemiesInRange"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="EarthshockApply">
         <EditorCategories value=""/>
@@ -5584,17 +5768,16 @@
     <CEffectSet id="SuperioritySet">
         <EditorCategories value=""/>
         <EffectArray value="SuperiorityCounter"/>
-        <EffectArray value="Superiority1Stack"/>
-        <EffectArray value="Superiority2Stacks"/>
-        <EffectArray value="Superiority3Stacks"/>
-        <EffectArray value="Superiority4Stacks"/>
+        <EffectArray value="SuperioritySwitch"/>
+        <ValidatorArray value="HasNoSuperiorityCounterFromCaster"/>
+        <ValidatorArray value="SuperiorityCounterNotMax"/>
     </CEffectSet>
     <CEffectSet id="LeadershipSet">
         <EditorCategories value=""/>
         <EffectArray value="LeadershipCounter"/>
-        <EffectArray value="Leadership1Stack"/>
-        <EffectArray value="Leadership2Stacks"/>
-        <EffectArray value="Leadership3Stacks"/>
+        <EffectArray value="LeadershipSwitch"/>
+        <ValidatorArray value="HasNoLeadershipCounterFromCaster"/>
+        <ValidatorArray value="LeadershipCounterNotMax"/>
     </CEffectSet>
     <CEffectModifyPlayer id="AddVespeneRefinery">
         <EditorCategories value=""/>
@@ -5770,7 +5953,7 @@
         <Chance value="0.1"/>
         <EffectArray value="ApplyScannedUnitgroupTracker"/>
         <EffectArray value="WaterofLifeAutocastMissingHPSort"/>
-        <EffectArray value="MissingHPSortTriggerIndicator"/>
+        <EffectArray value="MissingHPSort"/>
     </CEffectSet>
     <CEffectApplyBehavior id="WeldingHealApply">
         <EditorCategories value=""/>
@@ -5831,7 +6014,7 @@
         <Type value="WeaponDamage"/>
     </CEffectDamage>
     <CEffectEnumArea id="fAstralblade@SlashCone" parent="FindEnemyUnits">
-        <AreaArray Arc="90" Radius="2" Effect="fAstralblade@Attack"/>
+        <AreaArray Arc="90" Radius="1.5" Effect="fAstralblade@Attack"/>
         <SearchFlags index="OffsetAreaByAngle" value="0"/>
     </CEffectEnumArea>
     <CEffectDamage id="fBarrageSlayer@Attack" parent="ChaosDamage">
@@ -5955,7 +6138,7 @@
         <EffectArray value="fThunderAstralblade@Attack"/>
     </CEffectSet>
     <CEffectEnumArea id="fThunderAstralblade@SlashCone" parent="FindEnemyUnits">
-        <AreaArray Arc="99.9975" Radius="2" Effect="fThunderAstralblade@SearchSet"/>
+        <AreaArray Arc="99.9975" Radius="1.5" Effect="fThunderAstralblade@SearchSet"/>
         <SearchFlags index="OffsetAreaByAngle" value="0"/>
     </CEffectEnumArea>
     <CEffectDamage id="fRaptorlingAttack" parent="NormalDamage">
@@ -6103,18 +6286,6 @@
         <Kind value="Spell"/>
         <Amount value="25"/>
     </CEffectDamage>
-    <CEffectSet id="OverburnSet">
-        <EditorCategories value=""/>
-        <EffectArray value="OverburnUseEnergy"/>
-        <EffectArray value="OverburnSearch"/>
-    </CEffectSet>
-    <CEffectModifyUnit id="OverburnUseEnergy">
-        <EditorCategories value=""/>
-        <ImpactUnit Value="Caster"/>
-        <VitalArray index="Energy">
-            <Change value="-10"/>
-        </VitalArray>
-    </CEffectModifyUnit>
     <CEffectSet id="SellTower">
         <EditorCategories value=""/>
     </CEffectSet>
@@ -6149,6 +6320,9 @@
         <SpawnEffect value="CreationSetEffects"/>
         <SpawnUnit value="fCelestian"/>
         <SpawnOffset value="0,-1"/>
+        <SpawnCount value="1">
+            <AccumulatorArray value="CreationAdditionalSpawn"/>
+        </SpawnCount>
     </CEffectCreateUnit>
     <CEffectDamage id="AurorDamage" parent="MagicDamage">
         <Kind value="Ranged"/>
@@ -6165,6 +6339,7 @@
     <CEffectEnumArea id="EarthshockSearch" parent="FindEnemyUnits">
         <ExcludeArray/>
         <AreaArray Radius="12" Effect="EarthshockSet"/>
+        <MinCount value="1"/>
     </CEffectEnumArea>
     <CEffectDamage id="TheosDamage" parent="MagicDamage">
         <Kind value="Ranged"/>
@@ -6271,10 +6446,9 @@
     </CEffectRemoveBehavior>
     <CEffectSet id="PurgeSet">
         <EditorCategories value=""/>
-        <EffectArray value="Use07Energy"/>
+        <EffectArray value="Use05Energy"/>
         <EffectArray value="PurgeRemoveImmunity"/>
         <EffectArray value="PurgeDamage"/>
-        <ValidatorArray value="Has07Energy"/>
     </CEffectSet>
     <CEffectDamage id="PurgeDamage" parent="ChaosDamage">
         <Kind value="Spell"/>
@@ -6308,7 +6482,9 @@
         <EffectArray value="Cleanse"/>
     </CEffectSet>
     <CEffectCreateHealer id="PurifyHeal" parent="HealOnceTemplate">
-        <RechargeVitalRate value="100"/>
+        <RechargeVitalRate value="100">
+            <AccumulatorArray value="TheosCelestianHealingSwitch"/>
+        </RechargeVitalRate>
     </CEffectCreateHealer>
     <CEffectApplyBehavior id="EnergyCatalyst">
         <ValidatorArray value="CasterNotExpelled"/>
@@ -6719,15 +6895,9 @@
         <Random value="4"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>
-    <CEffectSet id="NightmareCritSet">
-        <EditorCategories value=""/>
-        <Chance value="0.1"/>
-        <EffectArray value="NightmareDamage"/>
-    </CEffectSet>
     <CEffectSet id="NightmareAttackSet">
         <EditorCategories value=""/>
         <EffectArray value="NightmareDamage"/>
-        <EffectArray value="NightmareCritSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="SoundofMadnessApply">
         <ValidatorArray value="CasterNotExpelled"/>
@@ -7507,7 +7677,7 @@
     <CEffectLaunchMissile id="Wave28">
         <EditorCategories value=""/>
         <ImpactEffect value="Wave28Damage"/>
-        <AmmoUnit value="BioStasisMissile"/>
+        <AmmoUnit value="Wave28AttackMissile"/>
     </CEffectLaunchMissile>
     <CEffectLaunchMissile id="Wave29">
         <EditorCategories value=""/>
@@ -7629,7 +7799,7 @@
         <Type value="WeaponDamage"/>
     </CEffectDamage>
     <CEffectDamage id="Wave13Damage" parent="MagicDamage">
-        <Amount value="30"/>
+        <Amount value="37"/>
         <Random value="3"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>
@@ -7669,7 +7839,6 @@
             <SortArray value="TSLifeFraction"/>
             <SortArray value="TSAngleAuto"/>
         </TargetSorts>
-        <AreaArray Radius="4.5"/>
         <MaxCount value="2"/>
     </CEffectEnumArea>
     <CEffectLaunchMissile id="PhantomAttack">
@@ -7683,7 +7852,6 @@
             <SortArray value="TSLifeFraction"/>
             <SortArray value="TSAngleAuto"/>
         </TargetSorts>
-        <AreaArray Radius="4.5"/>
         <MaxCount value="2"/>
     </CEffectEnumArea>
     <CEffectDamage id="Send_Roach" parent="NormalDamage">
@@ -8151,7 +8319,6 @@
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSAngle"/>
         </TargetSorts>
-        <AreaArray Radius="6"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="NightCrawlerMultishot" parent="MultishotTemplate">
@@ -8161,7 +8328,6 @@
             <SortArray value="TSLifeLargestFirst"/>
             <SortArray value="TSAngle"/>
         </TargetSorts>
-        <AreaArray Radius="6"/>
         <MaxCount value="2"/>
     </CEffectEnumArea>
     <CEffectModifyUnit id="RepulseDrop">
@@ -8231,7 +8397,7 @@
     </CEffectApplyBehavior>
     <CEffectEnumArea id="ParityCheckSearchArea" parent="FindFriendlyUnitsPlusSelfModifiableRange">
         <ImpactLocation Value="SourcePoint"/>
-        <AreaArray MaxCount="10" Radius="8" Effect="ParityCheckHeal"/>
+        <AreaArray MaxCount="8" Radius="8" Effect="ParityCheckHeal"/>
         <SearchFilters value="Visible;Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
         <TargetSorts>
             <SortArray value="TSShieldsFraction"/>
@@ -8260,10 +8426,8 @@
         <Behavior value="MatrixShield"/>
     </CEffectApplyBehavior>
     <CEffectSet id="DecodeDamageSet">
-        <ValidatorArray value="NoDecodeDamageCooldown"/>
         <EditorCategories value=""/>
         <EffectArray value="DecodeDamage"/>
-        <EffectArray value="DecodeDamageCooldown"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="MatrixShieldRemove">
         <EditorCategories value=""/>
@@ -8305,24 +8469,14 @@
         <Behavior value="Preserved"/>
     </CEffectApplyBehavior>
     <CEffectSet id="DecodeSearchSet">
-        <ValidatorArray value="Has05Energy"/>
         <ValidatorArray value="NotDecoded"/>
+        <ValidatorArray value="Has03Energy"/>
         <EffectArray value="Decode"/>
-        <EffectArray value="Use05Energy"/>
+        <EffectArray value="Use03Energy"/>
     </CEffectSet>
-    <CEffectApplyBehavior id="DecodeDamageCooldown">
-        <EditorCategories value=""/>
-        <WhichUnit Value="Source"/>
-    </CEffectApplyBehavior>
-    <CEffectModifyUnit id="DecodeDamage">
-        <ValidatorArray value="NoDecodeDamageCooldown"/>
-        <EditorCategories value=""/>
-        <ImpactUnit Value="Source"/>
-        <KillCreditUnit Value="Caster"/>
-        <VitalArray index="Life">
-            <Change value="-8"/>
-        </VitalArray>
-    </CEffectModifyUnit>
+    <CEffectDamage id="DecodeDamage" parent="MagicDamage">
+        <Amount value="10"/>
+    </CEffectDamage>
     <CEffectDamage id="OrbitalSatelliteDamage" parent="ChaosDamage">
         <Kind value="Ranged"/>
     </CEffectDamage>
@@ -8708,7 +8862,7 @@
     </CEffectIssueOrder>
     <CEffectDamage id="fStaccato@Attack" parent="PiercingDamage">
         <Kind value="Ranged"/>
-        <Amount value="35"/>
+        <Amount value="41"/>
         <Random value="5"/>
         <Type value="WeaponDamage"/>
     </CEffectDamage>
@@ -9216,28 +9370,23 @@
         <EffectArray value="SurveillanceSearchArea"/>
     </CEffectSet>
     <CEffectApplyBehavior id="Superiority1Stack">
-        <ValidatorArray value="SuperiorityCounterEqual1"/>
         <ValidatorArray value="HasNoSuperiority1Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Superiority2Stacks">
-        <ValidatorArray value="SuperiorityCounterEqual2"/>
         <ValidatorArray value="HasNoSuperiority2Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Superiority3Stacks">
-        <ValidatorArray value="SuperiorityCounterEqual3"/>
         <ValidatorArray value="HasNoSuperiority3Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Superiority4Stacks">
-        <ValidatorArray value="SuperiorityCounterEqual4"/>
         <ValidatorArray value="HasNoSuperiority4Stack"/>
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="SuperiorityCounter">
         <EditorCategories value=""/>
-        <ValidatorArray value="SuperiorityCounterNotMax"/>
     </CEffectApplyBehavior>
     <CEffectCreatePersistent id="ta_ChainLightning@InitialDelay">
         <EditorCategories value=""/>

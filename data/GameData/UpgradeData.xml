@@ -108,6 +108,9 @@
         <AffectedUnitArray value="SecuritySystem"/>
         <MaxLevel value="30"/>
     </CUpgrade>
+    <CUpgrade id="RefundRush">
+        <EffectArray Operation="Set" Reference="Button,SellTower,Tooltip" Value="UserData/MutatorData/Refund_Rush_activation"/>
+    </CUpgrade>
     <CUpgrade id="SpottedEnemy">
         <MaxLevel value="2"/>
     </CUpgrade>
