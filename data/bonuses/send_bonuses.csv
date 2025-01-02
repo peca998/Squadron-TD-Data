@@ -18,6 +18,7 @@ Firebat,0,1,0,1,1.0,True,0.0,1.0,True,
 Siege Tank,48,1,0,1,1.0,True,0.0,1.0,True,Tank Decimator: +6 dmg/hit (assume 8 stacks) | 6*8=48
 Abyss Mage,0,1,0,1,1.0,True,0.0,1.0,True,
 Observer,0,1,0,1,1.0,True,0.0,1.0,True,
+Ghost,0,1,25,1,1.0,False,0.0,1.0,True,EMP Blast: assume 500 shields stripped | 500/20=25 (don't sort cuz it strips so we can't scale it as damage)
 Queen,0,1,0,1,1.0,True,0.0,1.0,True,
 Hydralisk,0,1,45,1,1.0,True,0.0,1.0,True,Poison Attack: Target attacks 20% slower and takes 15 damage over 3 seconds
 Aberration Basher,0,1,0,1,1.0,True,0.0,1.18,True,Resistance Aura: Allies gain 15% damage reduction => 118% hp

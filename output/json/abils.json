@@ -767,6 +767,10 @@
         "name": "Stun Immune",
         "desc": "Not affected by most stun abilities."
     },
+    "emp blast": {
+        "name": "EMP Blast",
+        "desc": "Detonates an EMP at target point that strips 100.00 + 5.00% shields from enemies."
+    },
     "hunter's pounce": {
         "name": "Hunter's Pounce",
         "desc": "Jumps towards an enemy unit, disorienting nearby enemies and reducing their damage output by 30.00%."

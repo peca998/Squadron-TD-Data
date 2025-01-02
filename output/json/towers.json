@@ -132,7 +132,7 @@
             "decode"
         ],
         "bonuses": {
-            "dps_bonus_add": 8.0,
+            "dps_bonus_add": 10.0,
             "dps_bonus_mult": 1.0,
             "life_bonus_add": 0.0,
             "life_bonus_mult": 1.0,
@@ -384,13 +384,13 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 424.0,
+            "life_bonus_add": 5280.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
             "sort_with_dps_bonus": true,
-            "sort_with_life_bonus": true
+            "sort_with_life_bonus": false
         },
         "tier": "4u",
         "builder": "Ancient",
@@ -535,7 +535,7 @@
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
             "life_bonus_add": 0.0,
-            "life_bonus_mult": 2.05,
+            "life_bonus_mult": 1.2,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
@@ -982,13 +982,13 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 0.0,
+            "life_bonus_add": 1300.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
             "sort_with_dps_bonus": true,
-            "sort_with_life_bonus": true
+            "sort_with_life_bonus": false
         },
         "tier": "3",
         "builder": "Automaton",
@@ -1569,7 +1569,7 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 4000.0,
+            "life_bonus_add": 4500.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
@@ -2120,7 +2120,7 @@
         "bonuses": {
             "dps_bonus_add": 38.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 5000.0,
+            "life_bonus_add": 5263.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
@@ -2170,7 +2170,7 @@
         "bonuses": {
             "dps_bonus_add": 224.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 3000.0,
+            "life_bonus_add": 3158.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
@@ -2720,7 +2720,7 @@
             "purge"
         ],
         "bonuses": {
-            "dps_bonus_add": 42.86,
+            "dps_bonus_add": 60.0,
             "dps_bonus_mult": 1.0,
             "life_bonus_add": 0.0,
             "life_bonus_mult": 1.0,
@@ -3069,9 +3069,9 @@
             "creation"
         ],
         "bonuses": {
-            "dps_bonus_add": 344.0,
+            "dps_bonus_add": 574.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 3195.0,
+            "life_bonus_add": 5325.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
@@ -4076,13 +4076,13 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 0.0,
+            "life_bonus_add": 5764.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
             "sort_with_dps_bonus": true,
-            "sort_with_life_bonus": true
+            "sort_with_life_bonus": false
         },
         "tier": "2uu",
         "builder": "Ghost",
@@ -5712,13 +5712,13 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 1560.0,
+            "life_bonus_add": 1520.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
             "sort_with_dps_bonus": true,
-            "sort_with_life_bonus": true
+            "sort_with_life_bonus": false
         },
         "tier": "6",
         "builder": "Nature",
@@ -5763,13 +5763,13 @@
         "bonuses": {
             "dps_bonus_add": 0.0,
             "dps_bonus_mult": 1.0,
-            "life_bonus_add": 4881.0,
+            "life_bonus_add": 5700.0,
             "life_bonus_mult": 1.0,
             "wpn_bonus_add": 0.0,
             "wpn_bonus_mult": 1.0,
             "wpn_period_mult": 1.0,
             "sort_with_dps_bonus": true,
-            "sort_with_life_bonus": true
+            "sort_with_life_bonus": false
         },
         "tier": "6u",
         "builder": "Nature",

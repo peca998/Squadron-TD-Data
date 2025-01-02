@@ -874,6 +874,52 @@
         "bounty": 12.0,
         "income": 6.0
     },
+    "ghost": {
+        "id": "Send_Ghost",
+        "name": "Ghost",
+        "wpn": {
+            "id": "Send_Ghost",
+            "name": "Ghost Attack",
+            "damage": {
+                "id": "Send_Ghost",
+                "min": 30.0,
+                "max": 33.0,
+                "kind": "Ranged",
+                "dmg_type": "Magic",
+                "effect_type": "WeaponDamage"
+            },
+            "period": 0.9,
+            "targets": 1,
+            "range": 4.0,
+            "melee": false
+        },
+        "hp": 575.0,
+        "shields": 0.0,
+        "energy": 5.0,
+        "armor": "Light",
+        "cost": {
+            "minerals": 0.0,
+            "vespene": 245.0,
+            "supply": 0.0
+        },
+        "move_speed": 2.5,
+        "abilities": [
+            "emp blast"
+        ],
+        "bonuses": {
+            "dps_bonus_add": 25.0,
+            "dps_bonus_mult": 1.0,
+            "life_bonus_add": 0.0,
+            "life_bonus_mult": 1.0,
+            "wpn_bonus_add": 0.0,
+            "wpn_bonus_mult": 1.0,
+            "wpn_period_mult": 1.0,
+            "sort_with_dps_bonus": false,
+            "sort_with_life_bonus": true
+        },
+        "bounty": 12.25,
+        "income": 7.0
+    },
     "hydralisk": {
         "id": "Send_Hydralisk",
         "name": "Hydralisk",
